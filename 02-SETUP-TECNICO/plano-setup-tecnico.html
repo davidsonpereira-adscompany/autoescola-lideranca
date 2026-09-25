@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Técnico — Auto Escola Liderança</title>
+<style>
+  :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #6B7280;
+    --accent: #2563EB;
+    --accent-light: #EFF6FF;
+    --border: #E5E7EB;
+    --success: #059669;
+    --warn: #D97706;
+    --danger: #DC2626;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  .subtitle { color: var(--muted); font-size: .95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.15rem;
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+    padding-bottom: .4rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+  }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: .75rem;
+    position: relative;
+    padding-left: 3.5rem;
+  }
+  .step-number {
+    position: absolute;
+    left: 1rem;
+    top: 1.25rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .85rem;
+  }
+  .step h3 { font-size: 1rem; margin-bottom: .4rem; }
+  .step p { font-size: .92rem; color: var(--muted); margin-bottom: .4rem; }
+  .dep {
+    display: inline-block;
+    background: #FEF3C7;
+    color: var(--warn);
+    padding: .1rem .5rem;
+    border-radius: 3px;
+    font-size: .75rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+  }
+  .dep.client { background: #FEE2E2; color: var(--danger); }
+  .dep.self { background: #ECFDF5; color: var(--success); }
+  ul { padding-left: 1.25rem; margin: .4rem 0; }
+  li { margin-bottom: .25rem; font-size: .92rem; }
+  .note {
+    background: #FEF3C7;
+    border-left: 3px solid var(--warn);
+    padding: .6rem .8rem;
+    font-size: .88rem;
+    margin: .75rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .timeline {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .5rem 1rem;
+    margin: 1rem 0;
+    font-size: .92rem;
+  }
+  .timeline dt { font-weight: 600; color: var(--accent); white-space: nowrap; }
+  .timeline dd { color: var(--muted); }
+  @media print {
+    body { padding: 1rem; font-size: .9rem; }
+    .step { break-inside: avoid; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .step { padding-left: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Plano de Setup Técnico</h1>
+<p class="subtitle">Auto Escola Liderança · Meta Ads + Instagram · Semana 1</p>
+
+<h2>Pré-requisitos (vêm da Priscila)</h2>
+<div class="note">
+  Nenhuma etapa pode começar sem os itens 1 e 3. Cobrar até sexta 19/09 no máximo.
+</div>
+<ul>
+  <li><strong>E-mail da autoescola</strong> — para criar ou acessar o Business Manager</li>
+  <li><strong>Acessos aos 2 Instagram</strong> — login/senha ou convite como administrador</li>
+  <li><strong>Cartão de crédito da autoescola</strong> — cadastrado direto na plataforma (Priscila ou Samuel fazem)</li>
+</ul>
+
+<h2>Sequência de Execução</h2>
+
+<div class="step">
+  <div class="step-number">1</div>
+  <h3>Business Manager</h3>
+  <span class="dep client">Depende: e-mail do cliente</span>
+  <ul>
+    <li>Acessar <strong>business.facebook.com</strong> com o e-mail da autoescola</li>
+    <li>Se não existir: criar Business Manager em nome de "Auto Escola Liderança"</li>
+    <li>Se já existir: solicitar acesso de administrador</li>
+    <li>Adicionar Davidson Pereira como administrador do Business Manager</li>
+  </ul>
+</div>
+
+<div class="step">
+  <div class="step-number">2</div>
+  <h3>Página do Facebook</h3>
+  <span class="dep self">Pode criar sem o cliente</span>
+  <ul>
+    <li>Verificar se já existe uma página da Auto Escola Liderança</li>
+    <li>Se existir: vincular ao Business Manager e pedir acesso</li>
+    <li>Se não existir: criar página dentro do Business Manager</li>
+    <li>Nome: <strong>Auto Escola Liderança</strong> · Categoria: Autoescola · Cidade: Coração de Jesus, MG</li>
+    <li>Foto de perfil: logo da autoescola · Capa: foto da estrutura ou veículos</li>
+  </ul>
+</div>
+
+<div class="step">
+  <div class="step-number">3</div>
+  <h3>Conta de Anúncios</h3>
+  <span class="dep client">Depende: Business Manager + cartão</span>
+  <ul>
+    <li>Criar conta de anúncios dentro do Business Manager</li>
+    <li>Nome: <strong>Auto Escola Liderança — Conta Principal</strong></li>
+    <li>Moeda: BRL · Fuso: Brasília (GMT-3)</li>
+    <li>Adicionar método de pagamento: <strong>cartão do cliente</strong> (Priscila ou Samuel fazem essa etapa)</li>
+    <li>Definir limite de gastos diário: R$ 25,00 (como proteção)</li>
+  </ul>
+  <div class="note">
+    A Priscila ou o Samuel precisam cadastrar o cartão com o próprio login. Nunca pedir dados do cartão — enviar o link da plataforma e orientar por vídeo/prints se necessário.
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-number">4</div>
+  <h3>Vincular Instagram — Coração de Jesus</h3>
+  <span class="dep client">Depende: acesso ao Instagram</span>
+  <ul>
+    <li>Garantir que @autoescolalideranca.cj é conta profissional (Comercial)</li>
+    <li>Se for pessoal: converter para conta comercial</li>
+    <li>Vincular ao Business Manager → Contas do Instagram</li>
+    <li>Vincular à página do Facebook criada na etapa 2</li>
+  </ul>
+</div>
+
+<div class="step">
+  <div class="step-number">5</div>
+  <h3>Vincular Instagram — Brasília de Minas</h3>
+  <span class="dep client">Depende: acesso ao Instagram</span>
+  <ul>
+    <li>Mesmo processo do passo 4, para @autoescolalideranca.bm</li>
+    <li>Garantir que é conta profissional (Comercial)</li>
+    <li>Vincular ao mesmo Business Manager</li>
+    <li>Vincular à mesma página do Facebook (ou criar página secundária se necessário)</li>
+  </ul>
+</div>
+
+<div class="step">
+  <div class="step-number">6</div>
+  <h3>Pixel e Eventos</h3>
+  <span class="dep self">Independente do cliente</span>
+  <ul>
+    <li>Criar Pixel no Business Manager: <strong>Pixel Auto Escola Liderança</strong></li>
+    <li>Por enquanto sem site — o Pixel será usado para rastrear conversas no WhatsApp via eventos personalizados</li>
+    <li>Configurar evento de conversão: <strong>Contato (WhatsApp)</strong></li>
+    <li>Se houver landing page futura: instalar Pixel nela</li>
+  </ul>
+</div>
+
+<div class="step">
+  <div class="step-number">7</div>
+  <h3>Verificações Finais</h3>
+  <span class="dep self">Checklist de conferência</span>
+  <ul>
+    <li>Business Manager ativo e sem restrições</li>
+    <li>Conta de anúncios com método de pagamento ativo</li>
+    <li>Dois Instagram vinculados e aparecendo no Business Manager</li>
+    <li>Página do Facebook ativa com foto e capa</li>
+    <li>Pixel criado e associado à conta de anúncios</li>
+    <li>Davidson como administrador em tudo</li>
+  </ul>
+</div>
+
+<h2>Cronograma Estimado</h2>
+<dl class="timeline">
+  <dt>Qua 17/09</dt>
+  <dd>Kickoff com Priscila + envio do checklist de onboarding</dd>
+  <dt>Sex 19/09</dt>
+  <dd>Prazo para receber acessos e e-mail</dd>
+  <dt>Seg 22/09</dt>
+  <dd>Executar etapas 1 a 6 (tudo em sequência, ~2h de trabalho)</dd>
+  <dt>Ter 23/09</dt>
+  <dd>Verificações finais + confirmar método de pagamento</dd>
+</dl>
+
+<h2>Riscos e Contingências</h2>
+<ul>
+  <li><strong>Priscila não envia acessos até sexta:</strong> cobrar segunda (22/09) de manhã por WhatsApp. Se não enviar até terça, ligar.</li>
+  <li><strong>Instagram é conta pessoal:</strong> pedir pra converter (enviar tutorial em prints).</li>
+  <li><strong>Business Manager já existe mas está restrito:</strong> avaliar se vale criar um novo ou apelar à Meta.</li>
+  <li><strong>Cartão recusado:</strong> orientar sobre limites do cartão e sugerir alternativas (outro cartão, boleto via Mercado Pago se disponível).</li>
+</ul>
+
+</body>
+</html>

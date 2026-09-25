@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro de Cliente Oculto — Auto Escola Liderança</title>
+<style>
+  :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #6B7280;
+    --accent: #7C3AED;
+    --accent-light: #F5F3FF;
+    --border: #E5E7EB;
+    --success: #059669;
+    --warn: #D97706;
+    --danger: #DC2626;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  .subtitle { color: var(--muted); font-size: .95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.15rem;
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+    padding-bottom: .4rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+  }
+  h3 { font-size: 1rem; margin: 1.25rem 0 .5rem; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .persona-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: .75rem;
+  }
+  .persona-badge {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: .2rem .6rem;
+    border-radius: 4px;
+    font-size: .8rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  ul, ol { padding-left: 1.25rem; margin: .5rem 0; }
+  li { margin-bottom: .35rem; font-size: .92rem; }
+  .msg-box {
+    background: #F3F4F6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: .75rem 0;
+    font-size: .92rem;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+  }
+  .note {
+    background: #FEF3C7;
+    border-left: 3px solid var(--warn);
+    padding: .6rem .8rem;
+    font-size: .88rem;
+    margin: .75rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .danger-note {
+    background: #FEE2E2;
+    border-left: 3px solid var(--danger);
+    padding: .6rem .8rem;
+    font-size: .88rem;
+    margin: .75rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: .88rem;
+  }
+  th, td {
+    padding: .6rem .75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+  .score { font-weight: 700; text-align: center; }
+  .score-good { color: var(--success); }
+  .score-mid { color: var(--warn); }
+  .score-bad { color: var(--danger); }
+  .divider { border: 0; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+  @media print {
+    body { padding: 1rem; font-size: .9rem; }
+    .card { break-inside: avoid; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    table { font-size: .8rem; }
+    th, td { padding: .4rem .5rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Roteiro de Cliente Oculto</h1>
+<p class="subtitle">Auto Escola Liderança · Diagnóstico de Atendimento · Semana 1</p>
+
+<div class="danger-note">
+  <strong>Fazer ANTES do kickoff com a Priscila.</strong> Se ela souber do teste, o comportamento da equipe muda e o diagnóstico perde valor. Nenhum resultado do cliente oculto deve ser compartilhado diretamente — será usado para embasar recomendações no playbook de WhatsApp.
+</div>
+
+<h2>Objetivo</h2>
+<p>Avaliar a experiência real de um potencial aluno ao entrar em contato pelas duas unidades via WhatsApp. Medir: velocidade de resposta, clareza, cordialidade, uso de termos técnicos, tentativa de fechamento e diferença de padrão entre Coração de Jesus e Brasília de Minas.</p>
+
+<h2>Logística</h2>
+<ul>
+  <li><strong>Canal:</strong> WhatsApp (principal canal de entrada — 70-80% dos leads)</li>
+  <li><strong>Quando:</strong> terça ou quarta (16 ou 17/09), em horário comercial (9h-17h)</li>
+  <li><strong>Quem executa:</strong> Davidson ou pessoa de confiança, usando número pessoal que a autoescola não conheça</li>
+  <li><strong>Duas rodadas:</strong> uma mensagem para cada unidade, com intervalo de pelo menos 2 horas entre elas</li>
+  <li><strong>Registrar tudo:</strong> prints de toda a conversa + anotar horários de envio e resposta</li>
+</ul>
+
+<h2>Personas e Mensagens</h2>
+
+<div class="card">
+  <div class="persona-header">
+    <div>
+      <h3 style="margin:0">Persona 1 — Jovem primeira habilitação</h3>
+      <p style="color:var(--muted);font-size:.88rem;margin-top:.25rem">Perfil: 18-20 anos, acabou de fazer 18, quer tirar a CNH B. Não sabe nada do processo.</p>
+    </div>
+    <span class="persona-badge">Unidade: Coração de Jesus</span>
+  </div>
+  <p><strong>Mensagem inicial:</strong></p>
+  <div class="msg-box">
+    Oi, boa tarde! Acabei de fazer 18 anos e quero tirar minha carteira de motorista. Como funciona? Quanto custa?
+  </div>
+  <p><strong>Se responderem, aprofundar com:</strong></p>
+  <ul>
+    <li>"Quanto tempo demora mais ou menos pra ficar pronto?"</li>
+    <li>"Posso parcelar?"</li>
+    <li>"E se eu reprovar no exame, como funciona?"</li>
+  </ul>
+  <p><strong>Se NÃO responderem em 2 horas:</strong> enviar uma segunda mensagem simples.</p>
+  <div class="msg-box">Oi, vocês estão atendendo?</div>
+</div>
+
+<div class="card">
+  <div class="persona-header">
+    <div>
+      <h3 style="margin:0">Persona 2 — Adulto categoria D</h3>
+      <p style="color:var(--muted);font-size:.88rem;margin-top:.25rem">Perfil: 30-40 anos, já tem CNH B, quer adicionar categoria D pra trabalhar como motorista.</p>
+    </div>
+    <span class="persona-badge">Unidade: Brasília de Minas</span>
+  </div>
+  <p><strong>Mensagem inicial:</strong></p>
+  <div class="msg-box">
+    Boa tarde! Já tenho carteira B e preciso tirar a D pra trabalhar. Vocês fazem essa categoria? Qual o valor?
+  </div>
+  <p><strong>Se responderem, aprofundar com:</strong></p>
+  <ul>
+    <li>"Preciso fazer algum curso antes ou já posso começar direto?"</li>
+    <li>"Quanto tempo leva o processo todo?"</li>
+    <li>"Vocês levam pro exame em Montes Claros ou eu que tenho que ir por conta?"</li>
+  </ul>
+  <p><strong>Se NÃO responderem em 2 horas:</strong> enviar mensagem de reforço.</p>
+  <div class="msg-box">Oi, ainda estou aguardando. Vocês atendem por aqui?</div>
+</div>
+
+<div class="note">
+  <strong>Regra de ouro:</strong> agir como um lead real. Não fazer perguntas demais de uma vez. Responder como uma pessoa normal responderia — com erros de digitação leves, respostas curtas, e no ritmo de uma conversa real.
+</div>
+
+<hr class="divider">
+
+<h2>Critérios de Avaliação</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Critério</th>
+      <th>O que observar</th>
+      <th style="text-align:center">Nota (0-10)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tempo de resposta</strong></td>
+      <td>Quanto tempo levou pra primeira resposta? Até 30 min = ótimo. 1-2h = regular. Mais de 2h = crítico.</td>
+      <td class="score">___</td>
+    </tr>
+    <tr>
+      <td><strong>Cordialidade</strong></td>
+      <td>Cumprimentou? Chamou pelo nome? Tom acolhedor ou frio/mecânico?</td>
+      <td class="score">___</td>
+    </tr>
+    <tr>
+      <td><strong>Clareza</strong></td>
+      <td>Explicou o processo de forma simples? Ou usou termos técnicos (RENACH, biometria, CFC)?</td>
+      <td class="score">___</td>
+    </tr>
+    <tr>
+      <td><strong>Completude</strong></td>
+      <td>Respondeu TUDO que foi perguntado? Informou preço, prazo, documentos necessários?</td>
+      <td class="score">___</td>
+    </tr>
+    <tr>
+      <td><strong>Proatividade</strong></td>
+      <td>Fez perguntas pra entender a situação do lead? Ofereceu informação adicional sem ser perguntado?</td>
+      <td class="score">___</td>
+    </tr>
+    <tr>
+      <td><strong>Tentativa de fechamento</strong></td>
+      <td>Tentou agendar, marcar uma visita, pedir documentos? Ou só respondeu e esperou?</td>
+      <td class="score">___</td>
+    </tr>
+    <tr>
+      <td><strong>Follow-up</strong></td>
+      <td>Se a conversa parou, voltou a entrar em contato em algum momento? (esperar 24h pra avaliar)</td>
+      <td class="score">___</td>
+    </tr>
+    <tr>
+      <td><strong>Linguagem</strong></td>
+      <td>Escreveu com clareza? Muitos erros? Mensagens muito longas ou muito curtas? Usou áudio sem necessidade?</td>
+      <td class="score">___</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Escala de Classificação</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Média</th>
+      <th>Classificação</th>
+      <th>Significa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="score score-good">8-10</td>
+      <td>Excelente</td>
+      <td>Atendimento converte bem. Ajustes pontuais.</td>
+    </tr>
+    <tr>
+      <td class="score score-mid">5-7</td>
+      <td>Regular</td>
+      <td>Atende mas não fecha. Playbook vai resolver.</td>
+    </tr>
+    <tr>
+      <td class="score score-bad">0-4</td>
+      <td>Crítico</td>
+      <td>Lead se perde no caminho. Prioridade máxima no treinamento.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider">
+
+<h2>Template do Relatório</h2>
+
+<div class="card">
+  <h3>Unidade: _____________</h3>
+  <ul>
+    <li><strong>Data e hora do contato:</strong> ___/___/2026 às ___:___</li>
+    <li><strong>Primeira resposta em:</strong> ___ minutos</li>
+    <li><strong>Quem respondeu (nome, se identificou):</strong> ___</li>
+    <li><strong>Média das notas (8 critérios):</strong> ___/10</li>
+    <li><strong>Classificação:</strong> Excelente / Regular / Crítico</li>
+  </ul>
+  <h3 style="margin-top:1rem">Pontos fortes</h3>
+  <ul>
+    <li>___</li>
+    <li>___</li>
+  </ul>
+  <h3>Pontos a melhorar</h3>
+  <ul>
+    <li>___</li>
+    <li>___</li>
+  </ul>
+  <h3>Observações gerais</h3>
+  <p style="color:var(--muted)">___</p>
+</div>
+
+<hr class="divider">
+
+<h2>Como usar os resultados</h2>
+<ol>
+  <li><strong>Alimentar o Playbook de WhatsApp (Semana 2):</strong> os problemas encontrados viram seções do manual de atendimento. Se não cumprimentam → script de abertura. Se não fecham → script de agendamento.</li>
+  <li><strong>Embasar o treinamento (Semana 2):</strong> "Percebi que alguns pontos podem melhorar no atendimento" — nunca revelar o teste. Apresentar como boas práticas de mercado.</li>
+  <li><strong>Comparar as unidades:</strong> se Brasília de Minas tiver nota muito abaixo, priorizar treinamento lá. O diagnóstico da call de 03/09 já indicava WhatsApp de Brasília de Minas sem monitoramento constante.</li>
+  <li><strong>Baseline para medir evolução:</strong> repetir o teste no mês 2 (com persona diferente) e comparar as notas.</li>
+</ol>
+
+</body>
+</html>

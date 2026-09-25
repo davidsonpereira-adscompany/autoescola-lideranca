@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Idea &mdash; Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --bg2: #0A0A0A;
+    --bg3: #0E0E0E;
+    --card: #111111;
+    --card2: #0C0C0C;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --texto3: #333;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto);
+    color: var(--branco);
+    font-family: var(--sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 32px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.08) 0%, transparent 70%),
+                linear-gradient(180deg, #040404 0%, #060606 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(255,92,0,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(255,92,0,0.04) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 40px;
+    font-family: var(--sans);
+  }
+  .hero-big-idea {
+    font-family: var(--serif);
+    font-size: clamp(44px, 8vw, 110px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    max-width: 900px;
+  }
+  .hero-big-idea em {
+    font-style: italic;
+    color: var(--laranja);
+  }
+  .hero-tagline {
+    font-size: clamp(16px, 2.2vw, 20px);
+    font-weight: 300;
+    color: var(--texto);
+    max-width: 660px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+    font-family: var(--sans);
+  }
+  .hero-tagline strong { color: var(--branco); font-weight: 500; }
+  .hero-divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(180deg, var(--laranja) 0%, transparent 100%);
+    margin: 0 auto;
+  }
+
+  /* ── LAYOUT ───────────────────────────────────────────── */
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .sec-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 16px;
+    font-family: var(--sans);
+  }
+  .sec-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+  .sec-title em { font-style: italic; color: var(--laranja); }
+  .sec-body {
+    font-size: 16px;
+    color: var(--texto);
+    font-weight: 300;
+    max-width: 700px;
+    line-height: 1.8;
+    font-family: var(--sans);
+  }
+  .sec-body p + p { margin-top: 20px; }
+  .sec-body strong { color: var(--branco); font-weight: 500; }
+
+  /* ── QUOTE BLOCK ──────────────────────────────────────── */
+  .quote-block {
+    margin: 48px 0;
+    padding: 40px 48px;
+    background: var(--card);
+    border-left: 3px solid var(--laranja);
+    position: relative;
+  }
+  .quote-block::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 120px;
+    color: var(--laranja3);
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .quote-text {
+    font-family: var(--serif);
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--branco);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 16px;
+  }
+  .quote-author {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    font-family: var(--sans);
+  }
+
+  /* ── CASO IPOD ────────────────────────────────────────── */
+  .caso-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 48px 0;
+  }
+  .caso-card {
+    padding: 40px 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  .caso-card.errado { border-left: 3px solid var(--texto3); }
+  .caso-card.certo { border-left: 3px solid var(--laranja); }
+  .caso-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: var(--sans);
+  }
+  .caso-card.errado .caso-card-label { color: var(--texto3); }
+  .caso-card.certo .caso-card-label { color: var(--laranja); }
+  .caso-card-produto {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--texto2);
+    margin-bottom: 8px;
+  }
+  .caso-card-frase {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .caso-card.errado .caso-card-frase { color: var(--texto2); }
+  .caso-card.certo .caso-card-frase { color: var(--branco); }
+  .caso-card-desc {
+    font-size: 14px;
+    color: var(--texto);
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: var(--sans);
+  }
+
+  /* ── ANTES / DEPOIS ───────────────────────────────────── */
+  .transform-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    margin: 56px 0;
+    align-items: start;
+  }
+  .transform-col {
+    padding: 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  .transform-col.antes { border-right: none; border-radius: 8px 0 0 8px; }
+  .transform-col.depois { border-left: none; border-color: rgba(255,92,0,0.25); border-radius: 0 8px 8px 0; background: rgba(255,92,0,0.04); }
+  .transform-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: 22px;
+    color: var(--laranja);
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+  .transform-col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: var(--sans);
+  }
+  .transform-col.antes .transform-col-label { color: var(--texto3); }
+  .transform-col.depois .transform-col-label { color: var(--laranja); }
+  .transform-item {
+    font-size: 14px;
+    color: var(--texto);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+    font-family: var(--sans);
+  }
+  .transform-item:last-child { border-bottom: none; }
+  .transform-item .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .antes .dot { background: var(--texto3); }
+  .depois .dot { background: var(--laranja); }
+
+  /* ── INIMIGO ──────────────────────────────────────────── */
+  .inimigo-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inimigo-box::before {
+    content: 'INIMIGO';
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: rgba(255,255,255,0.06);
+    font-family: var(--sans);
+  }
+  .inimigo-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .inimigo-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .inimigo-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .inimigo-nome {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--texto3);
+    margin-bottom: 6px;
+    font-family: var(--sans);
+  }
+  .inimigo-desc {
+    font-size: 15px;
+    color: var(--texto);
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: var(--sans);
+  }
+  .inimigo-desc strong { color: var(--branco); font-weight: 500; }
+
+  /* ── PILARES ──────────────────────────────────────────── */
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 56px 0;
+  }
+  .pilar {
+    background: var(--card);
+    padding: 40px 32px;
+    border: 1px solid var(--border);
+    transition: border-color 0.3s;
+  }
+  .pilar:hover { border-color: rgba(255,92,0,0.25); }
+  .pilar-num {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--laranja3);
+    font-family: var(--sans);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .pilar-titulo {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .pilar-frase {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--laranja);
+    margin-bottom: 16px;
+    font-style: italic;
+    font-family: var(--serif);
+  }
+  .pilar-desc {
+    font-size: 13px;
+    color: var(--texto2);
+    line-height: 1.6;
+    font-weight: 300;
+    font-family: var(--sans);
+  }
+
+  /* ── VOZ ──────────────────────────────────────────────── */
+  .voz-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 48px 0;
+  }
+  .voz-card {
+    padding: 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  .voz-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-family: var(--sans);
+  }
+  .voz-card.sim .voz-card-label { color: var(--laranja); }
+  .voz-card.nao .voz-card-label { color: var(--texto3); }
+  .voz-exemplo {
+    font-size: 14px;
+    color: var(--texto);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-style: italic;
+    font-weight: 300;
+    font-family: var(--sans);
+  }
+  .voz-exemplo:last-child { border-bottom: none; }
+
+  /* ── APLICACOES ───────────────────────────────────────── */
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin: 48px 0;
+  }
+  .app-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 32px;
+  }
+  .app-plataforma {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 12px;
+    font-family: var(--sans);
+  }
+  .app-titulo {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .app-desc {
+    font-size: 13px;
+    color: var(--texto2);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-family: var(--sans);
+  }
+  .app-exemplo {
+    background: var(--bg3);
+    border-left: 2px solid var(--laranja);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--texto);
+    font-style: italic;
+    line-height: 1.5;
+    font-family: var(--sans);
+  }
+
+  /* ── HEADLINE BANK ────────────────────────────────────── */
+  .headline-item {
+    padding: 24px 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    margin-bottom: 2px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .headline-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--laranja);
+    width: 24px;
+    flex-shrink: 0;
+    font-family: var(--sans);
+  }
+  .headline-text {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--branco);
+    font-weight: 400;
+    line-height: 1.4;
+    flex: 1;
+  }
+  .headline-uso {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--texto3);
+    white-space: nowrap;
+    font-family: var(--sans);
+  }
+
+  /* ── FOOTER ───────────────────────────────────────────── */
+  .footer {
+    padding: 60px 32px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--texto3);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .footer-logo em { color: var(--laranja); font-style: italic; }
+  .footer-sub { font-size: 12px; color: var(--texto3); font-family: var(--sans); }
+
+  /* ── PRINT ────────────────────────────────────────────── */
+  @media print {
+    @page { margin: 15mm; }
+    body { background: #fff; color: #111; }
+    .hero { background: #fff; min-height: auto; padding: 40px 0; }
+    .hero-big-idea, .sec-title { color: #111; }
+    .hero-big-idea em, .sec-title em { color: #FF5C00; }
+    .sec-label, .pilar-frase, .app-plataforma, .hero-eyebrow, .quote-author { color: #FF5C00; }
+    .hero-tagline, .sec-body, .pilar-desc, .app-desc { color: #444; }
+    .card, .pilar, .voz-card, .app-card, .headline-item, .inimigo-box { background: #f9f9f9; border-color: #ddd; }
+    .quote-block { background: #f5f5f5; border-left-color: #FF5C00; }
+    .quote-text { color: #111; }
+    .hero-divider, .transform-divider { display: none; }
+    .footer { border-top-color: #ddd; }
+    .nav-bar { display: none !important; }
+  }
+
+  /* ── RESPONSIVO ───────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero { padding: 60px 20px; }
+    .wrap { padding: 0 20px; }
+    .section { padding: 60px 0; }
+    .caso-grid { grid-template-columns: 1fr; }
+    .pilares-grid { grid-template-columns: 1fr; }
+    .transform-grid { grid-template-columns: 1fr; }
+    .transform-col.antes { border-radius: 8px 8px 0 0; border-right: 1px solid var(--border); border-bottom: none; }
+    .transform-col.depois { border-radius: 0 0 8px 8px; border-left: 1px solid rgba(255,92,0,0.25); border-top: none; }
+    .transform-divider {
+      width: 100%;
+      height: 40px;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-top: none;
+      border-bottom: none;
+    }
+    .voz-grid { grid-template-columns: 1fr; }
+    .app-grid { grid-template-columns: 1fr; }
+    .quote-block { padding: 28px 24px; }
+    .inimigo-box { padding: 28px 24px; }
+    .headline-item { flex-wrap: wrap; gap: 8px; padding: 20px 24px; }
+    .headline-uso { width: 100%; }
+    .caso-card { padding: 28px 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 48px 16px; }
+    .wrap { padding: 0 16px; }
+    .section { padding: 48px 0; }
+    .hero-big-idea { font-size: clamp(32px, 10vw, 48px); }
+    .sec-title { font-size: clamp(24px, 6vw, 32px); }
+    .quote-block { padding: 20px 16px; }
+    .inimigo-box { padding: 20px 16px; }
+    .pilar { padding: 28px 20px; }
+    .headline-item { padding: 16px; }
+    .headline-text { font-size: 15px; }
+    .nav-bar a { font-size: 10px !important; padding: 5px 10px !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+<div class="nav-bar" style="position:sticky;top:0;z-index:9999;background:rgba(6,6,6,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 24px;display:flex;align-items:center;gap:8px;font-family:Inter,-apple-system,sans-serif;">
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,0.5);padding:6px 14px;border:1px solid rgba(255,255,255,0.06);border-radius:5px;transition:all 0.25s;" onmouseover="this.style.color='#FF5C00';this.style.borderColor='rgba(255,92,0,0.25)'" onmouseout="this.style.color='rgba(255,255,255,0.5)';this.style.borderColor='rgba(255,255,255,0.06)'">
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Central
+  </a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     HERO — A BIG IDEA
+═══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">Auto Escola Liderança &mdash; Big Idea da Campanha</div>
+
+  <h1 class="hero-big-idea">
+    Do primeiro contato<br>
+    <em>até a chave</em><br>
+    na mão.
+  </h1>
+
+  <p class="hero-tagline">
+    Duas unidades, acompanhamento completo e centenas de aprovados.
+    <strong>A Liderança cuida de cada etapa</strong>
+    &mdash; para você só se preocupar em dirigir.
+  </p>
+
+  <div class="hero-divider"></div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     1. A LIÇÃO DO iPOD
+═══════════════════════════════════════════════ -->
+<div class="wrap">
+<section class="section">
+  <div class="sec-label">01 &mdash; A Origem da Big Idea</div>
+  <h2 class="sec-title">A lição de<br><em>Steve Jobs</em></h2>
+
+  <div class="sec-body">
+    <p>Em 2001, Steve Jobs subiu ao palco para apresentar o iPod. Naquela época, já existiam dezenas de MP3 players no mercado. A Dell vendia o seu anunciando <strong>"5GB de armazenamento"</strong>. A Microsoft falava em <strong>"codec H.265, protocolo HLS, servidores dedicados"</strong>. Creative Labs listava especificações técnicas que ninguém entendia.</p>
+    <p>O que Jobs disse? Nenhuma especificação. Nenhum número de engenharia. Ele tirou o iPod do bolso e falou seis palavras:</p>
+  </div>
+
+  <div class="quote-block">
+    <p class="quote-text">1.000 músicas no seu bolso.</p>
+    <span class="quote-author">Steve Jobs &mdash; Lançamento do iPod, 2001</span>
+  </div>
+
+  <div class="sec-body">
+    <p>Em uma frase, Jobs comunicou a <strong>transformação</strong> &mdash; não a tecnologia. O cliente não queria 5 gigabytes. Queria levar toda a sua música para qualquer lugar. A Apple vendeu 100 milhões de iPods. Os concorrentes, com todas as suas especificações técnicas, desapareceram.</p>
+    <p>A lição é simples: <strong>as pessoas não compram características técnicas. Compram o que muda na vida delas.</strong></p>
+  </div>
+
+  <div class="caso-grid">
+    <div class="caso-card errado">
+      <div class="caso-card-label">Como os concorrentes falavam</div>
+      <div class="caso-card-produto">Dell DJ &mdash; 2003</div>
+      <div class="caso-card-frase">"5GB de armazenamento interno com interface USB 2.0"</div>
+      <div class="caso-card-desc">Ninguém sabe o que são 5 gigabytes. Ninguém se emociona com USB 2.0. A comunicação fala sobre o produto &mdash; nunca sobre o cliente.</div>
+    </div>
+    <div class="caso-card certo">
+      <div class="caso-card-label">Como a Apple falou</div>
+      <div class="caso-card-produto">iPod &mdash; 2001</div>
+      <div class="caso-card-frase">"1.000 músicas no seu bolso"</div>
+      <div class="caso-card-desc">Qualquer pessoa entende. Qualquer pessoa deseja. A comunicação fala sobre a transformação que o cliente vive &mdash; e o produto se torna irresistível.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     2. O PARALELO COM A LIDERANÇA
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">02 &mdash; O Paralelo com a Liderança</div>
+  <h2 class="sec-title">O mesmo erro no mercado<br>de <em>autoescolas</em></h2>
+
+  <div class="sec-body">
+    <p>O mercado de autoescolas comete exatamente o mesmo erro que os concorrentes do iPod. Todas falam em <strong>"primeira habilitação categoria B", "CFC credenciado ao Detran", "45 horas-aula", "exame de aptidão física e mental", "RENACH"</strong>.</p>
+    <p>O jovem de 18 anos em Coração de Jesus que quer tirar a primeira habilitação não faz ideia do que é RENACH. Não sabe quantas horas-aula precisa. E não deveria precisar saber.</p>
+    <p>O que ele quer saber é: <strong>como funciona, quanto tempo demora e se vai conseguir passar?</strong></p>
+  </div>
+
+  <div class="caso-grid">
+    <div class="caso-card errado">
+      <div class="caso-card-label">O que o mercado fala</div>
+      <div class="caso-card-produto">Comunicação típica de autoescola</div>
+      <div class="caso-card-frase">"Primeira habilitação Cat. B com 45h/aula. CFC credenciado. Agende seu RENACH."</div>
+      <div class="caso-card-desc">O futuro aluno não sabe o que é CFC. Não sabe o que é RENACH. E não deveria precisar saber para confiar na autoescola. A comunicação fala sobre o processo &mdash; nunca sobre a pessoa.</div>
+    </div>
+    <div class="caso-card certo">
+      <div class="caso-card-label">O que a Liderança deve falar</div>
+      <div class="caso-card-produto">Comunicação Liderança</div>
+      <div class="caso-card-frase">"Do primeiro contato até a chave na mão."</div>
+      <div class="caso-card-desc">Qualquer pessoa entende. Qualquer futuro motorista deseja exatamente isso: alguém que cuide de tudo. O processo está por trás &mdash; mas a promessa está na frente.</div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <p class="quote-text">Marketing é sobre valores. O mundo é muito barulhento, e não vamos ter a chance de fazer as pessoas lembrarem muito sobre nós. Então precisamos ser muito claros sobre o que queremos que elas saibam.</p>
+    <span class="quote-author">Steve Jobs &mdash; Reunião interna da Apple, 1997</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     3. O INIMIGO
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">03 &mdash; O Inimigo</div>
+  <h2 class="sec-title">Contra o que<br><em>estamos lutando</em></h2>
+
+  <div class="sec-body">
+    <p>Toda Big Idea precisa de um inimigo claro. O inimigo não é um concorrente &mdash; é a <strong>situação que o cliente quer escapar.</strong> São três:</p>
+  </div>
+
+  <div class="inimigo-box">
+    <div class="inimigo-item">
+      <div class="inimigo-icon">👻</div>
+      <div>
+        <div class="inimigo-nome">O Atendimento Fantasma</div>
+        <div class="inimigo-desc">A pessoa manda mensagem no WhatsApp e espera horas &mdash; ou dias &mdash; sem resposta. Quando alguém responde, usa linguagem técnica que confunde em vez de orientar. <strong>Cada lead sem resposta é uma matrícula perdida para sempre.</strong> O futuro aluno não vai esperar: ele vai para o concorrente que respondeu primeiro.</div>
+      </div>
+    </div>
+    <div class="inimigo-item">
+      <div class="inimigo-icon">😰</div>
+      <div>
+        <div class="inimigo-nome">O Processo Desconhecido</div>
+        <div class="inimigo-desc">Ninguém explica como funciona. RENACH, biometria, aulas teóricas, exame prático &mdash; o candidato não sabe por onde começa, quanto tempo leva, nem quanto vai custar de verdade. <strong>O medo do desconhecido é a principal razão pela qual as pessoas adiam a habilitação.</strong> Não é falta de vontade &mdash; é falta de informação.</div>
+      </div>
+    </div>
+    <div class="inimigo-item">
+      <div class="inimigo-icon">📸</div>
+      <div>
+        <div class="inimigo-nome">A Autoescola Invisível</div>
+        <div class="inimigo-desc">O Instagram é uma vitrine de posts genéricos de alunos aprovados. Mesmo formato, mesma legenda, zero personalidade. <strong>Se todas as autoescolas parecem iguais, o único critério de escolha passa a ser o preço.</strong> Não existe rosto, não existe história, não existe motivo para escolher uma e não outra.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     4. O JEITO ANTIGO × O JEITO NOVO
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">04 &mdash; O Jeito Antigo × O Jeito Novo</div>
+  <h2 class="sec-title">A autoescola genérica<br>contra a <em>Liderança</em></h2>
+
+  <div class="sec-body">
+    <p>A maioria das autoescolas da região opera no mesmo modelo há décadas: espera o aluno chegar, matricula, dá aula e torce para que ele passe. A Liderança pode ser diferente. <strong>Em vez de vender um serviço, pode vender uma jornada completa &mdash; do primeiro contato até a aprovação.</strong></p>
+  </div>
+
+  <div class="caso-grid">
+    <div class="caso-card errado">
+      <div class="caso-card-label">O jeito antigo</div>
+      <div class="caso-card-produto">Autoescola genérica da região</div>
+      <div class="caso-card-frase">"Habilitação Cat. B. Ligue e agende."</div>
+      <div class="caso-card-desc">Comunicação fria, sem personalidade. O aluno não sabe quem vai ensinar, como funciona o processo, nem por que deveria escolher essa autoescola e não outra. Espera que o lead chegue sozinho.</div>
+    </div>
+    <div class="caso-card certo">
+      <div class="caso-card-label">O jeito Liderança</div>
+      <div class="caso-card-produto">Comunicação com acompanhamento</div>
+      <div class="caso-card-frase">"Manda um oi no WhatsApp. A gente te explica tudo."</div>
+      <div class="caso-card-desc">Tom direto, humano. O aluno sabe que vai ser acolhido. A porta está aberta e o primeiro passo é simples. A Liderança vai ao encontro do lead, não espera sentada.</div>
+    </div>
+  </div>
+
+  <div class="sec-body">
+    <p>A diferença não é o serviço em si &mdash; todas as autoescolas ensinam a dirigir e preparam para o exame. A diferença é <strong>como o aluno se sente durante o processo.</strong> O jeito antigo trata o aluno como mais um número. O jeito Liderança trata como alguém que precisa de orientação, paciência e acompanhamento. E isso não custa mais &mdash; <strong>custa atenção.</strong></p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     5. A TRANSFORMAÇÃO
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">05 &mdash; A Transformação</div>
+  <h2 class="sec-title">De onde o aluno está<br>para <em>onde ele quer chegar</em></h2>
+
+  <div class="sec-body">
+    <p>A campanha não vende aulas de direção. <strong>Vende a conquista de poder ir e vir por conta própria.</strong> É essa transformação que deve aparecer em cada anúncio, cada post, cada conversa no WhatsApp.</p>
+  </div>
+
+  <div class="transform-grid">
+    <div class="transform-col antes">
+      <div class="transform-col-label">Antes da Liderança</div>
+      <div class="transform-item"><span class="dot"></span>Não sabe por onde começar o processo da habilitação</div>
+      <div class="transform-item"><span class="dot"></span>Medo de reprovar no exame do Detran</div>
+      <div class="transform-item"><span class="dot"></span>Manda mensagem no WhatsApp e fica sem resposta</div>
+      <div class="transform-item"><span class="dot"></span>Não sabe quem vai ensinar nem como são os veículos</div>
+      <div class="transform-item"><span class="dot"></span>Depende de carona, ônibus ou da boa vontade dos outros</div>
+      <div class="transform-item"><span class="dot"></span>Adia a habilitação porque parece complicado e caro demais</div>
+    </div>
+    <div class="transform-divider">&rarr;</div>
+    <div class="transform-col depois">
+      <div class="transform-col-label">Depois da Liderança</div>
+      <div class="transform-item"><span class="dot"></span>Primeiro contato respondido rápido, com orientação clara e acolhedora</div>
+      <div class="transform-item"><span class="dot"></span>Preparado e confiante &mdash; sabe o que esperar no exame</div>
+      <div class="transform-item"><span class="dot"></span>Suporte humanizado do começo ao fim, sem jargão</div>
+      <div class="transform-item"><span class="dot"></span>Conhece o Samuel, a equipe, os veículos novos &mdash; sente confiança</div>
+      <div class="transform-item"><span class="dot"></span>CNH na mão &mdash; independência para ir e vir</div>
+      <div class="transform-item"><span class="dot"></span>Processo organizado, parcelado e sem surpresas</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     6. OS TRÊS PILARES
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">06 &mdash; Os Três Pilares</div>
+  <h2 class="sec-title">As três promessas que<br><em>sustentam tudo</em></h2>
+
+  <div class="sec-body">
+    <p>Toda comunicação da Liderança &mdash; seja um anúncio de 6 segundos ou uma conversa no WhatsApp &mdash; deve se apoiar em pelo menos um desses três pilares. São eles que transformam características operacionais em <strong>benefícios que o aluno sente na pele.</strong></p>
+  </div>
+
+  <div class="pilares-grid">
+
+    <div class="pilar">
+      <div class="pilar-num">01</div>
+      <div class="pilar-titulo">Acompanhamento de Ponta a Ponta</div>
+      <div class="pilar-frase">"Do primeiro contato até a chave na mão"</div>
+      <div class="pilar-desc">O aluno não precisa entender o processo. Não precisa saber o que é RENACH, biometria ou carga horária obrigatória. A Liderança cuida de cada etapa &mdash; da matrícula ao translado para o exame em Montes Claros. Ele só precisa aparecer e dirigir.</div>
+    </div>
+
+    <div class="pilar">
+      <div class="pilar-num">02</div>
+      <div class="pilar-titulo">Aprovação com Confiança</div>
+      <div class="pilar-frase">"Instrutores que preparam, não que treinam"</div>
+      <div class="pilar-desc">Centenas de alunos aprovados na região. Instrutores experientes que respeitam o ritmo de cada um. Veículos novos. O aluno não vai para o exame com medo &mdash; vai preparado, confiante e sabendo o que esperar.</div>
+    </div>
+
+    <div class="pilar">
+      <div class="pilar-num">03</div>
+      <div class="pilar-titulo">Estrutura de Verdade</div>
+      <div class="pilar-frase">"Duas unidades, frota nova, categorias A até E"</div>
+      <div class="pilar-desc">Não é promessa &mdash; é estrutura instalada. Duas unidades cobrindo Coração de Jesus e Brasília de Minas. Frota renovada. Categorias A, B, AB, D e E (carreta). Translado para exame. Parcelamento flexível. A estrutura que o aluno merece.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     7. A VOZ DA CAMPANHA
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">07 &mdash; A Voz da Campanha</div>
+  <h2 class="sec-title">Como a Liderança<br><em>fala com o mundo</em></h2>
+
+  <div class="sec-body">
+    <p>A voz da Liderança é a do <strong>instrutor amigo</strong> &mdash; aquele que te ensina com paciência, explica sem jargão técnico, e torce pela sua aprovação. Direto, acolhedor, confiável. Tom de conversa, nunca de edital.</p>
+    <p>A comunicação nunca fala em RENACH, biometria, CFC, carga horária obrigatória ou resolução do CONTRAN. Fala em <strong>primeiro passo, acompanhamento, confiança, aprovação, independência.</strong></p>
+  </div>
+
+  <div class="voz-grid">
+    <div class="voz-card sim">
+      <div class="voz-card-label">Fala assim</div>
+      <div class="voz-exemplo">"Do primeiro dia até a aprovação, a gente caminha junto."</div>
+      <div class="voz-exemplo">"Medo de dirigir? Normal. A gente vai no seu ritmo."</div>
+      <div class="voz-exemplo">"Mais de 500 aprovados. O próximo pode ser você."</div>
+      <div class="voz-exemplo">"Translado para o exame por nossa conta. Você só vai preparado."</div>
+      <div class="voz-exemplo">"Parcela pra caber no bolso. Vem conversar."</div>
+      <div class="voz-exemplo">"Pergunte pra quem já fez. A aprovação fala por si."</div>
+    </div>
+    <div class="voz-card nao">
+      <div class="voz-card-label">Nunca fala assim</div>
+      <div class="voz-exemplo">"CFC credenciado ao Detran-MG conforme portaria 132/2024."</div>
+      <div class="voz-exemplo">"RENACH liberado em até 5 dias úteis após biometria."</div>
+      <div class="voz-exemplo">"Aulas teóricas de legislação conforme resolução do CONTRAN."</div>
+      <div class="voz-exemplo">"Agende seu exame de aptidão física e mental."</div>
+      <div class="voz-exemplo">"Carga horária de 45h: 25h teóricas + 20h práticas."</div>
+      <div class="voz-exemplo">"Exame de direção veicular com reteste incluso no CFC integrado."</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     8. BANCO DE HEADLINES
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">08 &mdash; Banco de Headlines</div>
+  <h2 class="sec-title">Frases que abrem<br><em>qualquer porta</em></h2>
+
+  <div class="sec-body">
+    <p>Headlines derivadas diretamente da Big Idea. Cada uma ataca um ponto de dor diferente ou acende um desejo diferente &mdash; mas todas falam em <strong>benefício, jamais em característica.</strong></p>
+  </div>
+
+  <div style="margin-top: 40px;">
+
+    <div class="headline-item">
+      <div class="headline-num">01</div>
+      <div class="headline-text">Do primeiro contato até a chave na mão.</div>
+      <div class="headline-uso">Big Idea Principal</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">02</div>
+      <div class="headline-text">Você não precisa entender o processo. Precisa de alguém que cuide dele por você.</div>
+      <div class="headline-uso">Página de Vendas</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">03</div>
+      <div class="headline-text">Mais de 500 aprovados na região. O próximo pode ser você.</div>
+      <div class="headline-uso">Anúncio &mdash; Prova Social</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">04</div>
+      <div class="headline-text">Medo de dirigir? Normal. Aqui a gente vai no seu ritmo.</div>
+      <div class="headline-uso">Anúncio &mdash; Objeção</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">05</div>
+      <div class="headline-text">18 anos? Parabéns. Sua habilitação está mais perto do que você imagina.</div>
+      <div class="headline-uso">Anúncio &mdash; Idade</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">06</div>
+      <div class="headline-text">Duas unidades. Coração de Jesus e Brasília de Minas. Sempre perto de você.</div>
+      <div class="headline-uso">Anúncio &mdash; Local</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">07</div>
+      <div class="headline-text">A gente cuida da matrícula, dos documentos, do translado e do preparo. Você só dirige.</div>
+      <div class="headline-uso">Anúncio &mdash; Conveniência</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">08</div>
+      <div class="headline-text">Quanto custa não ter habilitação? Oportunidades perdidas, dependência, tempo.</div>
+      <div class="headline-uso">Reels &mdash; Provocação</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">09</div>
+      <div class="headline-text">Frota nova, instrutores experientes, resultado que aparece na aprovação.</div>
+      <div class="headline-uso">Feed &mdash; Institucional</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">10</div>
+      <div class="headline-text">Habilitei na Liderança. Pergunta pra mim como foi.</div>
+      <div class="headline-uso">Prova Social &mdash; Depoimento</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">11</div>
+      <div class="headline-text">Na Liderança, ninguém te deixa sozinho no processo.</div>
+      <div class="headline-uso">Slogan &mdash; Branding</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">12</div>
+      <div class="headline-text">O WhatsApp tá aberto. Manda um oi que a gente te explica tudo.</div>
+      <div class="headline-uso">Stories &mdash; CTA</div>
+    </div>
+
+    <div style="margin: 32px 0 16px; padding: 12px 24px; font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--laranja); font-family: var(--sans); border-left: 3px solid var(--laranja);">Headlines do ângulo "Jornada Completa"</div>
+
+    <div class="headline-item">
+      <div class="headline-num">13</div>
+      <div class="headline-text">Do primeiro documento à foto com a CNH na mão.</div>
+      <div class="headline-uso">Anúncio &mdash; Jornada</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">14</div>
+      <div class="headline-text">Categoria E chegou na região. Sua carreira de motorista começa aqui.</div>
+      <div class="headline-uso">Meta Ads &mdash; Cat. E</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">15</div>
+      <div class="headline-text">Samuel e equipe. As pessoas por trás de cada aprovação.</div>
+      <div class="headline-uso">Reels &mdash; Rosto da Marca</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">16</div>
+      <div class="headline-text">Não escolha a autoescola mais barata. Escolha a que te prepara de verdade.</div>
+      <div class="headline-uso">Carrossel &mdash; Educativo</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">17</div>
+      <div class="headline-text">Sua mãe, seu pai ou você. Quem for, a gente acompanha do começo ao fim.</div>
+      <div class="headline-uso">Stories &mdash; Emocional</div>
+    </div>
+
+    <div class="headline-item">
+      <div class="headline-num">18</div>
+      <div class="headline-text">Translado para o exame em Montes Claros por nossa conta. Você só precisa ir preparado.</div>
+      <div class="headline-uso">Anúncio &mdash; Diferencial</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     9. APLICAÇÕES POR CANAL
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">09 &mdash; Aplicações por Canal</div>
+  <h2 class="sec-title">A Big Idea em<br><em>cada plataforma</em></h2>
+
+  <div class="sec-body">
+    <p>A mesma ideia central &mdash; <em>Do primeiro contato até a chave na mão</em> &mdash; se adapta ao formato e ao momento de cada plataforma. O espírito é sempre o mesmo: benefício primeiro, sempre.</p>
+  </div>
+
+  <div class="app-grid">
+
+    <div class="app-card">
+      <div class="app-plataforma">Instagram &mdash; Reels</div>
+      <div class="app-titulo">O rosto da Liderança na tela</div>
+      <div class="app-desc">Samuel na câmera, falando direto com o público. Primeiros 3 segundos: gancho de dor ou curiosidade. Formato: dica rápida, bastidor da aula, depoimento de aluno. CTA: "Manda um oi no WhatsApp &mdash; link na bio."</div>
+      <div class="app-exemplo">"Você sabe qual o primeiro passo pra tirar a habilitação? Não é ir no Detran. É mandar um oi pra gente. A gente te explica tudo."</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-plataforma">Instagram &mdash; Carrossel</div>
+      <div class="app-titulo">O processo passo a passo, sem jargão</div>
+      <div class="app-desc">Slide 1: pergunta provocadora. Slides 2-6: cada etapa do processo em linguagem simples. Slide final: CTA para WhatsApp. Objetivo: desmistificar e reduzir o medo.</div>
+      <div class="app-exemplo">"Slide 1: Quanto tempo leva pra tirar a habilitação? Slide 6: Menos do que você imagina. A gente te mostra o caminho."</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-plataforma">Instagram &mdash; Stories</div>
+      <div class="app-titulo">Prova social diária</div>
+      <div class="app-desc">Depoimentos de alunos aprovados com foto + 1 frase. Bastidores da aula prática. Enquetes interativas ("Você tem medo de baliza?"). Sempre com link para o WhatsApp nos stories com CTA.</div>
+      <div class="app-exemplo">"Essa é a Maria. Habilitou com a gente semana passada. Pergunta pra ela como foi."</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-plataforma">Meta Ads &mdash; Criativo</div>
+      <div class="app-titulo">Do medo à confiança em 15 segundos</div>
+      <div class="app-desc">Vídeo curto ou imagem com contraste: antes (medo, dúvida, dependência de carona) vs. depois (CNH na mão, liberdade, conquista). Copy com benefício na primeira linha. CTA para WhatsApp.</div>
+      <div class="app-exemplo">"Cansou de depender de carona? Na Liderança, a gente cuida de tudo &mdash; do primeiro documento até a aprovação. Manda um oi no WhatsApp."</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-plataforma">WhatsApp &mdash; Atendimento</div>
+      <div class="app-titulo">O primeiro contato que faz diferença</div>
+      <div class="app-desc">Resposta rápida, tom pessoal, sem jargão. Explica o processo em palavras simples. Envia áudio ou texto curto com as próximas etapas. Pergunta antes de oferecer &mdash; entende o momento do lead.</div>
+      <div class="app-exemplo">"Oi! Aqui é da Auto Escola Liderança. Conta pra gente: é sua primeira habilitação ou você já tem outra categoria? A gente te explica direitinho como funciona."</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-plataforma">Meta Ads &mdash; Campanha Cat. E</div>
+      <div class="app-titulo">Carreta na região. Sua carreira começa aqui.</div>
+      <div class="app-desc">Anúncio direcionado a profissionais que já têm CNH B e querem subir de categoria. Destaque: retorno financeiro rápido, mercado aquecido, a única da região com veículo de carreta.</div>
+      <div class="app-exemplo">"Quer dirigir carreta? A Liderança é a única da região com Categoria E. Invista na sua carreira &mdash; o mercado tá precisando de motorista."</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-plataforma">Presencial &mdash; Na Autoescola</div>
+      <div class="app-titulo">A experiência continua fora da tela</div>
+      <div class="app-desc">Banner na recepção com a Big Idea. Atendimento alinhado com o tom digital. Follow-up pós-matrícula. Pedido de depoimento na hora da aprovação (vídeo + foto). O aluno que indica ganha reconhecimento.</div>
+      <div class="app-exemplo">"Parabéns pela aprovação! Posso gravar um vídeo rápido com você? Quero que as pessoas vejam o resultado de quem confiou na Liderança."</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-plataforma">Conteúdo Orgânico &mdash; Samuel</div>
+      <div class="app-titulo">O porta-voz que gera confiança</div>
+      <div class="app-desc">Samuel falando direto com a câmera: dicas de direção, bastidores do dia a dia, história da autoescola. Tom de amigo que ensina. Rosto da marca que humaniza a comunicação. Formatos curtos (10-30 seg) para facilitar a gravação.</div>
+      <div class="app-exemplo">"Oi, eu sou o Samuel, da Auto Escola Liderança. Muita gente me pergunta: 'qual o segredo pra passar de primeira?' Posso te contar em 10 segundos."</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     10. A REGRA DE OURO
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="sec-label">10 &mdash; A Regra de Ouro</div>
+  <h2 class="sec-title">O filtro de<br><em>toda decisão criativa</em></h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Antes de publicar qualquer coisa, pergunte: isso fala sobre o que o aluno <em>sente e vive</em> &mdash; ou sobre o que a autoescola <em>tem e faz</em>?</p>
+    <span class="quote-author">Teste da Big Idea &mdash; Auto Escola Liderança</span>
+  </div>
+
+  <div class="sec-body">
+    <p>Se a resposta for "fala sobre a autoescola", reescreva até que fale sobre o aluno. <strong>A Liderança não tem 45 horas-aula. A Liderança te prepara até você se sentir seguro.</strong> A Liderança não é um CFC credenciado. A Liderança é onde centenas de pessoas conquistaram a independência de ir e vir.</p>
+    <p>Característica é o que a autoescola tem. Benefício é o que o aluno <em>vira</em> depois de passar pela Liderança.</p>
+    <p><strong>Venda sempre a transformação &mdash; jamais a especificação.</strong></p>
+    <p style="margin-top: 32px; padding: 24px; background: var(--card); border: 1px solid var(--border); font-size: 14px; line-height: 1.8;">
+      <strong style="color: var(--laranja);">Na prática:</strong> Quando o Samuel gravar um Reels sobre o processo, ele não diz "a carga horária obrigatória é de 45 horas-aula, sendo 25 teóricas e 20 práticas". Ele diz: <strong>"O processo é mais rápido do que você imagina. A gente cuida de tudo &mdash; você só precisa vir e dirigir."</strong><br><br>
+      O processo é a razão pela qual funciona. A transformação é a razão pela qual o aluno escolhe a Liderança. Comunique a segunda. A primeira fica nos bastidores &mdash; para quando o aluno quiser se aprofundar.
+    </p>
+  </div>
+
+</section>
+
+</div><!-- /wrap -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Big Idea &mdash; Auto Escola Liderança &mdash; Setembro 2026</div>
+</footer>
+
+</body>
+</html>

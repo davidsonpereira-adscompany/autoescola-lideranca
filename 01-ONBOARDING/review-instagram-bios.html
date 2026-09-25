@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Instagram + Bios Otimizadas — Auto Escola Liderança</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F8FAFC;
+    --text: #0F172A;
+    --muted: #64748B;
+    --accent: #E1306C;
+    --accent-light: #FFF1F5;
+    --border: #E2E8F0;
+    --success: #059669;
+    --success-light: #ECFDF5;
+    --warn: #D97706;
+    --warn-light: #FEF3C7;
+    --danger: #DC2626;
+    --danger-light: #FEF2F2;
+    --blue: #2563EB;
+    --blue-light: #EFF6FF;
+  }
+
+  @page { size: A4; margin: 18mm 16mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .doc-header {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .doc-header .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #FFF;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .2rem .6rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .5rem;
+  }
+  .doc-header h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: .25rem;
+  }
+  .doc-header .subtitle {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+    padding-bottom: .35rem;
+    border-bottom: 2px solid var(--accent-light);
+  }
+  h3 {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 1.25rem;
+    margin-bottom: .5rem;
+  }
+  p, li { font-size: .92rem; }
+  p { margin-bottom: .6rem; }
+  ul, ol { padding-left: 1.25rem; margin: .5rem 0; }
+  li { margin-bottom: .4rem; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .card-success {
+    background: var(--success-light);
+    border-left: 3px solid var(--success);
+    border-radius: 0 8px 8px 0;
+  }
+  .card-warn {
+    background: var(--warn-light);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 8px 8px 0;
+  }
+  .card-danger {
+    background: var(--danger-light);
+    border-left: 3px solid var(--danger);
+    border-radius: 0 8px 8px 0;
+  }
+  .card-blue {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: .75rem 0;
+    font-size: .85rem;
+  }
+  th, td {
+    padding: .55rem .7rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 3px;
+  }
+  .tag-green { background: var(--success-light); color: var(--success); }
+  .tag-red { background: var(--danger-light); color: var(--danger); }
+  .tag-yellow { background: var(--warn-light); color: var(--warn); }
+
+  .bio-box {
+    background: #FAFAFA;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: .75rem 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .bio-box .bio-name {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: .1rem;
+  }
+  .bio-box .bio-category {
+    font-size: .8rem;
+    color: var(--muted);
+    margin-bottom: .75rem;
+  }
+  .bio-box .bio-text {
+    font-size: .9rem;
+    line-height: 1.5;
+    white-space: pre-line;
+  }
+  .bio-box .bio-link {
+    margin-top: .5rem;
+    font-size: .85rem;
+    color: var(--blue);
+    font-weight: 500;
+  }
+
+  .highlight-row {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    margin: .75rem 0;
+  }
+  .highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+  }
+  .highlight-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    background: var(--surface);
+  }
+  .highlight-label {
+    font-size: .68rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 65px;
+    line-height: 1.2;
+  }
+
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  .before-after .arrow {
+    font-size: 1.5rem;
+    color: var(--muted);
+    align-self: center;
+    padding-top: 2rem;
+  }
+
+  .footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: .75rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media print {
+    body { padding: 0; }
+    .card, .bio-box { break-inside: avoid; }
+  }
+  @media (max-width: 640px) {
+    body { padding: 1rem; }
+    .grid-2, .before-after { grid-template-columns: 1fr; }
+    .before-after .arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+<div style="position:sticky;top:0;z-index:9999;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid #E2E8F0;padding:10px 24px;display:flex;align-items:center;gap:8px;font-family:Inter,-apple-system,sans-serif;">
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:#64748B;padding:6px 14px;border:1px solid #E2E8F0;border-radius:5px;transition:all 0.25s;" onmouseover="this.style.color='#E1306C';this.style.borderColor='#E1306C'" onmouseout="this.style.color='#64748B';this.style.borderColor='#E2E8F0'">
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Central
+  </a>
+</div>
+
+<div class="doc-header">
+  <span class="badge">Otimização de Perfis</span>
+  <h1>Review do Instagram + Bios Otimizadas</h1>
+  <p class="subtitle">Auto Escola Liderança · @autoescolalideranca.cj e @autoescolalideranca.bm</p>
+</div>
+
+<!-- ═══════════════ PARTE 1: DIAGNÓSTICO ═══════════════ -->
+<h2>Parte 1 — Diagnóstico dos Perfis Atuais</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <h3 style="margin-top:0;">@autoescolalideranca.cj <span class="tag tag-red">RESTRITO</span></h3>
+    <p style="font-size:.85rem;color:var(--muted);">Coração de Jesus (matriz)</p>
+    <ul>
+      <li><strong>Status:</strong> Restrito — não conecta ao BM novo</li>
+      <li><strong>Seguidores:</strong> Base principal (maioria dos seguidores da marca)</li>
+      <li><strong>Conteúdo:</strong> ~90% posts de aprovados ("Habilitei!")</li>
+      <li><strong>Bio atual:</strong> Provavelmente genérica (nome + telefone)</li>
+      <li><strong>Destaques:</strong> Inexistentes ou desorganizados</li>
+      <li><strong>Reels:</strong> Poucos ou nenhum</li>
+      <li><strong>Porta-voz:</strong> Nunca apareceu</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0;">@autoescolalideranca.bm <span class="tag tag-green">ATIVO</span></h3>
+    <p style="font-size:.85rem;color:var(--muted);">Brasília de Minas (filial)</p>
+    <ul>
+      <li><strong>Status:</strong> Conectado ao BM, campanhas rodam por ele</li>
+      <li><strong>Seguidores:</strong> 883</li>
+      <li><strong>Publicações:</strong> 22 posts</li>
+      <li><strong>Conteúdo:</strong> ~90% posts de aprovados ("Habilitei!")</li>
+      <li><strong>Bio atual:</strong> Provavelmente genérica</li>
+      <li><strong>Destaques:</strong> Inexistentes ou desorganizados</li>
+      <li><strong>Reels:</strong> Poucos ou nenhum</li>
+      <li><strong>Porta-voz:</strong> Nunca apareceu</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Problemas Identificados (ambos os perfis)</h3>
+
+<div class="card card-danger">
+  <ol>
+    <li><strong>Conteúdo monotemático:</strong> 90% dos posts são "Habilitei!" — funciona como vitrine para quem já é aluno, mas não atrai novos leads</li>
+    <li><strong>Bio sem CTA:</strong> não diz ao visitante o que fazer (chamar no WhatsApp, conhecer os planos)</li>
+    <li><strong>Sem destaques estratégicos:</strong> quem chega ao perfil não encontra informação organizada (preços, processo, depoimentos, FAQ)</li>
+    <li><strong>Sem porta-voz:</strong> nenhum rosto humano na comunicação — concorrentes também não têm, então é diferencial imediato</li>
+    <li><strong>Sem identidade visual:</strong> posts sem padrão de cores, tipografia ou estilo</li>
+    <li><strong>Sem conteúdo de topo de funil:</strong> nada que responda às dúvidas de quem ainda não decidiu (quanto custa, quanto tempo, como funciona)</li>
+    <li><strong>Dois perfis sem conexão:</strong> parecem empresas diferentes, não duas unidades da mesma marca</li>
+  </ol>
+</div>
+
+<!-- ═══════════════ PARTE 2: BIOS OTIMIZADAS ═══════════════ -->
+<h2>Parte 2 — Bios Otimizadas</h2>
+
+<p>As bios seguem a Big Idea ("Do primeiro contato até a chave na mão") e incluem: proposta de valor, prova social, CTA direto e link.</p>
+
+<h3>@autoescolalideranca.cj — Coração de Jesus</h3>
+<p style="font-size:.85rem;color:var(--muted);">Aplicar assim que o perfil for desbloqueado.</p>
+
+<div class="bio-box">
+  <div class="bio-name">Auto Escola Liderança</div>
+  <div class="bio-category">Autoescola · Coração de Jesus-MG</div>
+  <div class="bio-text">Do primeiro contato até a chave na mão.
+Cat. A · B · AB · D · E (nova!)
+Centenas de alunos aprovados na região.
+Chama no WhatsApp e começa essa semana:</div>
+  <div class="bio-link">wa.me/5538992056​51</div>
+</div>
+
+<h3>@autoescolalideranca.bm — Brasília de Minas</h3>
+<p style="font-size:.85rem;color:var(--muted);">Aplicar agora — perfil ativo.</p>
+
+<div class="bio-box">
+  <div class="bio-name">Auto Escola Liderança</div>
+  <div class="bio-category">Autoescola · Brasília de Minas-MG</div>
+  <div class="bio-text">Do primeiro contato até a chave na mão.
+Cat. A · B · AB · D · E (nova!)
+Centenas de alunos aprovados na região.
+Chama no WhatsApp e começa essa semana:</div>
+  <div class="bio-link">wa.me/5538986885​20</div>
+</div>
+
+<div class="card card-blue">
+  <h3 style="margin-top:0;">Por que essa bio funciona</h3>
+  <ul>
+    <li><strong>Linha 1:</strong> Big Idea — proposta de valor clara e diferenciada</li>
+    <li><strong>Linha 2:</strong> Todas as categorias de uma vez — mostra amplitude (e a novidade da Cat. E)</li>
+    <li><strong>Linha 3:</strong> Prova social (centenas de aprovados) — gera confiança</li>
+    <li><strong>Linha 4:</strong> CTA direto — "chama no WhatsApp" é o que o público faz naturalmente</li>
+    <li><strong>Link:</strong> WhatsApp direto da unidade — sem intermediários</li>
+  </ul>
+</div>
+
+<!-- ═══════════════ PARTE 3: DESTAQUES ═══════════════ -->
+<h2>Parte 3 — Destaques (Stories Highlights)</h2>
+
+<p>Os destaques organizam a informação que o visitante precisa ao chegar no perfil. São iguais para as duas unidades (com telefone/endereço da respectiva unidade).</p>
+
+<div class="highlight-row">
+  <div class="highlight-item">
+    <div class="highlight-circle">&#x2753;</div>
+    <div class="highlight-label">COMO FUNCIONA</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-circle">&#x1F4B0;</div>
+    <div class="highlight-label">PREÇOS</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-circle">&#x2705;</div>
+    <div class="highlight-label">APROVADOS</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-circle">&#x1F5E3;</div>
+    <div class="highlight-label">DEPOIMENTOS</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-circle">&#x1F697;</div>
+    <div class="highlight-label">ESTRUTURA</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-circle">&#x1F4CD;</div>
+    <div class="highlight-label">UNIDADES</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-circle">&#x1F69B;</div>
+    <div class="highlight-label">CAT. D/E</div>
+  </div>
+</div>
+
+<h3>Conteúdo de cada destaque</h3>
+
+<table>
+  <thead>
+    <tr><th>Destaque</th><th>Conteúdo (3-5 stories cada)</th><th>Objetivo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>COMO FUNCIONA</strong></td>
+      <td>Passo a passo da matrícula à habilitação: matrícula → aula teórica → simulador → aula prática → exame → CNH na mão. Linguagem simples, sem jargão.</td>
+      <td>Responder à dúvida nº 1 do público ("como funciona?")</td>
+    </tr>
+    <tr>
+      <td><strong>PREÇOS</strong></td>
+      <td>Tabela simplificada por categoria (A, B, AB). Faixa de preço (a partir de R$ 630). Opção à vista com desconto. "Manda um oi no WhatsApp que a gente monta o melhor plano pra você."</td>
+      <td>Tirar a ansiedade do preço antes do contato</td>
+    </tr>
+    <tr>
+      <td><strong>APROVADOS</strong></td>
+      <td>Compilação dos melhores posts de aprovados (já existem). Fotos de turmas. Contador: "X alunos aprovados em 2026".</td>
+      <td>Prova social — "quem faz aqui, passa"</td>
+    </tr>
+    <tr>
+      <td><strong>DEPOIMENTOS</strong></td>
+      <td>Prints de mensagens de alunos (com autorização). Vídeos curtos de alunos contando a experiência. Prints de avaliações positivas.</td>
+      <td>Confiança via relato de terceiros</td>
+    </tr>
+    <tr>
+      <td><strong>ESTRUTURA</strong></td>
+      <td>Fotos dos veículos novos (carro, moto, categoria D). Fachada das unidades. Sala de aula.</td>
+      <td>Mostrar qualidade e profissionalismo</td>
+    </tr>
+    <tr>
+      <td><strong>UNIDADES</strong></td>
+      <td>Localização de Coração de Jesus e Brasília de Minas. Mapa. Horários. WhatsApp de cada uma.</td>
+      <td>Facilitar o contato — "estamos perto de você"</td>
+    </tr>
+    <tr>
+      <td><strong>CAT. D/E</strong></td>
+      <td>O que é a categoria D (ônibus) e E (carreta). Para quem serve. Preço. "Agora disponível na região." Foto do veículo.</td>
+      <td>Captar público profissional de alto ticket</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ PARTE 4: PADRONIZAÇÃO VISUAL ═══════════════ -->
+<h2>Parte 4 — Padronização Visual (Recomendações)</h2>
+
+<div class="card">
+  <h3 style="margin-top:0;">Identidade visual dos perfis</h3>
+  <ul>
+    <li><strong>Foto de perfil:</strong> Logo da Liderança em fundo sólido (branco ou azul escuro). Igual nas duas unidades — reforça que é a mesma marca</li>
+    <li><strong>Capas de destaque:</strong> Mesmo estilo para as duas unidades — ícones em fundo sólido com a cor primária da marca</li>
+    <li><strong>Posts de aprovados:</strong> Template padrão com logo, nome da unidade e data. Manter o formato, mas profissionalizar o layout</li>
+    <li><strong>Reels:</strong> Capa padronizada com título em texto grande + cor da marca. Samuel sempre com a mesma identidade visual</li>
+    <li><strong>Stories:</strong> Usar o Instagram nativo (enquetes, perguntas, contagem regressiva). Sticker com link do WhatsApp em todo story</li>
+  </ul>
+</div>
+
+<div class="card card-warn">
+  <h3 style="margin-top:0;">Ação imediata (Brasília de Minas)</h3>
+  <p>O perfil @autoescolalideranca.bm está ativo e é por onde as campanhas vão rodar. Prioridade:</p>
+  <ol>
+    <li>Atualizar bio com o texto otimizado acima</li>
+    <li>Criar pelo menos 3 destaques (COMO FUNCIONA, PREÇOS, APROVADOS) antes das campanhas de 30/09</li>
+    <li>Postar pelo menos 3 conteúdos novos antes do dia 30 (1 Reel do Samuel, 1 carrossel "como funciona", 1 post de aprovados no template novo)</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0;">Ação futura (Coração de Jesus)</h3>
+  <p>Quando o perfil @autoescolalideranca.cj for desbloqueado:</p>
+  <ol>
+    <li>Atualizar bio imediatamente</li>
+    <li>Replicar todos os destaques de BM</li>
+    <li>Separar campanhas: cada unidade com seu Instagram e segmentação local</li>
+    <li>Manter identidade visual idêntica entre os dois perfis</li>
+  </ol>
+</div>
+
+<!-- ═══════════════ CHECKLIST ═══════════════ -->
+<h2>Checklist de Implementação</h2>
+
+<table>
+  <thead>
+    <tr><th>Ação</th><th>Perfil</th><th>Quem executa</th><th>Prazo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Atualizar bio (texto acima)</td><td>BM</td><td>Priscila / Davidson</td><td>25/09</td></tr>
+    <tr><td>Criar destaque COMO FUNCIONA</td><td>BM</td><td>Equipe (stories) + Davidson (revisão)</td><td>27/09</td></tr>
+    <tr><td>Criar destaque PREÇOS</td><td>BM</td><td>Equipe (stories) + Davidson (revisão)</td><td>27/09</td></tr>
+    <tr><td>Criar destaque APROVADOS</td><td>BM</td><td>Equipe (compilação dos posts existentes)</td><td>27/09</td></tr>
+    <tr><td>Publicar Reel do Samuel (roteiro já entregue)</td><td>BM</td><td>Samuel (gravação) + equipe (postagem)</td><td>28/09</td></tr>
+    <tr><td>Publicar carrossel "Como funciona a habilitação"</td><td>BM</td><td>Davidson (arte) + equipe (postagem)</td><td>29/09</td></tr>
+    <tr><td>Atualizar foto de perfil (logo padronizado)</td><td>BM</td><td>Davidson</td><td>25/09</td></tr>
+    <tr><td>Replicar tudo no CJ quando desbloquear</td><td>CJ</td><td>Davidson + Priscila</td><td>Quando desbloquear</td></tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  ADS Company · Auto Escola Liderança · Review Instagram + Bios · Setembro 2026<br>
+  Documento interno — não compartilhar com o cliente
+</div>
+
+</body>
+</html>

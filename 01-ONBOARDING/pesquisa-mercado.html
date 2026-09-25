@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa de Mercado e Concorrentes — Auto Escola Liderança</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F8FAFC;
+    --text: #0F172A;
+    --muted: #64748B;
+    --accent: #7C3AED;
+    --accent-dark: #6D28D9;
+    --accent-light: #F5F3FF;
+    --border: #E2E8F0;
+    --success: #059669;
+    --success-light: #ECFDF5;
+    --warn: #D97706;
+    --warn-light: #FEF3C7;
+    --danger: #DC2626;
+    --danger-light: #FEF2F2;
+    --blue: #2563EB;
+    --blue-light: #EFF6FF;
+  }
+
+  @page { size: A4; margin: 18mm 16mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .doc-header {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .doc-header .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #FFF;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .2rem .6rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .5rem;
+  }
+  .doc-header h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: .25rem;
+  }
+  .doc-header .subtitle {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+  .meta-row {
+    display: flex; gap: 1.5rem; margin-top: .75rem; flex-wrap: wrap;
+  }
+  .meta-item {
+    font-size: .8rem; color: var(--muted);
+  }
+  .meta-item strong { color: var(--text); font-weight: 600; }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+    padding-bottom: .35rem;
+    border-bottom: 2px solid var(--accent-light);
+  }
+  h3 {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 1.25rem;
+    margin-bottom: .5rem;
+  }
+  p, li { font-size: .92rem; }
+  p { margin-bottom: .6rem; }
+  ul, ol { padding-left: 1.25rem; margin: .5rem 0; }
+  li { margin-bottom: .4rem; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .card-accent {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .card-success {
+    background: var(--success-light);
+    border-left: 3px solid var(--success);
+    border-radius: 0 8px 8px 0;
+  }
+  .card-warn {
+    background: var(--warn-light);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 8px 8px 0;
+  }
+  .card-danger {
+    background: var(--danger-light);
+    border-left: 3px solid var(--danger);
+    border-radius: 0 8px 8px 0;
+  }
+  .card-blue {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: .75rem 0;
+    font-size: .85rem;
+  }
+  th, td {
+    padding: .55rem .7rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 3px;
+    margin-right: .3rem;
+  }
+  .tag-green { background: var(--success-light); color: var(--success); }
+  .tag-red { background: var(--danger-light); color: var(--danger); }
+  .tag-yellow { background: var(--warn-light); color: var(--warn); }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+  .tag-purple { background: var(--accent-light); color: var(--accent); }
+
+  .competitor-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .competitor-card .name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .25rem;
+  }
+  .competitor-card .location {
+    font-size: .82rem;
+    color: var(--muted);
+    margin-bottom: .75rem;
+  }
+
+  .score-bar {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .4rem;
+    font-size: .82rem;
+  }
+  .score-bar .bar-label {
+    width: 120px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .score-bar .bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .score-bar .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+  .score-bar .bar-value {
+    width: 30px;
+    text-align: right;
+    font-weight: 600;
+    font-size: .8rem;
+  }
+
+  .insight-box {
+    display: flex;
+    gap: .75rem;
+    align-items: flex-start;
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .insight-box:last-child { border-bottom: none; }
+  .insight-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: .1rem;
+  }
+  .insight-text { font-size: .88rem; }
+
+  .footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: .75rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media print {
+    body { padding: 0; }
+    .card, .competitor-card { break-inside: avoid; }
+    h2 { break-after: avoid; }
+  }
+  @media (max-width: 640px) {
+    body { padding: 1rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .doc-header h1 { font-size: 1.25rem; }
+    .score-bar .bar-label { width: 90px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+<div style="position:sticky;top:0;z-index:9999;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid #E2E8F0;padding:10px 24px;display:flex;align-items:center;gap:8px;font-family:Inter,-apple-system,sans-serif;">
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:#64748B;padding:6px 14px;border:1px solid #E2E8F0;border-radius:5px;transition:all 0.25s;" onmouseover="this.style.color='#7C3AED';this.style.borderColor='#7C3AED'" onmouseout="this.style.color='#64748B';this.style.borderColor='#E2E8F0'">
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Central
+  </a>
+</div>
+
+<div class="doc-header">
+  <span class="badge">Base Estratégica 2/3</span>
+  <h1>Pesquisa de Mercado e Concorrentes</h1>
+  <p class="subtitle">Auto Escola Liderança · Região Norte de Minas Gerais</p>
+  <div class="meta-row">
+    <span class="meta-item"><strong>Responsável:</strong> Davidson Pereira (ADS Company)</span>
+    <span class="meta-item"><strong>Data:</strong> 24 de setembro de 2026</span>
+    <span class="meta-item"><strong>Fontes:</strong> Google, Instagram, Facebook, Meta Ad Library, Solutudo, ListaTudo</span>
+  </div>
+</div>
+
+<!-- ═══════════════ 1. PANORAMA DO MERCADO ═══════════════ -->
+<h2>1. Panorama do Mercado Local</h2>
+
+<div class="card card-accent">
+  <p>O mercado de CFCs (Centros de Formação de Condutores) na microrregião de Montes Claros, norte de Minas Gerais, é composto por empresas familiares com presença digital limitada. Coração de Jesus (~26 mil habitantes) e Brasília de Minas (~32 mil habitantes) formam uma praça de aproximadamente 58 mil pessoas, mais as cidades satélites (São João da Lagoa, Lagoa dos Patos e outras) que elevam o potencial de alcance.</p>
+  <p style="margin-bottom:0;">O público de primeira habilitação (18-30 anos) é o motor do mercado, com pico de demanda entre janeiro e março (pós-maioridade) e entre agosto e outubro (busca por independência antes do fim do ano). Categorias profissionais (D e E) representam um nicho de alto ticket que a maioria dos CFCs locais não atende ou não comunica.</p>
+</div>
+
+<h3>Dados do Mercado</h3>
+<div class="grid-2">
+  <div class="card">
+    <ul>
+      <li><strong>População combinada:</strong> ~58 mil habitantes (CJ + BM)</li>
+      <li><strong>Faixa etária 18-30:</strong> estimativa ~20% da população = ~11.600 pessoas</li>
+      <li><strong>Penetração de CNH:</strong> baixa em cidades do interior do norte de MG</li>
+      <li><strong>Ticket médio Cat B:</strong> R$ 860 a R$ 2.060 (5 a 20 aulas, c/ legislação)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <ul>
+      <li><strong>Sazonalidade:</strong> picos em jan-mar e ago-out</li>
+      <li><strong>Exames:</strong> realizados em Montes Claros (DETRAN regional)</li>
+      <li><strong>Regulação:</strong> Sindicfc-MG supervisiona os CFCs do estado</li>
+      <li><strong>Tendência:</strong> digitalização acelerada do setor, mas a região ainda é analógica</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════ 2. CONCORRENTES DIRETOS ═══════════════ -->
+<h2>2. Concorrentes Diretos (Coração de Jesus e Brasília de Minas)</h2>
+
+<div class="competitor-card">
+  <div class="name">Auto Escola Ativa <span class="tag tag-yellow">CONCORRENTE DIRETO</span></div>
+  <div class="location">Av. Montes Claros, 1428 — Centro, Coração de Jesus-MG · Também em Montes Claros</div>
+
+  <table>
+    <tr><th style="width:35%">Dado</th><th>Detalhe</th></tr>
+    <tr><td>Razão Social</td><td>CFC Fernandes & Veloso Ltda</td></tr>
+    <tr><td>Fundação</td><td>01/07/2014 (12 anos)</td></tr>
+    <tr><td>Instagram</td><td>@autoescolaativacdj — ativo, posts de aprovados + promoções</td></tr>
+    <tr><td>Facebook</td><td>facebook.com/cfcativa01</td></tr>
+    <tr><td>Filial</td><td>Montes Claros (@autoescolaativamoc)</td></tr>
+    <tr><td>Meta Ads</td><td><span class="tag tag-green">NENHUM ANÚNCIO ATIVO</span> (verificado na Biblioteca de Anúncios)</td></tr>
+    <tr><td>Categorias</td><td>A, B, AB (confirmadas); D e E não verificadas</td></tr>
+  </table>
+
+  <h3>Avaliação da Presença Digital</h3>
+  <div class="score-bar">
+    <span class="bar-label">Instagram</span>
+    <div class="bar-track"><div class="bar-fill" style="width:35%;background:var(--warn);"></div></div>
+    <span class="bar-value">3/10</span>
+  </div>
+  <div class="score-bar">
+    <span class="bar-label">Facebook</span>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--danger);"></div></div>
+    <span class="bar-value">2/10</span>
+  </div>
+  <div class="score-bar">
+    <span class="bar-label">Tráfego Pago</span>
+    <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--danger);"></div></div>
+    <span class="bar-value">0/10</span>
+  </div>
+  <div class="score-bar">
+    <span class="bar-label">Conteúdo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--warn);"></div></div>
+    <span class="bar-value">3/10</span>
+  </div>
+
+  <p style="margin-top:.75rem;font-size:.88rem;color:var(--muted);">
+    <strong>Análise:</strong> Concorrente mais próximo geograficamente — fica na mesma avenida que a Liderança em Coração de Jesus. Presença digital fraca: posts esporádicos de aprovados, sem estratégia de atração, sem tráfego pago. Ponto forte: tempo de mercado (12 anos) e filial em Montes Claros. Ponto fraco: não comunica diferenciais, conteúdo repetitivo.
+  </p>
+</div>
+
+<div class="competitor-card">
+  <div class="name">Auto Escola Coração de Jesus <span class="tag tag-yellow">CONCORRENTE DIRETO</span></div>
+  <div class="location">Av. Montes Claros, 1095 — Centro, Coração de Jesus-MG · Filial em Montes Claros (Av. Padre Chico, 297, Maracanã)</div>
+
+  <table>
+    <tr><th style="width:35%">Dado</th><th>Detalhe</th></tr>
+    <tr><td>Tempo de mercado</td><td>15+ anos</td></tr>
+    <tr><td>Instagram (sede)</td><td>@autoescolacdj</td></tr>
+    <tr><td>Instagram (filial MOC)</td><td>@autoescolacoracaodejesus</td></tr>
+    <tr><td>Facebook</td><td>facebook.com/Auto-Escola-Coração-de-Jesus</td></tr>
+    <tr><td>Telefone</td><td>(38) 3228-1884 / (38) 99845-7167</td></tr>
+    <tr><td>Meta Ads</td><td><span class="tag tag-green">NENHUM ANÚNCIO ATIVO</span></td></tr>
+    <tr><td>Categorias</td><td>A, B, D (ônibus e caminhão mencionados)</td></tr>
+  </table>
+
+  <h3>Avaliação da Presença Digital</h3>
+  <div class="score-bar">
+    <span class="bar-label">Instagram</span>
+    <div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--warn);"></div></div>
+    <span class="bar-value">3/10</span>
+  </div>
+  <div class="score-bar">
+    <span class="bar-label">Facebook</span>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--danger);"></div></div>
+    <span class="bar-value">2/10</span>
+  </div>
+  <div class="score-bar">
+    <span class="bar-label">Tráfego Pago</span>
+    <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--danger);"></div></div>
+    <span class="bar-value">0/10</span>
+  </div>
+  <div class="score-bar">
+    <span class="bar-label">Conteúdo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--danger);"></div></div>
+    <span class="bar-value">2/10</span>
+  </div>
+
+  <p style="margin-top:.75rem;font-size:.88rem;color:var(--muted);">
+    <strong>Análise:</strong> Concorrente mais antigo da cidade (15+ anos), com nome que remete à cidade — vantagem de marca local. Dois perfis no Instagram com pouca frequência de postagem. Sem tráfego pago. Oferece categorias profissionais (D), o que o aproxima do mix da Liderança. Ponto forte: tradição e reconhecimento. Ponto fraco: presença digital estagnada.
+  </p>
+</div>
+
+<div class="card card-warn">
+  <p><strong>Brasília de Minas:</strong> A pesquisa não retornou concorrentes diretos em Brasília de Minas. Isso sugere que a unidade da Liderança pode ser a principal (ou única) autoescola da cidade, o que representa uma vantagem competitiva significativa. Confirmar com Priscila se há CFCs concorrentes em BM.</p>
+</div>
+
+<!-- ═══════════════ 3. CONCORRENTES REGIONAIS ═══════════════ -->
+<h2>3. Concorrentes Regionais (Montes Claros)</h2>
+
+<p>Montes Claros é a referência regional (~400 mil habitantes). Os CFCs de lá não competem diretamente pela mesma praça, mas são referência para alunos que vão até a cidade para exames e podem servir como benchmark.</p>
+
+<div class="grid-2">
+  <div class="competitor-card">
+    <div class="name">MOCTRAN <span class="tag tag-blue">REFERÊNCIA REGIONAL</span></div>
+    <div class="location">Montes Claros-MG</div>
+    <ul>
+      <li><strong>Instagram:</strong> @moctranautoescola — <strong>35 mil seguidores</strong></li>
+      <li>Maior presença digital da região</li>
+      <li>Conteúdo profissional: Reels, depoimentos, bastidores</li>
+      <li>Referência de como uma autoescola pode crescer no Instagram</li>
+      <li><strong>Meta Ads:</strong> não verificado como anúncio ativo para a região CJ/BM</li>
+    </ul>
+  </div>
+
+  <div class="competitor-card">
+    <div class="name">Autoescola Norte de Minas <span class="tag tag-blue">REFERÊNCIA REGIONAL</span></div>
+    <div class="location">R. Bernardino Souto, 501 — Vila Regina, Montes Claros-MG</div>
+    <ul>
+      <li><strong>Facebook:</strong> facebook.com/cfcNortedeminas</li>
+      <li>20+ anos de mercado</li>
+      <li>Categorias A e B</li>
+      <li>Presença digital moderada, foco no Facebook</li>
+      <li>Site próprio: autoescolanortedeminas.com.br</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════ 4. BIBLIOTECA DE ANÚNCIOS ═══════════════ -->
+<h2>4. Análise da Biblioteca de Anúncios (Meta Ad Library)</h2>
+
+<div class="card card-success">
+  <h3 style="margin-top:0;color:var(--success);">Descoberta principal: ZERO anúncios ativos na região</h3>
+  <p>A busca na Biblioteca de Anúncios do Meta por "autoescola Montes Claros Coração de Jesus" retornou <strong>zero resultados</strong>. Nenhum CFC da região está investindo em tráfego pago profissional no Meta Ads.</p>
+  <p style="margin-bottom:0;"><strong>Implicação:</strong> A Auto Escola Liderança será a primeira autoescola da região a rodar campanhas profissionais no Meta Ads. Isso representa uma vantagem competitiva de first-mover — o público local não está acostumado a ver anúncios de autoescola no feed, o que aumenta o impacto e o potencial de conversão.</p>
+</div>
+
+<h3>Panorama Nacional (referência)</h3>
+<div class="card">
+  <p>No Brasil inteiro, há aproximadamente <strong>3.541 anúncios ativos</strong> de autoescolas no Meta Ads. Padrões identificados:</p>
+
+  <table>
+    <thead>
+      <tr><th>Padrão</th><th>Frequência</th><th>Exemplo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CTA "Converse conosco" (WhatsApp)</td>
+        <td>Mais comum</td>
+        <td>CFC Marcelo Quixadá, Auto Escola Marcelos, I9 Autoescolas</td>
+      </tr>
+      <tr>
+        <td>Oferta de pacote combinado</td>
+        <td>Frequente</td>
+        <td>"Pague Carro e Ganhe Moto" (Autoescola Aguiar)</td>
+      </tr>
+      <tr>
+        <td>Veículo automático como diferencial</td>
+        <td>Crescente</td>
+        <td>Autoescola Jardim Novo</td>
+      </tr>
+      <tr>
+        <td>Destaque do porta-voz / instrutor</td>
+        <td>Moderada</td>
+        <td>Diretor André Valadares</td>
+      </tr>
+      <tr>
+        <td>Condições de pagamento</td>
+        <td>Frequente</td>
+        <td>Autoescola Fórmula Vip: "Sua CNH com as melhores condições"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════ 5. REFERÊNCIAS NACIONAIS ═══════════════ -->
+<h2>5. Referências Nacionais</h2>
+
+<div class="grid-2">
+  <div class="competitor-card">
+    <div class="name">MOCTRAN (Montes Claros) <span class="tag tag-purple">BENCHMARK</span></div>
+    <div class="location">@moctranautoescola · 35K seguidores</div>
+    <p style="font-size:.88rem;margin-top:.5rem;">Maior autoescola da região norte de Minas no Instagram. Modelo de como uma autoescola do interior pode construir presença digital forte. Conteúdo profissionalizado com Reels, depoimentos de alunos, bastidores de aulas e comunicação de conquistas. Referência direta por estar na mesma região geográfica e cultural.</p>
+    <h3>O que aprender</h3>
+    <ul style="font-size:.85rem;">
+      <li>Formato de Reels de aprovados com edição profissional</li>
+      <li>Uso de bastidores de aula prática como conteúdo de topo de funil</li>
+      <li>Frequência de postagem consistente</li>
+      <li>Comunicação acessível (sem jargão técnico)</li>
+    </ul>
+  </div>
+
+  <div class="competitor-card">
+    <div class="name">Marketing para Autoescola <span class="tag tag-purple">BENCHMARK</span></div>
+    <div class="location">@mktautoescola · Perfil especializado</div>
+    <p style="font-size:.88rem;margin-top:.5rem;">Perfil voltado exclusivamente para marketing digital de autoescolas. Fonte de tendências, formatos de conteúdo e boas práticas do setor. Aborda temas como diferenciação de concorrência, captação de alunos pelo Instagram e estratégias de conteúdo para CFCs.</p>
+    <h3>O que aprender</h3>
+    <ul style="font-size:.85rem;">
+      <li>Formatos de conteúdo que funcionam para o setor</li>
+      <li>Tendências de comunicação para CFCs</li>
+      <li>Erros comuns que autoescolas cometem no digital</li>
+      <li>Modelos de posts e Reels adaptáveis</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════ 6. MAPA COMPETITIVO ═══════════════ -->
+<h2>6. Mapa Competitivo — Resumo</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>CFC</th>
+      <th>Cidade</th>
+      <th>Instagram</th>
+      <th>Meta Ads</th>
+      <th>Cat D/E</th>
+      <th>2 Unidades</th>
+      <th>Ameaça</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Liderança</strong></td>
+      <td>CJ + BM</td>
+      <td>@autoescolalideranca.cj / .bm</td>
+      <td><span class="tag tag-green">EM IMPLANTAÇÃO</span></td>
+      <td>D + E (nova)</td>
+      <td>Sim</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Auto Escola Ativa</td>
+      <td>CJ + MOC</td>
+      <td>@autoescolaativacdj</td>
+      <td><span class="tag tag-red">NÃO USA</span></td>
+      <td>Não confirmado</td>
+      <td>Sim (MOC)</td>
+      <td><span class="tag tag-yellow">MÉDIA</span></td>
+    </tr>
+    <tr>
+      <td>AE Coração de Jesus</td>
+      <td>CJ + MOC</td>
+      <td>@autoescolacdj</td>
+      <td><span class="tag tag-red">NÃO USA</span></td>
+      <td>D (sem E)</td>
+      <td>Sim (MOC)</td>
+      <td><span class="tag tag-yellow">MÉDIA</span></td>
+    </tr>
+    <tr>
+      <td>MOCTRAN</td>
+      <td>MOC</td>
+      <td>@moctranautoescola (35K)</td>
+      <td>Não verificado</td>
+      <td>Sim</td>
+      <td>Não</td>
+      <td><span class="tag tag-green">BAIXA</span></td>
+    </tr>
+    <tr>
+      <td>Norte de Minas</td>
+      <td>MOC</td>
+      <td>Não encontrado</td>
+      <td><span class="tag tag-red">NÃO USA</span></td>
+      <td>A e B apenas</td>
+      <td>Não</td>
+      <td><span class="tag tag-green">BAIXA</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 7. INSIGHTS E OPORTUNIDADES ═══════════════ -->
+<h2>7. Insights Estratégicos</h2>
+
+<div class="card">
+  <div class="insight-box">
+    <span class="insight-icon" style="color:var(--success);">&#x2714;</span>
+    <div class="insight-text">
+      <strong>First-mover em tráfego pago confirmado.</strong> Nenhum CFC de Coração de Jesus, Brasília de Minas ou região imediata investe em Meta Ads. A Liderança será a primeira a aparecer no feed dos potenciais alunos com anúncio profissional — impacto alto e custo por resultado potencialmente baixo.
+    </div>
+  </div>
+  <div class="insight-box">
+    <span class="insight-icon" style="color:var(--success);">&#x2714;</span>
+    <div class="insight-text">
+      <strong>Categoria E pode ser exclusiva na região.</strong> Nenhum concorrente direto em Coração de Jesus menciona Categoria E (carreta). Se confirmado, esse é um diferencial comunicável de altíssimo valor — público profissional de alto ticket.
+    </div>
+  </div>
+  <div class="insight-box">
+    <span class="insight-icon" style="color:var(--success);">&#x2714;</span>
+    <div class="insight-text">
+      <strong>Brasília de Minas sem concorrência visível.</strong> A pesquisa não encontrou nenhum CFC concorrente em Brasília de Minas. Se a Liderança for a única, a campanha para essa cidade pode ser ainda mais agressiva.
+    </div>
+  </div>
+  <div class="insight-box">
+    <span class="insight-icon" style="color:var(--warn);">&#x26A0;</span>
+    <div class="insight-text">
+      <strong>Concorrentes têm vantagem de tempo de mercado.</strong> Tanto a Ativa (12 anos) quanto a AE Coração de Jesus (15+ anos) têm mais tempo na cidade. A Liderança precisa compensar com presença digital forte e comunicação de resultado (aprovados, prazo, acompanhamento).
+    </div>
+  </div>
+  <div class="insight-box">
+    <span class="insight-icon" style="color:var(--blue);">&#x2139;</span>
+    <div class="insight-text">
+      <strong>O padrão do setor é "Converse conosco" (WhatsApp).</strong> A maioria dos anúncios de autoescola no Brasil direciona para WhatsApp. Isso reforça a urgência do playbook de atendimento — sem atendimento padronizado, o lead do anúncio se perde.
+    </div>
+  </div>
+  <div class="insight-box">
+    <span class="insight-icon" style="color:var(--blue);">&#x2139;</span>
+    <div class="insight-text">
+      <strong>Conteúdo de aprovados é universal, mas insuficiente.</strong> Todos os CFCs da região usam posts de "Habilitei!" como conteúdo principal. É vitrine, não captação. A Liderança precisa ir além: bastidores, FAQ, porta-voz, prova social estruturada, Reels educativos.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ 8. RECOMENDAÇÕES ═══════════════ -->
+<h2>8. Recomendações para a Big Idea (próximo passo)</h2>
+
+<div class="card card-blue">
+  <p>Com base nesta pesquisa, a Big Idea deve explorar:</p>
+  <ol>
+    <li><strong>O vazio de comunicação profissional na região</strong> — ninguém fala de autoescola de forma moderna e acessível. A Liderança pode ser a voz do "descomplicar" a habilitação.</li>
+    <li><strong>A prova social como ativo principal</strong> — centenas de aprovados são matéria-prima para criativos de alta conversão. Transformar "Habilitei!" de vitrine em argumento de venda.</li>
+    <li><strong>A Categoria E como novidade absoluta</strong> — comunicar antes de qualquer concorrente, captando o público profissional de alto ticket.</li>
+    <li><strong>O porta-voz (Samuel) como diferencial humano</strong> — nenhum concorrente local tem rosto na comunicação. O dono da autoescola falando diretamente com o público cria conexão e confiança.</li>
+    <li><strong>As duas unidades como conveniência</strong> — "perto de você, em Coração de Jesus e Brasília de Minas" reduz a objeção de deslocamento.</li>
+  </ol>
+</div>
+
+<div class="footer">
+  ADS Company · Auto Escola Liderança · Pesquisa de Mercado · Setembro 2026<br>
+  Documento interno — não compartilhar com o cliente
+</div>
+
+</body>
+</html>

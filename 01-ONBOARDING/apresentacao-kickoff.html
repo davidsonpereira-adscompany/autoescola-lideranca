@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kickoff — Auto Escola Liderança</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+  :root {
+    --bg: #0B1120;
+    --surface: #131B2E;
+    --card: #1A2540;
+    --text: #F1F5F9;
+    --muted: #94A3B8;
+    --accent: #F59E0B;
+    --accent2: #3B82F6;
+    --success: #10B981;
+    --glow: rgba(245, 158, 11, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  .deck {
+    width: 100%; height: 100%;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 6rem;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity .45s ease, transform .45s ease;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .slide.exit-left {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  .slide.exit-right {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  .slide.enter-right {
+    transition: none;
+    transform: translateX(40px);
+    opacity: 0;
+  }
+
+  .slide.enter-left {
+    transition: none;
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+
+  /* ── COVER ── */
+  .slide-cover {
+    background:
+      linear-gradient(180deg, rgba(11,17,32,0.82) 0%, rgba(11,17,32,0.65) 40%, rgba(11,17,32,0.85) 100%),
+      url('cover-kickoff.png') center/cover no-repeat;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    padding: .4rem 1.2rem;
+    border: 1px solid var(--accent);
+    border-radius: 2rem;
+    color: var(--accent);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .cover-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: .5rem;
+    background: linear-gradient(135deg, var(--text) 40%, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cover-sub {
+    font-size: 1.1rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+
+  .cover-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  .cover-logos .x {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .cover-logos span {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* ── OBJECTIVE ── */
+  .big-number {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: .25rem;
+  }
+
+  .big-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .anchor-box {
+    background: var(--card);
+    border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 2rem;
+    margin-top: 1rem;
+  }
+
+  .anchor-box p {
+    font-size: 1.05rem;
+    color: var(--muted);
+  }
+
+  .anchor-box strong {
+    color: var(--accent);
+  }
+
+  /* ── GRID CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .cards-grid.two-col {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+
+  .g-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: border-color .25s;
+  }
+
+  .g-card:hover {
+    border-color: rgba(245,158,11,0.3);
+  }
+
+  .g-card .icon {
+    font-size: 1.8rem;
+    margin-bottom: .6rem;
+  }
+
+  .g-card h4 {
+    font-size: .92rem;
+    font-weight: 700;
+    margin-bottom: .35rem;
+  }
+
+  .g-card p {
+    font-size: .78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-tag {
+    display: inline-block;
+    padding: .3rem .9rem;
+    border-radius: 2rem;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .tag-blue { background: rgba(59,130,246,0.15); color: var(--accent2); }
+  .tag-amber { background: var(--glow); color: var(--accent); }
+  .tag-green { background: rgba(16,185,129,0.15); color: var(--success); }
+
+  .slide h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+    line-height: 1.2;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 100px 24px 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding: .75rem 0;
+    position: relative;
+  }
+
+  .tl-date {
+    text-align: right;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--accent);
+    padding-top: .15rem;
+  }
+
+  .tl-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .tl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .tl-line {
+    width: 2px;
+    flex: 1;
+    background: rgba(245,158,11,0.2);
+    margin-top: 4px;
+  }
+
+  .tl-item:last-child .tl-line { display: none; }
+
+  .tl-content h4 {
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: .2rem;
+  }
+
+  .tl-content p {
+    font-size: .78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist {
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: .85rem 1.25rem;
+    background: var(--card);
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .check-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--glow);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: .05rem;
+  }
+
+  .check-text {
+    font-size: .88rem;
+    line-height: 1.5;
+  }
+
+  .check-text strong { color: var(--text); }
+  .check-text span { color: var(--muted); font-size: .82rem; }
+
+  /* ── NEXT STEPS ── */
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 850px;
+  }
+
+  .step-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+
+  .step-card .step-date {
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: .6rem;
+  }
+
+  .step-card h4 {
+    font-size: .95rem;
+    font-weight: 700;
+    margin-bottom: .4rem;
+  }
+
+  .step-card p {
+    font-size: .8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── CLOSING ── */
+  .closing-phrase {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: .75rem;
+    max-width: 700px;
+  }
+
+  .closing-phrase em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .closing-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .closing-contact {
+    display: flex;
+    gap: 2rem;
+    font-size: .85rem;
+    color: var(--muted);
+  }
+
+  .closing-contact strong {
+    color: var(--text);
+  }
+
+  /* ── NAV ── */
+  .nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem 2rem;
+    background: rgba(11,17,32,0.9);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    z-index: 100;
+  }
+
+  .nav-brand {
+    font-size: .75rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .nav-dots {
+    display: flex;
+    gap: .4rem;
+  }
+
+  .nav-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+  }
+
+  .nav-dot.active {
+    background: var(--accent);
+    transform: scale(1.3);
+  }
+
+  .nav-arrows {
+    display: flex;
+    gap: .5rem;
+  }
+
+  .nav-arrows button {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+  }
+
+  .nav-arrows button:hover {
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .slide { padding: 2rem 1.5rem; }
+    .cover-title { font-size: 2rem; }
+    .big-number { font-size: 4rem; }
+    .cards-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
+    .cards-grid.two-col { grid-template-columns: 1fr; }
+    .steps-row { grid-template-columns: 1fr; gap: .75rem; }
+    .slide h2 { font-size: 1.5rem; }
+    .closing-phrase { font-size: 1.6rem; }
+    .tl-item { grid-template-columns: 80px 20px 1fr; gap: .5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1 — CAPA -->
+  <div class="slide slide-cover active" data-slide="0">
+    <div class="cover-badge">Kickoff &middot; 17 de setembro de 2026</div>
+    <h1 class="cover-title">Auto Escola<br>Liderança</h1>
+    <p class="cover-sub">Os próximos 90 dias que vão transformar a captação de alunos</p>
+    <div class="cover-logos">
+      <span>Auto Escola Liderança</span>
+      <span class="x">&times;</span>
+      <span>ADS Company</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — OBJETIVO -->
+  <div class="slide" data-slide="1">
+    <span class="section-tag tag-amber">Nosso objetivo</span>
+    <div class="big-number">80+</div>
+    <div class="big-label">alunos por mês nas duas unidades</div>
+    <p style="color:var(--muted); max-width:550px; font-size:.92rem; margin-bottom:1.5rem;">
+      50 em Coração de Jesus + 30 em Brasília de Minas.<br>
+      Um patamar que a estrutura já comporta — só falta o motor de captação.
+    </p>
+    <div class="anchor-box">
+      <p><strong>3 alunos matriculados</strong> já pagam todo o investimento mensal.<br>
+      Cada aluno além disso é lucro direto.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — O QUE A ADS COMPANY FAZ -->
+  <div class="slide" data-slide="2">
+    <span class="section-tag tag-blue">O que a ADS Company entrega</span>
+    <h2>Estratégia, anúncios e direção.<br>Tudo pronto pra vocês executarem.</h2>
+    <div class="cards-grid">
+      <div class="g-card">
+        <div class="icon">📢</div>
+        <h4>Anúncios no Instagram</h4>
+        <p>Campanhas profissionais segmentadas por região e idade. Duas unidades, dois públicos.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">📋</div>
+        <h4>Calendário de Conteúdo</h4>
+        <p>Pautas mensais de Reels, Feed e Stories com temas que atraem novos alunos.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">💬</div>
+        <h4>Manual do WhatsApp</h4>
+        <p>Script de atendimento, qualificação e follow-up. Linguagem simples, sem termos técnicos.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">📊</div>
+        <h4>Relatório Mensal</h4>
+        <p>Números claros: quantos viram, quantos clicaram, quantos chamaram no WhatsApp.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">📱</div>
+        <h4>Perfis Otimizados</h4>
+        <p>Bio, destaques e padrão visual dos dois Instagram para converter visitante em mensagem.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">🎯</div>
+        <h4>Diagnóstico Regional</h4>
+        <p>Mapeamento de público, concorrência e oportunidades em cada cidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — O QUE A AUTOESCOLA FAZ -->
+  <div class="slide" data-slide="3">
+    <span class="section-tag tag-green">O papel da autoescola</span>
+    <h2>A parceria funciona quando<br>cada um faz a sua parte.</h2>
+    <div class="cards-grid two-col">
+      <div class="g-card">
+        <div class="icon">🎬</div>
+        <h4>Produzir o conteúdo</h4>
+        <p>Gravar os vídeos e tirar as fotos com base nas pautas que eu entrego. Vocês publicam.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">📲</div>
+        <h4>Atender os leads</h4>
+        <p>Quando o WhatsApp tocar, responder rápido e seguir o manual de atendimento.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">💳</div>
+        <h4>Verba dos anúncios</h4>
+        <p>Cadastrar o cartão na plataforma. Valor sugerido: R$ 20 a 25 por dia. Como pagar uma conta.</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">📸</div>
+        <h4>Enviar materiais</h4>
+        <p>Fotos dos veículos, da estrutura, da equipe e dos alunos aprovados (com autorização).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 — TIMELINE 90 DIAS -->
+  <div class="slide" data-slide="4">
+    <span class="section-tag tag-amber">Cronograma</span>
+    <h2>Os 90 dias, semana a semana</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Semana 1<br><small style="font-weight:400;color:var(--muted)">16-22/set</small></div>
+        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <h4>Fundação</h4>
+          <p>Configuração de plataformas, otimização dos perfis, diagnóstico de atendimento e mapeamento regional.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Semana 2<br><small style="font-weight:400;color:var(--muted)">23-29/set</small></div>
+        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <h4>Estruturação</h4>
+          <p>Manual de WhatsApp entregue, treinamento rápido, calendário de outubro pronto, criativos produzidos.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Semanas 3-4<br><small style="font-weight:400;color:var(--muted)">30/set-13/out</small></div>
+        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <h4>Motor ligado</h4>
+          <p>Primeiros anúncios no ar — um para cada unidade. Monitoramento diário e primeira leitura de dados.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mês 2<br><small style="font-weight:400;color:var(--muted)">14/out-13/nov</small></div>
+        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <h4>Otimização</h4>
+          <p>Testes com diferentes anúncios, otimização por resultados, primeira ação presencial. Relatório nº 1.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mês 3<br><small style="font-weight:400;color:var(--muted)">14/nov-13/dez</small></div>
+        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <h4>Consolidação</h4>
+          <p>Expansão para novas regiões, campanha da Categoria E e do carro automático. Relatório nº 2 + renovação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 — CHECKLIST -->
+  <div class="slide" data-slide="5">
+    <span class="section-tag tag-amber">Checklist</span>
+    <h2>O que eu preciso de vocês</h2>
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-num">1</div>
+        <div class="check-text"><strong>Acessos aos dois Instagram</strong><br><span>Login e senha, ou me adicionar como administrador</span></div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">2</div>
+        <div class="check-text"><strong>Página do Facebook</strong><br><span>Se já tiverem, me dar acesso. Se não, eu crio</span></div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">3</div>
+        <div class="check-text"><strong>E-mail da autoescola</strong><br><span>Para configurar a plataforma de anúncios</span></div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">4</div>
+        <div class="check-text"><strong>Cartão de crédito cadastrado na plataforma</strong><br><span>Vocês cadastram — R$ 20 a 25/dia, como pagar uma conta</span></div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">5</div>
+        <div class="check-text"><strong>WhatsApp das duas unidades</strong><br><span>Números + quem atende cada um</span></div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">6</div>
+        <div class="check-text"><strong>Fotos e vídeos</strong><br><span>Veículos, estrutura, equipe, alunos aprovados (com autorização)</span></div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">7</div>
+        <div class="check-text"><strong>Tabela de categorias e preços</strong><br><span>Atualizada com todas as categorias oferecidas</span></div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">8</div>
+        <div class="check-text"><strong>Porta-voz da marca</strong><br><span>Quem vai aparecer nos vídeos e conteúdos</span></div>
+      </div>
+    </div>
+    <p style="margin-top:1.25rem; color:var(--accent); font-weight:600; font-size:.9rem;">
+      Prazo ideal: até sexta-feira, 19 de setembro
+    </p>
+  </div>
+
+  <!-- SLIDE 7 — SOBRE VOCÊS (BASELINE) -->
+  <div class="slide" data-slide="6">
+    <span class="section-tag tag-green">Sobre vocês</span>
+    <h2>Quero entender o momento<br>da autoescola hoje</h2>
+    <div class="cards-grid two-col">
+      <div class="g-card">
+        <div class="icon">📈</div>
+        <h4>Volume atual</h4>
+        <p>Quantos alunos estão matriculando por mês em cada unidade hoje?</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">🏆</div>
+        <h4>Categoria campeã</h4>
+        <p>Qual é a mais procurada? E as novidades — Categoria E e carro automático?</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">💬</div>
+        <h4>Atendimento</h4>
+        <p>Como funciona o WhatsApp hoje? Quem responde? Qual horário de pico?</p>
+      </div>
+      <div class="g-card">
+        <div class="icon">🗺️</div>
+        <h4>Região</h4>
+        <p>Já tiveram alunos de São João da Lagoa, Lagoa dos Patos ou cidades vizinhas?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8 — PRÓXIMOS PASSOS -->
+  <div class="slide" data-slide="7">
+    <span class="section-tag tag-blue">Próximos passos</span>
+    <h2>O que acontece agora</h2>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-date">Hoje — 17/set</div>
+        <h4>Vocês enviam os acessos</h4>
+        <p>Compartilham os dados do checklist. Qualquer dúvida, é só chamar no WhatsApp.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-date">Sexta — 19/set</div>
+        <h4>Eu configuro tudo</h4>
+        <p>Plataforma de anúncios, perfis otimizados, tudo pronto pra funcionar.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-date">Semana que vem</div>
+        <h4>Manual + Calendário</h4>
+        <p>Entrego o manual de atendimento, fazemos um treino de 30 min e o calendário de outubro.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 9 — ENCERRAMENTO -->
+  <div class="slide slide-cover" data-slide="8">
+    <p class="closing-phrase">O WhatsApp vai <em>tocar</em>.<br>A autoescola vai <em>encher</em>.</p>
+    <p class="closing-sub">Vamos juntos nos próximos 90 dias.</p>
+    <div class="closing-contact">
+      <div><strong>Davidson Pereira</strong><br>ADS Company</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- NAV BAR -->
+<div class="nav-bar">
+  <div class="nav-brand">Auto Escola Liderança &middot; Kickoff</div>
+  <div class="nav-dots" id="dots"></div>
+  <div class="nav-arrows">
+    <button onclick="go(-1)" aria-label="Anterior">&#8592;</button>
+    <button onclick="go(1)" aria-label="Próximo">&#8594;</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dotsEl = document.getElementById('dots');
+  let cur = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n) {
+    if (n < 0 || n >= slides.length || n === cur) return;
+    const forward = n > cur;
+    const old = cur;
+    cur = n;
+
+    slides[old].classList.remove('active');
+    slides[old].classList.add(forward ? 'exit-left' : 'exit-right');
+
+    slides[cur].className = 'slide' + (slides[cur].className.match(/ slide-cover/) ? ' slide-cover' : '');
+    slides[cur].classList.add(forward ? 'enter-right' : 'enter-left');
+    void slides[cur].offsetHeight;
+    slides[cur].classList.remove('enter-right', 'enter-left');
+    slides[cur].classList.add('active');
+
+    setTimeout(() => slides[old].classList.remove('exit-left', 'exit-right'), 500);
+
+    document.querySelectorAll('.nav-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === cur)
+    );
+  }
+
+  function go(d) { goTo(cur + d); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+  });
+
+  let touchX = 0;
+  document.addEventListener('touchstart', e => touchX = e.touches[0].clientX);
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+  });
+</script>
+
+</body>
+</html>
