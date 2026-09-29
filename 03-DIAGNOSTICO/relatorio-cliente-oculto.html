@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Cliente Oculto &mdash; Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --bg2: #0A0A0A;
+    --bg3: #0E0E0E;
+    --card: #111111;
+    --card2: #0C0C0C;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --texto3: #333;
+    --verde: #22C55E;
+    --amarelo: #EAB308;
+    --vermelho: #EF4444;
+    --verde-bg: rgba(34,197,94,0.08);
+    --amarelo-bg: rgba(234,179,8,0.08);
+    --vermelho-bg: rgba(239,68,68,0.08);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto);
+    color: var(--branco);
+    font-family: var(--sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV BAR ──────────────────────────────── */
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(6,6,6,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-left { display: flex; align-items: center; gap: 14px; }
+  .btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--branco);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-voltar:hover { border-color: var(--laranja); color: var(--laranja); }
+  .nav-title {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--texto);
+  }
+  .nav-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--laranja);
+  }
+
+  /* ── HERO ─────────────────────────────────── */
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 32px 60px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.06) 0%, transparent 70%),
+                linear-gradient(180deg, #040404 0%, #060606 100%);
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 700px;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--laranja);
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--texto);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    margin-top: 32px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-meta-item {
+    font-size: 12px;
+    color: var(--texto2);
+    letter-spacing: 0.05em;
+  }
+  .hero-meta-item strong {
+    color: var(--branco);
+    font-weight: 600;
+  }
+
+  /* ── SECTIONS ─────────────────────────────── */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 32px;
+  }
+  .section + .section { border-top: 1px solid var(--border); }
+  .section-num {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  .section h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    margin: 28px 0 12px;
+    color: var(--branco);
+  }
+  .section p {
+    color: var(--texto);
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  /* ── CARDS ────────────────────────────────── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .card-unit {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .card-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-regular { background: var(--amarelo-bg); color: var(--amarelo); border: 1px solid rgba(234,179,8,0.2); }
+  .badge-critico { background: var(--vermelho-bg); color: var(--vermelho); border: 1px solid rgba(239,68,68,0.2); }
+  .badge-bom { background: var(--verde-bg); color: var(--verde); border: 1px solid rgba(34,197,94,0.2); }
+
+  .card-atendente {
+    font-size: 13px;
+    color: var(--texto2);
+    margin-bottom: 16px;
+  }
+  .card-atendente strong { color: var(--branco); }
+
+  /* ── TIMELINE ─────────────────────────────── */
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 16px;
+    padding-left: 16px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--texto2);
+  }
+  .tl-item.tl-good::before { background: var(--verde); }
+  .tl-item.tl-warn::before { background: var(--amarelo); }
+  .tl-item.tl-bad::before { background: var(--vermelho); }
+  .tl-time {
+    font-size: 11px;
+    color: var(--texto2);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
+  }
+  .tl-text {
+    font-size: 14px;
+    color: var(--texto);
+    margin-top: 2px;
+  }
+  .tl-text strong { color: var(--branco); }
+
+  /* ── MSG BUBBLE ──────────────────────────── */
+  .msg {
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 8px 0;
+    max-width: 85%;
+  }
+  .msg-lead {
+    background: rgba(255,92,0,0.08);
+    border: 1px solid rgba(255,92,0,0.15);
+    border-radius: 10px 10px 10px 2px;
+    color: var(--branco);
+  }
+  .msg-atendente {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 10px 10px 2px 10px;
+    margin-left: auto;
+    color: var(--texto);
+  }
+
+  /* ── SCORE TABLE ─────────────────────────── */
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .score-table th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--texto2);
+    font-weight: 700;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .score-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .score-table td:first-child {
+    font-weight: 600;
+    color: var(--branco);
+    white-space: nowrap;
+  }
+  .score-table td:nth-child(2) { color: var(--texto); font-size: 13px; }
+  .score-table .score-val {
+    font-weight: 800;
+    font-size: 16px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .s-good { color: var(--verde); }
+  .s-mid { color: var(--amarelo); }
+  .s-bad { color: var(--vermelho); }
+
+  /* ── COMPARE TABLE ───────────────────────── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .compare-table th {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--texto2);
+    font-weight: 700;
+    padding: 10px 14px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .compare-table th:first-child { text-align: left; }
+  .compare-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .compare-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: var(--branco);
+  }
+  .compare-table .avg-row td {
+    border-top: 2px solid rgba(255,92,0,0.3);
+    font-weight: 800;
+    font-size: 16px;
+    padding-top: 16px;
+  }
+
+  /* ── FINDINGS ─────────────────────────────── */
+  .finding {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .finding:last-child { border-bottom: none; }
+  .finding-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+  .finding-icon.f-critical { background: var(--vermelho-bg); }
+  .finding-icon.f-warn { background: var(--amarelo-bg); }
+  .finding-icon.f-ok { background: var(--verde-bg); }
+  .finding-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--branco);
+    margin-bottom: 4px;
+  }
+  .finding-desc {
+    font-size: 13px;
+    color: var(--texto);
+    line-height: 1.6;
+  }
+
+  /* ── RECO CARDS ──────────────────────────── */
+  .reco {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--laranja);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .reco-num {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .reco-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--branco);
+  }
+  .reco-body {
+    font-size: 14px;
+    color: var(--texto);
+    line-height: 1.7;
+  }
+
+  /* ── VEREDITO ─────────────────────────────── */
+  .veredito {
+    background: linear-gradient(135deg, rgba(255,92,0,0.06) 0%, rgba(255,92,0,0.02) 100%);
+    border: 1px solid rgba(255,92,0,0.15);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    margin: 32px 0;
+  }
+  .veredito-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .veredito h3 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .veredito p {
+    font-size: 15px;
+    color: var(--texto);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── FOOTER ──────────────────────────────── */
+  .doc-footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 12px;
+    color: var(--texto2);
+  }
+
+  /* ── RESPONSIVE ──────────────────────────── */
+  @media (max-width: 768px) {
+    .nav-bar { padding: 10px 16px; }
+    .hero { padding: 60px 20px 40px; min-height: 50vh; }
+    .section { padding: 40px 20px; }
+    .card { padding: 20px; }
+    .hero-meta { flex-direction: column; gap: 8px; }
+    .score-table td:nth-child(2) { display: none; }
+    .compare-table { font-size: 12px; }
+    .compare-table td, .compare-table th { padding: 8px 6px; }
+    .veredito { padding: 28px 20px; }
+    .reco { padding: 20px; }
+  }
+  @media (max-width: 480px) {
+    .card-header { flex-direction: column; }
+    .hero h1 { font-size: 1.6rem; }
+  }
+
+  /* ── PRINT ───────────────────────────────── */
+  @media print {
+    .nav-bar { display: none; }
+    body { background: white; color: #111; }
+    .hero { min-height: auto; background: none; padding: 40px 20px; }
+    .hero h1, .section h2, .section h3, .card-unit, .finding-title, .reco-title, .veredito h3 { color: #111; }
+    .section p, .tl-text, .finding-desc, .reco-body, .hero-sub, .veredito p { color: #444; }
+    .card, .reco, .veredito { border-color: #ddd; break-inside: avoid; }
+    .section + .section { border-color: #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV BAR ══ -->
+<nav class="nav-bar">
+  <div class="nav-left">
+    <a href="../01-ONBOARDING/index.html" class="btn-voltar">&#8592; VOLTAR</a>
+    <span class="nav-title">Relatório Cliente Oculto</span>
+  </div>
+  <span class="nav-badge">ADS Company</span>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <p class="hero-eyebrow">Diagnóstico de Atendimento</p>
+  <h1>Relatório do <em>Cliente Oculto</em></h1>
+  <p class="hero-sub">
+    Avaliação real do atendimento por WhatsApp nas duas unidades da Auto Escola Liderança —
+    antes de qualquer treinamento ou playbook.
+  </p>
+  <div class="hero-meta">
+    <span class="hero-meta-item"><strong>Data do teste:</strong> 24-25/09/2026</span>
+    <span class="hero-meta-item"><strong>Unidades:</strong> Coração de Jesus &amp; Brasília de Minas</span>
+    <span class="hero-meta-item"><strong>Canal:</strong> WhatsApp</span>
+  </div>
+</header>
+
+<!-- ══ 01 — CONTEXTO ══ -->
+<section class="section">
+  <p class="section-num">01 &mdash; Contexto</p>
+  <h2>Como o teste foi realizado</h2>
+  <p>
+    Um lead fictício entrou em contato com cada unidade pelo WhatsApp, simulando interesse real
+    em tirar habilitação. O objetivo: medir a experiência que um potencial aluno tem do primeiro
+    "oi" até o momento de decisão — sem que a equipe soubesse do teste.
+  </p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:20px;">
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;font-weight:800;color:var(--laranja);">2</div>
+      <div style="font-size:12px;color:var(--texto);margin-top:4px;">Unidades testadas</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;font-weight:800;color:var(--laranja);">8</div>
+      <div style="font-size:12px;color:var(--texto);margin-top:4px;">Critérios avaliados</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;font-weight:800;color:var(--laranja);">213</div>
+      <div style="font-size:12px;color:var(--texto);margin-top:4px;">Mensagens analisadas</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;font-weight:800;color:var(--laranja);">0</div>
+      <div style="font-size:12px;color:var(--texto);margin-top:4px;">Fechamentos realizados</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 — BRASÍLIA DE MINAS ══ -->
+<section class="section">
+  <p class="section-num">02 &mdash; Unidade Brasília de Minas</p>
+  <h2>Análise do Atendimento — Gabriel</h2>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-unit">Brasília de Minas &mdash; MG</div>
+        <div class="card-atendente">Atendente: <strong>Gabriel</strong> &middot; 24/09/2026, período da tarde</div>
+      </div>
+      <span class="card-badge badge-critico">Nota 4,8 &mdash; Crítico</span>
+    </div>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--laranja);margin-bottom:16px;">Linha do tempo</h3>
+
+    <div class="timeline">
+      <div class="tl-item tl-good">
+        <span class="tl-time">17:12</span>
+        <div class="tl-text"><strong>Lead envia:</strong> "Opa boa tarde! quanto ta pra tirar habilitação?"</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">17:12</span>
+        <div class="tl-text"><strong>Auto-reply dispara</strong> — mensagem institucional com horários e "Líder em Aprovação".</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">17:17</span>
+        <div class="tl-text"><strong>Gabriel responde em 5 minutos.</strong> "Boa tarde José. Você gostaria de carro ou moto?" — direto ao ponto, sem acolhimento.</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-time">18:08</span>
+        <div class="tl-text">Lead responde: "os dois"</div>
+      </div>
+      <div class="tl-item tl-warn">
+        <span class="tl-time">18:09-18:10</span>
+        <div class="tl-text"><strong>Info dump imediato:</strong> envia tabela de taxas do Estado (R$927,66) ANTES de entender a situação do lead. São 4 mensagens em sequência.</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">18:09</span>
+        <div class="tl-text"><strong>Pergunta de qualificação:</strong> "Você já dirige? Ou pilota?" — boa pergunta, mas veio DEPOIS das taxas, fora de ordem.</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-time">18:24</span>
+        <div class="tl-text">Lead responde: "já dirijo e piloto sim"</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">18:25</span>
+        <div class="tl-text"><strong>Personalização:</strong> "Eu te indicaria um pacote com 10 aulas" — recomendação baseada na resposta do lead.</div>
+      </div>
+      <div class="tl-item tl-warn">
+        <span class="tl-time">18:26</span>
+        <div class="tl-text"><strong>Segundo info dump:</strong> envia Pacote Ouro (R$1.850) e Premium (R$2.300). "Esses pacotes estão na promoção, consigo mais um desconto."</div>
+      </div>
+      <div class="tl-item tl-bad">
+        <span class="tl-time">18:26 em diante</span>
+        <div class="tl-text"><strong>Silêncio total.</strong> Nenhuma tentativa de fechamento. Nenhum follow-up. Conversa morreu.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Notas por critério</h3>
+  <table class="score-table">
+    <thead>
+      <tr>
+        <th>Critério</th>
+        <th>Observação</th>
+        <th style="text-align:center;">Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tempo de resposta</td>
+        <td>5 minutos até a primeira resposta real. Excelente.</td>
+        <td class="score-val s-good">8</td>
+      </tr>
+      <tr>
+        <td>Cordialidade</td>
+        <td>Chamou pelo nome, mas tom seco. Sem acolhimento, sem emoji, sem pergunta sobre como o lead está.</td>
+        <td class="score-val s-mid">5</td>
+      </tr>
+      <tr>
+        <td>Clareza</td>
+        <td>Taxas claras, pacotes organizados com emojis. Porém, sequência confusa — taxas antes de entender a necessidade.</td>
+        <td class="score-val s-mid">6</td>
+      </tr>
+      <tr>
+        <td>Completude</td>
+        <td>Não explicou o processo, prazos, documentos necessários ou próximos passos. Só preços.</td>
+        <td class="score-val s-mid">5</td>
+      </tr>
+      <tr>
+        <td>Proatividade</td>
+        <td>Perguntou se já dirige (boa qualificação) e recomendou pacote. Mas parou aí.</td>
+        <td class="score-val s-mid">6</td>
+      </tr>
+      <tr>
+        <td>Fechamento</td>
+        <td>Zero. "Consigo mais um desconto" é uma isca sem anzol — nenhum CTA, nenhuma pergunta de compromisso.</td>
+        <td class="score-val s-bad">2</td>
+      </tr>
+      <tr>
+        <td>Follow-up</td>
+        <td>Nenhum. Conversa encerrou às 18:26 de 24/09. Nenhuma mensagem em 25/09 ou depois.</td>
+        <td class="score-val s-bad">0</td>
+      </tr>
+      <tr>
+        <td>Linguagem</td>
+        <td>Texto claro sem erros, mas fragmentado — 3 a 4 mensagens curtas onde uma organizada bastaria.</td>
+        <td class="score-val s-mid">6</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
+    <div class="card" style="flex:1;min-width:200px;border-left:3px solid var(--verde);">
+      <div style="font-size:12px;color:var(--verde);font-weight:700;margin-bottom:8px;">PONTOS FORTES</div>
+      <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+        <li>Resposta rápida (5 min)</li>
+        <li>Qualificação "já dirige?"</li>
+        <li>Recomendação personalizada de pacote</li>
+        <li>Pacotes bem formatados com emojis</li>
+      </ul>
+    </div>
+    <div class="card" style="flex:1;min-width:200px;border-left:3px solid var(--vermelho);">
+      <div style="font-size:12px;color:var(--vermelho);font-weight:700;margin-bottom:8px;">PONTOS CRÍTICOS</div>
+      <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+        <li>Nenhuma tentativa de fechamento</li>
+        <li>Zero follow-up (lead perdido)</li>
+        <li>Info dump antes de qualificar</li>
+        <li>Tom mecânico, sem acolhimento</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 — CORAÇÃO DE JESUS ══ -->
+<section class="section">
+  <p class="section-num">03 &mdash; Unidade Coração de Jesus</p>
+  <h2>Análise do Atendimento — Priscila</h2>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-unit">Coração de Jesus &mdash; MG</div>
+        <div class="card-atendente">Atendente: <strong>Priscila</strong> &middot; 24-25/09/2026</div>
+      </div>
+      <span class="card-badge badge-regular">Nota 6,0 &mdash; Regular</span>
+    </div>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--laranja);margin-bottom:16px;">Linha do tempo</h3>
+
+    <div class="timeline">
+      <div class="tl-item tl-good">
+        <span class="tl-time">10:50</span>
+        <div class="tl-text"><strong>Lead envia:</strong> "oi bom dia! To querendo tirar minha carteira, como que funciona ai? quanto custa?"</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">10:50</span>
+        <div class="tl-text"><strong>Auto-reply dispara</strong> — mensagem institucional + link do Instagram.</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">10:58</span>
+        <div class="tl-text"><strong>Priscila responde em 8 minutos.</strong> "Olá, bom dia! Tudo bem? Qual categoria você tem interesse?" — cordial, mas não respondeu o que o lead perguntou.</div>
+      </div>
+      <div class="tl-item tl-warn">
+        <span class="tl-time">16:32</span>
+        <div class="tl-text"><strong>Lead retorna 5h30 depois:</strong> "to presisando mesmo é da b" + "me disseram que era melhor tirar a de moto junto"</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">16:33-16:35</span>
+        <div class="tl-text"><strong>Boa explicação educacional:</strong> Priscila explica o risco do AB — "Se não tirar a A, enquanto não tirar, você não recebe a CNH." Didática e acessível.</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">16:40</span>
+        <div class="tl-text"><strong>Explica opções de legislação</strong> (com professora vs. por conta própria). Informativo.</div>
+      </div>
+      <div class="tl-item tl-bad">
+        <span class="tl-time">16:59</span>
+        <div class="tl-text"><strong>Lead pergunta preço:</strong> "fica tudo o mesmo preço?" Priscila responde evasivamente: "Com é um preço / Sem é outro."</div>
+      </div>
+      <div class="tl-item tl-bad">
+        <span class="tl-time">17:06</span>
+        <div class="tl-text"><strong>Lead precisa pedir DUAS VEZES:</strong> "e quais são os preços?" — a informação mais importante demorou para chegar.</div>
+      </div>
+      <div class="tl-item tl-warn">
+        <span class="tl-time">17:14-17:16</span>
+        <div class="tl-text"><strong>Info dump massivo:</strong> 7 mensagens em 2 minutos — 4 pacotes (AB 5+5, AB 10+10, B 5, B 10) + 2 tabelas de taxas. Avalanche de números.</div>
+      </div>
+      <div class="tl-item tl-bad">
+        <span class="tl-time">17:16</span>
+        <div class="tl-text"><strong>Nenhuma tentativa de fechamento.</strong> Informou, não guiou. Sem "qual pacote te interessa?", sem "posso agendar?".</div>
+      </div>
+      <div class="tl-item tl-good">
+        <span class="tl-time">25/09 — 09:05</span>
+        <div class="tl-text"><strong>Follow-up no dia seguinte:</strong> "Bom dia! Entendeu o processo? Posso te explicar como funciona desde o início." Positivo.</div>
+      </div>
+      <div class="tl-item tl-warn">
+        <span class="tl-time">25/09 — 10:27</span>
+        <div class="tl-text">Lead pergunta sobre "laudo". Priscila responde "Qual laudo?" — conversa encerra sem resolução.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Notas por critério</h3>
+  <table class="score-table">
+    <thead>
+      <tr>
+        <th>Critério</th>
+        <th>Observação</th>
+        <th style="text-align:center;">Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tempo de resposta</td>
+        <td>8 minutos até a primeira resposta real. Bom.</td>
+        <td class="score-val s-mid">7</td>
+      </tr>
+      <tr>
+        <td>Cordialidade</td>
+        <td>Cumprimento caloroso, "Tudo bem?", tom acolhedor, emojis. Melhor que BM.</td>
+        <td class="score-val s-mid">7</td>
+      </tr>
+      <tr>
+        <td>Clareza</td>
+        <td>Explicação do AB excelente. Mas "Com é um preço / Sem é outro" foi evasivo — lead pediu preço duas vezes.</td>
+        <td class="score-val s-mid">6</td>
+      </tr>
+      <tr>
+        <td>Completude</td>
+        <td>Deu preços completos, explicou legislação, taxas separadas. Faltou: prazo, documentos, próximo passo.</td>
+        <td class="score-val s-mid">6</td>
+      </tr>
+      <tr>
+        <td>Proatividade</td>
+        <td>Perguntou a categoria, explicou riscos do AB por iniciativa própria. Ofereceu ajuda no follow-up.</td>
+        <td class="score-val s-mid">6</td>
+      </tr>
+      <tr>
+        <td>Fechamento</td>
+        <td>Nenhuma tentativa. Mesmo o follow-up foi informativo ("entendeu o processo?"), não de conversão.</td>
+        <td class="score-val s-bad">3</td>
+      </tr>
+      <tr>
+        <td>Follow-up</td>
+        <td>Fez follow-up na manhã seguinte (09:05). Ponto positivo importante — BM não fez nenhum.</td>
+        <td class="score-val s-mid">7</td>
+      </tr>
+      <tr>
+        <td>Linguagem</td>
+        <td>Tom humano e acessível. Fragmentação em múltiplas mensagens curtas. "nenhuma" (com erro) em vez de "nenhuma categoria".</td>
+        <td class="score-val s-mid">6</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
+    <div class="card" style="flex:1;min-width:200px;border-left:3px solid var(--verde);">
+      <div style="font-size:12px;color:var(--verde);font-weight:700;margin-bottom:8px;">PONTOS FORTES</div>
+      <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+        <li>Follow-up no dia seguinte</li>
+        <li>Explicação educacional do AB</li>
+        <li>Tom acolhedor e humano</li>
+        <li>Opções de legislação bem explicadas</li>
+      </ul>
+    </div>
+    <div class="card" style="flex:1;min-width:200px;border-left:3px solid var(--vermelho);">
+      <div style="font-size:12px;color:var(--vermelho);font-weight:700;margin-bottom:8px;">PONTOS CRÍTICOS</div>
+      <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+        <li>Lead pediu preço 2x antes de receber</li>
+        <li>7 mensagens de preço em 2 minutos</li>
+        <li>Nenhuma tentativa de fechamento</li>
+        <li>"Qual laudo?" — não guiou o lead</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 — COMPARATIVO ══ -->
+<section class="section">
+  <p class="section-num">04 &mdash; Quadro Comparativo</p>
+  <h2>Brasília de Minas vs. Coração de Jesus</h2>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Critério</th>
+        <th>BM — Gabriel</th>
+        <th>CJ — Priscila</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tempo de resposta</td>
+        <td class="s-good" style="font-weight:700;">8</td>
+        <td class="s-mid" style="font-weight:700;">7</td>
+      </tr>
+      <tr>
+        <td>Cordialidade</td>
+        <td class="s-mid" style="font-weight:700;">5</td>
+        <td class="s-mid" style="font-weight:700;">7</td>
+      </tr>
+      <tr>
+        <td>Clareza</td>
+        <td class="s-mid" style="font-weight:700;">6</td>
+        <td class="s-mid" style="font-weight:700;">6</td>
+      </tr>
+      <tr>
+        <td>Completude</td>
+        <td class="s-mid" style="font-weight:700;">5</td>
+        <td class="s-mid" style="font-weight:700;">6</td>
+      </tr>
+      <tr>
+        <td>Proatividade</td>
+        <td class="s-mid" style="font-weight:700;">6</td>
+        <td class="s-mid" style="font-weight:700;">6</td>
+      </tr>
+      <tr>
+        <td>Fechamento</td>
+        <td class="s-bad" style="font-weight:700;">2</td>
+        <td class="s-bad" style="font-weight:700;">3</td>
+      </tr>
+      <tr>
+        <td>Follow-up</td>
+        <td class="s-bad" style="font-weight:700;">0</td>
+        <td class="s-mid" style="font-weight:700;">7</td>
+      </tr>
+      <tr>
+        <td>Linguagem</td>
+        <td class="s-mid" style="font-weight:700;">6</td>
+        <td class="s-mid" style="font-weight:700;">6</td>
+      </tr>
+      <tr class="avg-row">
+        <td>Média Final</td>
+        <td class="s-bad">4,8</td>
+        <td class="s-mid">6,0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="veredito">
+    <div class="veredito-label">Veredito Geral</div>
+    <h3>As duas unidades informam,<br>mas nenhuma <em style="color:var(--laranja);">fecha</em>.</h3>
+    <p>
+      O atendimento funciona como um balcão de informações: responde perguntas, envia preços e espera.
+      Não existe condução — nenhum CTA, nenhum agendamento, nenhum compromisso. O lead recebe
+      tudo o que precisa para comparar com concorrentes e ir embora.
+    </p>
+  </div>
+</section>
+
+<!-- ══ 05 — DIAGNÓSTICO PRINCIPAL ══ -->
+<section class="section">
+  <p class="section-num">05 &mdash; Diagnóstico Principal</p>
+  <h2>Os 5 problemas que mais custam alunos</h2>
+
+  <div class="finding">
+    <div class="finding-icon f-critical">&#10005;</div>
+    <div>
+      <div class="finding-title">1. Fechamento inexistente</div>
+      <div class="finding-desc">
+        Nenhuma das duas unidades tentou fechar. Nenhuma pergunta do tipo "Quando quer começar?",
+        "Posso reservar sua vaga?", "Qual pacote faz mais sentido pra você?". O lead recebeu
+        informação e ficou solto. Esse é o maior vazamento do funil.
+      </div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-icon f-critical">&#10005;</div>
+    <div>
+      <div class="finding-title">2. Info dump sem condução</div>
+      <div class="finding-desc">
+        Ambos enviam tabelas de preços, taxas e pacotes de uma vez — Gabriel com 4 mensagens
+        seguidas, Priscila com 7 em 2 minutos. O lead se perde nos números. Falta guiar: "Pelo
+        que você me disse, o melhor pacote pra você é X. Quer que eu explique ele?"
+      </div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-icon f-critical">&#10005;</div>
+    <div>
+      <div class="finding-title">3. Follow-up ausente em BM</div>
+      <div class="finding-desc">
+        Gabriel simplesmente não retornou. A conversa morreu às 18:26 com "consigo mais um
+        desconto" — uma promessa sem ação. Em CJ, Priscila fez follow-up na manhã seguinte,
+        mas informativo, não de conversão. BM perde 100% dos leads que não respondem na hora.
+      </div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-icon f-warn">&#9888;</div>
+    <div>
+      <div class="finding-title">4. Qualificação fora de ordem</div>
+      <div class="finding-desc">
+        Gabriel enviou taxas do Estado ANTES de perguntar se o lead já dirige. Priscila perguntou
+        a categoria, mas quando o lead pediu preço, respondeu evasivamente ("Com é um preço /
+        Sem é outro") em vez de dar a informação direta. A sequência correta seria:
+        qualificar → recomendar → informar preço → fechar.
+      </div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-icon f-warn">&#9888;</div>
+    <div>
+      <div class="finding-title">5. Tom de balcão, não de consultor</div>
+      <div class="finding-desc">
+        O atendimento soa como um guichê de informações: "Qual categoria? Aqui os preços."
+        Falta postura consultiva — entender a situação, recomendar com autoridade, conduzir
+        o próximo passo. "Pelo que você me disse, o caminho ideal é esse. Vou te guiar."
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 06 — RECOMENDAÇÕES ══ -->
+<section class="section">
+  <p class="section-num">06 &mdash; Recomendações para o Playbook</p>
+  <h2>O que o playbook de WhatsApp precisa resolver</h2>
+  <p>
+    Cada problema identificado vira uma seção do manual de atendimento. O playbook não é
+    um documento para ler e guardar — é um roteiro para abrir ao lado do WhatsApp e seguir.
+  </p>
+
+  <div class="reco">
+    <div class="reco-num">Recomendação 01</div>
+    <div class="reco-title">Script de abertura com acolhimento</div>
+    <div class="reco-body">
+      Substituir "Qual categoria?" por uma saudação que demonstre interesse:
+      "Olá, [nome]! Que bom que você veio! Me conta: é a sua primeira habilitação ou você já tem
+      carteira e quer adicionar categoria?" — uma pergunta que qualifica E acolhe.
+    </div>
+  </div>
+
+  <div class="reco">
+    <div class="reco-num">Recomendação 02</div>
+    <div class="reco-title">Fluxo de qualificação antes do preço</div>
+    <div class="reco-body">
+      Nunca enviar tabela de preços como primeira informação. O fluxo correto:
+      (1) Saudar → (2) Perguntar categoria → (3) Perguntar se já dirige/pilota →
+      (4) Recomendar UM pacote ideal → (5) Só depois dar o preço daquele pacote.
+      O lead não precisa ver todos os pacotes — precisa ver O DELE.
+    </div>
+  </div>
+
+  <div class="reco">
+    <div class="reco-num">Recomendação 03</div>
+    <div class="reco-title">CTA de fechamento obrigatório</div>
+    <div class="reco-body">
+      Toda conversa precisa terminar com uma pergunta de compromisso. Exemplos:
+      "Posso reservar sua vaga nesse pacote?", "Quer que eu separe os documentos que
+      você vai precisar?", "Consigo encaixar você já na turma de segunda. Quer garantir?"
+      — o lead precisa de um empurrão gentil, não de silêncio.
+    </div>
+  </div>
+
+  <div class="reco">
+    <div class="reco-num">Recomendação 04</div>
+    <div class="reco-title">Cadência de follow-up padronizada</div>
+    <div class="reco-body">
+      Definir regra inegociável: se o lead não respondeu, follow-up em 24h, 48h e 72h.
+      Cada mensagem com tom diferente — dia 1: "Ficou com alguma dúvida?", dia 2: "Reservei
+      uma condição especial pra você", dia 3: "Último aviso — a turma de [mês] está quase
+      fechando." Gabriel não fez nenhum follow-up. Isso é venda perdida.
+    </div>
+  </div>
+
+  <div class="reco">
+    <div class="reco-num">Recomendação 05</div>
+    <div class="reco-title">Mensagem única organizada em vez de fragmentos</div>
+    <div class="reco-body">
+      Enviar UMA mensagem bem formatada em vez de 4 a 7 mensagens curtas seguidas.
+      Fragmentar o envio cria ansiedade ("Calma, tem mais?") e dificulta a leitura.
+      O pacote recomendado deve chegar em uma única mensagem, com emojis de marcação,
+      preço destacado e a pergunta de fechamento no final da mesma mensagem.
+    </div>
+  </div>
+
+  <div class="reco">
+    <div class="reco-num">Recomendação 06</div>
+    <div class="reco-title">Guia de processo passo a passo</div>
+    <div class="reco-body">
+      Nenhuma unidade explicou o processo completo. O lead quer saber: "O que eu faço
+      primeiro? Quanto tempo leva? Que documentos preciso?" Criar um texto-padrão curto:
+      "O processo todo leva em média X meses. O primeiro passo é [documentos]. Depois
+      você faz [legislação]. E aí começam as aulas práticas. Eu cuido de tudo pra você."
+    </div>
+  </div>
+</section>
+
+<!-- ══ 07 — PRÓXIMOS PASSOS ══ -->
+<section class="section">
+  <p class="section-num">07 &mdash; Próximos Passos</p>
+  <h2>Da análise à ação</h2>
+
+  <div style="display:grid;gap:12px;">
+    <div class="card" style="display:flex;align-items:center;gap:16px;">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:14px;">1</div>
+      <div>
+        <div style="font-weight:600;font-size:14px;">Playbook de WhatsApp</div>
+        <div style="font-size:13px;color:var(--texto);">Criar o manual completo de atendimento com scripts, fluxos e cadência de follow-up — baseado nos 6 pontos acima.</div>
+      </div>
+    </div>
+    <div class="card" style="display:flex;align-items:center;gap:16px;">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:14px;">2</div>
+      <div>
+        <div style="font-weight:600;font-size:14px;">Treinamento com a equipe</div>
+        <div style="font-size:13px;color:var(--texto);">Apresentar como "boas práticas de mercado" — sem revelar o teste. Foco: acolhimento, condução e fechamento.</div>
+      </div>
+    </div>
+    <div class="card" style="display:flex;align-items:center;gap:16px;">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:14px;">3</div>
+      <div>
+        <div style="font-weight:600;font-size:14px;">Mensagens automáticas</div>
+        <div style="font-size:13px;color:var(--texto);">Configurar auto-reply de follow-up (24h) para leads que não respondem. A resposta automática atual funciona — agora precisa do pós-atendimento.</div>
+      </div>
+    </div>
+    <div class="card" style="display:flex;align-items:center;gap:16px;">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:14px;">4</div>
+      <div>
+        <div style="font-weight:600;font-size:14px;">Segundo teste (Mês 2)</div>
+        <div style="font-size:13px;color:var(--texto);">Repetir o cliente oculto com personas diferentes para medir evolução após a implementação do playbook.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="doc-footer">
+  Auto Escola Liderança &middot; Diagnóstico de Atendimento &middot; Setembro 2026<br>
+  ADS Company &mdash; Assessoria de Marketing e Vendas
+</footer>
+
+</body>
+</html>
