@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook de Atendimento WhatsApp &mdash; Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --bg2: #0A0A0A;
+    --card: #111111;
+    --card2: #0C0C0C;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --verde: #22C55E;
+    --verde-bg: rgba(34,197,94,0.08);
+    --amarelo: #EAB308;
+    --amarelo-bg: rgba(234,179,8,0.08);
+    --vermelho: #EF4444;
+    --vermelho-bg: rgba(239,68,68,0.08);
+    --azul: #3B8BFF;
+    --azul-bg: rgba(59,139,255,0.08);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto);
+    color: var(--branco);
+    font-family: var(--sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  .nav-bar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(6,6,6,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-left { display: flex; align-items: center; gap: 14px; }
+  .btn-voltar {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: transparent; border: 1px solid rgba(255,255,255,0.12);
+    color: var(--branco); font-family: var(--sans); font-size: 13px;
+    font-weight: 500; padding: 6px 14px; border-radius: 6px;
+    cursor: pointer; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-voltar:hover { border-color: var(--laranja); color: var(--laranja); }
+  .nav-title { font-family: var(--serif); font-size: 14px; color: var(--texto); }
+  .nav-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laranja); }
+
+  /* HERO */
+  .hero {
+    min-height: 55vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 80px 32px 60px; position: relative; overflow: hidden;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.06) 0%, transparent 70%),
+                linear-gradient(180deg, #040404 0%, #060606 100%);
+  }
+  .hero-eyebrow {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--laranja); font-weight: 700; margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-weight: 700; line-height: 1.15; max-width: 700px; margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-sub { font-size: 15px; color: var(--texto); max-width: 560px; line-height: 1.7; }
+
+  /* SECTIONS */
+  .section { max-width: 900px; margin: 0 auto; padding: 60px 32px; }
+  .section + .section { border-top: 1px solid var(--border); }
+  .section-num {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--laranja); font-weight: 700; margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  .section h3 {
+    font-family: var(--serif); font-size: 1.1rem;
+    margin: 28px 0 12px; color: var(--branco);
+  }
+  .section p, .section li { color: var(--texto); font-size: 14px; }
+  .section p { margin-bottom: 14px; }
+
+  /* CARDS */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-bottom: 16px;
+  }
+  .card-title {
+    font-family: var(--serif); font-size: 1.05rem;
+    margin-bottom: 12px; color: var(--branco);
+  }
+
+  /* REGRA DE OURO */
+  .regra {
+    background: linear-gradient(135deg, rgba(255,92,0,0.06) 0%, rgba(255,92,0,0.02) 100%);
+    border: 1px solid rgba(255,92,0,0.15); border-radius: 12px;
+    padding: 20px 24px; margin: 20px 0;
+  }
+  .regra-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--laranja); font-weight: 700; margin-bottom: 6px;
+  }
+  .regra-text { font-size: 15px; color: var(--branco); font-weight: 500; line-height: 1.6; }
+
+  /* HIPOTESE */
+  .hipotese {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-bottom: 16px;
+    border-left: 3px solid var(--laranja);
+  }
+  .hipotese-num {
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--laranja); font-weight: 700; margin-bottom: 4px;
+  }
+  .hipotese-title {
+    font-family: var(--serif); font-size: 1.1rem;
+    margin-bottom: 4px; color: var(--branco);
+  }
+  .hipotese-perfil { font-size: 13px; color: var(--texto2); margin-bottom: 14px; }
+
+  /* MSG BUBBLE */
+  .msg {
+    border-radius: 10px; padding: 12px 16px; font-size: 13px;
+    line-height: 1.6; margin: 10px 0; max-width: 90%;
+  }
+  .msg-lead {
+    background: rgba(255,92,0,0.08); border: 1px solid rgba(255,92,0,0.15);
+    border-radius: 10px 10px 10px 2px; color: var(--branco);
+  }
+  .msg-lead::before { content: 'LEAD:'; display: block; font-size: 9px; letter-spacing: 0.1em; color: var(--laranja); font-weight: 700; margin-bottom: 4px; }
+  .msg-atendente {
+    background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.12);
+    border-radius: 10px 10px 2px 10px; margin-left: auto; color: var(--branco);
+  }
+  .msg-atendente::before { content: 'ATENDENTE:'; display: block; font-size: 9px; letter-spacing: 0.1em; color: var(--verde); font-weight: 700; margin-bottom: 4px; }
+
+  /* PASSO */
+  .passo {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 16px 0; border-bottom: 1px solid var(--border);
+  }
+  .passo:last-child { border-bottom: none; }
+  .passo-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--laranja3); display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0;
+    color: var(--laranja); font-weight: 800; font-size: 13px;
+  }
+  .passo-body { flex: 1; }
+  .passo-title { font-weight: 700; font-size: 14px; color: var(--branco); margin-bottom: 4px; }
+  .passo-desc { font-size: 13px; color: var(--texto); line-height: 1.6; }
+
+  /* BADGE */
+  .badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+  }
+  .badge-fazer { background: var(--verde-bg); color: var(--verde); border: 1px solid rgba(34,197,94,0.2); }
+  .badge-nao { background: var(--vermelho-bg); color: var(--vermelho); border: 1px solid rgba(239,68,68,0.2); }
+  .badge-dica { background: var(--azul-bg); color: var(--azul); border: 1px solid rgba(59,139,255,0.2); }
+
+  /* OBJEÇÃO */
+  .objecao {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-bottom: 16px;
+  }
+  .objecao-frase {
+    font-style: italic; font-size: 15px; color: var(--branco);
+    margin-bottom: 12px; padding-left: 16px;
+    border-left: 2px solid var(--vermelho);
+  }
+  .objecao-resposta {
+    font-size: 13px; color: var(--texto); line-height: 1.7;
+    padding-left: 16px; border-left: 2px solid var(--verde);
+  }
+
+  /* CHECKLIST */
+  .check-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 8px 0; font-size: 13px; color: var(--texto);
+  }
+  .check-box {
+    width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 4px; flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* TABLE */
+  .info-table {
+    width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px;
+  }
+  .info-table th {
+    text-align: left; font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--texto2); font-weight: 700;
+    padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .info-table td {
+    padding: 10px 12px; border-bottom: 1px solid var(--border);
+    color: var(--texto);
+  }
+  .info-table td:first-child { color: var(--branco); font-weight: 600; }
+
+  /* FOOTER */
+  .doc-footer {
+    max-width: 900px; margin: 0 auto; padding: 40px 32px;
+    border-top: 1px solid var(--border);
+    text-align: center; font-size: 12px; color: var(--texto2);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-bar { padding: 10px 16px; }
+    .hero { padding: 60px 20px 40px; min-height: 45vh; }
+    .section { padding: 40px 20px; }
+    .card, .hipotese, .objecao, .regra { padding: 18px; }
+    .msg { max-width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.5rem; }
+    .passo { flex-direction: column; gap: 8px; }
+  }
+
+  /* PRINT */
+  @media print {
+    .nav-bar { display: none; }
+    body { background: white; color: #111; }
+    .hero { min-height: auto; background: none; padding: 30px 20px; }
+    .hero h1, .section h2, .section h3, .card-title, .hipotese-title, .passo-title, .regra-text { color: #111; }
+    .section p, .section li, .passo-desc, .check-item { color: #444; }
+    .card, .hipotese, .objecao, .regra { border-color: #ddd; break-inside: avoid; }
+    .section + .section { border-color: #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-left">
+    <a href="index.html" class="btn-voltar">&#8592; VOLTAR</a>
+    <span class="nav-title">Playbook de Atendimento</span>
+  </div>
+  <span class="nav-badge">ADS Company</span>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">Documento 01 &mdash; Vendas &amp; Atendimento</p>
+  <h1>Playbook de <em>Atendimento</em> via WhatsApp</h1>
+  <p class="hero-sub">
+    Roteiro completo de venda consultiva para as duas unidades da Auto Escola Lideran&ccedil;a.
+    Do primeiro &ldquo;oi&rdquo; at&eacute; a matr&iacute;cula fechada.
+  </p>
+</header>
+
+<!-- ══ 01 — REGRAS DE OURO ══ -->
+<section class="section">
+  <p class="section-num">01 &mdash; Regras de Ouro</p>
+  <h2>Antes de qualquer conversa</h2>
+  <p>Tr&ecirc;s regras que valem para toda e qualquer intera&ccedil;&atilde;o com o lead, sem exce&ccedil;&atilde;o.</p>
+
+  <div class="regra">
+    <div class="regra-label">Regra 1 &mdash; Velocidade</div>
+    <div class="regra-text">
+      Toda nova conversa deve ser respondida em, no m&aacute;ximo, <strong>5 minutos</strong> em hor&aacute;rio comercial.
+      A velocidade no primeiro contato demonstra profissionalismo e aumenta drasticamente a chance de matr&iacute;cula.
+    </div>
+  </div>
+
+  <div class="regra">
+    <div class="regra-label">Regra 2 &mdash; Qualificar antes de precificar</div>
+    <div class="regra-text">
+      Nunca envie tabela de pre&ccedil;os como primeira resposta. Primeiro entenda a situa&ccedil;&atilde;o do lead,
+      depois recomende <strong>um</strong> pacote personalizado. O lead n&atilde;o precisa ver tudo &mdash; precisa ver o que &eacute; dele.
+    </div>
+  </div>
+
+  <div class="regra">
+    <div class="regra-label">Regra 3 &mdash; Sempre fechar</div>
+    <div class="regra-text">
+      Toda conversa precisa terminar com uma <strong>pergunta de compromisso</strong>.
+      &ldquo;Posso reservar sua vaga?&rdquo;, &ldquo;Quer que eu separe os documentos?&rdquo;, &ldquo;Quando quer come&ccedil;ar?&rdquo;
+      &mdash; o lead precisa de um empurr&atilde;o gentil, n&atilde;o de sil&ecirc;ncio.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 — MENSAGEM DE SAUDAÇÃO ══ -->
+<section class="section">
+  <p class="section-num">02 &mdash; Mensagem de Sauda&ccedil;&atilde;o</p>
+  <h2>O auto-reply que recebe o lead</h2>
+  <p>
+    A mensagem autom&aacute;tica do WhatsApp Business &eacute; o primeiro contato. Ela n&atilde;o vende &mdash; ela confirma
+    que a mensagem chegou e que um atendente real vai responder.
+  </p>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="card" style="flex:1;min-width:250px;border-left:3px solid var(--vermelho);">
+      <span class="badge badge-nao">N&atilde;o fazer</span>
+      <div class="msg msg-atendente" style="margin-top:12px;max-width:100%;">
+        Auto Escola Lideran&ccedil;a<br>
+        Ol&aacute;! Seja bem-vindo(a)!<br>
+        Como podemos te ajudar hoje? &#128522;<br><br>
+        Atendimento: Segunda a sexta: 07h &agrave;s 19h<br>
+        S&aacute;bado: 08h &agrave;s 12h<br><br>
+        Auto Escola Lideran&ccedil;a &ndash; L&iacute;der em Aprova&ccedil;&atilde;o
+      </div>
+      <p style="font-size:12px;color:var(--vermelho);margin-top:10px;">
+        &ldquo;Como podemos te ajudar?&rdquo; &eacute; redundante quando o lead j&aacute; disse o que quer.
+        Al&eacute;m disso, parece mensagem padr&atilde;o de qualquer empresa.
+      </p>
+    </div>
+
+    <div class="card" style="flex:1;min-width:250px;border-left:3px solid var(--verde);">
+      <span class="badge badge-fazer">Fazer</span>
+      <div class="msg msg-atendente" style="margin-top:12px;max-width:100%;">
+        Auto Escola Lideran&ccedil;a &#128663;<br>
+        L&iacute;der em Aprova&ccedil;&atilde;o!<br><br>
+        Recebemos sua mensagem. Em instantes, um dos nossos atendentes vai te responder pessoalmente.<br><br>
+        &#128205; Atendimento: seg a sex 07h-19h &middot; s&aacute;b 08h-12h
+      </div>
+      <p style="font-size:12px;color:var(--verde);margin-top:10px;">
+        Curta, confirma recebimento e promete atendimento humano r&aacute;pido. Sem pergunta redundante.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 — TEMPERATURA DO LEAD ══ -->
+<section class="section">
+  <p class="section-num">03 &mdash; Temperatura do Lead</p>
+  <h2>Identifique antes de responder</h2>
+  <p>
+    O lead chega com n&iacute;veis diferentes de informa&ccedil;&atilde;o e urg&ecirc;ncia.
+    Leia a primeira mensagem e identifique a qual perfil ele pertence. Cada perfil tem um script de abertura diferente.
+  </p>
+
+  <!-- HIPÓTESE 1: EXPLORADOR -->
+  <div class="hipotese">
+    <div class="hipotese-num">Perfil 1</div>
+    <div class="hipotese-title">O Explorador</div>
+    <div class="hipotese-perfil">N&atilde;o sabe nada do processo. Quer entender como funciona.</div>
+
+    <div class="msg msg-lead">&ldquo;Oi, como funciona pra tirar carteira?&rdquo;</div>
+    <div class="msg msg-lead">&ldquo;Quero tirar minha habilitação, como que é?&rdquo;</div>
+
+    <h3 style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--verde);margin:16px 0 10px;">Script de abertura</h3>
+    <div class="msg msg-atendente" style="max-width:100%;">
+      Oi, [Nome]! Que bom que voc&ecirc; veio! &#128522;<br><br>
+      Tirar a carteira &eacute; mais simples do que parece &mdash; e a gente te acompanha em cada etapa.<br><br>
+      Pra eu te orientar certinho, me conta: &eacute; a sua <strong>primeira habilita&ccedil;&atilde;o</strong> ou voc&ecirc; j&aacute; tem carteira e quer <strong>adicionar uma categoria</strong>?
+    </div>
+    <p style="font-size:12px;color:var(--texto2);margin-top:8px;">
+      <strong>Por que funciona:</strong> acolhe, tranquiliza (&ldquo;mais simples do que parece&rdquo;) e faz a primeira pergunta de qualifica&ccedil;&atilde;o
+      sem pedir informa&ccedil;&atilde;o demais de uma vez.
+    </p>
+  </div>
+
+  <!-- HIPÓTESE 2: DIRETO AO PONTO -->
+  <div class="hipotese">
+    <div class="hipotese-num">Perfil 2</div>
+    <div class="hipotese-title">O Direto ao Ponto</div>
+    <div class="hipotese-perfil">J&aacute; sabe o que quer. Pergunta pre&ccedil;o logo de cara.</div>
+
+    <div class="msg msg-lead">&ldquo;Quanto custa pra tirar a B?&rdquo;</div>
+    <div class="msg msg-lead">&ldquo;Opa, quanto tá a habilitação?&rdquo;</div>
+
+    <h3 style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--verde);margin:16px 0 10px;">Script de abertura</h3>
+    <div class="msg msg-atendente" style="max-width:100%;">
+      Oi, [Nome]! Tudo bem? &#128075;<br><br>
+      Antes de te passar o valor certinho, deixa eu entender a sua situa&ccedil;&atilde;o pra te recomendar o melhor pacote &mdash; porque o valor muda de acordo com o que voc&ecirc; precisa.<br><br>
+      Voc&ecirc; j&aacute; dirige ou pilota, ou vai ser a primeira vez?
+    </div>
+    <p style="font-size:12px;color:var(--texto2);margin-top:8px;">
+      <strong>Por que funciona:</strong> reconhece a urg&ecirc;ncia do lead (&ldquo;valor certinho&rdquo;), justifica a pergunta (&ldquo;porque o valor muda&rdquo;)
+      e puxa pra qualifica&ccedil;&atilde;o sem parecer que est&aacute; enrolando.
+    </p>
+  </div>
+
+  <!-- HIPÓTESE 3: COMPARADOR -->
+  <div class="hipotese">
+    <div class="hipotese-num">Perfil 3</div>
+    <div class="hipotese-title">O Comparador</div>
+    <div class="hipotese-perfil">J&aacute; pesquisou na concorr&ecirc;ncia. Quer comparar pre&ccedil;o ou servi&ccedil;o.</div>
+
+    <div class="msg msg-lead">&ldquo;Vi que na outra autoescola é R$800, vocês fazem por quanto?&rdquo;</div>
+    <div class="msg msg-lead">&ldquo;Tô vendo em algumas autoescolas, vocês têm diferencial?&rdquo;</div>
+
+    <h3 style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--verde);margin:16px 0 10px;">Script de abertura</h3>
+    <div class="msg msg-atendente" style="max-width:100%;">
+      Oi, [Nome]! Tudo certo? &#128522;<br><br>
+      Legal que voc&ecirc; est&aacute; pesquisando &mdash; &eacute; o certo mesmo. Aqui na Lideran&ccedil;a, al&eacute;m do pre&ccedil;o, a gente entrega <strong>acompanhamento do in&iacute;cio ao fim</strong>: ve&iacute;culos novos, alto &iacute;ndice de aprova&ccedil;&atilde;o e suporte em cada etapa.<br><br>
+      Pra eu montar a melhor proposta pra voc&ecirc;, me conta: qual categoria voc&ecirc; precisa? E j&aacute; tem alguma experi&ecirc;ncia dirigindo?
+    </div>
+    <p style="font-size:12px;color:var(--texto2);margin-top:8px;">
+      <strong>Por que funciona:</strong> valida a pesquisa (&ldquo;&eacute; o certo mesmo&rdquo;), posiciona os diferenciais antes do pre&ccedil;o
+      e puxa a qualifica&ccedil;&atilde;o pra personalizar a proposta.
+    </p>
+  </div>
+
+  <div class="regra">
+    <div class="regra-label">Regra de ouro &mdash; Adaptação</div>
+    <div class="regra-text">
+      Se o lead j&aacute; traz informa&ccedil;&otilde;es na primeira mensagem (ex: &ldquo;quero tirar a B, j&aacute; dirijo&rdquo;),
+      <strong>n&atilde;o repita perguntas que ele j&aacute; respondeu</strong>. Use a informa&ccedil;&atilde;o que veio e avan&ccedil;e pro pr&oacute;ximo passo da qualifica&ccedil;&atilde;o.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 — QUALIFICAÇÃO ══ -->
+<section class="section">
+  <p class="section-num">04 &mdash; Qualifica&ccedil;&atilde;o</p>
+  <h2>As 4 perguntas obrigat&oacute;rias</h2>
+  <p>
+    Antes de falar em pre&ccedil;o, voc&ecirc; precisa das respostas a essas 4 perguntas. Elas definem qual pacote recomendar.
+    N&atilde;o precisa fazer as 4 de uma vez &mdash; v&atilde;o entrando naturalmente na conversa.
+    Se o lead j&aacute; respondeu alguma na mensagem inicial, pule para a pr&oacute;xima.
+  </p>
+
+  <div class="passo">
+    <div class="passo-num">1</div>
+    <div class="passo-body">
+      <div class="passo-title">Primeira habilita&ccedil;&atilde;o ou adi&ccedil;&atilde;o/mudan&ccedil;a?</div>
+      <div class="passo-desc">
+        &ldquo;&Eacute; a sua primeira habilita&ccedil;&atilde;o ou voc&ecirc; j&aacute; tem carteira e quer adicionar uma categoria?&rdquo;<br>
+        <span style="color:var(--texto2);">Define o fluxo: primeira habilitação = processo completo. Adição = processo parcial, taxas diferentes.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <div class="passo-num">2</div>
+    <div class="passo-body">
+      <div class="passo-title">Qual categoria?</div>
+      <div class="passo-desc">
+        &ldquo;Qual categoria voc&ecirc; precisa? S&oacute; carro (B), s&oacute; moto (A), ou os dois juntos (AB)?&rdquo;<br>
+        <span style="color:var(--texto2);">Se o lead mencionar AB, explicar o risco: &ldquo;Se tirar B mas não tirar A, enquanto não tirar, não recebe a CNH.&rdquo;</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <div class="passo-num">3</div>
+    <div class="passo-body">
+      <div class="passo-title">J&aacute; dirige ou pilota?</div>
+      <div class="passo-desc">
+        &ldquo;Voc&ecirc; j&aacute; tem alguma experi&ecirc;ncia dirigindo/pilotando, ou vai ser a primeira vez?&rdquo;<br>
+        <span style="color:var(--texto2);">Define a quantidade de aulas recomendada. Já dirige → 5-10 aulas. Nunca dirigiu → 15-20 aulas.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <div class="passo-num">4</div>
+    <div class="passo-body">
+      <div class="passo-title">Legisla&ccedil;&atilde;o com acompanhamento ou por conta?</div>
+      <div class="passo-desc">
+        &ldquo;Pra parte te&oacute;rica, voc&ecirc; prefere ter <strong>acompanhamento da nossa professora</strong> (material, aulas presenciais, suporte nos estudos) ou prefere <strong>estudar por conta pr&oacute;pria</strong> pelo aplicativo?&rdquo;<br>
+        <span style="color:var(--texto2);">Com legislação = valor cheio. Sem legislação = desconto. Sempre recomendar COM para quem é primeira habilitação.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="regra" style="margin-top:24px;">
+    <div class="regra-label">Recomenda&ccedil;&atilde;o interna</div>
+    <div class="regra-text">
+      A maioria dos leads &eacute; primeira habilita&ccedil;&atilde;o Categoria B. Para esse perfil, o pacote recomendado &eacute;:<br>
+      <strong>Cat B, com legisla&ccedil;&atilde;o, 10 aulas</strong> (j&aacute; dirige) ou <strong>15 aulas</strong> (nunca dirigiu).<br>
+      Esse &eacute; o ponto de partida. O lead pode ajustar depois.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 05 — EXPLICAR O PROCESSO ══ -->
+<section class="section">
+  <p class="section-num">05 &mdash; Explica&ccedil;&atilde;o do Processo</p>
+  <h2>Antes do pre&ccedil;o, explique o caminho</h2>
+  <p>
+    Depois de qualificar, explique o processo completo de forma simples. Isso agrega valor
+    e faz o pre&ccedil;o parecer justo quando chegar &mdash; o lead entende pelo que est&aacute; pagando.
+  </p>
+
+  <div class="msg msg-atendente" style="max-width:100%;">
+    [Nome], o processo todo funciona assim:<br><br>
+    <strong>1. Legisla&ccedil;&atilde;o (parte te&oacute;rica)</strong> &mdash; voc&ecirc; estuda o conte&uacute;do, faz a prova te&oacute;rica no Detran e, quando passar, recebe a licen&ccedil;a pra come&ccedil;ar as aulas pr&aacute;ticas.<br><br>
+    <strong>2. Aulas pr&aacute;ticas</strong> &mdash; aqui &eacute; a melhor parte! Voc&ecirc; vai ter aulas no nosso ve&iacute;culo (novinho), com instrutor dedicado, no seu ritmo.<br><br>
+    <strong>3. Exame pr&aacute;tico</strong> &mdash; quando estiver pronto, a gente agenda o exame. A gente te leva, no nosso ve&iacute;culo, e voc&ecirc; faz com confian&ccedil;a.<br><br>
+    Em m&eacute;dia, o processo leva de <strong>3 a 5 meses</strong> do in&iacute;cio ao fim. E a gente te acompanha em cada etapa. &#128170;
+  </div>
+
+  <p style="font-size:12px;color:var(--texto2);margin-top:8px;">
+    <strong>Por que funciona:</strong> transforma um processo burocr&aacute;tico em algo simples e acompanhado.
+    A frase &ldquo;a gente te acompanha em cada etapa&rdquo; &eacute; o diferencial da Lideran&ccedil;a.
+    Adapte conforme a categoria e a situa&ccedil;&atilde;o do lead.
+  </p>
+</section>
+
+<!-- ══ 06 — APRESENTAÇÃO DO PACOTE ══ -->
+<section class="section">
+  <p class="section-num">06 &mdash; Apresenta&ccedil;&atilde;o do Pacote</p>
+  <h2>Uma proposta, personalizada</h2>
+  <p>
+    Com a qualifica&ccedil;&atilde;o feita e o processo explicado, agora sim: apresente <strong>um pacote recomendado</strong>,
+    n&atilde;o uma tabela inteira. O pacote j&aacute; vem justificado pela qualifica&ccedil;&atilde;o.
+  </p>
+
+  <h3>Exemplo: Lead Cat B, j&aacute; dirige, com legisla&ccedil;&atilde;o</h3>
+  <div class="msg msg-atendente" style="max-width:100%;">
+    [Nome], pelo que voc&ecirc; me contou, o pacote ideal pra voc&ecirc; &eacute; esse:<br><br>
+    &#128663; <strong>Categoria B &mdash; 10 aulas pr&aacute;ticas</strong><br><br>
+    Inclui:<br>
+    &#128221; Legisla&ccedil;&atilde;o com acompanhamento da professora<br>
+    &#128218; 2 livros did&aacute;ticos<br>
+    &#128663; 10 aulas de dire&ccedil;&atilde;o<br>
+    &#128196; Aluguel do ve&iacute;culo + certificado<br><br>
+    <strong>Investimento:</strong> R$ 1.260,00 &agrave; vista<br>
+    ou R$ 1.360,00 no cart&atilde;o em at&eacute; 5x sem juros<br><br>
+    Al&eacute;m disso, tem as taxas do Estado (Detran) que ficam em R$ 931,86 &mdash; essas s&atilde;o iguais em qualquer autoescola.<br><br>
+    Esse pacote &eacute; o mais indicado pra quem j&aacute; tem experi&ecirc;ncia dirigindo. Faz sentido pra voc&ecirc;?
+  </div>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;">
+    <div class="card" style="flex:1;min-width:250px;border-left:3px solid var(--verde);">
+      <span class="badge badge-fazer">Fazer</span>
+      <ul style="padding-left:16px;margin-top:10px;font-size:13px;color:var(--texto);">
+        <li>Apresentar <strong>um</strong> pacote recomendado</li>
+        <li>Justificar com base na qualifica&ccedil;&atilde;o (&ldquo;pelo que voc&ecirc; me contou&rdquo;)</li>
+        <li>Separar pre&ccedil;o do pacote e taxas do Estado</li>
+        <li>Terminar com pergunta de confirma&ccedil;&atilde;o (&ldquo;faz sentido pra voc&ecirc;?&rdquo;)</li>
+        <li>Enviar tudo em <strong>uma &uacute;nica mensagem</strong> organizada</li>
+      </ul>
+    </div>
+    <div class="card" style="flex:1;min-width:250px;border-left:3px solid var(--vermelho);">
+      <span class="badge badge-nao">N&atilde;o fazer</span>
+      <ul style="padding-left:16px;margin-top:10px;font-size:13px;color:var(--texto);">
+        <li>Enviar tabela com <strong>todos</strong> os pacotes de uma vez</li>
+        <li>Mandar 4-7 mensagens seguidas com pre&ccedil;os</li>
+        <li>Jogar n&uacute;meros sem contexto (&ldquo;R$ 1.260 &agrave; vista / R$ 1.360 a prazo&rdquo;)</li>
+        <li>Falar de taxas sem explicar que s&atilde;o do Estado</li>
+        <li>Terminar a mensagem de pre&ccedil;o sem CTA</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Se o lead pedir pra ver outros pacotes</h3>
+  <p>
+    Se o lead pedir &ldquo;me manda tudo&rdquo;, a&iacute; sim envie as op&ccedil;&otilde;es &mdash; mas <strong>com recomenda&ccedil;&atilde;o destacada</strong>:
+  </p>
+  <div class="msg msg-atendente" style="max-width:100%;">
+    Claro! Aqui est&atilde;o as op&ccedil;&otilde;es pra Cat B com legisla&ccedil;&atilde;o:<br><br>
+    &#9675; 5 aulas &mdash; R$ 860 / R$ 960<br>
+    &#9679; <strong>10 aulas &mdash; R$ 1.260 / R$ 1.360 &#9668; recomendado pra voc&ecirc;</strong><br>
+    &#9675; 15 aulas &mdash; R$ 1.660 / R$ 1.760<br>
+    &#9675; 20 aulas &mdash; R$ 2.060 / R$ 2.160<br><br>
+    (valores: &agrave; vista / cart&atilde;o 5x sem juros)<br><br>
+    Qual faz mais sentido pra voc&ecirc;?
+  </div>
+</section>
+
+<!-- ══ 07 — CTA DE FECHAMENTO ══ -->
+<section class="section">
+  <p class="section-num">07 &mdash; Fechamento</p>
+  <h2>A pergunta que falta</h2>
+  <p>
+    Depois de apresentar o pacote, o lead vai reagir de uma dessas formas:
+    aceitar, pedir desconto, pedir tempo ou sumir. Cada uma tem um caminho.
+  </p>
+
+  <h3>Se o lead aceitar</h3>
+  <div class="msg msg-atendente" style="max-width:100%;">
+    &Oacute;tima escolha, [Nome]! &#127881;<br><br>
+    Pra come&ccedil;ar, preciso de:<br>
+    &#128196; RG ou CNH (foto frente e verso)<br>
+    &#128196; CPF<br>
+    &#128196; Comprovante de resid&ecirc;ncia<br><br>
+    Pode me enviar por aqui mesmo. Assim que receber, j&aacute; inicio sua matr&iacute;cula e voc&ecirc; pode come&ccedil;ar essa semana!
+  </div>
+
+  <h3>Se o lead disser &ldquo;vou pensar&rdquo;</h3>
+  <div class="msg msg-atendente" style="max-width:100%;">
+    Tranquilo, [Nome]! &Eacute; uma decis&atilde;o importante mesmo. &#128170;<br><br>
+    Ficou com alguma d&uacute;vida sobre o processo ou sobre o pacote? Porque se tiver algo que eu possa esclarecer, t&ocirc; aqui.<br><br>
+    Se preferir, posso te mandar um resumo por texto pra voc&ecirc; analisar com calma. O que acha?
+  </div>
+  <p style="font-size:12px;color:var(--texto2);">
+    <strong>Aten&ccedil;&atilde;o:</strong> quando o lead diz &ldquo;vou pensar&rdquo;, na maioria das vezes tem uma obje&ccedil;&atilde;o escondida.
+    A pergunta &ldquo;ficou com alguma d&uacute;vida?&rdquo; abre espa&ccedil;o pra ele falar o real motivo.
+  </p>
+
+  <h3>Se o lead sumir (n&atilde;o respondeu)</h3>
+  <p>
+    N&atilde;o responda com mais mensagens imediatamente. Registre na planilha/etiqueta e siga o
+    <strong>POP de Follow-up</strong> (Documento 02).
+  </p>
+</section>
+
+<!-- ══ 08 — OBJEÇÕES ══ -->
+<section class="section">
+  <p class="section-num">08 &mdash; Obje&ccedil;&otilde;es</p>
+  <h2>As 3 mais comuns e como contornar</h2>
+  <p>
+    Essas s&atilde;o as obje&ccedil;&otilde;es reais que aparecem no WhatsApp da Lideran&ccedil;a, em ordem de frequ&ecirc;ncia.
+    Cada uma tem uma estrat&eacute;gia espec&iacute;fica.
+  </p>
+
+  <!-- OBJEÇÃO 1: PREÇO -->
+  <div class="objecao">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--vermelho);font-weight:700;margin-bottom:8px;">Obje&ccedil;&atilde;o 1 &mdash; A mais comum</div>
+    <div class="objecao-frase">&ldquo;T&aacute; caro&rdquo; / &ldquo;Na outra &eacute; mais barato&rdquo;</div>
+    <h3 style="font-size:13px;color:var(--verde);margin:12px 0 8px;">Estrat&eacute;gia: Ancoragem no valor total + flexibilidade</h3>
+    <div class="objecao-resposta">
+      <strong>Script:</strong> &ldquo;Entendo, [Nome]. O pre&ccedil;o &eacute; uma preocupa&ccedil;&atilde;o importante. Deixa eu te mostrar o que t&aacute; inclu&iacute;do nesse valor:
+      legisla&ccedil;&atilde;o com acompanhamento, livros, [X] aulas pr&aacute;ticas, aluguel do ve&iacute;culo pro exame e certificado &mdash; ou seja, o pacote completo, sem surpresas no meio do caminho.
+      <br><br>
+      Al&eacute;m disso, <strong>d&aacute; pra parcelar em at&eacute; 5x sem juros</strong>. E dependendo da forma de pagamento, consigo ver uma condi&ccedil;&atilde;o especial pra voc&ecirc;. Quer que eu veja?&rdquo;
+      <br><br>
+      <em style="color:var(--texto2);">Por que funciona: refor&ccedil;a tudo que est&aacute; inclu&iacute;do (o lead esquece), mostra parcelamento e abre a porta pra desconto sem prometer valor fixo.</em>
+    </div>
+  </div>
+
+  <!-- OBJEÇÃO 2: TEMPO -->
+  <div class="objecao">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--amarelo);font-weight:700;margin-bottom:8px;">Obje&ccedil;&atilde;o 2 &mdash; Frequente</div>
+    <div class="objecao-frase">&ldquo;Agora n&atilde;o d&aacute;&rdquo; / &ldquo;T&ocirc; sem tempo&rdquo;</div>
+    <h3 style="font-size:13px;color:var(--verde);margin:12px 0 8px;">Estrat&eacute;gia: Flexibilidade de hor&aacute;rio + urg&ecirc;ncia suave</h3>
+    <div class="objecao-resposta">
+      <strong>Script:</strong> &ldquo;Entendo, a correria do dia a dia &eacute; real. Mas olha, a parte te&oacute;rica voc&ecirc; pode estudar no seu tempo, pelo celular.
+      E as aulas pr&aacute;ticas a gente agenda no hor&aacute;rio que funcionar pra voc&ecirc; &mdash; de manh&atilde;, tarde ou noite.
+      <br><br>
+      A maioria dos nossos alunos trabalha ou estuda. O processo &eacute; flex&iacute;vel justamente por isso. Quer que eu explique como encaixar na sua rotina?&rdquo;
+      <br><br>
+      <em style="color:var(--texto2);">Por que funciona: remove a barreira (&ldquo;a maioria trabalha&rdquo;) e mostra que o processo se adapta, n&atilde;o o contr&aacute;rio.</em>
+    </div>
+  </div>
+
+  <!-- OBJEÇÃO 3: MEDO -->
+  <div class="objecao">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--azul);font-weight:700;margin-bottom:8px;">Obje&ccedil;&atilde;o 3 &mdash; Rara, mas real</div>
+    <div class="objecao-frase">&ldquo;Tenho medo de dirigir&rdquo; / &ldquo;E se eu reprovar?&rdquo;</div>
+    <h3 style="font-size:13px;color:var(--verde);margin:12px 0 8px;">Estrat&eacute;gia: Prova social + garantia de acompanhamento</h3>
+    <div class="objecao-resposta">
+      <strong>Script:</strong> &ldquo;Fique tranquilo(a), [Nome]. A grande maioria dos nossos alunos chega exatamente com essa inseguran&ccedil;a &mdash; e sai dirigindo com confian&ccedil;a.
+      <br><br>
+      O nosso instrutor vai no seu ritmo, sem pressa. E se voc&ecirc; sentir que precisa de mais aulas antes do exame, a gente conversa e ajusta. O importante &eacute; voc&ecirc; ir pro exame seguro(a).
+      <br><br>
+      Aqui na Lideran&ccedil;a, a gente &eacute; l&iacute;der em aprova&ccedil;&atilde;o justamente por isso &mdash; ningu&eacute;m vai pro exame sem estar pronto.&rdquo;
+      <br><br>
+      <em style="color:var(--texto2);">Por que funciona: normaliza o medo, oferece seguran&ccedil;a (&ldquo;no seu ritmo&rdquo;) e usa o slogan como prova.</em>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 09 — CHECKLIST RÁPIDO ══ -->
+<section class="section">
+  <p class="section-num">09 &mdash; Checklist R&aacute;pido</p>
+  <h2>Resumo visual para o dia a dia</h2>
+  <p>Antes de encerrar qualquer conversa, confirme que passou por cada etapa:</p>
+
+  <div class="card">
+    <div class="check-item"><div class="check-box"></div><span><strong>Respondi em at&eacute; 5 minutos?</strong></span></div>
+    <div class="check-item"><div class="check-box"></div><span><strong>Identifiquei a temperatura?</strong> (Explorador / Direto / Comparador)</span></div>
+    <div class="check-item"><div class="check-box"></div><span><strong>Fiz as 4 perguntas de qualifica&ccedil;&atilde;o?</strong> (ou as que faltavam)</span></div>
+    <div class="check-item"><div class="check-box"></div><span><strong>Expliquei o processo antes do pre&ccedil;o?</strong></span></div>
+    <div class="check-item"><div class="check-box"></div><span><strong>Apresentei UM pacote recomendado?</strong> (n&atilde;o a tabela inteira)</span></div>
+    <div class="check-item"><div class="check-box"></div><span><strong>Terminei com uma pergunta de compromisso?</strong></span></div>
+    <div class="check-item"><div class="check-box"></div><span><strong>Se n&atilde;o fechou: marquei etiqueta/planilha pra follow-up?</strong></span></div>
+  </div>
+
+  <h3>Etiquetas do WhatsApp Business</h3>
+  <p style="font-size:12px;color:var(--texto2);margin-bottom:12px;">
+    Estas etiquetas s&atilde;o usadas em <strong>todos os documentos</strong> desta central comercial.
+    Crie-as no WhatsApp Business de cada unidade com as cores abaixo.
+  </p>
+  <table class="info-table">
+    <thead>
+      <tr><th>Etiqueta</th><th>Cor</th><th>Quando usar</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Novo Lead</td><td style="color:var(--azul);">&#128309; Azul</td><td>Acabou de chegar, ainda n&atilde;o qualificado</td></tr>
+      <tr><td>Qualificado</td><td style="color:var(--amarelo);">&#128993; Amarela</td><td>Recebeu proposta, aguardando decis&atilde;o</td></tr>
+      <tr><td>F1 &mdash; 24h</td><td style="color:var(--laranja);">&#128992; Laranja</td><td>1&ordm; follow-up agendado &mdash; retornar amanh&atilde;</td></tr>
+      <tr><td>F2 &mdash; 48h</td><td style="color:#C084FC;">&#128995; Roxa</td><td>2&ordm; follow-up &mdash; &uacute;ltima chamada</td></tr>
+      <tr><td>Matriculado</td><td style="color:var(--verde);">&#128994; Verde</td><td>Fechou! Matr&iacute;cula realizada</td></tr>
+      <tr><td>P&oacute;s-Matr&iacute;cula</td><td style="color:var(--azul);">&#128309; Azul claro</td><td>Aluno ativo &mdash; acompanhamento p&oacute;s-venda</td></tr>
+      <tr><td>Congelado</td><td style="color:var(--texto2);">&#9898; Cinza</td><td>N&atilde;o respondeu ao F2 &mdash; fora do ciclo ativo</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--texto2);margin-top:10px;">
+    <strong>Detalhes completos sobre follow-up:</strong> consulte o <a href="pop-follow-up.html" style="color:var(--laranja);">POP de Follow-up</a> (Doc 02).
+  </p>
+</section>
+
+<!-- ══ 10 — FLUXO VISUAL ══ -->
+<section class="section">
+  <p class="section-num">10 &mdash; Fluxo Visual</p>
+  <h2>O caminho completo do lead</h2>
+
+  <div style="display:grid;gap:8px;">
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:12px;">1</div>
+      <div style="font-size:13px;"><strong>Lead chega</strong> &rarr; Auto-reply dispara &rarr; Atendente responde em at&eacute; 5 min</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:12px;">2</div>
+      <div style="font-size:13px;"><strong>Identificar temperatura</strong> &rarr; Explorador / Direto / Comparador &rarr; Script de abertura</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:12px;">3</div>
+      <div style="font-size:13px;"><strong>Qualificar</strong> &rarr; 4 perguntas (tipo, categoria, experi&ecirc;ncia, legisla&ccedil;&atilde;o)</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:12px;">4</div>
+      <div style="font-size:13px;"><strong>Explicar o processo</strong> &rarr; 3 etapas (legisla&ccedil;&atilde;o &rarr; aulas &rarr; exame) &rarr; agregar valor</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:12px;">5</div>
+      <div style="font-size:13px;"><strong>Apresentar UM pacote</strong> &rarr; Pre&ccedil;o personalizado + taxas separadas + condi&ccedil;&otilde;es</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:12px;">6</div>
+      <div style="font-size:13px;"><strong>CTA de fechamento</strong> &rarr; &ldquo;Faz sentido?&rdquo; &rarr; &ldquo;Posso iniciar sua matr&iacute;cula?&rdquo;</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-top:3px solid var(--verde);padding:14px;">
+        <div style="font-size:12px;color:var(--verde);font-weight:700;">FECHOU</div>
+        <div style="font-size:12px;color:var(--texto);margin-top:4px;">Pedir documentos<br>Etiquetar &ldquo;Matriculado&rdquo;</div>
+      </div>
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-top:3px solid var(--amarelo);padding:14px;">
+        <div style="font-size:12px;color:var(--amarelo);font-weight:700;">OBJE&Ccedil;&Atilde;O</div>
+        <div style="font-size:12px;color:var(--texto);margin-top:4px;">Contornar (Se&ccedil;&atilde;o 08)<br>Tentar novo CTA</div>
+      </div>
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-top:3px solid var(--vermelho);padding:14px;">
+        <div style="font-size:12px;color:var(--vermelho);font-weight:700;">SUMIU</div>
+        <div style="font-size:12px;color:var(--texto);margin-top:4px;">Etiquetar &ldquo;Follow-up&rdquo;<br>Seguir POP Follow-up</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  Auto Escola Lideran&ccedil;a &middot; Playbook de Atendimento WhatsApp &middot; Outubro 2026<br>
+  ADS Company &mdash; Assessoria de Marketing e Vendas
+</footer>
+
+</body>
+</html>

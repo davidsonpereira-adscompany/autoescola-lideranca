@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POP P&oacute;s-Matr&iacute;cula &mdash; Auto Escola Lideran&ccedil;a | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --card: #111111;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --verde: #22C55E;
+    --verde-bg: rgba(34,197,94,0.08);
+    --amarelo: #EAB308;
+    --amarelo-bg: rgba(234,179,8,0.08);
+    --vermelho: #EF4444;
+    --azul: #3B8BFF;
+    --azul-bg: rgba(59,139,255,0.08);
+    --roxo: #C084FC;
+    --roxo-bg: rgba(192,132,252,0.08);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--preto); color: var(--branco); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: rgba(6,6,6,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-left { display: flex; align-items: center; gap: 14px; }
+  .btn-voltar { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 1px solid rgba(255,255,255,0.12); color: var(--branco); font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+  .btn-voltar:hover { border-color: var(--laranja); color: var(--laranja); }
+  .nav-title { font-family: var(--serif); font-size: 14px; color: var(--texto); }
+  .nav-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laranja); }
+
+  .hero { min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 32px 60px; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.06) 0%, transparent 70%), linear-gradient(180deg, #040404 0%, #060606 100%); }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 24px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; max-width: 700px; margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-sub { font-size: 15px; color: var(--texto); max-width: 560px; line-height: 1.7; }
+
+  .section { max-width: 900px; margin: 0 auto; padding: 60px 32px; }
+  .section + .section { border-top: 1px solid var(--border); }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 12px; }
+  .section h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 20px; line-height: 1.2; }
+  .section h3 { font-family: var(--serif); font-size: 1.1rem; margin: 28px 0 12px; color: var(--branco); }
+  .section p, .section li { color: var(--texto); font-size: 14px; }
+  .section p { margin-bottom: 14px; }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .regra { background: linear-gradient(135deg, rgba(255,92,0,0.06) 0%, rgba(255,92,0,0.02) 100%); border: 1px solid rgba(255,92,0,0.15); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .regra-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 6px; }
+  .regra-text { font-size: 15px; color: var(--branco); font-weight: 500; line-height: 1.6; }
+
+  .msg { border-radius: 10px; padding: 12px 16px; font-size: 13px; line-height: 1.6; margin: 10px 0; max-width: 90%; }
+  .msg-atendente { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.12); border-radius: 10px 10px 2px 10px; margin-left: auto; color: var(--branco); }
+  .msg-atendente::before { content: 'ATENDENTE:'; display: block; font-size: 9px; letter-spacing: 0.1em; color: var(--verde); font-weight: 700; margin-bottom: 4px; }
+
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.06); }
+  .timeline-item { position: relative; margin-bottom: 32px; }
+  .timeline-dot {
+    position: absolute; left: -40px; top: 4px; width: 28px; height: 28px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 9px; z-index: 1;
+  }
+  .dot-pm1 { background: var(--verde-bg); color: var(--verde); border: 2px solid rgba(34,197,94,0.3); }
+  .dot-pm2 { background: var(--azul-bg); color: var(--azul); border: 2px solid rgba(59,139,255,0.3); }
+  .dot-pm3 { background: var(--laranja3); color: var(--laranja); border: 2px solid rgba(255,92,0,0.3); }
+  .dot-pm4 { background: var(--roxo-bg); color: var(--roxo); border: 2px solid rgba(192,132,252,0.3); }
+  .timeline-title { font-weight: 700; font-size: 15px; color: var(--branco); margin-bottom: 2px; }
+  .timeline-when { font-size: 12px; color: var(--texto2); margin-bottom: 10px; }
+
+  .info-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  .info-table th { text-align: left; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texto2); font-weight: 700; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .info-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--texto); }
+  .info-table td:first-child { color: var(--branco); font-weight: 600; }
+
+  .doc-footer { max-width: 900px; margin: 0 auto; padding: 40px 32px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--texto2); }
+
+  @media (max-width: 768px) {
+    .nav-bar { padding: 10px 16px; }
+    .hero { padding: 60px 20px 40px; min-height: 40vh; }
+    .section { padding: 40px 20px; }
+    .card, .regra { padding: 18px; }
+    .msg { max-width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.5rem; }
+    .timeline { padding-left: 36px; }
+  }
+  @media print {
+    .nav-bar { display: none; }
+    body { background: white; color: #111; }
+    .hero { min-height: auto; background: none; padding: 30px 20px; }
+    .hero h1, .section h2, .section h3, .timeline-title, .regra-text { color: #111; }
+    .section p, .section li, .timeline-when { color: #444; }
+    .card, .regra { border-color: #ddd; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-left">
+    <a href="index.html" class="btn-voltar">&#8592; VOLTAR</a>
+    <span class="nav-title">POP P&oacute;s-Matr&iacute;cula</span>
+  </div>
+  <span class="nav-badge">ADS Company</span>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Documento 04 &mdash; Vendas &amp; Atendimento</p>
+  <h1>POP <em>P&oacute;s-Matr&iacute;cula</em></h1>
+  <p class="hero-sub">
+    A matr&iacute;cula n&atilde;o &eacute; o fim &mdash; &eacute; o come&ccedil;o. Este processo transforma alunos
+    em promotores que indicam novos alunos.
+  </p>
+</header>
+
+<!-- ══ 01 — FILOSOFIA ══ -->
+<section class="section">
+  <p class="section-num">01 &mdash; Filosofia</p>
+  <h2>Aluno satisfeito indica &mdash; aluno esquecido n&atilde;o</h2>
+
+  <div class="regra">
+    <div class="regra-label">Regra de ouro</div>
+    <div class="regra-text">
+      Cada aluno matriculado &eacute; um <strong>canal de aquisi&ccedil;&atilde;o</strong>.
+      Quando ele fala bem da autoescola pro amigo, vizinho ou colega de trabalho,
+      esse lead chega <strong>pr&eacute;-vendido</strong> &mdash; sem custo de tr&aacute;fego.
+    </div>
+  </div>
+
+  <p>
+    O processo de p&oacute;s-matr&iacute;cula &eacute; uma sequ&ecirc;ncia de 4 contatos estrat&eacute;gicos,
+    distribu&iacute;dos ao longo da jornada do aluno na autoescola.
+  </p>
+</section>
+
+<!-- ══ 02 — TIMELINE ══ -->
+<section class="section">
+  <p class="section-num">02 &mdash; Os 4 Contatos</p>
+  <h2>Cad&ecirc;ncia p&oacute;s-matr&iacute;cula</h2>
+
+  <div class="timeline">
+
+    <!-- PM1 -->
+    <div class="timeline-item">
+      <div class="timeline-dot dot-pm1">PM1</div>
+      <div class="timeline-title">Boas-vindas e confirma&ccedil;&atilde;o</div>
+      <div class="timeline-when">24 horas ap&oacute;s a matr&iacute;cula</div>
+
+      <div class="msg msg-atendente" style="max-width:100%;">
+        Oi, [Nome]! Aqui &eacute; da Auto Escola Lideran&ccedil;a! &#128663;<br><br>
+        S&oacute; passando pra confirmar: sua matr&iacute;cula t&aacute; toda certinha! Documentos recebidos e cadastro feito no sistema.<br><br>
+        Seu pr&oacute;ximo passo &eacute; a <strong>legisla&ccedil;&atilde;o</strong>. [Se com acompanhamento: &ldquo;A professora vai te adicionar no grupo da turma e te passar o material essa semana.&rdquo;] [Se por conta: &ldquo;Voc&ecirc; j&aacute; pode baixar o app e come&ccedil;ar a estudar no seu ritmo.&rdquo;]<br><br>
+        Qualquer d&uacute;vida, &eacute; s&oacute; chamar aqui. Estamos juntos nessa jornada! &#128170;
+      </div>
+
+      <div class="card" style="margin-top:12px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:var(--branco);margin-bottom:8px;">Por que funciona</div>
+        <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+          <li><strong>Confirma&ccedil;&atilde;o:</strong> reduz a ansiedade do aluno (&ldquo;ser&aacute; que deu certo?&rdquo;).</li>
+          <li><strong>Pr&oacute;ximo passo claro:</strong> o aluno sabe exatamente o que fazer agora.</li>
+          <li><strong>Canal aberto:</strong> &ldquo;&eacute; s&oacute; chamar aqui&rdquo; mostra acessibilidade.</li>
+        </ul>
+      </div>
+
+      <div style="font-size:12px;color:var(--texto2);margin-top:10px;">
+        <strong>Na planilha:</strong> mudar etiqueta para <strong style="color:var(--azul);">P&oacute;s-Matr&iacute;cula</strong>.
+        Anotar data do PM2 (7 dias ap&oacute;s a matr&iacute;cula).
+      </div>
+    </div>
+
+    <!-- PM2 -->
+    <div class="timeline-item">
+      <div class="timeline-dot dot-pm2">PM2</div>
+      <div class="timeline-title">Check-in de legisla&ccedil;&atilde;o</div>
+      <div class="timeline-when">7 dias ap&oacute;s a matr&iacute;cula</div>
+
+      <div class="msg msg-atendente" style="max-width:100%;">
+        Oi, [Nome]! Tudo bem? &#128075;<br><br>
+        J&aacute; faz uma semana que voc&ecirc; come&ccedil;ou! Como est&atilde;o os estudos da legisla&ccedil;&atilde;o? T&aacute; conseguindo acompanhar?<br><br>
+        Se tiver qualquer dificuldade com o material ou com o app, me avisa que a gente te ajuda. O importante &eacute; manter o ritmo pra voc&ecirc; ir pro exame te&oacute;rico com confian&ccedil;a! &#128218;
+      </div>
+
+      <div class="card" style="margin-top:12px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:var(--branco);margin-bottom:8px;">Por que funciona</div>
+        <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+          <li><strong>Evita evas&atilde;o:</strong> muitos alunos travam na legisla&ccedil;&atilde;o e desistem em sil&ecirc;ncio.</li>
+          <li><strong>Suporte ativo:</strong> &ldquo;a gente te ajuda&rdquo; mostra que o aluno n&atilde;o est&aacute; sozinho.</li>
+          <li><strong>Mant&eacute;m o momentum:</strong> lembrete gentil pra n&atilde;o perder o ritmo.</li>
+        </ul>
+      </div>
+
+      <div style="font-size:12px;color:var(--texto2);margin-top:10px;">
+        <strong>Na planilha:</strong> anotar resposta. Se o aluno estiver com dificuldade, registrar e acompanhar.
+        PM3 ser&aacute; acionado quando o aluno for aprovado no te&oacute;rico.
+      </div>
+    </div>
+
+    <!-- PM3 -->
+    <div class="timeline-item">
+      <div class="timeline-dot dot-pm3">PM3</div>
+      <div class="timeline-title">Parab&eacute;ns pela aprova&ccedil;&atilde;o te&oacute;rica</div>
+      <div class="timeline-when">Quando o aluno passar no exame te&oacute;rico</div>
+
+      <div class="msg msg-atendente" style="max-width:100%;">
+        [Nome], parab&eacute;ns pela aprova&ccedil;&atilde;o! &#127881;&#128663;<br><br>
+        Primeira etapa conclu&iacute;da! Agora vem a melhor parte: as <strong>aulas pr&aacute;ticas</strong>.<br><br>
+        Seu LADV (licen&ccedil;a pra aulas) j&aacute; foi liberado. Vamos agendar suas primeiras aulas essa semana?<br><br>
+        Me manda os hor&aacute;rios que funcionam melhor pra voc&ecirc; (manh&atilde;, tarde ou noite) que a gente encaixa! &#128170;
+      </div>
+
+      <div class="card" style="margin-top:12px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:var(--branco);margin-bottom:8px;">Por que funciona</div>
+        <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+          <li><strong>Celebra a conquista:</strong> refor&ccedil;a que o aluno est&aacute; progredindo.</li>
+          <li><strong>Transi&ccedil;&atilde;o suave:</strong> j&aacute; puxa pra pr&oacute;xima etapa sem intervalo.</li>
+          <li><strong>Flexibilidade:</strong> o aluno escolhe o hor&aacute;rio &mdash; remove barreira de tempo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PM4 -->
+    <div class="timeline-item">
+      <div class="timeline-dot dot-pm4">PM4</div>
+      <div class="timeline-title">Aprovado! Depoimento e indica&ccedil;&atilde;o</div>
+      <div class="timeline-when">Quando o aluno for aprovado no exame pr&aacute;tico</div>
+
+      <div class="msg msg-atendente" style="max-width:100%;">
+        [Nome], PARAB&Eacute;NS! &#127881;&#127881;&#127881;<br><br>
+        Voc&ecirc; &eacute; oficialmente habilitado(a)! Que emo&ccedil;&atilde;o, n&eacute;? A gente fica muito feliz de ter feito parte dessa conquista.<br><br>
+        Posso te pedir um favor? Se voc&ecirc; puder gravar um <strong>v&iacute;deo curto</strong> (pode ser pelo celular mesmo, 15 segundos) contando como foi sua experi&ecirc;ncia com a Lideran&ccedil;a, isso ajuda demais outros alunos que t&atilde;o pensando em come&ccedil;ar e t&ecirc;m medo.<br><br>
+        E se tiver algum amigo ou familiar que t&aacute; querendo tirar a habilita&ccedil;&atilde;o, manda nosso contato! A gente faz uma condi&ccedil;&atilde;o especial pra indica&ccedil;&atilde;o sua. &#128170;&#128663;
+      </div>
+
+      <div class="card" style="margin-top:12px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:var(--branco);margin-bottom:8px;">Por que funciona</div>
+        <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+          <li><strong>Momento emocional:</strong> a aprova&ccedil;&atilde;o &eacute; o pico de satisfa&ccedil;&atilde;o &mdash; melhor hora pra pedir depoimento.</li>
+          <li><strong>Prova social:</strong> v&iacute;deo de aluno real &eacute; o conte&uacute;do mais poderoso pra campanhas.</li>
+          <li><strong>Programa de indica&ccedil;&atilde;o:</strong> &ldquo;condi&ccedil;&atilde;o especial pra indica&ccedil;&atilde;o&rdquo; gera lead pr&eacute;-vendido.</li>
+          <li><strong>Custo zero:</strong> indica&ccedil;&atilde;o n&atilde;o custa tr&aacute;fego &mdash; &eacute; o canal mais rent&aacute;vel.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ 03 — PROGRAMA DE INDICAÇÃO ══ -->
+<section class="section">
+  <p class="section-num">03 &mdash; Indica&ccedil;&atilde;o</p>
+  <h2>Programa &ldquo;Indique e Ganhe&rdquo;</h2>
+  <p>
+    Simples e direto. O aluno indica, o amigo matricula, e o aluno ganha um benef&iacute;cio real.
+    N&atilde;o precisa de sistema &mdash; funciona no WhatsApp + planilha.
+  </p>
+
+  <div class="card" style="border-left:3px solid var(--verde);">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--verde);font-weight:700;margin-bottom:10px;">Como funciona</div>
+    <div style="display:grid;gap:12px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--verde-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde);font-weight:800;font-size:12px;">1</div>
+        <div style="font-size:13px;color:var(--texto);">O aluno aprovado indica um amigo/familiar.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--verde-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde);font-weight:800;font-size:12px;">2</div>
+        <div style="font-size:13px;color:var(--texto);">O indicado entra em contato e menciona quem indicou.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--verde-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde);font-weight:800;font-size:12px;">3</div>
+        <div style="font-size:13px;color:var(--texto);">Quando o indicado <strong>fechar a matr&iacute;cula</strong>, o aluno que indicou ganha o benef&iacute;cio.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Sugest&otilde;es de benef&iacute;cio</h3>
+  <table class="info-table">
+    <thead>
+      <tr><th>Benef&iacute;cio</th><th>Quando usar</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Desconto em aulas extras</td><td>Se o aluno precisar de mais aulas pr&aacute;ticas</td></tr>
+      <tr><td>Desconto no aluguel do ve&iacute;culo (exame)</td><td>Se o aluno ainda n&atilde;o fez o exame pr&aacute;tico</td></tr>
+      <tr><td>Brinde f&iacute;sico (ex: chaveiro, bon&eacute;)</td><td>Qualquer momento &mdash; tangível e memor&aacute;vel</td></tr>
+      <tr><td>Desconto pra adi&ccedil;&atilde;o de categoria</td><td>Se o aluno quiser adicionar A ou outra</td></tr>
+    </tbody>
+  </table>
+
+  <div class="regra">
+    <div class="regra-label">Importante</div>
+    <div class="regra-text">
+      O benef&iacute;cio s&oacute; &eacute; ativado ap&oacute;s a <strong>matr&iacute;cula do indicado</strong>.
+      Nunca prometa antes da convers&atilde;o. E sempre registre na planilha quem indicou quem.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 — REGISTRO ══ -->
+<section class="section">
+  <p class="section-num">04 &mdash; Registro</p>
+  <h2>Controle na planilha</h2>
+  <p>Adicione estas colunas na aba de alunos matriculados:</p>
+
+  <table class="info-table">
+    <thead>
+      <tr><th>Coluna</th><th>O que preencher</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Data da matr&iacute;cula</td><td>Quando fechou</td></tr>
+      <tr><td>PM1 (24h)</td><td>Data + status (feito / pendente)</td></tr>
+      <tr><td>PM2 (7 dias)</td><td>Data + status</td></tr>
+      <tr><td>PM3 (te&oacute;rico)</td><td>Data da aprova&ccedil;&atilde;o + status</td></tr>
+      <tr><td>PM4 (pr&aacute;tico)</td><td>Data da aprova&ccedil;&atilde;o + status</td></tr>
+      <tr><td>Depoimento</td><td>Sim / N&atilde;o + link do v&iacute;deo</td></tr>
+      <tr><td>Indicou</td><td>Nome do(s) indicado(s)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ 05 — FLUXO VISUAL ══ -->
+<section class="section">
+  <p class="section-num">05 &mdash; Fluxo Visual</p>
+  <h2>A jornada p&oacute;s-matr&iacute;cula</h2>
+
+  <div style="display:grid;gap:8px;">
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--verde-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;">&#127881;</div>
+      <div style="font-size:13px;"><strong>Matr&iacute;cula fechada!</strong> &rarr; Etiqueta &#128994; Matriculado &rarr; Anotar PM1</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--verde-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde);font-weight:800;font-size:9px;">PM1</div>
+      <div style="font-size:13px;"><strong>24h</strong> &rarr; Boas-vindas + pr&oacute;ximo passo &rarr; Etiqueta <span style="color:var(--azul);">P&oacute;s-Matr&iacute;cula</span></div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--azul-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--azul);font-weight:800;font-size:9px;">PM2</div>
+      <div style="font-size:13px;"><strong>7 dias</strong> &rarr; Check-in legisla&ccedil;&atilde;o &rarr; Evitar evas&atilde;o</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:9px;">PM3</div>
+      <div style="font-size:13px;"><strong>Aprovado te&oacute;rico</strong> &rarr; Parab&eacute;ns + agendar aulas pr&aacute;ticas</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--roxo-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--roxo);font-weight:800;font-size:9px;">PM4</div>
+      <div style="font-size:13px;"><strong>Aprovado pr&aacute;tico</strong> &rarr; Depoimento + programa de indica&ccedil;&atilde;o</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--verde);padding:16px;">
+      <div style="font-size:13px;color:var(--verde);font-weight:700;">ALUNO PROMOTOR</div>
+      <div style="font-size:12px;color:var(--texto);margin-top:4px;">Indica novos alunos &rarr; leads pr&eacute;-vendidos &rarr; custo zero</div>
+    </div>
+  </div>
+</section>
+
+<footer class="doc-footer">
+  Auto Escola Lideran&ccedil;a &middot; POP P&oacute;s-Matr&iacute;cula &middot; Outubro 2026<br>
+  ADS Company &mdash; Assessoria de Marketing e Vendas
+</footer>
+
+</body>
+</html>

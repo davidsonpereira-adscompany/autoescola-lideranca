@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POP Rotina Comercial &mdash; Auto Escola Lideran&ccedil;a | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --card: #111111;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --verde: #22C55E;
+    --verde-bg: rgba(34,197,94,0.08);
+    --amarelo: #EAB308;
+    --amarelo-bg: rgba(234,179,8,0.08);
+    --vermelho: #EF4444;
+    --azul: #3B8BFF;
+    --azul-bg: rgba(59,139,255,0.08);
+    --roxo: #C084FC;
+    --roxo-bg: rgba(192,132,252,0.08);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--preto); color: var(--branco); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: rgba(6,6,6,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-left { display: flex; align-items: center; gap: 14px; }
+  .btn-voltar { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 1px solid rgba(255,255,255,0.12); color: var(--branco); font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+  .btn-voltar:hover { border-color: var(--laranja); color: var(--laranja); }
+  .nav-title { font-family: var(--serif); font-size: 14px; color: var(--texto); }
+  .nav-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laranja); }
+
+  .hero { min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 32px 60px; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.06) 0%, transparent 70%), linear-gradient(180deg, #040404 0%, #060606 100%); }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 24px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; max-width: 700px; margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-sub { font-size: 15px; color: var(--texto); max-width: 560px; line-height: 1.7; }
+
+  .section { max-width: 900px; margin: 0 auto; padding: 60px 32px; }
+  .section + .section { border-top: 1px solid var(--border); }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 12px; }
+  .section h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 20px; line-height: 1.2; }
+  .section h3 { font-family: var(--serif); font-size: 1.1rem; margin: 28px 0 12px; color: var(--branco); }
+  .section p, .section li { color: var(--texto); font-size: 14px; }
+  .section p { margin-bottom: 14px; }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .regra { background: linear-gradient(135deg, rgba(255,92,0,0.06) 0%, rgba(255,92,0,0.02) 100%); border: 1px solid rgba(255,92,0,0.15); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .regra-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 6px; }
+  .regra-text { font-size: 15px; color: var(--branco); font-weight: 500; line-height: 1.6; }
+
+  .bloco {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px; margin-bottom: 20px; position: relative; overflow: hidden;
+  }
+  .bloco::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  }
+  .bloco-1::before { background: var(--laranja); }
+  .bloco-2::before { background: var(--verde); }
+  .bloco-3::before { background: var(--azul); }
+  .bloco-4::before { background: var(--roxo); }
+  .bloco-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .bloco-icon {
+    width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center;
+    justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .bloco-1 .bloco-icon { background: var(--laranja3); }
+  .bloco-2 .bloco-icon { background: var(--verde-bg); }
+  .bloco-3 .bloco-icon { background: var(--azul-bg); }
+  .bloco-4 .bloco-icon { background: var(--roxo-bg); }
+  .bloco-name { font-family: var(--serif); font-size: 1.1rem; color: var(--branco); }
+  .bloco-time { font-size: 12px; color: var(--texto2); margin-top: 2px; }
+
+  .task-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 13px; color: var(--texto);
+  }
+  .task-item:last-child { border-bottom: none; }
+  .task-check {
+    width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 4px; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .info-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  .info-table th { text-align: left; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texto2); font-weight: 700; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .info-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--texto); }
+  .info-table td:first-child { color: var(--branco); font-weight: 600; }
+
+  .doc-footer { max-width: 900px; margin: 0 auto; padding: 40px 32px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--texto2); }
+
+  @media (max-width: 768px) {
+    .nav-bar { padding: 10px 16px; }
+    .hero { padding: 60px 20px 40px; min-height: 40vh; }
+    .section { padding: 40px 20px; }
+    .bloco, .card, .regra { padding: 18px; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.5rem; }
+    .bloco-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media print {
+    .nav-bar { display: none; }
+    body { background: white; color: #111; }
+    .hero { min-height: auto; background: none; padding: 30px 20px; }
+    .hero h1, .section h2, .section h3, .bloco-name, .regra-text { color: #111; }
+    .section p, .section li, .task-item { color: #444; }
+    .bloco, .card, .regra { border-color: #ddd; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-left">
+    <a href="index.html" class="btn-voltar">&#8592; VOLTAR</a>
+    <span class="nav-title">POP Rotina Comercial</span>
+  </div>
+  <span class="nav-badge">ADS Company</span>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Documento 03 &mdash; Vendas &amp; Atendimento</p>
+  <h1>POP <em>Rotina Comercial</em></h1>
+  <p class="hero-sub">
+    Estrutura di&aacute;ria do atendente para gerar matr&iacute;culas de forma ativa &mdash;
+    sem esperar o WhatsApp tocar.
+  </p>
+</header>
+
+<!-- ══ 01 — FILOSOFIA ══ -->
+<section class="section">
+  <p class="section-num">01 &mdash; Filosofia</p>
+  <h2>Eu n&atilde;o espero o lead &mdash; eu vou atr&aacute;s</h2>
+
+  <div class="regra">
+    <div class="regra-label">Regra de ouro</div>
+    <div class="regra-text">
+      O dia &eacute; dividido em <strong>4 blocos</strong> com miss&otilde;es claras.
+      Se voc&ecirc; s&oacute; atende quem chega, depende 100% do tr&aacute;fego.
+      Se voc&ecirc; tamb&eacute;m ativa, <strong>dobra as chances</strong> de matr&iacute;cula.
+    </div>
+  </div>
+
+  <p>
+    Esta rotina &eacute; pra Priscila (CJ) e Gabriel (BM). Os blocos n&atilde;o precisam ser em hor&aacute;rios fixos
+    &mdash; mas as <strong>a&ccedil;&otilde;es precisam acontecer todo dia</strong>.
+  </p>
+</section>
+
+<!-- ══ 02 — BLOCOS ══ -->
+<section class="section">
+  <p class="section-num">02 &mdash; Os 4 Blocos</p>
+  <h2>Estrutura di&aacute;ria</h2>
+
+  <!-- BLOCO 1 -->
+  <div class="bloco bloco-1">
+    <div class="bloco-header">
+      <div class="bloco-icon">&#9728;&#65039;</div>
+      <div>
+        <div class="bloco-name">Bloco 1 &mdash; Prepara&ccedil;&atilde;o</div>
+        <div class="bloco-time">Primeiros 15 minutos do dia</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--texto);margin-bottom:12px;">
+      Abrir a planilha, revisar o que ficou pendente e montar a lista de a&ccedil;&otilde;es do dia.
+    </p>
+    <div class="task-item"><div class="task-check"></div><span><strong>Abrir a planilha</strong> e filtrar por status:</span></div>
+    <div class="task-item" style="padding-left:30px;border-bottom:none;">
+      <span>
+        &#128992; <strong style="color:var(--laranja);">F1 &mdash; 24h:</strong> quem recebeu proposta ontem e n&atilde;o fechou?<br>
+        &#128995; <strong style="color:var(--roxo);">F2 &mdash; 48h:</strong> quem n&atilde;o respondeu ao F1 de ontem?<br>
+        &#128309; <strong style="color:var(--azul);">P&oacute;s-Matr&iacute;cula:</strong> algum aluno novo precisa de check-in?
+      </span>
+    </div>
+    <div class="task-item"><div class="task-check"></div><span><strong>Verificar WhatsApp:</strong> mensagens recebidas fora do hor&aacute;rio &mdash; responder em ordem de chegada.</span></div>
+    <div class="task-item"><div class="task-check"></div><span><strong>Definir as 3 prioridades do dia.</strong> Ex: &ldquo;1. Fazer 3 F1. 2. Retornar 2 leads de ontem. 3. Ligar para 1 lead qualificado.&rdquo;</span></div>
+  </div>
+
+  <!-- BLOCO 2 -->
+  <div class="bloco bloco-2">
+    <div class="bloco-header">
+      <div class="bloco-icon">&#128170;</div>
+      <div>
+        <div class="bloco-name">Bloco 2 &mdash; A&ccedil;&atilde;o Proativa</div>
+        <div class="bloco-time">30 a 45 minutos (hor&aacute;rio flex&iacute;vel)</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--texto);margin-bottom:12px;">
+      Este &eacute; o bloco que gera matr&iacute;culas. Aqui voc&ecirc; n&atilde;o espera &mdash; voc&ecirc; faz acontecer.
+    </p>
+
+    <h3 style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--laranja);margin:16px 0 10px;">Miss&atilde;o 1 &mdash; Follow-ups (15-20 min)</h3>
+    <div class="task-item"><div class="task-check"></div><span>Executar todos os <strong>F1</strong> e <strong>F2</strong> da planilha usando os scripts do <a href="pop-follow-up.html" style="color:var(--laranja);">POP de Follow-up</a>.</span></div>
+    <div class="task-item"><div class="task-check"></div><span>Atualizar status na planilha ap&oacute;s cada envio.</span></div>
+
+    <h3 style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--verde);margin:16px 0 10px;">Miss&atilde;o 2 &mdash; P&oacute;s-Matr&iacute;cula (10 min)</h3>
+    <div class="task-item"><div class="task-check"></div><span>Executar contatos de p&oacute;s-matr&iacute;cula agendados (PM1, PM2, PM3) conforme <a href="pop-pos-matricula.html" style="color:var(--laranja);">POP P&oacute;s-Matr&iacute;cula</a>.</span></div>
+
+    <h3 style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--azul);margin:16px 0 10px;">Miss&atilde;o 3 &mdash; Reativa&ccedil;&atilde;o (10-15 min, 1x por semana)</h3>
+    <div class="task-item"><div class="task-check"></div><span>Filtrar leads <strong>congelados h&aacute; mais de 30 dias</strong> na planilha.</span></div>
+    <div class="task-item"><div class="task-check"></div><span>Enviar mensagem de reativa&ccedil;&atilde;o (script no POP Follow-up, Se&ccedil;&atilde;o 06).</span></div>
+  </div>
+
+  <!-- BLOCO 3 -->
+  <div class="bloco bloco-3">
+    <div class="bloco-header">
+      <div class="bloco-icon">&#128172;</div>
+      <div>
+        <div class="bloco-name">Bloco 3 &mdash; Atendimento Reativo</div>
+        <div class="bloco-time">Cont&iacute;nuo &mdash; ao longo de todo o dia</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--texto);margin-bottom:12px;">
+      Novos leads chegam pelo WhatsApp (org&acirc;nico ou tr&aacute;fego pago). Atender com excel&ecirc;ncia &eacute; o b&aacute;sico.
+    </p>
+    <div class="task-item"><div class="task-check"></div><span><strong>Responder em at&eacute; 5 minutos</strong> em hor&aacute;rio comercial.</span></div>
+    <div class="task-item"><div class="task-check"></div><span>Seguir o <a href="playbook-atendimento.html" style="color:var(--laranja);">Playbook de Atendimento</a> sem pular etapas.</span></div>
+    <div class="task-item"><div class="task-check"></div><span>Ao final de cada conversa sem matr&iacute;cula: <strong>1 minuto pra registrar na planilha</strong>.</span></div>
+
+    <div class="regra" style="margin-top:16px;">
+      <div class="regra-label">Regra inegoci&aacute;vel</div>
+      <div class="regra-text">
+        Nenhuma conversa pode existir <strong>s&oacute; no WhatsApp</strong>.
+        Se n&atilde;o est&aacute; na planilha, n&atilde;o existe pro follow-up &mdash; e a venda morre.
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO 4 -->
+  <div class="bloco bloco-4">
+    <div class="bloco-header">
+      <div class="bloco-icon">&#128202;</div>
+      <div>
+        <div class="bloco-name">Bloco 4 &mdash; Fechamento do Dia</div>
+        <div class="bloco-time">&Uacute;ltimos 10 minutos antes de sair</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--texto);margin-bottom:12px;">
+      Fechar o dia organizado &eacute; o que faz o dia seguinte come&ccedil;ar r&aacute;pido.
+    </p>
+    <div class="task-item"><div class="task-check"></div><span><strong>Atualizar a planilha:</strong> todos os leads do dia est&atilde;o registrados?</span></div>
+    <div class="task-item"><div class="task-check"></div><span><strong>Contar os n&uacute;meros:</strong> quantas conversas? Quantas matr&iacute;culas? Quantos follow-ups feitos?</span></div>
+    <div class="task-item"><div class="task-check"></div><span><strong>Olhar a planilha de amanh&atilde;:</strong> quantos F1 e F2 est&atilde;o agendados? Algum p&oacute;s-matr&iacute;cula?</span></div>
+  </div>
+</section>
+
+<!-- ══ 03 — RESUMO VISUAL ══ -->
+<section class="section">
+  <p class="section-num">03 &mdash; Resumo Visual</p>
+  <h2>O dia em um olhar</h2>
+
+  <table class="info-table">
+    <thead>
+      <tr><th>Bloco</th><th>Tempo</th><th>O que fazer</th><th>Documento de refer&ecirc;ncia</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color:var(--laranja);">1. Prepara&ccedil;&atilde;o</td>
+        <td>15 min</td>
+        <td>Planilha + prioridades + mensagens pendentes</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td style="color:var(--verde);">2. A&ccedil;&atilde;o Proativa</td>
+        <td>30-45 min</td>
+        <td>Follow-ups (F1, F2) + p&oacute;s-matr&iacute;cula + reativa&ccedil;&atilde;o</td>
+        <td><a href="pop-follow-up.html" style="color:var(--laranja);">Doc 02</a> + <a href="pop-pos-matricula.html" style="color:var(--laranja);">Doc 04</a></td>
+      </tr>
+      <tr>
+        <td style="color:var(--azul);">3. Atendimento</td>
+        <td>Cont&iacute;nuo</td>
+        <td>Novos leads &rarr; Playbook completo &rarr; Registrar</td>
+        <td><a href="playbook-atendimento.html" style="color:var(--laranja);">Doc 01</a></td>
+      </tr>
+      <tr>
+        <td style="color:var(--roxo);">4. Fechamento</td>
+        <td>10 min</td>
+        <td>Atualizar planilha + contar resultados + preparar amanh&atilde;</td>
+        <td>&mdash;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="regra">
+    <div class="regra-label">Tempo total di&aacute;rio dedicado</div>
+    <div class="regra-text">
+      <strong>55 a 70 minutos</strong> de a&ccedil;&atilde;o estruturada + atendimento cont&iacute;nuo.<br>
+      N&atilde;o &eacute; tempo extra &mdash; &eacute; o mesmo trabalho, s&oacute; que <strong>organizado</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 — MÉTRICAS ══ -->
+<section class="section">
+  <p class="section-num">04 &mdash; M&eacute;tricas</p>
+  <h2>O que medir toda semana</h2>
+  <p>
+    No fechamento de sexta-feira, anote esses n&uacute;meros na planilha (aba &ldquo;Resumo Semanal&rdquo;).
+    S&atilde;o os indicadores que mostram se o processo est&aacute; funcionando.
+  </p>
+
+  <table class="info-table">
+    <thead>
+      <tr><th>M&eacute;trica</th><th>O que mostra</th><th>Meta sugerida</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Leads novos</td><td>Volume de entrada &mdash; sa&uacute;de do tr&aacute;fego</td><td>Acompanhar tend&ecirc;ncia</td></tr>
+      <tr><td>Follow-ups feitos</td><td>Disciplina do processo</td><td>100% dos agendados</td></tr>
+      <tr><td>Matr&iacute;culas</td><td>Resultado final</td><td>Meta da unidade</td></tr>
+      <tr><td>Taxa de convers&atilde;o</td><td>Matr&iacute;culas &divide; Leads novos</td><td>Acima de 20%</td></tr>
+      <tr><td>Leads congelados</td><td>Leads que n&atilde;o responderam &mdash; oportunidade futura</td><td>Reativar 1x/m&ecirc;s</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="doc-footer">
+  Auto Escola Lideran&ccedil;a &middot; POP Rotina Comercial &middot; Outubro 2026<br>
+  ADS Company &mdash; Assessoria de Marketing e Vendas
+</footer>
+
+</body>
+</html>

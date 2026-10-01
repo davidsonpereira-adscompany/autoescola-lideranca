@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POP Follow-up &mdash; Auto Escola Lideran&ccedil;a | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --bg2: #0A0A0A;
+    --card: #111111;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --verde: #22C55E;
+    --verde-bg: rgba(34,197,94,0.08);
+    --amarelo: #EAB308;
+    --amarelo-bg: rgba(234,179,8,0.08);
+    --vermelho: #EF4444;
+    --vermelho-bg: rgba(239,68,68,0.08);
+    --azul: #3B8BFF;
+    --azul-bg: rgba(59,139,255,0.08);
+    --roxo: #C084FC;
+    --roxo-bg: rgba(192,132,252,0.08);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto); color: var(--branco);
+    font-family: var(--sans); line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .nav-bar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(6,6,6,0.92); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-left { display: flex; align-items: center; gap: 14px; }
+  .btn-voltar {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: transparent; border: 1px solid rgba(255,255,255,0.12);
+    color: var(--branco); font-family: var(--sans); font-size: 13px;
+    font-weight: 500; padding: 6px 14px; border-radius: 6px;
+    cursor: pointer; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-voltar:hover { border-color: var(--laranja); color: var(--laranja); }
+  .nav-title { font-family: var(--serif); font-size: 14px; color: var(--texto); }
+  .nav-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laranja); }
+
+  .hero {
+    min-height: 45vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 80px 32px 60px; position: relative;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.06) 0%, transparent 70%),
+                linear-gradient(180deg, #040404 0%, #060606 100%);
+  }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 24px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; max-width: 700px; margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-sub { font-size: 15px; color: var(--texto); max-width: 560px; line-height: 1.7; }
+
+  .section { max-width: 900px; margin: 0 auto; padding: 60px 32px; }
+  .section + .section { border-top: 1px solid var(--border); }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 12px; }
+  .section h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 20px; line-height: 1.2; }
+  .section h3 { font-family: var(--serif); font-size: 1.1rem; margin: 28px 0 12px; color: var(--branco); }
+  .section p, .section li { color: var(--texto); font-size: 14px; }
+  .section p { margin-bottom: 14px; }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .regra { background: linear-gradient(135deg, rgba(255,92,0,0.06) 0%, rgba(255,92,0,0.02) 100%); border: 1px solid rgba(255,92,0,0.15); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .regra-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 6px; }
+  .regra-text { font-size: 15px; color: var(--branco); font-weight: 500; line-height: 1.6; }
+
+  .msg { border-radius: 10px; padding: 12px 16px; font-size: 13px; line-height: 1.6; margin: 10px 0; max-width: 90%; }
+  .msg-atendente {
+    background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.12);
+    border-radius: 10px 10px 2px 10px; margin-left: auto; color: var(--branco);
+  }
+  .msg-atendente::before { content: 'ATENDENTE:'; display: block; font-size: 9px; letter-spacing: 0.1em; color: var(--verde); font-weight: 700; margin-bottom: 4px; }
+
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.06); }
+  .timeline-item { position: relative; margin-bottom: 32px; }
+  .timeline-dot {
+    position: absolute; left: -40px; top: 4px; width: 28px; height: 28px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 11px; z-index: 1;
+  }
+  .dot-f1 { background: var(--laranja3); color: var(--laranja); border: 2px solid rgba(255,92,0,0.3); }
+  .dot-f2 { background: var(--roxo-bg); color: var(--roxo); border: 2px solid rgba(192,132,252,0.3); }
+  .dot-ice { background: rgba(255,255,255,0.04); color: var(--texto2); border: 2px solid rgba(255,255,255,0.1); }
+  .timeline-title { font-weight: 700; font-size: 15px; color: var(--branco); margin-bottom: 2px; }
+  .timeline-when { font-size: 12px; color: var(--texto2); margin-bottom: 10px; }
+
+  .passo { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .passo:last-child { border-bottom: none; }
+  .passo-num { width: 32px; height: 32px; border-radius: 50%; background: var(--laranja3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--laranja); font-weight: 800; font-size: 13px; }
+  .passo-body { flex: 1; }
+  .passo-title { font-weight: 700; font-size: 14px; color: var(--branco); margin-bottom: 4px; }
+  .passo-desc { font-size: 13px; color: var(--texto); line-height: 1.6; }
+
+  .info-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  .info-table th { text-align: left; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texto2); font-weight: 700; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .info-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--texto); }
+  .info-table td:first-child { color: var(--branco); font-weight: 600; }
+
+  .doc-footer { max-width: 900px; margin: 0 auto; padding: 40px 32px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--texto2); }
+
+  @media (max-width: 768px) {
+    .nav-bar { padding: 10px 16px; }
+    .hero { padding: 60px 20px 40px; min-height: 40vh; }
+    .section { padding: 40px 20px; }
+    .card, .regra { padding: 18px; }
+    .msg { max-width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.5rem; }
+    .passo { flex-direction: column; gap: 8px; }
+    .timeline { padding-left: 36px; }
+  }
+  @media print {
+    .nav-bar { display: none; }
+    body { background: white; color: #111; }
+    .hero { min-height: auto; background: none; padding: 30px 20px; }
+    .hero h1, .section h2, .section h3, .timeline-title, .regra-text, .passo-title { color: #111; }
+    .section p, .section li, .passo-desc, .timeline-when { color: #444; }
+    .card, .regra { border-color: #ddd; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-left">
+    <a href="index.html" class="btn-voltar">&#8592; VOLTAR</a>
+    <span class="nav-title">POP Follow-up</span>
+  </div>
+  <span class="nav-badge">ADS Company</span>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Documento 02 &mdash; Vendas &amp; Atendimento</p>
+  <h1>POP de <em>Follow-up</em></h1>
+  <p class="hero-sub">
+    Processo para recuperar leads que n&atilde;o fecharam na primeira conversa.
+    Duas tentativas, com gatilhos de escassez e desapego estrat&eacute;gico.
+  </p>
+</header>
+
+<!-- ══ 01 — FILOSOFIA ══ -->
+<section class="section">
+  <p class="section-num">01 &mdash; Filosofia</p>
+  <h2>A oportunidade tem prazo de validade</h2>
+
+  <div class="regra">
+    <div class="regra-label">Regra de ouro</div>
+    <div class="regra-text">
+      O lead que disse &ldquo;vou pensar&rdquo; n&atilde;o est&aacute; pensando &mdash; est&aacute; <strong>esquecendo</strong>.
+      O follow-up existe pra reacender o interesse, n&atilde;o pra cobrar.
+      Se depois de 2 tentativas n&atilde;o houver resposta, congele o lead. Insistir mais &eacute; queimar a marca.
+    </div>
+  </div>
+
+  <p>
+    A autoescola &eacute; uma decis&atilde;o de alto valor e ciclo m&eacute;dio. O lead precisa de um empurr&atilde;o gentil,
+    n&atilde;o de press&atilde;o. Todo follow-up &eacute; feito com tom profissional, como quem <strong>informa</strong>, n&atilde;o como quem pede.
+  </p>
+</section>
+
+<!-- ══ 02 — QUANDO ATIVAR ══ -->
+<section class="section">
+  <p class="section-num">02 &mdash; Quando ativar</p>
+  <h2>Gatilhos de follow-up</h2>
+  <p>O processo de follow-up &eacute; ativado em <strong>dois cen&aacute;rios</strong>:</p>
+
+  <div class="card" style="border-left:3px solid var(--laranja);">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px;">Cen&aacute;rio A</div>
+    <div style="font-weight:600;color:var(--branco);margin-bottom:6px;">Lead disse &ldquo;vou pensar&rdquo; ou &ldquo;depois te falo&rdquo;</div>
+    <div style="font-size:13px;color:var(--texto);">
+      Recebeu a proposta, demonstrou interesse, mas n&atilde;o fechou. A&ccedil;&atilde;o imediata: etiquetar como
+      <strong style="color:var(--laranja);">F1 &mdash; 24h</strong> e anotar na planilha.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--laranja);">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px;">Cen&aacute;rio B</div>
+    <div style="font-weight:600;color:var(--branco);margin-bottom:6px;">Lead sumiu ap&oacute;s receber a proposta</div>
+    <div style="font-size:13px;color:var(--texto);">
+      Enviou o pacote, o lead visualizou mas n&atilde;o respondeu. Mesmo tratamento: etiquetar como
+      <strong style="color:var(--laranja);">F1 &mdash; 24h</strong> e anotar.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 — TIMELINE ══ -->
+<section class="section">
+  <p class="section-num">03 &mdash; O Processo</p>
+  <h2>Cad&ecirc;ncia de follow-up</h2>
+
+  <div class="timeline">
+
+    <!-- F1 -->
+    <div class="timeline-item">
+      <div class="timeline-dot dot-f1">F1</div>
+      <div class="timeline-title">Primeiro Follow-up &mdash; Gatilho de Escassez</div>
+      <div class="timeline-when">24 horas ap&oacute;s a proposta &middot; Etiqueta: <strong style="color:var(--laranja);">F1 &mdash; 24h</strong></div>
+
+      <div class="msg msg-atendente" style="max-width:100%;">
+        Oi, [Nome]! Tudo bem? &#128075;<br><br>
+        Passando s&oacute; pra te dar um retorno: as vagas para a pr&oacute;xima turma de legisla&ccedil;&atilde;o est&atilde;o quase completas. Como a gente conversou ontem, n&atilde;o quero que voc&ecirc; perca essa janela.<br><br>
+        Se quiser garantir, &eacute; s&oacute; me confirmar que eu j&aacute; reservo sua vaga. Se preferir esperar a pr&oacute;xima, tamb&eacute;m tudo certo &mdash; s&oacute; n&atilde;o tenho como garantir o mesmo valor. &#128521;<br><br>
+        Qualquer d&uacute;vida, t&ocirc; aqui!
+      </div>
+
+      <div class="card" style="margin-top:12px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:var(--branco);margin-bottom:8px;">Por que funciona</div>
+        <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+          <li><strong>Tom de &ldquo;retorno&rdquo;:</strong> n&atilde;o &eacute; cobran&ccedil;a, &eacute; informa&ccedil;&atilde;o &uacute;til.</li>
+          <li><strong>Escassez real:</strong> turmas t&ecirc;m data de in&iacute;cio &mdash; vagas acabam de verdade.</li>
+          <li><strong>Desapego estrat&eacute;gico:</strong> &ldquo;se preferir esperar, tudo certo&rdquo; reduz press&atilde;o e aumenta confian&ccedil;a.</li>
+          <li><strong>Ancoragem de pre&ccedil;o:</strong> &ldquo;n&atilde;o tenho como garantir o mesmo valor&rdquo; cria urg&ecirc;ncia sem mentir.</li>
+        </ul>
+      </div>
+
+      <div style="font-size:12px;color:var(--texto2);margin-top:10px;">
+        <strong>Na planilha:</strong> se respondeu &rarr; retomar negocia&ccedil;&atilde;o. Se n&atilde;o respondeu &rarr; mudar etiqueta para
+        <strong style="color:var(--roxo);">F2 &mdash; 48h</strong> e anotar a data do pr&oacute;ximo contato.
+      </div>
+    </div>
+
+    <!-- F2 -->
+    <div class="timeline-item">
+      <div class="timeline-dot dot-f2">F2</div>
+      <div class="timeline-title">Segundo Follow-up &mdash; &Uacute;ltima Chamada</div>
+      <div class="timeline-when">48 horas ap&oacute;s a proposta &middot; Etiqueta: <strong style="color:var(--roxo);">F2 &mdash; 48h</strong></div>
+
+      <div class="msg msg-atendente" style="max-width:100%;">
+        Oi, [Nome]! &#128075;<br><br>
+        Passando s&oacute; pra liberar a reserva que eu tinha feito pra voc&ecirc;, beleza? Como n&atilde;o tive seu retorno, vou abrir a vaga pra outros interessados.<br><br>
+        Se mudar de ideia e ainda der tempo, &eacute; s&oacute; me chamar. Sem compromisso.<br><br>
+        Abra&ccedil;o! &#128170;
+      </div>
+
+      <div class="card" style="margin-top:12px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:var(--branco);margin-bottom:8px;">Por que funciona</div>
+        <ul style="padding-left:16px;font-size:13px;color:var(--texto);">
+          <li><strong>Cria consequ&ecirc;ncia:</strong> a reserva era &ldquo;real&rdquo;, e est&aacute; sendo liberada.</li>
+          <li><strong>Encerra com classe:</strong> sem perguntas, sem press&atilde;o &mdash; s&oacute; uma comunica&ccedil;&atilde;o.</li>
+          <li><strong>Mant&eacute;m a porta aberta:</strong> &ldquo;&eacute; s&oacute; me chamar&rdquo; deixa claro que n&atilde;o h&aacute; ressentimento.</li>
+          <li><strong>Gatilho de perda:</strong> pode gerar arrependimento imediato (&ldquo;opa, segura a&iacute;!&rdquo;).</li>
+        </ul>
+      </div>
+
+      <div style="font-size:12px;color:var(--texto2);margin-top:10px;">
+        <strong>Na planilha:</strong> se respondeu &rarr; retomar. Se n&atilde;o respondeu &rarr; mudar para <strong style="color:var(--texto2);">Congelado</strong>.
+      </div>
+    </div>
+
+    <!-- CONGELADO -->
+    <div class="timeline-item">
+      <div class="timeline-dot dot-ice">&#10052;</div>
+      <div class="timeline-title">Congelado &mdash; Fim do ciclo ativo</div>
+      <div class="timeline-when">Ap&oacute;s F2 sem resposta &middot; Etiqueta: <strong style="color:var(--texto2);">Congelado</strong></div>
+
+      <div class="card" style="padding:16px;border-left:3px solid var(--texto2);">
+        <div style="font-size:13px;color:var(--texto);line-height:1.7;">
+          O lead <strong>n&atilde;o ser&aacute; contatado ativamente</strong> sobre esta negocia&ccedil;&atilde;o.
+          Ele s&oacute; volta ao funil ativo em duas situa&ccedil;&otilde;es:
+          <br><br>
+          1. <strong>Ele procura de novo</strong> &mdash; a&iacute; retoma como novo lead, sem mencionar conversas anteriores.<br>
+          2. <strong>Campanha de reativa&ccedil;&atilde;o</strong> &mdash; a cada 30-60 dias, filtrar os congelados e enviar mensagem gen&eacute;rica
+          com novidade (nova turma, promo&ccedil;&atilde;o sazonal).
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ 04 — REGISTRO NA PLANILHA ══ -->
+<section class="section">
+  <p class="section-num">04 &mdash; Registro</p>
+  <h2>Planilha de controle de leads</h2>
+  <p>
+    Sem CRM, a planilha &eacute; o sistema. <strong>Toda conversa que n&atilde;o fechar precisa ser registrada.</strong>
+    Sem registro, o follow-up n&atilde;o acontece &mdash; e a venda morre em sil&ecirc;ncio.
+  </p>
+
+  <table class="info-table">
+    <thead>
+      <tr><th>Coluna</th><th>O que preencher</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Nome</td><td>Nome do lead (como est&aacute; no WhatsApp)</td></tr>
+      <tr><td>Telefone</td><td>N&uacute;mero completo com DDD</td></tr>
+      <tr><td>Categoria</td><td>A, B, AB, D, E (ap&oacute;s qualifica&ccedil;&atilde;o)</td></tr>
+      <tr><td>Pacote enviado</td><td>Ex: &ldquo;Cat B, 10 aulas, c/ legisla&ccedil;&atilde;o, R$ 1.260&rdquo;</td></tr>
+      <tr><td>Status</td><td>F1 &mdash; 24h / F2 &mdash; 48h / Congelado / Matriculado</td></tr>
+      <tr><td>Data do pr&oacute;ximo contato</td><td>Data exata do pr&oacute;ximo follow-up</td></tr>
+      <tr><td>Observa&ccedil;&otilde;es</td><td>O que aconteceu na &uacute;ltima conversa (obje&ccedil;&atilde;o, d&uacute;vida, etc.)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="regra">
+    <div class="regra-label">Regra inegoci&aacute;vel</div>
+    <div class="regra-text">
+      Ao final de <strong>cada conversa</strong> que n&atilde;o resultar em matr&iacute;cula, gaste <strong>1 minuto</strong>
+      pra atualizar a planilha. &Eacute; isso que alimenta o Bloco de Follow-ups da rotina comercial (Doc 03).
+    </div>
+  </div>
+</section>
+
+<!-- ══ 05 — FLUXO VISUAL ══ -->
+<section class="section">
+  <p class="section-num">05 &mdash; Fluxo Visual</p>
+  <h2>O ciclo completo</h2>
+
+  <div style="display:grid;gap:8px;">
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--amarelo-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;">&#128172;</div>
+      <div style="font-size:13px;"><strong>Lead recebeu proposta</strong> e n&atilde;o fechou / sumiu</div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--laranja3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:800;font-size:11px;">F1</div>
+      <div style="font-size:13px;"><strong>24h</strong> &rarr; Gatilho de escassez &rarr; Etiqueta <span style="color:var(--laranja);">F1</span></div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-top:3px solid var(--verde);padding:14px;">
+        <div style="font-size:12px;color:var(--verde);font-weight:700;">RESPONDEU</div>
+        <div style="font-size:12px;color:var(--texto);margin-top:4px;">Retomar negocia&ccedil;&atilde;o<br>(voltar ao Playbook)</div>
+      </div>
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-top:3px solid var(--roxo);padding:14px;">
+        <div style="font-size:12px;color:var(--roxo);font-weight:700;">N&Atilde;O RESPONDEU</div>
+        <div style="font-size:12px;color:var(--texto);margin-top:4px;">Avan&ccedil;ar para F2 &#8595;</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--roxo-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--roxo);font-weight:800;font-size:11px;">F2</div>
+      <div style="font-size:13px;"><strong>48h</strong> &rarr; &Uacute;ltima chamada &rarr; Etiqueta <span style="color:var(--roxo);">F2</span></div>
+    </div>
+    <div style="text-align:center;color:var(--texto2);font-size:18px;">&#8595;</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-top:3px solid var(--verde);padding:14px;">
+        <div style="font-size:12px;color:var(--verde);font-weight:700;">RESPONDEU</div>
+        <div style="font-size:12px;color:var(--texto);margin-top:4px;">Retomar negocia&ccedil;&atilde;o</div>
+      </div>
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-top:3px solid var(--texto2);padding:14px;">
+        <div style="font-size:12px;color:var(--texto2);font-weight:700;">N&Atilde;O RESPONDEU</div>
+        <div style="font-size:12px;color:var(--texto);margin-top:4px;">Congelar &#10052;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 06 — REATIVAÇÃO ══ -->
+<section class="section">
+  <p class="section-num">06 &mdash; Reativa&ccedil;&atilde;o</p>
+  <h2>Leads congelados &mdash; como reativar</h2>
+  <p>
+    A cada <strong>30 a 60 dias</strong>, filtre os leads congelados na planilha e envie uma mensagem gen&eacute;rica
+    com uma novidade real (nova turma, promo&ccedil;&atilde;o sazonal, mudan&ccedil;a de pre&ccedil;o).
+  </p>
+
+  <div class="msg msg-atendente" style="max-width:100%;">
+    Oi, [Nome]! Tudo bem? &#128075;<br><br>
+    Aqui &eacute; da Auto Escola Lideran&ccedil;a. Lembrei de voc&ecirc; porque estamos abrindo uma nova turma de legisla&ccedil;&atilde;o no dia [DATA] e dessa vez com uma condi&ccedil;&atilde;o especial.<br><br>
+    Se ainda tiver interesse em tirar sua habilita&ccedil;&atilde;o, me chama que eu te explico. Sem compromisso!<br><br>
+    Abra&ccedil;o! &#128663;
+  </div>
+
+  <p style="font-size:12px;color:var(--texto2);">
+    Se o lead responder, ele volta como <strong style="color:var(--azul);">Novo Lead</strong> (etiqueta azul) e recomeça pelo Playbook de Atendimento.
+    Se n&atilde;o responder, mant&eacute;m congelado &mdash; sem nova tentativa por mais 30-60 dias.
+  </p>
+</section>
+
+<footer class="doc-footer">
+  Auto Escola Lideran&ccedil;a &middot; POP de Follow-up &middot; Outubro 2026<br>
+  ADS Company &mdash; Assessoria de Marketing e Vendas
+</footer>
+
+</body>
+</html>

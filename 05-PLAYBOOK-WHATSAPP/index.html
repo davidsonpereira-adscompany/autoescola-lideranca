@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central Comercial &mdash; Auto Escola Lideran&ccedil;a | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --card: #111111;
+    --card-hover: #161616;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --verde: #22C55E;
+    --verde-bg: rgba(34,197,94,0.08);
+    --amarelo: #EAB308;
+    --azul: #3B8BFF;
+    --azul-bg: rgba(59,139,255,0.08);
+    --roxo: #C084FC;
+    --roxo-bg: rgba(192,132,252,0.08);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--preto); color: var(--branco); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: rgba(6,6,6,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-left { display: flex; align-items: center; gap: 14px; }
+  .btn-voltar { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 1px solid rgba(255,255,255,0.12); color: var(--branco); font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+  .btn-voltar:hover { border-color: var(--laranja); color: var(--laranja); }
+  .nav-title { font-family: var(--serif); font-size: 14px; color: var(--texto); }
+  .nav-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laranja); }
+
+  .hero { min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 32px 60px; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.06) 0%, transparent 70%), linear-gradient(180deg, #040404 0%, #060606 100%); }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 24px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; max-width: 700px; margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-sub { font-size: 15px; color: var(--texto); max-width: 560px; line-height: 1.7; }
+
+  .section { max-width: 900px; margin: 0 auto; padding: 60px 32px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 12px; }
+  .section h2 { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.6rem); margin-bottom: 20px; line-height: 1.2; }
+  .section p { color: var(--texto); font-size: 14px; margin-bottom: 14px; }
+
+  /* DOC CARDS */
+  .doc-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .doc-card {
+    display: flex; align-items: stretch; text-decoration: none;
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; transition: all 0.25s;
+  }
+  .doc-card:hover { background: var(--card-hover); border-color: rgba(255,92,0,0.2); transform: translateY(-2px); }
+  .doc-card-accent { width: 5px; flex-shrink: 0; }
+  .doc-card-body { padding: 24px 28px; flex: 1; }
+  .doc-card-tag { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .doc-card-title { font-family: var(--serif); font-size: 1.15rem; color: var(--branco); margin-bottom: 6px; }
+  .doc-card-desc { font-size: 13px; color: var(--texto); line-height: 1.6; }
+  .doc-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; }
+  .doc-card-status { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+  .status-ready { background: rgba(34,197,94,0.1); color: #22C55E; border: 1px solid rgba(34,197,94,0.2); }
+  .doc-card-arrow { color: var(--texto2); transition: color 0.2s; }
+  .doc-card:hover .doc-card-arrow { color: var(--laranja); }
+  .doc-card-arrow svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+  /* ETIQUETAS */
+  .etiqueta-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 16px; }
+  .etiqueta-item {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .etiqueta-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .etiqueta-name { font-size: 13px; font-weight: 600; color: var(--branco); }
+  .etiqueta-desc { font-size: 11px; color: var(--texto2); margin-top: 2px; }
+
+  .doc-footer { max-width: 900px; margin: 0 auto; padding: 40px 32px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--texto2); }
+
+  @media (max-width: 768px) {
+    .nav-bar { padding: 10px 16px; }
+    .hero { padding: 60px 20px 40px; min-height: 40vh; }
+    .section { padding: 40px 20px; }
+    .doc-card-body { padding: 18px 20px; }
+    .etiqueta-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.5rem; }
+  }
+  @media print {
+    .nav-bar { display: none; }
+    body { background: white; color: #111; }
+    .hero { min-height: auto; background: none; padding: 30px 20px; }
+    .hero h1, .section h2, .doc-card-title, .etiqueta-name { color: #111; }
+    .section p, .doc-card-desc, .etiqueta-desc { color: #444; }
+    .doc-card { border-color: #ddd; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-left">
+    <a href="../01-ONBOARDING/index.html" class="btn-voltar">&#8592; VOLTAR</a>
+    <span class="nav-title">Central Comercial</span>
+  </div>
+  <span class="nav-badge">ADS Company</span>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Auto Escola Lideran&ccedil;a</p>
+  <h1>Central <em>Comercial</em></h1>
+  <p class="hero-sub">
+    Todos os documentos de atendimento, vendas e p&oacute;s-matr&iacute;cula em um &uacute;nico lugar.
+    Consulte antes, durante e depois de cada conversa com o lead.
+  </p>
+</header>
+
+<!-- DOCUMENTOS -->
+<section class="section">
+  <p class="section-num">Documentos</p>
+  <h2>4 documentos &mdash; 1 processo completo</h2>
+  <p>Cada documento cobre uma etapa do funil. Leia na ordem da primeira vez. Depois, consulte o que precisar.</p>
+
+  <div class="doc-grid">
+
+    <!-- DOC 01 -->
+    <a href="playbook-atendimento.html" class="doc-card">
+      <div class="doc-card-accent" style="background:var(--laranja);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--laranja);">Doc 01</div>
+        <div class="doc-card-title">Playbook de Atendimento WhatsApp</div>
+        <div class="doc-card-desc">
+          Do primeiro &ldquo;oi&rdquo; &agrave; matr&iacute;cula: sauda&ccedil;&atilde;o, temperatura do lead, qualifica&ccedil;&atilde;o,
+          processo, pacote personalizado, fechamento e obje&ccedil;&otilde;es.
+        </div>
+        <div class="doc-card-footer">
+          <span class="doc-card-status status-ready">Conclu&iacute;do</span>
+          <div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- DOC 02 -->
+    <a href="pop-follow-up.html" class="doc-card">
+      <div class="doc-card-accent" style="background:var(--roxo);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--roxo);">Doc 02</div>
+        <div class="doc-card-title">POP de Follow-up</div>
+        <div class="doc-card-desc">
+          Cad&ecirc;ncia de 2 tentativas (F1 em 24h, F2 em 48h) pra recuperar leads que n&atilde;o fecharam.
+          Gatilhos de escassez e desapego estrat&eacute;gico.
+        </div>
+        <div class="doc-card-footer">
+          <span class="doc-card-status status-ready">Conclu&iacute;do</span>
+          <div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- DOC 03 -->
+    <a href="pop-rotina-comercial.html" class="doc-card">
+      <div class="doc-card-accent" style="background:var(--verde);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--verde);">Doc 03</div>
+        <div class="doc-card-title">POP Rotina Comercial</div>
+        <div class="doc-card-desc">
+          Estrutura di&aacute;ria em 4 blocos: prepara&ccedil;&atilde;o, a&ccedil;&atilde;o proativa, atendimento reativo e fechamento.
+          55-70 minutos de a&ccedil;&atilde;o organizada por dia.
+        </div>
+        <div class="doc-card-footer">
+          <span class="doc-card-status status-ready">Conclu&iacute;do</span>
+          <div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- DOC 04 -->
+    <a href="pop-pos-matricula.html" class="doc-card">
+      <div class="doc-card-accent" style="background:var(--azul);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--azul);">Doc 04</div>
+        <div class="doc-card-title">POP P&oacute;s-Matr&iacute;cula</div>
+        <div class="doc-card-desc">
+          4 contatos estrat&eacute;gicos (24h, 7 dias, te&oacute;rico, pr&aacute;tico) que transformam alunos em promotores.
+          Inclui programa de indica&ccedil;&atilde;o.
+        </div>
+        <div class="doc-card-footer">
+          <span class="doc-card-status status-ready">Conclu&iacute;do</span>
+          <div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ETIQUETAS UNIFICADAS -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <p class="section-num">Refer&ecirc;ncia R&aacute;pida</p>
+  <h2>Etiquetas do WhatsApp Business</h2>
+  <p>Sistema unificado usado em todos os documentos. Crie no WhatsApp Business de cada unidade.</p>
+
+  <div class="etiqueta-grid">
+    <div class="etiqueta-item">
+      <div class="etiqueta-dot" style="background:var(--azul);"></div>
+      <div>
+        <div class="etiqueta-name">Novo Lead</div>
+        <div class="etiqueta-desc">Acabou de chegar</div>
+      </div>
+    </div>
+    <div class="etiqueta-item">
+      <div class="etiqueta-dot" style="background:var(--amarelo);"></div>
+      <div>
+        <div class="etiqueta-name">Qualificado</div>
+        <div class="etiqueta-desc">Recebeu proposta</div>
+      </div>
+    </div>
+    <div class="etiqueta-item">
+      <div class="etiqueta-dot" style="background:var(--laranja);"></div>
+      <div>
+        <div class="etiqueta-name">F1 &mdash; 24h</div>
+        <div class="etiqueta-desc">1&ordm; follow-up</div>
+      </div>
+    </div>
+    <div class="etiqueta-item">
+      <div class="etiqueta-dot" style="background:var(--roxo);"></div>
+      <div>
+        <div class="etiqueta-name">F2 &mdash; 48h</div>
+        <div class="etiqueta-desc">&Uacute;ltima chamada</div>
+      </div>
+    </div>
+    <div class="etiqueta-item">
+      <div class="etiqueta-dot" style="background:var(--verde);"></div>
+      <div>
+        <div class="etiqueta-name">Matriculado</div>
+        <div class="etiqueta-desc">Fechou!</div>
+      </div>
+    </div>
+    <div class="etiqueta-item">
+      <div class="etiqueta-dot" style="background:#60A5FA;"></div>
+      <div>
+        <div class="etiqueta-name">P&oacute;s-Matr&iacute;cula</div>
+        <div class="etiqueta-desc">Acompanhamento ativo</div>
+      </div>
+    </div>
+    <div class="etiqueta-item">
+      <div class="etiqueta-dot" style="background:#555;"></div>
+      <div>
+        <div class="etiqueta-name">Congelado</div>
+        <div class="etiqueta-desc">Fora do ciclo ativo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="doc-footer">
+  Auto Escola Lideran&ccedil;a &middot; Central Comercial &middot; Outubro 2026<br>
+  ADS Company &mdash; Assessoria de Marketing e Vendas
+</footer>
+
+</body>
+</html>
