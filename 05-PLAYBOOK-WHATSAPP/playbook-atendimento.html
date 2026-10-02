@@ -241,12 +241,59 @@
   /* PRINT */
   @media print {
     .nav-bar { display: none; }
-    body { background: white; color: #111; }
-    .hero { min-height: auto; background: none; padding: 30px 20px; }
-    .hero h1, .section h2, .section h3, .card-title, .hipotese-title, .passo-title, .regra-text { color: #111; }
-    .section p, .section li, .passo-desc, .check-item { color: #444; }
-    .card, .hipotese, .objecao, .regra { border-color: #ddd; break-inside: avoid; }
-    .section + .section { border-color: #ddd; }
+    body { background: white !important; color: #111 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .hero { min-height: auto; background: white !important; padding: 30px 20px; }
+    .hero h1, .hero h1 em { color: #111 !important; }
+    .hero-eyebrow { color: #C44500 !important; }
+    .hero-sub { color: #444 !important; }
+    .section h2, .section h3, .card-title, .hipotese-title, .passo-title, .regra-text { color: #111 !important; }
+    .section-num, .regra-label, .hipotese-num { color: #C44500 !important; }
+    .section p, .section li, .passo-desc, .check-item, .check-item span { color: #333 !important; }
+    .hipotese-perfil { color: #555 !important; }
+    .card, .hipotese, .objecao, .regra { background: #FAFAFA !important; border-color: #ddd !important; break-inside: avoid; }
+    .section + .section { border-color: #ccc !important; }
+    .msg { max-width: 100% !important; }
+    .msg-lead { background: #FFF5F0 !important; border-color: #E8D0C0 !important; color: #222 !important; }
+    .msg-lead::before { color: #C44500 !important; }
+    .msg-atendente { background: #F0FFF4 !important; border-color: #C0E8C8 !important; color: #222 !important; }
+    .msg-atendente::before { color: #167A38 !important; }
+    .objecao-frase { color: #222 !important; border-left-color: #C44500 !important; }
+    .objecao-resposta { color: #333 !important; border-left-color: #167A38 !important; }
+    .objecao-resposta em { color: #555 !important; }
+    .badge { border-color: #aaa !important; }
+    .badge-fazer { background: #E8F5E9 !important; color: #167A38 !important; }
+    .badge-nao { background: #FFF0F0 !important; color: #C00 !important; }
+    .badge-dica { background: #E8F0FF !important; color: #1A5BC4 !important; }
+    .info-table th { color: #555 !important; border-bottom-color: #ccc !important; }
+    .info-table td { color: #333 !important; border-bottom-color: #ddd !important; }
+    .info-table td:first-child { color: #111 !important; }
+    .passo-num { background: #FFF0E8 !important; color: #C44500 !important; }
+    .check-box { border-color: #999 !important; }
+    .doc-footer { color: #888 !important; border-top-color: #ccc !important; }
+    div[style*="border-top: 3px solid var(--verde)"] { border-top-color: #167A38 !important; }
+    div[style*="border-top: 3px solid var(--amarelo)"] { border-top-color: #B8860B !important; }
+    div[style*="border-top: 3px solid var(--vermelho)"] { border-top-color: #C00 !important; }
+    div[style*="border-left: 3px solid var(--verde)"] { border-left-color: #167A38 !important; }
+    div[style*="border-left: 3px solid var(--vermelho)"] { border-left-color: #C00 !important; }
+    div[style*="color:var(--verde)"] { color: #167A38 !important; }
+    div[style*="color:var(--amarelo)"] { color: #B8860B !important; }
+    div[style*="color:var(--vermelho)"] { color: #C00 !important; }
+    div[style*="color:var(--azul)"] { color: #1A5BC4 !important; }
+    div[style*="color:var(--laranja)"] { color: #C44500 !important; }
+    div[style*="color:var(--texto2)"] { color: #555 !important; }
+    span[style*="color:var(--laranja)"] { color: #C44500 !important; }
+    span[style*="color:var(--verde)"] { color: #167A38 !important; }
+    span[style*="color:var(--vermelho)"] { color: #C00 !important; }
+    span[style*="color:var(--texto2)"] { color: #555 !important; }
+    strong[style*="color:var(--laranja)"] { color: #C44500 !important; }
+    strong[style*="color:var(--azul)"] { color: #1A5BC4 !important; }
+    em[style*="color:var(--texto2)"] { color: #555 !important; }
+    p[style*="color:var(--verde)"] { color: #167A38 !important; }
+    p[style*="color:var(--vermelho)"] { color: #C00 !important; }
+    p[style*="color:var(--texto2)"] { color: #555 !important; }
+    h3[style*="color:var(--verde)"] { color: #167A38 !important; }
+    h3[style*="color:var(--laranja)"] { color: #C44500 !important; }
+    a[style*="color:var(--laranja)"] { color: #C44500 !important; }
   }
 </style>
 </head>
