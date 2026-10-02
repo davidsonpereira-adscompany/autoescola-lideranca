@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiros de Vídeo — Samuel · Auto Escola Liderança</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #6B7280;
+    --accent: #FF5C00;
+    --accent-light: #FFF7F2;
+    --border: #E5E7EB;
+    --success: #059669;
+    --success-light: #ECFDF5;
+    --warn: #D97706;
+    --warn-light: #FEF3C7;
+    --blue: #2563EB;
+    --blue-light: #EFF6FF;
+  }
+
+  @page { size: A4; margin: 18mm 16mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 20mm 18mm;
+    max-width: 210mm;
+    margin: 0 auto;
+  }
+
+  .header {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #FFF;
+    font-size: .65rem;
+    font-weight: 700;
+    padding: .2rem .6rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .5rem;
+  }
+  .header h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: .25rem;
+  }
+  .header .subtitle { font-size: .85rem; color: var(--muted); }
+  .meta-row {
+    display: flex; gap: 2rem; margin-top: .75rem; flex-wrap: wrap;
+  }
+  .meta-item { font-size: .78rem; color: var(--muted); }
+  .meta-item strong { color: var(--text); font-weight: 600; }
+
+  /* ROTEIRO BLOCK */
+  .roteiro {
+    margin-bottom: 2.5rem;
+    page-break-inside: avoid;
+  }
+  .roteiro-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent); color: #FFF;
+    font-size: .85rem; font-weight: 700;
+    margin-right: .5rem;
+  }
+  .roteiro-header {
+    display: flex; align-items: center;
+    margin-bottom: .75rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--accent-light);
+  }
+  .roteiro-title {
+    font-size: 1.1rem; font-weight: 700; color: var(--text);
+  }
+  .roteiro-angle {
+    font-size: .78rem; color: var(--accent); font-weight: 600;
+    text-transform: uppercase; letter-spacing: .04em;
+    margin-top: .1rem;
+  }
+
+  /* META TAGS */
+  .tag-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag {
+    display: inline-block; font-size: .68rem; font-weight: 600;
+    padding: .2rem .6rem; border-radius: 3px;
+  }
+  .tag-orange { background: var(--accent-light); color: var(--accent); }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+  .tag-green { background: var(--success-light); color: var(--success); }
+
+  /* SCENE */
+  .scene-box {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1rem;
+  }
+  .scene-label {
+    font-weight: 700; color: var(--blue);
+    font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .05em; margin-bottom: .3rem;
+  }
+  .scene-box p { font-size: .88rem; margin-bottom: .3rem; }
+  .scene-box p:last-child { margin-bottom: 0; }
+
+  /* SCRIPT */
+  .script-box {
+    background: #FAFAFA;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .script-label {
+    font-weight: 700; color: var(--accent);
+    font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .05em; margin-bottom: .6rem;
+  }
+  .script-box p {
+    font-size: 1.05rem; line-height: 2;
+    margin-bottom: .6rem;
+  }
+  .script-box p:last-child { margin-bottom: 0; }
+  .script-box .gancho {
+    font-weight: 700; color: var(--accent);
+    font-size: 1.1rem;
+  }
+  .script-box .cta {
+    font-weight: 700; color: var(--success);
+  }
+
+  /* TIMING */
+  .timing-box {
+    background: var(--success-light);
+    border-left: 3px solid var(--success);
+    padding: .8rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1rem;
+  }
+  .timing-label {
+    font-weight: 700; color: var(--success);
+    font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .05em; margin-bottom: .3rem;
+  }
+  .timing-box p { font-size: .85rem; }
+
+  /* TIPS */
+  .tips-box {
+    background: var(--warn-light);
+    border-left: 3px solid var(--warn);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1rem;
+  }
+  .tips-label {
+    font-weight: 700; color: var(--warn);
+    font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .05em; margin-bottom: .5rem;
+  }
+  .tips-box ul { list-style: none; padding: 0; }
+  .tips-box li {
+    font-size: .85rem; padding: .3rem 0 .3rem 1.2rem;
+    position: relative;
+  }
+  .tips-box li::before {
+    content: ""; position: absolute; left: 0; top: .55rem;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--warn);
+  }
+
+  /* SEPARATOR */
+  .separator {
+    border: none; border-top: 2px dashed var(--border);
+    margin: 2rem 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 2.5rem; padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: .72rem; color: var(--muted);
+    text-align: center;
+  }
+
+  /* DICAS GERAIS */
+  h2 {
+    font-size: 1rem; font-weight: 700; color: var(--accent);
+    margin: 1.5rem 0 .75rem;
+    padding-bottom: .3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  @media print {
+    body { padding: 0; }
+    .roteiro, .script-box, .scene-box, .tips-box, .timing-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span class="header-badge">Criativos para Meta Ads</span>
+  <h1>Roteiros de Vídeo — Samuel</h1>
+  <p class="subtitle">Auto Escola Liderança · Campanha de WhatsApp</p>
+  <div class="meta-row">
+    <span class="meta-item"><strong>Porta-voz:</strong> Samuel Ribeiro</span>
+    <span class="meta-item"><strong>Formato:</strong> Vertical 9:16</span>
+    <span class="meta-item"><strong>Objetivo:</strong> Mensagens (WhatsApp)</span>
+    <span class="meta-item"><strong>Data:</strong> Outubro 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROTEIRO 1 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="roteiro">
+  <div class="roteiro-header">
+    <span class="roteiro-num">1</span>
+    <div>
+      <div class="roteiro-title">O segredo de quem passa de primeira</div>
+      <div class="roteiro-angle">Prova social + Curiosidade</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag tag-orange">15–20 seg</span>
+    <span class="tag tag-blue">Topo de funil</span>
+    <span class="tag tag-green">Cat. A, B, AB</span>
+  </div>
+
+  <div class="scene-box">
+    <p class="scene-label">Cenário</p>
+    <p><strong>Onde:</strong> De pé no pátio da autoescola, com um dos veículos atrás.</p>
+    <p><strong>Enquadramento:</strong> Da cintura pra cima, celular na vertical.</p>
+    <p><strong>Tom:</strong> Conversa entre amigos. Olhar direto na câmera, sorriso natural.</p>
+  </div>
+
+  <div class="script-box">
+    <p class="script-label">Fala do Samuel</p>
+    <p class="gancho">"Quer saber o segredo de quem passa no exame de primeira?"</p>
+    <p>"Não é sorte. É ter alguém que acompanha você do começo ao fim."</p>
+    <p>"Aqui na Liderança, mais de 500 alunos já saíram com a chave na mão."</p>
+    <p class="cta">"Manda um 'oi' no WhatsApp que eu te explico tudo."</p>
+  </div>
+
+  <div class="timing-box">
+    <p class="timing-label">Marcação de tempo</p>
+    <p><strong>0–3s:</strong> Gancho (frase de abertura olhando na câmera) · <strong>3–12s:</strong> Desenvolvimento (tom calmo, confiante) · <strong>12–18s:</strong> CTA (apontar pra baixo ou pro link)</p>
+  </div>
+
+  <div class="tips-box">
+    <p class="tips-label">Dicas de gravação</p>
+    <ul>
+      <li>Os primeiros 3 segundos decidem se a pessoa para pra assistir — falar com energia</li>
+      <li>Pode se apoiar no veículo ou andar em direção à câmera enquanto fala</li>
+      <li>Se travar, respira e recomeça — grava 3 ou 4 vezes e manda a melhor</li>
+      <li>Luz natural (manhã ou fim de tarde) — evitar sol direto no rosto</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="separator" style="page-break-after: always;">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROTEIRO 2 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="roteiro">
+  <div class="roteiro-header">
+    <span class="roteiro-num">2</span>
+    <div>
+      <div class="roteiro-title">Categoria E — sua carteira vale mais</div>
+      <div class="roteiro-angle">Retorno financeiro + Escassez regional</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag tag-orange">20–25 seg</span>
+    <span class="tag tag-blue">Meio de funil</span>
+    <span class="tag tag-green">Cat. D e E</span>
+  </div>
+
+  <div class="scene-box">
+    <p class="scene-label">Cenário</p>
+    <p><strong>Onde:</strong> Ao lado do veículo de categoria D ou E (se disponível). Senão, no pátio com a fachada ao fundo.</p>
+    <p><strong>Enquadramento:</strong> Da cintura pra cima. Se possível, abrir o plano no início mostrando o veículo e depois fechar no Samuel.</p>
+    <p><strong>Tom:</strong> Direto, profissional. Falar com quem já tem CNH B e quer crescer.</p>
+  </div>
+
+  <div class="script-box">
+    <p class="script-label">Fala do Samuel</p>
+    <p class="gancho">"Você já tem CNH B? Então escuta isso."</p>
+    <p>"Quem tem categoria D ou E ganha até o dobro do salário no mercado de transporte."</p>
+    <p>"E agora a Liderança é uma das únicas da região que oferece categoria E — carreta."</p>
+    <p>"As vagas são limitadas porque o veículo é um só."</p>
+    <p class="cta">"Chama no WhatsApp e garante sua vaga na próxima turma."</p>
+  </div>
+
+  <div class="timing-box">
+    <p class="timing-label">Marcação de tempo</p>
+    <p><strong>0–3s:</strong> Gancho direto (filtrar quem já tem CNH) · <strong>3–15s:</strong> Argumento financeiro + escassez · <strong>15–22s:</strong> CTA com urgência</p>
+  </div>
+
+  <div class="tips-box">
+    <p class="tips-label">Dicas de gravação</p>
+    <ul>
+      <li>O gancho "Você já tem CNH B?" funciona como filtro — só para quem é público ideal</li>
+      <li>Se tiver o caminhão/carreta por perto, mostrar. A imagem do veículo grande chama atenção</li>
+      <li>Tom mais sério que o roteiro 1 — aqui é profissional falando com profissional</li>
+      <li>Pode gesticular contando nos dedos os benefícios</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- DICAS GERAIS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<h2>Regras gerais para os dois vídeos</h2>
+
+<div class="tips-box" style="border-left-color: var(--accent);">
+  <ul>
+    <li><strong>Nunca decorar</strong> — ler o roteiro, entender a ideia e falar com as próprias palavras</li>
+    <li><strong>Olhar na câmera</strong> — como se estivesse falando com um amigo</li>
+    <li><strong>Gravar sempre na vertical</strong> (celular em pé, 9:16)</li>
+    <li><strong>Sem trilha sonora durante a gravação</strong> — a edição coloca depois</li>
+    <li><strong>Mandar 2 a 3 versões</strong> de cada roteiro — a gente escolhe a melhor</li>
+    <li><strong>Duração máxima: 25 segundos</strong> — quanto mais curto, melhor o resultado no tráfego</li>
+    <li><strong>Prazo:</strong> gravar e enviar no grupo até <strong>sexta-feira 03/10</strong></li>
+  </ul>
+</div>
+
+<div class="footer">
+  ADS Company · Auto Escola Liderança · Roteiros para Meta Ads · Outubro 2026
+</div>
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Instagram BM &mdash; Auto Escola Lideran&ccedil;a | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja2: #FF7A33;
+    --laranja3: rgba(255,92,0,0.12);
+    --preto: #060606;
+    --bg2: #0A0A0A;
+    --card: #111111;
+    --card2: #0C0C0C;
+    --border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --texto: #A0A0A0;
+    --texto2: #666;
+    --verde: #22C55E;
+    --verde-bg: rgba(34,197,94,0.08);
+    --amarelo: #EAB308;
+    --amarelo-bg: rgba(234,179,8,0.08);
+    --vermelho: #EF4444;
+    --vermelho-bg: rgba(239,68,68,0.08);
+    --azul: #3B8BFF;
+    --azul-bg: rgba(59,139,255,0.08);
+    --roxo: #A855F7;
+    --roxo-bg: rgba(168,85,247,0.08);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto);
+    color: var(--branco);
+    font-family: var(--sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  .nav-bar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(6,6,6,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .btn-voltar {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: transparent; border: 1px solid rgba(255,255,255,0.12);
+    color: var(--branco); font-family: var(--sans); font-size: 13px;
+    font-weight: 500; padding: 6px 14px; border-radius: 6px;
+    cursor: pointer; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-voltar:hover { border-color: var(--laranja); color: var(--laranja); }
+  .nav-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laranja); }
+
+  /* HERO */
+  .hero {
+    padding: 60px 32px 48px; text-align: center;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,92,0,0.05) 0%, transparent 70%),
+                linear-gradient(180deg, #040404, var(--preto));
+  }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 16px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.15; margin-bottom: 8px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-sub { font-size: 14px; color: var(--texto); }
+  .hero-status { display: inline-block; margin-top: 16px; font-size: .7rem; font-weight: 700; padding: 4px 14px; border-radius: 14px; background: var(--verde-bg); color: var(--verde); border: 1px solid rgba(34,197,94,0.2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* SECTIONS */
+  .section { max-width: 880px; margin: 0 auto; padding: 48px 32px; }
+  .section + .section { border-top: 1px solid var(--border); }
+  .section-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); font-weight: 700; margin-bottom: 12px; }
+  .section h2 { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.7rem); margin-bottom: 20px; line-height: 1.2; }
+  .section h2 em { font-style: italic; color: var(--laranja); }
+
+  /* SCORE CARDS */
+  .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .score-card { background: var(--card); border: 1px solid var(--border); padding: 20px 16px; text-align: center; }
+  .score-num { font-size: 2rem; font-weight: 800; margin-bottom: 4px; }
+  .score-num.red { color: var(--vermelho); }
+  .score-num.yellow { color: var(--amarelo); }
+  .score-num.green { color: var(--verde); }
+  .score-label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--texto); }
+
+  /* DIAGNOSTIC CARDS */
+  .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  @media (max-width: 640px) { .diag-grid { grid-template-columns: 1fr; } }
+  .diag-card { padding: 20px; border-left: 3px solid; }
+  .diag-card.bad { background: var(--vermelho-bg); border-color: var(--vermelho); }
+  .diag-card.warn { background: var(--amarelo-bg); border-color: var(--amarelo); }
+  .diag-card.good { background: var(--verde-bg); border-color: var(--verde); }
+  .diag-card.info { background: var(--azul-bg); border-color: var(--azul); }
+  .diag-tag { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .diag-card.bad .diag-tag { color: var(--vermelho); }
+  .diag-card.warn .diag-tag { color: var(--amarelo); }
+  .diag-card.good .diag-tag { color: var(--verde); }
+  .diag-card.info .diag-tag { color: var(--azul); }
+  .diag-card p { font-size: .85rem; color: var(--texto); line-height: 1.6; }
+  .diag-card strong { color: var(--branco); }
+
+  /* BIO BOX */
+  .bio-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+  @media (max-width: 640px) { .bio-compare { grid-template-columns: 1fr; } }
+  .bio-box { padding: 24px; border: 1px solid var(--border); }
+  .bio-box.current { background: var(--vermelho-bg); border-color: rgba(239,68,68,0.2); }
+  .bio-box.proposed { background: var(--verde-bg); border-color: rgba(34,197,94,0.2); }
+  .bio-box-tag { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+  .bio-box.current .bio-box-tag { color: var(--vermelho); }
+  .bio-box.proposed .bio-box-tag { color: var(--verde); }
+  .bio-name { font-weight: 700; font-size: .95rem; margin-bottom: 2px; }
+  .bio-cat { font-size: .78rem; color: var(--texto); margin-bottom: 10px; }
+  .bio-text { font-size: .88rem; line-height: 1.6; white-space: pre-line; color: var(--branco); }
+  .bio-link { margin-top: 8px; font-size: .82rem; color: var(--azul); font-weight: 500; }
+
+  /* HIGHLIGHTS */
+  .hl-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
+  .hl-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .hl-circle { width: 60px; height: 60px; border-radius: 50%; border: 2px solid rgba(255,92,0,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; background: var(--laranja3); }
+  .hl-label { font-size: .65rem; font-weight: 600; text-align: center; max-width: 68px; line-height: 1.2; color: var(--texto); }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .82rem; }
+  th, td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--laranja); font-weight: 600; font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; background: var(--laranja3); }
+  td { color: var(--texto); }
+  td strong { color: var(--branco); }
+
+  /* CHECKLIST */
+  .check-item { display: flex; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .check-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .check-icon.urgent { background: var(--vermelho-bg); color: var(--vermelho); border: 1px solid rgba(239,68,68,0.3); }
+  .check-icon.important { background: var(--amarelo-bg); color: var(--amarelo); border: 1px solid rgba(234,179,8,0.3); }
+  .check-icon.normal { background: var(--azul-bg); color: var(--azul); border: 1px solid rgba(59,139,255,0.3); }
+  .check-text { flex: 1; }
+  .check-title { font-size: .88rem; font-weight: 600; color: var(--branco); margin-bottom: 2px; }
+  .check-desc { font-size: .78rem; color: var(--texto); line-height: 1.5; }
+  .check-who { font-size: .68rem; font-weight: 600; color: var(--roxo); margin-top: 4px; }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); font-size: .72rem; color: rgba(255,255,255,0.3); }
+
+  @media (max-width: 600px) {
+    .nav-bar { padding: 12px 16px; }
+    .hero { padding: 40px 20px 32px; }
+    .section { padding: 32px 16px; }
+    .score-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <a href="review-instagram-bios.html" class="btn-voltar">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Voltar
+  </a>
+  <span class="nav-badge">Bras&iacute;lia de Minas</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Review Completo</div>
+  <h1>@autoescolalideranca.<em>bm</em></h1>
+  <p class="hero-sub">Bras&iacute;lia de Minas &mdash; MG &middot; 22 posts &middot; 883 seguidores</p>
+  <span class="hero-status">Perfil ativo</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 1: NOTA GERAL -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section">
+  <div class="section-label">01 &mdash; Nota Geral</div>
+  <h2>Diagn&oacute;stico <em>R&aacute;pido</em></h2>
+
+  <div class="score-grid">
+    <div class="score-card">
+      <div class="score-num red">3</div>
+      <div class="score-label">Bio</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num yellow">4</div>
+      <div class="score-label">Destaques</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num red">3</div>
+      <div class="score-label">Feed</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num yellow">5</div>
+      <div class="score-label">Identidade</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num red">2</div>
+      <div class="score-label">Estrat&eacute;gia</div>
+    </div>
+  </div>
+
+  <div class="diag-grid">
+    <div class="diag-card good">
+      <div class="diag-tag">O que funciona</div>
+      <p>Posts de aprovados geram <strong>prova social aut&ecirc;ntica</strong>. A presen&ccedil;a de instrutores (Caio, Vin&iacute;cius, Franciele, Samuel, Norma) humaniza o perfil. H&aacute; consist&ecirc;ncia na paleta amarela/preta.</p>
+    </div>
+    <div class="diag-card bad">
+      <div class="diag-tag">O que prejudica</div>
+      <p><strong>90% do conte&uacute;do &eacute; &ldquo;Habilitei!!&rdquo;</strong> &mdash; funciona como vitrine para quem j&aacute; &eacute; aluno, mas n&atilde;o atrai leads novos. Bio gen&eacute;rica sem CTA. Nenhum Reel do porta-voz. Zero conte&uacute;do de topo de funil.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 2: BIO -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section">
+  <div class="section-label">02 &mdash; Bio</div>
+  <h2>Antes e <em>Depois</em></h2>
+
+  <div class="bio-compare">
+    <div class="bio-box current">
+      <div class="bio-box-tag">Bio Atual</div>
+      <div class="bio-name">Auto Escola Lideran&ccedil;a BM | CNH do Brasil</div>
+      <div class="bio-cat">Autoescola</div>
+      <div class="bio-text">Perfil Oficial > @autoescolalideranca.cj
+&bull; Categorias: &rarr;A | AB | B
+&#x1F171;&#xFE0F; - Renova&ccedil;&atilde;o | Atualiza&ccedil;&atilde;o | Reciclagem
+Fa&ccedil;a...</div>
+      <div class="bio-link">linktr.ee/autoescolaliderancamg</div>
+    </div>
+
+    <div class="bio-box proposed">
+      <div class="bio-box-tag">Bio Proposta</div>
+      <div class="bio-name">Auto Escola Lideran&ccedil;a &mdash; Bras&iacute;lia de Minas</div>
+      <div class="bio-cat">Autoescola &middot; Bras&iacute;lia de Minas-MG</div>
+      <div class="bio-text">Do primeiro contato at&eacute; a chave na m&atilde;o.
+Cat. A &middot; B &middot; AB &middot; D &middot; E (nova!)
+Centenas de alunos aprovados na regi&atilde;o.
+Chama no WhatsApp e come&ccedil;a essa semana:</div>
+      <div class="bio-link">wa.me/553898688520</div>
+    </div>
+  </div>
+
+  <div class="diag-grid">
+    <div class="diag-card bad">
+      <div class="diag-tag">Problemas da bio atual</div>
+      <p><strong>Sem proposta de valor</strong> &mdash; n&atilde;o diz por que escolher a Lideran&ccedil;a. <strong>Sem CTA</strong> &mdash; n&atilde;o diz ao visitante o que fazer. <strong>Redireciona para o CJ</strong> (que est&aacute; restrito). Linktree adiciona um passo desnecess&aacute;rio antes do WhatsApp. N&atilde;o menciona Cat. D/E.</p>
+    </div>
+    <div class="diag-card good">
+      <div class="diag-tag">Por que a nova bio funciona</div>
+      <p><strong>Linha 1:</strong> Big Idea &mdash; proposta de valor clara. <strong>Linha 2:</strong> Todas as categorias (inclusive a novidade Cat. E). <strong>Linha 3:</strong> Prova social. <strong>Linha 4:</strong> CTA direto. <strong>Link:</strong> WhatsApp sem intermedi&aacute;rios.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 3: DESTAQUES -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section">
+  <div class="section-label">03 &mdash; Destaques</div>
+  <h2>Stories <em>Highlights</em></h2>
+
+  <div class="diag-card warn" style="margin-bottom: 20px;">
+    <div class="diag-tag">Destaques atuais</div>
+    <p>H&aacute; 5 destaques: <strong>CAT A, CAT B, CAT D, LOCALIZA&Ccedil;&Atilde;O, PARCERIA</strong>. Organizados por categoria (t&eacute;cnico demais). Faltam destaques estrat&eacute;gicos que respondam d&uacute;vidas do visitante. Sem destaque de pre&ccedil;os, depoimentos ou processo.</p>
+  </div>
+
+  <p style="font-size: .9rem; color: var(--texto); margin-bottom: 16px;">Destaques propostos &mdash; organizar pela <strong>jornada do visitante</strong>, n&atilde;o pela categoria:</p>
+
+  <div class="hl-row">
+    <div class="hl-item"><div class="hl-circle">&#x2753;</div><div class="hl-label">COMO FUNCIONA</div></div>
+    <div class="hl-item"><div class="hl-circle">&#x1F4B0;</div><div class="hl-label">PRE&Ccedil;OS</div></div>
+    <div class="hl-item"><div class="hl-circle">&#x2705;</div><div class="hl-label">APROVADOS</div></div>
+    <div class="hl-item"><div class="hl-circle">&#x1F5E3;</div><div class="hl-label">DEPOIMENTOS</div></div>
+    <div class="hl-item"><div class="hl-circle">&#x1F697;</div><div class="hl-label">ESTRUTURA</div></div>
+    <div class="hl-item"><div class="hl-circle">&#x1F4CD;</div><div class="hl-label">UNIDADES</div></div>
+    <div class="hl-item"><div class="hl-circle">&#x1F69B;</div><div class="hl-label">CAT. D/E</div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Destaque</th><th>Conte&uacute;do (3&ndash;5 stories)</th><th>Objetivo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>COMO FUNCIONA</strong></td><td>Passo a passo: matr&iacute;cula &rarr; te&oacute;rica &rarr; simulador &rarr; pr&aacute;tica &rarr; exame &rarr; CNH. Sem jarg&atilde;o.</td><td>Responder &agrave; d&uacute;vida n&ordm; 1</td></tr>
+      <tr><td><strong>PRE&Ccedil;OS</strong></td><td>Faixa por categoria. &ldquo;Manda um oi no WhatsApp que a gente monta o melhor plano.&rdquo;</td><td>Tirar ansiedade do pre&ccedil;o</td></tr>
+      <tr><td><strong>APROVADOS</strong></td><td>Compila&ccedil;&atilde;o dos melhores posts de aprovados. Contador de aprovados em 2026.</td><td>Prova social</td></tr>
+      <tr><td><strong>DEPOIMENTOS</strong></td><td>V&iacute;deos curtos de 15s de alunos. Prints de mensagens com autoriza&ccedil;&atilde;o.</td><td>Confian&ccedil;a</td></tr>
+      <tr><td><strong>ESTRUTURA</strong></td><td>Fotos dos ve&iacute;culos novos, fachada, sala de aula.</td><td>Profissionalismo</td></tr>
+      <tr><td><strong>UNIDADES</strong></td><td>Localiza&ccedil;&atilde;o BM + CJ, mapa, hor&aacute;rios, WhatsApp de cada.</td><td>Facilitar contato</td></tr>
+      <tr><td><strong>CAT. D/E</strong></td><td>O que &eacute;, para quem, pre&ccedil;o. &ldquo;Agora na regi&atilde;o.&rdquo; Foto do ve&iacute;culo.</td><td>Alto ticket</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 4: FEED -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section">
+  <div class="section-label">04 &mdash; Feed</div>
+  <h2>An&aacute;lise do <em>Conte&uacute;do</em></h2>
+
+  <table>
+    <thead><tr><th>Tipo de post</th><th>Qtd</th><th>%</th><th>Veredicto</th></tr></thead>
+    <tbody>
+      <tr><td>&ldquo;Habilitei!!&rdquo; (aprovados)</td><td>~16</td><td>73%</td><td style="color:var(--vermelho)"><strong>Excessivo</strong> &mdash; repele quem ainda n&atilde;o &eacute; aluno</td></tr>
+      <tr><td>Datas comemorativas</td><td>~3</td><td>14%</td><td style="color:var(--amarelo)">Ok, mas gen&eacute;rico</td></tr>
+      <tr><td>Educacional/dica</td><td>~2</td><td>9%</td><td style="color:var(--verde)"><strong>Bom</strong> &mdash; precisa de muito mais</td></tr>
+      <tr><td>Reels com porta-voz</td><td>0</td><td>0%</td><td style="color:var(--vermelho)"><strong>Cr&iacute;tico</strong> &mdash; zero presen&ccedil;a do porta-voz</td></tr>
+      <tr><td>Carross&eacute;is informativos</td><td>0</td><td>0%</td><td style="color:var(--vermelho)"><strong>Cr&iacute;tico</strong> &mdash; formato de maior alcance</td></tr>
+    </tbody>
+  </table>
+
+  <div class="diag-grid">
+    <div class="diag-card good">
+      <div class="diag-tag">Pontos positivos</div>
+      <p>J&aacute; tem <strong>identidade visual consistente</strong> (amarelo + preto). Posts mostram instrutores com nome &mdash; <strong>humaniza</strong>. Inaugura&ccedil;&atilde;o registrada. Possui conte&uacute;do educacional que pode ser expandido (tri&acirc;ngulo de emerg&ecirc;ncia, passo a passo CNH).</p>
+    </div>
+    <div class="diag-card bad">
+      <div class="diag-tag">Problemas cr&iacute;ticos</div>
+      <p><strong>Monotem&aacute;tico:</strong> quase tudo &eacute; &ldquo;Habilitei!!&rdquo;. Quem visita o perfil sem ser aluno v&ecirc; s&oacute; fotos de desconhecidos e n&atilde;o encontra motivo para chamar no WhatsApp. <strong>Sem Reels do porta-voz</strong> &mdash; o algoritmo prioriza v&iacute;deo. <strong>Sem carross&eacute;is</strong> &mdash; formato com maior alcance org&acirc;nico. <strong>Sem conte&uacute;do de topo de funil</strong> que responda d&uacute;vidas e atraia leads novos.</p>
+    </div>
+  </div>
+
+  <div class="diag-card info" style="margin-top: 16px;">
+    <div class="diag-tag">Mix de conte&uacute;do recomendado</div>
+    <p>Para cada 10 posts: <strong>3 Reels</strong> (porta-voz respondendo d&uacute;vidas) + <strong>2 carross&eacute;is</strong> (educacionais) + <strong>2 aprovados</strong> (manter, mas n&atilde;o dominar) + <strong>2 stories/bastidores</strong> + <strong>1 prova social</strong> (depoimento em v&iacute;deo ou print). Propor&ccedil;&atilde;o: 70% topo + 20% meio + 10% fundo de funil.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 5: IDENTIDADE VISUAL -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section">
+  <div class="section-label">05 &mdash; Identidade Visual</div>
+  <h2>Padroniza&ccedil;&atilde;o <em>Visual</em></h2>
+
+  <div class="diag-grid">
+    <div class="diag-card good">
+      <div class="diag-tag">O que j&aacute; existe</div>
+      <p>Paleta amarelo + preto <strong>est&aacute; presente</strong> em boa parte dos posts. Logo visivel na maioria. Template de &ldquo;Habilitei!!&rdquo; com padr&atilde;o reconhec&iacute;vel. Capas de destaque com &iacute;cones.</p>
+    </div>
+    <div class="diag-card warn">
+      <div class="diag-tag">O que precisa ajustar</div>
+      <p><strong>Foto de perfil:</strong> logo pequena e pouco leg&iacute;vel em miniatura. <strong>Capas de destaque:</strong> precisam seguir o mesmo estilo do perfil CJ (padronizar). <strong>Posts de aprovados:</strong> template bom, mas precisa incluir nome da unidade (BM) para diferenciar. <strong>Reels:</strong> quando come&ccedil;ar, capas padronizadas com t&iacute;tulo + cor da marca.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 6: CHECKLIST -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section">
+  <div class="section-label">06 &mdash; Plano de A&ccedil;&atilde;o</div>
+  <h2>Checklist de <em>Implementa&ccedil;&atilde;o</em></h2>
+
+  <div class="check-item">
+    <div class="check-icon urgent">1</div>
+    <div class="check-text">
+      <div class="check-title">Atualizar bio com o texto proposto</div>
+      <div class="check-desc">Copiar o texto da se&ccedil;&atilde;o 02, trocar link do Linktree pelo WhatsApp direto (wa.me/553898688520).</div>
+      <div class="check-who">Priscila ou Gabriel</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon urgent">2</div>
+    <div class="check-text">
+      <div class="check-title">Criar 3 destaques essenciais</div>
+      <div class="check-desc">COMO FUNCIONA, PRE&Ccedil;OS e APROVADOS &mdash; antes do in&iacute;cio das campanhas (05/10).</div>
+      <div class="check-who">Equipe BM (gravar stories) + Davidson (revis&atilde;o)</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon urgent">3</div>
+    <div class="check-text">
+      <div class="check-title">Publicar os 2 Reels do Gabriel</div>
+      <div class="check-desc">Roteiros j&aacute; entregues. Gravar e postar antes das campanhas come&ccedil;arem.</div>
+      <div class="check-who">Gabriel (grava&ccedil;&atilde;o) + Davidson (edi&ccedil;&atilde;o/postagem)</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon important">4</div>
+    <div class="check-text">
+      <div class="check-title">Atualizar foto de perfil</div>
+      <div class="check-desc">Logo da Lideran&ccedil;a em fundo s&oacute;lido (branco ou amarelo escuro), leg&iacute;vel em miniatura. Igual ao perfil CJ.</div>
+      <div class="check-who">Davidson</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon important">5</div>
+    <div class="check-text">
+      <div class="check-title">Remover redirecionamento para CJ na bio</div>
+      <div class="check-desc">O perfil CJ est&aacute; restrito &mdash; redirecionar visitantes para l&aacute; &eacute; perder tr&aacute;fego. Retirar &ldquo;Perfil Oficial > @autoescolalideranca.cj&rdquo;.</div>
+      <div class="check-who">Priscila ou Gabriel</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon normal">6</div>
+    <div class="check-text">
+      <div class="check-title">Criar destaques restantes (4)</div>
+      <div class="check-desc">DEPOIMENTOS, ESTRUTURA, UNIDADES e CAT. D/E &mdash; at&eacute; a segunda semana de outubro.</div>
+      <div class="check-who">Equipe BM + Davidson</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon normal">7</div>
+    <div class="check-text">
+      <div class="check-title">Reduzir frequ&ecirc;ncia de posts &ldquo;Habilitei!!&rdquo;</div>
+      <div class="check-desc">M&aacute;ximo 2 por semana. Completar com Reels, carross&eacute;is e conte&uacute;do educacional.</div>
+      <div class="check-who">Equipe BM (sele&ccedil;&atilde;o) + Davidson (calend&aacute;rio)</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  ADS Company &mdash; Auto Escola Lideran&ccedil;a &mdash; Review @autoescolalideranca.bm &mdash; Outubro 2026
+</div>
+
+</body>
+</html>
