@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estratégia de Tráfego — Outubro 2026 · Auto Escola Liderança</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg: #060606;
+    --surface: #111111;
+    --surface-2: #1A1A1A;
+    --border: #2A2A2A;
+    --text: #F5F5F5;
+    --muted: #999;
+    --laranja: #FF5C00;
+    --laranja-soft: rgba(255,92,0,.12);
+    --amarelo: #FFD700;
+    --amarelo-soft: rgba(255,215,0,.10);
+    --verde: #22C55E;
+    --verde-soft: rgba(34,197,94,.10);
+    --azul: #3B82F6;
+    --azul-soft: rgba(59,130,246,.10);
+    --vermelho: #EF4444;
+    --vermelho-soft: rgba(239,68,68,.10);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; }
+
+  .header {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+    margin-bottom: 2.5rem;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--laranja);
+    color: #FFF;
+    font-size: .65rem;
+    font-weight: 700;
+    padding: .25rem .75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 1rem;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: .5rem;
+  }
+  .header h1 span { color: var(--amarelo); }
+  .header .subtitle { color: var(--muted); font-size: .9rem; }
+  .header .meta-row {
+    display: flex; gap: 1.5rem; justify-content: center;
+    margin-top: 1.25rem; flex-wrap: wrap;
+  }
+  .header .meta-item {
+    font-size: .78rem; color: var(--muted);
+    padding: .4rem .8rem;
+    background: var(--surface-2);
+    border-radius: 6px;
+  }
+  .header .meta-item strong { color: var(--text); }
+
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--laranja); color: #FFF;
+    font-size: .75rem; font-weight: 700;
+    margin-right: .5rem;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700;
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center;
+  }
+
+  .campaign-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .campaign-card:last-child { margin-bottom: 0; }
+  .campaign-name {
+    font-size: 1.05rem; font-weight: 700;
+    margin-bottom: .75rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .campaign-tag {
+    display: inline-block;
+    font-size: .6rem; font-weight: 700;
+    padding: .2rem .5rem; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: .04em;
+  }
+  .tag-topo { background: var(--azul-soft); color: var(--azul); }
+  .tag-meio { background: var(--amarelo-soft); color: var(--amarelo); }
+  .tag-nicho { background: var(--verde-soft); color: var(--verde); }
+  .tag-rmk { background: var(--vermelho-soft); color: var(--vermelho); }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+  }
+  .detail-item {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: .75rem 1rem;
+  }
+  .detail-label {
+    font-size: .65rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+    color: var(--muted); margin-bottom: .25rem;
+  }
+  .detail-value { font-size: .88rem; font-weight: 600; }
+
+  .copy-block {
+    background: var(--bg);
+    border-left: 3px solid var(--amarelo);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: .75rem;
+  }
+  .copy-label {
+    font-size: .6rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+    color: var(--amarelo); margin-bottom: .5rem;
+  }
+  .copy-block p { font-size: .88rem; line-height: 1.8; margin-bottom: .5rem; }
+  .copy-block p:last-child { margin-bottom: 0; }
+  .copy-headline {
+    font-weight: 700; color: var(--laranja);
+    font-size: .8rem; margin-top: .75rem;
+  }
+
+  .timeline {
+    display: flex; flex-direction: column; gap: .75rem;
+    margin-top: .5rem;
+  }
+  .timeline-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  .timeline-date {
+    min-width: 90px;
+    font-size: .75rem; font-weight: 700;
+    color: var(--amarelo);
+  }
+  .timeline-desc { font-size: .85rem; }
+
+  .budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: .5rem;
+  }
+  .budget-table th, .budget-table td {
+    padding: .6rem .8rem;
+    text-align: left;
+    font-size: .82rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .budget-table th {
+    font-size: .65rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+    color: var(--muted);
+  }
+  .budget-table td:last-child { text-align: right; font-weight: 600; }
+  .budget-total td {
+    font-weight: 700; color: var(--amarelo);
+    border-top: 2px solid var(--amarelo);
+    border-bottom: none;
+  }
+
+  .creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: .75rem;
+  }
+  .creative-item {
+    background: var(--bg);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .creative-item img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+  }
+  .creative-info {
+    padding: .75rem 1rem;
+  }
+  .creative-info .name { font-size: .82rem; font-weight: 600; }
+  .creative-info .format { font-size: .7rem; color: var(--muted); }
+
+  .alert-box {
+    background: var(--laranja-soft);
+    border: 1px solid rgba(255,92,0,.3);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+  }
+  .alert-box p { font-size: .85rem; }
+  .alert-box strong { color: var(--laranja); }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    font-size: .85rem;
+    padding: .5rem 0 .5rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: ""; position: absolute; left: 0; top: .7rem;
+    width: 10px; height: 10px; border-radius: 3px;
+    border: 2px solid var(--amarelo);
+  }
+
+  .footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: .72rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.5rem; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .creative-grid { grid-template-columns: 1fr; }
+    body { padding: 1rem .75rem; }
+    .section { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <span class="header-badge">Tráfego Pago · Meta Ads</span>
+  <h1>Estratégia de Campanha — <span>Outubro 2026</span></h1>
+  <p class="subtitle">Auto Escola Liderança · Coração de Jesus e Brasília de Minas</p>
+  <div class="meta-row">
+    <span class="meta-item"><strong>Objetivo:</strong> Mensagens (WhatsApp)</span>
+    <span class="meta-item"><strong>Investimento:</strong> R$ 20-25/dia</span>
+    <span class="meta-item"><strong>Meta:</strong> 80 alunos/mês</span>
+    <span class="meta-item"><strong>Período:</strong> 06/10 — 31/10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SEÇÃO 01 — VISÃO GERAL -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section">
+  <h2><span class="section-num">1</span> Visão Geral</h2>
+  <p style="font-size:.9rem; color:var(--muted); margin-bottom:1rem;">
+    Três campanhas rodando em paralelo, cada uma com um papel claro no funil. A campanha principal (Primeira Habilitação) consome a maior parte do orçamento. Cat. D/E ataca um nicho de alta intenção. Remarketing pega quem já demonstrou interesse e empurra pro WhatsApp.
+  </p>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Campanha</th>
+        <th>Funil</th>
+        <th>Orçamento/dia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CP01 — Primeira Habilitação</td>
+        <td><span class="campaign-tag tag-topo">Topo</span></td>
+        <td>R$ 15,00</td>
+      </tr>
+      <tr>
+        <td>CP02 — Categoria D/E</td>
+        <td><span class="campaign-tag tag-nicho">Nicho</span></td>
+        <td>R$ 5,00</td>
+      </tr>
+      <tr>
+        <td>CP03 — Remarketing</td>
+        <td><span class="campaign-tag tag-rmk">Fundo</span></td>
+        <td>R$ 5,00</td>
+      </tr>
+      <tr class="budget-total">
+        <td>Total</td>
+        <td></td>
+        <td>R$ 25,00/dia</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:.75rem; color:var(--muted); margin-top:.5rem;">
+    Total estimado em outubro (25 dias): <strong style="color:var(--text);">R$ 625,00</strong>
+  </p>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SEÇÃO 02 — CP01 -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section">
+  <h2><span class="section-num">2</span> CP01 — Primeira Habilitação</h2>
+
+  <div class="campaign-card">
+    <div class="campaign-name">
+      Primeira habilitação sem complicação
+      <span class="campaign-tag tag-topo">Topo de funil</span>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="detail-label">Objetivo</div>
+        <div class="detail-value">Mensagens (WhatsApp)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Orçamento</div>
+        <div class="detail-value">R$ 15/dia (CBO)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Público</div>
+        <div class="detail-value">18–35 anos, H+M</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Região</div>
+        <div class="detail-value">Raio 40km de CJ + BM</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Categorias</div>
+        <div class="detail-value">A, B, AB</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Posicionamentos</div>
+        <div class="detail-value">Feed + Stories + Reels (automático)</div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.25rem;">
+      <p style="font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:.5rem;">Segmentação detalhada</p>
+      <ul class="checklist">
+        <li>Interesses: Autoescola, CNH, Habilitação, Carro próprio, Moto, DETRAN</li>
+        <li>Comportamento: Moradores da região (não visitantes)</li>
+        <li>Excluir: Quem já mandou mensagem nos últimos 30 dias</li>
+        <li>2 conjuntos: um para CJ (raio 25km) e um para BM (raio 25km)</li>
+      </ul>
+    </div>
+
+    <div class="copy-block">
+      <p class="copy-label">Copy A — Acolhimento</p>
+      <p>Tá pensando em tirar a habilitação e não sabe por onde começar?</p>
+      <p>Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.</p>
+      <p>Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p>
+      <p class="copy-headline">Título: Sua primeira habilitação começa aqui</p>
+      <p class="copy-headline">Descrição: Categorias A, B e AB · 2 unidades na região</p>
+    </div>
+
+    <div class="copy-block">
+      <p class="copy-label">Copy B — Prova social</p>
+      <p>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.</p>
+      <p>A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.</p>
+      <p>Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p>
+      <p class="copy-headline">Título: +500 aprovados · O próximo pode ser você</p>
+      <p class="copy-headline">Descrição: Auto Escola Liderança · Coração de Jesus e Brasília de Minas</p>
+    </div>
+
+    <div class="copy-block">
+      <p class="copy-label">Copy C — Urgência</p>
+      <p>Outubro já começou e as turmas estão formando.</p>
+      <p>Se você quer tirar a habilitação ainda este ano, o momento é agora. A gente te acompanha do primeiro contato até a CNH na mão.</p>
+      <p>Manda um "oi" e começa essa semana.</p>
+      <p class="copy-headline">Título: Vagas abertas em outubro</p>
+      <p class="copy-headline">Descrição: Comece esta semana · WhatsApp direto</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SEÇÃO 03 — CP02 -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section">
+  <h2><span class="section-num">3</span> CP02 — Categoria D/E (Caminhão)</h2>
+
+  <div class="campaign-card">
+    <div class="campaign-name">
+      Habilitação profissional
+      <span class="campaign-tag tag-nicho">Nicho</span>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="detail-label">Objetivo</div>
+        <div class="detail-value">Mensagens (WhatsApp)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Orçamento</div>
+        <div class="detail-value">R$ 5/dia (CBO)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Público</div>
+        <div class="detail-value">21–50 anos, 70% Masc.</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Região</div>
+        <div class="detail-value">Raio 60km (CJ + BM + região)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Categorias</div>
+        <div class="detail-value">D e E</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Interesses</div>
+        <div class="detail-value">Caminhão, Transporte, Motorista</div>
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <p class="copy-label">Copy A — Profissional</p>
+      <p>Precisa da habilitação de caminhão? A Liderança é referência em Cat. D e E na região.</p>
+      <p>Nosso veículo de aula tem ar-condicionado e é o mesmo modelo usado no exame. A gente facilita tudo: matrícula, aulas e exame — sem complicação.</p>
+      <p>Chama no WhatsApp e fala com a gente.</p>
+      <p class="copy-headline">Título: Habilitação Cat. D e E — Caminhão</p>
+      <p class="copy-headline">Descrição: Veículo com ar-condicionado · Prático e teórico</p>
+    </div>
+
+    <div class="copy-block">
+      <p class="copy-label">Copy B — Oportunidade</p>
+      <p>Quer trabalhar como motorista profissional? O primeiro passo é a habilitação certa.</p>
+      <p>A Liderança forma motoristas de caminhão (Cat. D e E) com veículo próprio, ar-condicionado e acompanhamento completo.</p>
+      <p>Manda "quero" no WhatsApp e saiba como começar.</p>
+      <p class="copy-headline">Título: Sua carreira começa com a CNH certa</p>
+      <p class="copy-headline">Descrição: Cat. D e E · Ford Cargo com ar-condicionado</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SEÇÃO 04 — CP03 -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section">
+  <h2><span class="section-num">4</span> CP03 — Remarketing</h2>
+
+  <div class="campaign-card">
+    <div class="campaign-name">
+      Empurrão final
+      <span class="campaign-tag tag-rmk">Fundo de funil</span>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="detail-label">Objetivo</div>
+        <div class="detail-value">Mensagens (WhatsApp)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Orçamento</div>
+        <div class="detail-value">R$ 5/dia (CBO)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Público</div>
+        <div class="detail-value">Engajaram com perfil 30d</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Ativar em</div>
+        <div class="detail-value">13/10 (após 7 dias de CP01)</div>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <p style="font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:.5rem;">Públicos personalizados</p>
+      <ul class="checklist">
+        <li>Quem interagiu com o Instagram nos últimos 30 dias</li>
+        <li>Quem visitou o perfil do Instagram nos últimos 30 dias</li>
+        <li>Quem iniciou conversa no WhatsApp mas não matriculou (lista manual)</li>
+      </ul>
+    </div>
+
+    <div class="copy-block">
+      <p class="copy-label">Copy A — Reengajamento</p>
+      <p>Você deu uma olhada, mas ainda não começou. Normal — a decisão é importante.</p>
+      <p>Mas sabia que a gente te acompanha em cada etapa? Matrícula, teórico, simulador, prática e exame.</p>
+      <p>Chama no WhatsApp e tira suas dúvidas sem compromisso.</p>
+      <p class="copy-headline">Título: A gente te acompanha do começo ao fim</p>
+      <p class="copy-headline">Descrição: Sem complicação · Chame no WhatsApp</p>
+    </div>
+
+    <div class="copy-block">
+      <p class="copy-label">Copy B — Prova social + urgência</p>
+      <p>Enquanto você pensa, nossos alunos estão passando no exame.</p>
+      <p>Mais de 500 aprovados na região. Do primeiro contato até a CNH na mão — a gente cuida de tudo.</p>
+      <p>Manda um "oi" e começa ainda essa semana.</p>
+      <p class="copy-headline">Título: +500 aprovados · O próximo pode ser você</p>
+      <p class="copy-headline">Descrição: Vagas abertas em outubro</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SEÇÃO 05 — CRIATIVOS -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section">
+  <h2><span class="section-num">5</span> Criativos — Outubro</h2>
+  <p style="font-size:.85rem; color:var(--muted); margin-bottom:1rem;">
+    6 criativos estáticos (feed 1080×1080) + 2 vídeos (aguardando gravação do Gabriel e Samuel). Cada campanha recebe pelo menos 2 criativos para teste A/B.
+  </p>
+
+  <div class="creative-grid">
+    <div class="creative-item">
+      <img src="outubro/ad-01-primeira-habilitacao.png" alt="Ad 01" onerror="this.style.background='var(--surface-2)';this.style.minHeight='250px'">
+      <div class="creative-info">
+        <div class="name">Primeira Habilitação — Porta-voz</div>
+        <div class="format">Feed 1080×1080 · CP01</div>
+      </div>
+    </div>
+    <div class="creative-item">
+      <img src="outubro/ad-02-aprovados.png" alt="Ad 02" onerror="this.style.background='var(--surface-2)';this.style.minHeight='250px'">
+      <div class="creative-info">
+        <div class="name">+500 Aprovados — Prova Social</div>
+        <div class="format">Feed 1080×1080 · CP01 / CP03</div>
+      </div>
+    </div>
+    <div class="creative-item">
+      <img src="outubro/ad-03-vagas-outubro.png" alt="Ad 03" onerror="this.style.background='var(--surface-2)';this.style.minHeight='250px'">
+      <div class="creative-info">
+        <div class="name">Vagas Abertas — Urgência</div>
+        <div class="format">Feed 1080×1080 · CP01</div>
+      </div>
+    </div>
+    <div class="creative-item">
+      <img src="outubro/ad-04-cat-de.png" alt="Ad 04" onerror="this.style.background='var(--surface-2)';this.style.minHeight='250px'">
+      <div class="creative-info">
+        <div class="name">Categoria D/E — Caminhão</div>
+        <div class="format">Feed 1080×1080 · CP02</div>
+      </div>
+    </div>
+    <div class="creative-item">
+      <img src="outubro/ad-05-moto-cat-a.png" alt="Ad 05" onerror="this.style.background='var(--surface-2)';this.style.minHeight='250px'">
+      <div class="creative-info">
+        <div class="name">Categoria A — Moto</div>
+        <div class="format">Feed 1080×1080 · CP01</div>
+      </div>
+    </div>
+    <div class="creative-item">
+      <img src="outubro/ad-06-duas-unidades.png" alt="Ad 06" onerror="this.style.background='var(--surface-2)';this.style.minHeight='250px'">
+      <div class="creative-info">
+        <div class="name">2 Unidades — Institucional</div>
+        <div class="format">Feed 1080×1080 · CP01 / CP03</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-box">
+    <p><strong>Vídeos pendentes:</strong> Roteiros entregues para Gabriel (BM) e Samuel (CJ). Assim que gravarem e enviarem, os vídeos entram como criativos na CP01 — formato que mais converte em autoescola.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SEÇÃO 06 — CRONOGRAMA -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section">
+  <h2><span class="section-num">6</span> Cronograma de Outubro</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">06–08/10</div>
+      <div class="timeline-desc">
+        <strong>Setup técnico:</strong> Subir criativos no Gerenciador, configurar campanhas CP01 e CP02, públicos, orçamentos e posicionamentos. Revisar pixel/dataset.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">09/10</div>
+      <div class="timeline-desc">
+        <strong>Motor ligado:</strong> CP01 e CP02 entram no ar. Monitoramento intensivo nas primeiras 48h.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">09–12/10</div>
+      <div class="timeline-desc">
+        <strong>Fase de aprendizado:</strong> NÃO mexer nas campanhas. Deixar o algoritmo otimizar. Apenas acompanhar métricas.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">13/10</div>
+      <div class="timeline-desc">
+        <strong>CP03 no ar:</strong> Ativar remarketing com público quente (engajaram com perfil nos primeiros 7 dias).
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">14–16/10</div>
+      <div class="timeline-desc">
+        <strong>Primeira leitura:</strong> Analisar CPM, CPC, CTR, custo por mensagem. Pausar criativos com CTR abaixo de 1%. Escalar os vencedores.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">17–20/10</div>
+      <div class="timeline-desc">
+        <strong>Teste A/B:</strong> Trocar copies nos conjuntos de menor performance. Adicionar vídeos (se Gabriel/Samuel já tiverem gravado).
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">21–25/10</div>
+      <div class="timeline-desc">
+        <strong>Otimização:</strong> Redistribuir orçamento para os conjuntos vencedores. Expandir raio se o custo por mensagem estiver saudável (&lt; R$ 3,00).
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">27–31/10</div>
+      <div class="timeline-desc">
+        <strong>Relatório mensal:</strong> Consolidar resultados, calcular custo por lead/aluno, preparar ajustes para novembro.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SEÇÃO 07 — MÉTRICAS -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section">
+  <h2><span class="section-num">7</span> Métricas e Metas</h2>
+
+  <div class="detail-grid">
+    <div class="detail-item">
+      <div class="detail-label">Custo por mensagem (meta)</div>
+      <div class="detail-value" style="color:var(--verde);">≤ R$ 3,00</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">CTR mínimo</div>
+      <div class="detail-value" style="color:var(--amarelo);">≥ 1,5%</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">Mensagens/mês (projeção)</div>
+      <div class="detail-value">200–300 conversas</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">Taxa de conversão (meta)</div>
+      <div class="detail-value" style="color:var(--verde);">25–35%</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">Matrículas estimadas</div>
+      <div class="detail-value" style="color:var(--amarelo);">50–80 alunos</div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">Custo por matrícula (meta)</div>
+      <div class="detail-value">≤ R$ 12,00</div>
+    </div>
+  </div>
+
+  <div class="alert-box" style="margin-top:1.25rem;">
+    <p><strong>Ponto crítico:</strong> O atendimento no WhatsApp é onde o lead vira aluno. Resposta rápida (&lt; 5 min), linguagem simples, sem termos técnicos. O playbook de atendimento já foi entregue — garantir que a equipe está seguindo.</p>
+  </div>
+</div>
+
+<div class="footer">
+  ADS Company · Auto Escola Liderança · Estratégia de Tráfego Pago · Outubro 2026
+</div>
+
+</div>
+</body>
+</html>

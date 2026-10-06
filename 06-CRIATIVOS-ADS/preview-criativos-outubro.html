@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview Criativos — Outubro 2026 · Auto Escola Liderança</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg: #060606;
+    --surface: #111111;
+    --surface-2: #1A1A1A;
+    --border: #2A2A2A;
+    --text: #F5F5F5;
+    --muted: #999;
+    --laranja: #FF5C00;
+    --amarelo: #FFD700;
+    --verde: #22C55E;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .header {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+    margin-bottom: 2rem;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--laranja);
+    color: #FFF;
+    font-size: .65rem;
+    font-weight: 700;
+    padding: .25rem .75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: .75rem;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: .35rem;
+  }
+  .header h1 span { color: var(--amarelo); }
+  .header .subtitle { color: var(--muted); font-size: .85rem; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .2s, border-color .2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--amarelo);
+  }
+
+  .card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    background: var(--surface-2);
+  }
+
+  .card-body { padding: 1.25rem; }
+
+  .card-campaign {
+    display: inline-block;
+    font-size: .6rem; font-weight: 700;
+    padding: .2rem .5rem; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: .04em;
+    margin-bottom: .5rem;
+  }
+  .cp01 { background: rgba(59,130,246,.12); color: #3B82F6; }
+  .cp02 { background: rgba(34,197,94,.12); color: #22C55E; }
+  .cp03 { background: rgba(239,68,68,.12); color: #EF4444; }
+
+  .card-title {
+    font-size: 1rem; font-weight: 700;
+    margin-bottom: .25rem;
+  }
+  .card-desc {
+    font-size: .78rem; color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--amarelo);
+    color: #000;
+    font-size: .78rem;
+    font-weight: 700;
+    padding: .5rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+  .btn-download:hover { opacity: .85; }
+  .btn-download svg { width: 14px; height: 14px; }
+
+  .fotos-section {
+    margin-top: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .fotos-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+  }
+  .fotos-section p { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
+
+  .fotos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: .75rem;
+  }
+  .foto-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    cursor: pointer;
+    transition: transform .2s;
+  }
+  .foto-thumb:hover { transform: scale(1.05); }
+  .foto-label {
+    font-size: .68rem; color: var(--muted);
+    text-align: center; margin-top: .25rem;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: .72rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .fotos-grid { grid-template-columns: repeat(2, 1fr); }
+    body { padding: 1rem .75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <span class="header-badge">Criativos para Meta Ads</span>
+  <h1>Preview — <span>Outubro 2026</span></h1>
+  <p class="subtitle">6 criativos estáticos (feed 1080×1080) + fotos reais para uso direto</p>
+</div>
+
+<div class="grid">
+
+  <!-- AD 01 -->
+  <div class="card">
+    <img class="card-img" src="outubro/ad-01-primeira-habilitacao.png" alt="Ad 01 — Primeira Habilitação">
+    <div class="card-body">
+      <span class="card-campaign cp01">CP01 — Primeira Habilitação</span>
+      <div class="card-title">Porta-voz + CTA WhatsApp</div>
+      <div class="card-desc">Instrutor ao lado do veículo de aula. Headline: "Sua primeira habilitação começa aqui"</div>
+      <a href="outubro/ad-01-primeira-habilitacao.png" download class="btn-download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download 1080×1080
+      </a>
+    </div>
+  </div>
+
+  <!-- AD 02 -->
+  <div class="card">
+    <img class="card-img" src="outubro/ad-02-aprovados.png" alt="Ad 02 — Aprovados">
+    <div class="card-body">
+      <span class="card-campaign cp01">CP01 / CP03</span>
+      <div class="card-title">+500 Aprovados — Prova Social</div>
+      <div class="card-desc">Grupo de aprovados celebrando. Headline: "+500 aprovados — O próximo pode ser você"</div>
+      <a href="outubro/ad-02-aprovados.png" download class="btn-download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download 1080×1080
+      </a>
+    </div>
+  </div>
+
+  <!-- AD 03 -->
+  <div class="card">
+    <img class="card-img" src="outubro/ad-03-vagas-outubro.png" alt="Ad 03 — Vagas Outubro">
+    <div class="card-body">
+      <span class="card-campaign cp01">CP01 — Urgência</span>
+      <div class="card-title">Vagas Abertas em Outubro</div>
+      <div class="card-desc">Design gráfico puro. Headline: "Vagas abertas em outubro — Comece ainda esta semana"</div>
+      <a href="outubro/ad-03-vagas-outubro.png" download class="btn-download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download 1080×1080
+      </a>
+    </div>
+  </div>
+
+  <!-- AD 04 -->
+  <div class="card">
+    <img class="card-img" src="outubro/ad-04-cat-de.png" alt="Ad 04 — Cat D/E">
+    <div class="card-body">
+      <span class="card-campaign cp02">CP02 — Categoria D/E</span>
+      <div class="card-title">Habilitação Cat. D e E — Caminhão</div>
+      <div class="card-desc">Ford Cargo com branding. Headline: "Habilitação Cat. D e E — Caminhão com ar-condicionado"</div>
+      <a href="outubro/ad-04-cat-de.png" download class="btn-download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download 1080×1080
+      </a>
+    </div>
+  </div>
+
+  <!-- AD 05 -->
+  <div class="card">
+    <img class="card-img" src="outubro/ad-05-moto-cat-a.png" alt="Ad 05 — Moto Cat A">
+    <div class="card-body">
+      <span class="card-campaign cp01">CP01 — Moto</span>
+      <div class="card-title">Categoria A — Habilitação de Moto</div>
+      <div class="card-desc">Yamaha Factor com logo. Headline: "Habilitação de moto — Aulas práticas completas"</div>
+      <a href="outubro/ad-05-moto-cat-a.png" download class="btn-download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download 1080×1080
+      </a>
+    </div>
+  </div>
+
+  <!-- AD 06 -->
+  <div class="card">
+    <img class="card-img" src="outubro/ad-06-duas-unidades.png" alt="Ad 06 — Duas Unidades">
+    <div class="card-body">
+      <span class="card-campaign cp01">CP01 / CP03 — Institucional</span>
+      <div class="card-title">2 Unidades pra Te Atender</div>
+      <div class="card-desc">Design institucional. Coração de Jesus + Brasília de Minas com pins de localização</div>
+      <a href="outubro/ad-06-duas-unidades.png" download class="btn-download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download 1080×1080
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOTOS REAIS -->
+<div class="fotos-section">
+  <h2>Fotos Reais — Uso Direto como Criativo</h2>
+  <p>Estas fotos podem ser enviadas diretamente no Gerenciador de Anúncios como criativos alternativos. O texto vai nos campos do anúncio (texto principal, título, descrição), não na imagem.</p>
+
+  <div class="fotos-grid">
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/porta-voz-bm-ao-lado-carro.jpg" alt="Gabriel BM">
+      <div class="foto-label">Gabriel — BM</div>
+    </div>
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/porta-voz-cj-ao-lado-carro.jpg" alt="Rafael CJ">
+      <div class="foto-label">Rafael — CJ</div>
+    </div>
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/carro-aula-bm-lateral.jpg" alt="Carro BM">
+      <div class="foto-label">Carro aula — BM</div>
+    </div>
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/fachada-brasilia-de-minas-01.jpg" alt="Fachada BM">
+      <div class="foto-label">Fachada — BM</div>
+    </div>
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/fachada-coracao-de-jesus-01.jpg" alt="Fachada CJ">
+      <div class="foto-label">Fachada — CJ</div>
+    </div>
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/post-aprovados-cat-b-grupo-5.jpeg" alt="Aprovados Cat B">
+      <div class="foto-label">Aprovados — Cat. B</div>
+    </div>
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/veiculo-categoria-d-frente.jpeg" alt="Caminhão">
+      <div class="foto-label">Caminhão — Cat. D</div>
+    </div>
+    <div>
+      <img class="foto-thumb" src="../04-MIDIAS/moto-aula-yamaha-factor-cj.jpeg" alt="Moto">
+      <div class="foto-label">Moto — Yamaha Factor</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  ADS Company · Auto Escola Liderança · Criativos Meta Ads · Outubro 2026
+</div>
+
+</div>
+</body>
+</html>
