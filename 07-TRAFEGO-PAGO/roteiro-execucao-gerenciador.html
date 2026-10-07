@@ -35,11 +35,12 @@ body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:15p
 .tip-green{border-left-color:var(--green);background:rgba(52,211,153,.04)}
 .tip-yellow{border-left-color:var(--yellow);background:rgba(251,191,36,.04)}
 .tip-red{border-left-color:var(--red);background:rgba(239,68,68,.04)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:20px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
-.card h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.card h3{font-size:13px;font-weight:700;margin-bottom:4px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
 .card p{font-size:13px;color:var(--dim)}
-.card .num{font-family:var(--serif);font-size:28px;color:var(--o);line-height:1;margin-bottom:8px}
+.card .num{font-family:var(--serif);font-size:30px;color:var(--txt);line-height:1.1;margin-bottom:4px}
+.card .num span{color:var(--o)}
 .level{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px}
 .level-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
 .level-head .step{width:34px;height:34px;border-radius:50%;background:rgba(255,92,0,.12);color:var(--o);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -49,7 +50,7 @@ body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:15p
 .kv .row{display:grid;grid-template-columns:220px 1fr;gap:12px;font-size:13px;padding:10px 14px;background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.12);border-radius:8px;align-items:start}
 .kv .row b{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
 .kv .row span{color:var(--txt)}
-.kv .row code{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--green);background:rgba(52,211,153,.06);padding:2px 6px;border-radius:4px}
+.kv .row code,code{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--green);background:rgba(52,211,153,.06);padding:2px 6px;border-radius:4px}
 @media(max-width:600px){.kv .row{grid-template-columns:1fr;gap:4px}}
 .badges{display:flex;gap:6px;flex-wrap:wrap}
 .badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:6px}
@@ -59,493 +60,317 @@ body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:15p
 .b-y{background:rgba(251,191,36,.12);color:var(--yellow)}
 .b-r{background:rgba(239,68,68,.12);color:var(--red)}
 .b-t{background:rgba(255,255,255,.05);color:var(--dim)}
-.ad{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-top:12px;display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:start}
-.ad img{width:100%;border-radius:8px;border:1px solid rgba(255,255,255,.08)}
-.ad h4{font-size:14px;font-weight:700;margin-bottom:6px}
-.ad .f{font-size:12px;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
-.ad p{font-size:13px;color:rgba(245,245,245,.85);white-space:pre-line}
-.ad .line{font-size:13px;color:rgba(245,245,245,.85)}
-.ad .line strong{color:var(--txt)}
+.copyblock{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-top:12px}
+.copyblock h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.copyblock .used{font-size:12px;color:var(--dim);margin-bottom:10px}
+.copyblock .used code{color:var(--yellow);background:rgba(251,191,36,.06)}
+.copyblock .f{font-size:11px;color:var(--o);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-top:10px}
+.copyblock p{font-size:13px;color:rgba(245,245,245,.85);white-space:pre-line}
+.copyblock .line{font-size:13px;color:rgba(245,245,245,.85)}
+.copyblock .line strong{color:var(--txt)}
 .copybtn{display:inline-block;margin-top:6px;font-size:11px;font-weight:600;color:var(--o);background:rgba(255,92,0,.08);border:1px solid rgba(255,92,0,.25);border-radius:6px;padding:4px 10px;cursor:pointer;font-family:var(--sans)}
 .copybtn:hover{background:rgba(255,92,0,.16)}
 .copybtn.done{color:var(--green);border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.08)}
-@media(max-width:600px){.ad{grid-template-columns:1fr}.ad img{max-width:160px}}
+.tbl-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--border);margin-top:14px}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+thead th{text-align:left;padding:12px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--o);background:var(--card2);border-bottom:1px solid var(--border)}
+tbody td{padding:11px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr.on td{background:rgba(52,211,153,.05)}
+tbody td img{width:56px;height:56px;border-radius:6px;object-fit:cover;border:1px solid rgba(255,255,255,.08);display:block}
+.st{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:6px;white-space:nowrap}
+.st-on{background:rgba(52,211,153,.15);color:var(--green)}
+.st-off{background:rgba(255,255,255,.05);color:var(--dim)}
 .check{list-style:none;display:grid;gap:8px}
 .check li{display:flex;gap:12px;align-items:flex-start;font-size:14px;padding:12px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px}
 .check li input{margin-top:5px;accent-color:var(--green);flex-shrink:0}
 .check li label{cursor:pointer}
-.tbl-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--border);margin-top:14px}
-table{width:100%;border-collapse:collapse;background:var(--card)}
-thead th{text-align:left;padding:12px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--o);background:var(--card2);border-bottom:1px solid var(--border)}
-tbody td{padding:11px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:top}
-tbody tr:last-child td{border-bottom:none}
-tbody td code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--green)}
 @media(max-width:768px){.hero{padding:80px 20px 40px}.container{padding:0 16px 60px}}
 </style>
 </head>
 <body>
 
 <nav class="top-nav">
-  <a href="#antes" class="active">Antes de começar</a>
-  <a href="#cp01">CP01 Primeira Habilitação</a>
-  <a href="#cp02">CP02 Cat. D/E</a>
-  <a href="#cp03">CP03 Remarketing</a>
-  <a href="#mapa">Mapa dos anúncios</a>
-  <a href="#final">Checklist final</a>
+  <a href="#estrutura" class="active">Estrutura</a>
+  <a href="#antes">Antes de começar</a>
+  <a href="#campanha">Campanha</a>
+  <a href="#conjuntos">Conjuntos</a>
+  <a href="#anuncios">Anúncios</a>
+  <a href="#copies">Copies</a>
+  <a href="#fase2">Fase 2</a>
+  <a href="#final">Checklist</a>
 </nav>
 <a href="../01-ONBOARDING/index.html" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Central</a>
 
 <section class="hero">
-  <div class="hero-badge">Tráfego pago — Execução manual</div>
-  <h1>Roteiro de execução no <span>Gerenciador</span></h1>
-  <p>Campo a campo, na ordem em que o Gerenciador de Anúncios pede. Cada campanha, conjunto e anúncio já vem com nome, orçamento, público, criativo e copy definidos. É copiar, colar e publicar.</p>
+  <div class="hero-badge">Tráfego pago — Execução no Gerenciador</div>
+  <h1>Uma campanha, <span>duas cidades</span></h1>
+  <p>Estrutura final de outubro: R$ 30/dia em uma única campanha, dois conjuntos (um por cidade), público aberto, 4 anúncios ativos por conjunto e reserva pronta para a rotação do dia 15. Campo a campo, na ordem em que o Gerenciador pede.</p>
   <div class="hero-meta">
     <span><strong>Conta:</strong> CONTA 01 - CFC LIDERANÇA</span>
-    <span><strong>Campanhas:</strong> 3</span>
-    <span><strong>Conjuntos:</strong> 5</span>
-    <span><strong>Anúncios:</strong> 19</span>
-    <span><strong>Investimento:</strong> R$ 25/dia</span>
+    <span><strong>Campanha:</strong> 1</span>
+    <span><strong>Conjuntos:</strong> 2</span>
+    <span><strong>Anúncios:</strong> 22 criados · 8 ativos</span>
+    <span><strong>Investimento:</strong> R$ 30/dia</span>
   </div>
 </section>
 
 <div class="container">
 
+<!-- ESTRUTURA -->
+<section class="section" id="estrutura">
+  <div class="section-label">Decisão de estrutura</div>
+  <h2>Por que <span>não fragmentar</span></h2>
+  <div class="cards">
+    <div class="card"><div class="num">R$ <span>30</span>/dia</div><h3>Orçamento</h3><p>No nível da campanha. O Gerenciador move a verba para a cidade que converte mais barato.</p></div>
+    <div class="card"><div class="num"><span>2</span> conjuntos</div><h3>Um por cidade</h3><p>Única divisão mantida — o número de WhatsApp é definido no conjunto, e cada unidade tem o seu.</p></div>
+    <div class="card"><div class="num"><span>18</span>–55</div><h3>Público aberto</h3><p>Em cidade pequena a localização já segmenta. Interesses só encolhem um público que já é curto.</p></div>
+    <div class="card"><div class="num"><span>4</span> ativos</div><h3>Por conjunto</h3><p>Rosto real, urgência, prova social e caminhão. Quatro ângulos, zero redundância.</p></div>
+  </div>
+  <div class="tip"><strong>A regra que define tudo:</strong> cada conjunto precisa de cerca de 50 conversas por semana para sair da fase de aprendizado. Com R$ 30/dia a conta inteira gera de 3 a 6 conversas por dia. Dividir isso em 5 conjuntos (plano anterior) deixaria cada um com 1 conversa/dia — nenhum aprenderia. Com 2 conjuntos e público aberto, cada um recebe sinal suficiente.</div>
+  <div class="tip tip-yellow"><strong>Categoria D/E entra como anúncio, não como campanha.</strong> O criativo do caminhão roda no mesmo conjunto dos demais. Quem quer caminhão para nele; o algoritmo aprende por anúncio quem converte. É esperado que ele receba de 10 a 20% da verba — não 25%. Se ficar zerado por 7 dias, vai para teste isolado na Fase 2.</div>
+</section>
+
 <!-- ANTES DE COMEÇAR -->
 <section class="section" id="antes">
   <div class="section-label">Etapa 0</div>
   <h2>Antes de <span>começar</span></h2>
-  <p class="section-desc">Cinco verificações que evitam retrabalho. Faça todas antes de criar a primeira campanha.</p>
-
   <div class="level">
     <div class="kv">
-      <div class="row"><b>Conta de anúncios</b><span>CONTA 01 - CFC LIDERANÇA · ID <code>1114773581250921</code> · Portfólio •Prii</span></div>
-      <div class="row"><b>Página do Facebook</b><span>Página da Auto Escola Liderança (a que está vinculada ao Instagram de Brasília de Minas)</span></div>
-      <div class="row"><b>Instagram</b><span>Perfil de <strong>Brasília de Minas</strong>. O perfil de Coração de Jesus está restrito — não usar até liberar.</span></div>
-      <div class="row"><b>WhatsApp vinculado</b><span>Os dois números precisam estar vinculados à Página: <code>(38) 9 9868-8520</code> BM e <code>(38) 9 9920-5651</code> CJ. Caminho: Página → Configurações → WhatsApp.</span></div>
-      <div class="row"><b>Biblioteca de mídia</b><span>12 imagens 1080×1080 já carregadas (ad-01 a ad-12). Confirmar que os nomes dos arquivos foram preservados para localizar na hora de montar os anúncios.</span></div>
+      <div class="row"><b>Conta de anúncios</b><span>CONTA 01 - CFC LIDERANÇA · ID <code>1114773581250921</code></span></div>
+      <div class="row"><b>Página do Facebook</b><span>Auto Escola Liderança (vinculada ao Instagram de Brasília de Minas)</span></div>
+      <div class="row"><b>Instagram</b><span>Perfil de <strong>Brasília de Minas</strong> em todos os anúncios. O de Coração de Jesus está restrito — não usar até liberar.</span></div>
+      <div class="row"><b>WhatsApp vinculado</b><span>Os dois números na Página: <code>(38) 9 9868-8520</code> BM e <code>(38) 9 9920-5651</code> CJ. Caminho: Página → Configurações → WhatsApp.</span></div>
+      <div class="row"><b>Biblioteca de mídia</b><span>12 imagens 1080×1080 carregadas (ad-01 a ad-12), nomes dos arquivos preservados.</span></div>
     </div>
   </div>
-
-  <div class="tip tip-yellow"><strong>Se a Página tiver só um número de WhatsApp vinculado:</strong> os anúncios de Coração de Jesus vão cair no número de Brasília de Minas. Funciona, mas a equipe de BM precisa redirecionar o lead. Vincular o segundo número antes de publicar resolve isso.</div>
-
-  <div class="tip"><strong>Padrão de nomes</strong> (facilita leitura dos relatórios depois):<br>
-  Campanha → <code>[CP01] Primeira Habilitação | Mensagens | Out/26</code><br>
-  Conjunto → <code>[CP01] CJ | 18-35 | Raio 25km</code><br>
-  Anúncio → <code>[CP01] CJ | AD01 | Copy A</code></div>
+  <div class="tip tip-yellow"><strong>Se a Página tiver só um número vinculado,</strong> os leads de Coração de Jesus caem no telefone de Brasília de Minas. Funciona, mas gera redirecionamento manual. Vincular o segundo número antes de publicar.</div>
 </section>
 
-<!-- CP01 -->
-<section class="section" id="cp01">
-  <div class="section-label">Campanha 1 · Topo de funil · R$ 15/dia</div>
-  <h2>CP01 — <span>Primeira Habilitação</span></h2>
-  <p class="section-desc">A campanha principal. Dois conjuntos (um por cidade), cinco anúncios em cada, mesmo orçamento dividido pelo Gerenciador conforme performance.</p>
-
-  <!-- NÍVEL CAMPANHA -->
+<!-- CAMPANHA -->
+<section class="section" id="campanha">
+  <div class="section-label">Etapa 1</div>
+  <h2>Nível <span>Campanha</span></h2>
   <div class="level">
-    <div class="level-head"><div class="step">1</div><h3>Nível Campanha</h3><div class="sub">Gerenciador → Criar → escolher objetivo</div></div>
+    <div class="level-head"><div class="step">1</div><h3>Gerenciador → Criar</h3><div class="sub">Uma única campanha para o mês inteiro</div></div>
     <div class="kv">
-      <div class="row"><b>Objetivo</b><span>Engajamento</span></div>
-      <div class="row"><b>Nome da campanha</b><span><code>[CP01] Primeira Habilitação | Mensagens | Out/26</code></span></div>
+      <div class="row"><b>Objetivo</b><span><strong>Engajamento</strong></span></div>
+      <div class="row"><b>Nome da campanha</b><span><code>[LID] Primeira Habilitação + Cat. D/E | WhatsApp | Out/26</code></span></div>
       <div class="row"><b>Categoria de anúncio especial</b><span>Nenhuma</span></div>
-      <div class="row"><b>Orçamento da campanha Advantage</b><span><strong>Ativado</strong> (orçamento no nível da campanha)</span></div>
-      <div class="row"><b>Orçamento</b><span>Diário · <code>R$ 15,00</code></span></div>
+      <div class="row"><b>Orçamento da campanha Advantage</b><span><strong>Ativado</strong> — o orçamento fica aqui, não nos conjuntos</span></div>
+      <div class="row"><b>Orçamento</b><span>Diário · <code>R$ 30,00</code></span></div>
       <div class="row"><b>Estratégia de lance</b><span>Volume mais alto (padrão)</span></div>
-      <div class="row"><b>Teste A/B</b><span>Desligado — o teste acontece dentro do conjunto, com os anúncios competindo entre si</span></div>
+      <div class="row"><b>Teste A/B</b><span>Desligado — o teste acontece entre os anúncios dentro do conjunto</span></div>
+      <div class="row"><b>Programação</b><span>Início imediato · sem data de término</span></div>
     </div>
   </div>
+</section>
 
-  <!-- NÍVEL CONJUNTO -->
+<!-- CONJUNTOS -->
+<section class="section" id="conjuntos">
+  <div class="section-label">Etapa 2</div>
+  <h2>Nível <span>Conjunto</span> — criar 2</h2>
+  <p class="section-desc">Idênticos em tudo, exceto nome, cidade e número de WhatsApp. Sem orçamento neste nível.</p>
   <div class="level">
-    <div class="level-head"><div class="step">2</div><h3>Nível Conjunto — criar 2</h3><div class="sub">Tudo igual nos dois, exceto nome e cidade</div></div>
+    <div class="level-head"><div class="step">2</div><h3>Campos comuns aos dois conjuntos</h3></div>
     <div class="kv">
-      <div class="row"><b>Nome do conjunto 1</b><span><code>[CP01] CJ | 18-35 | Raio 25km</code></span></div>
-      <div class="row"><b>Nome do conjunto 2</b><span><code>[CP01] BM | 18-35 | Raio 25km</code></span></div>
       <div class="row"><b>Local da conversão</b><span>Aplicativos de mensagens</span></div>
       <div class="row"><b>Aplicativo</b><span>WhatsApp</span></div>
       <div class="row"><b>Página</b><span>Auto Escola Liderança</span></div>
-      <div class="row"><b>Número do WhatsApp</b><span>Conjunto CJ → <code>(38) 9 9920-5651</code> · Conjunto BM → <code>(38) 9 9868-8520</code></span></div>
       <div class="row"><b>Meta de desempenho</b><span>Maximizar o número de conversas</span></div>
-      <div class="row"><b>Orçamento e programação</b><span>Sem data de término · Início imediato</span></div>
-      <div class="row"><b>Localização — conjunto CJ</b><span>Coração de Jesus, Minas Gerais · Raio <code>25 km</code> · "Pessoas que moram neste local"</span></div>
-      <div class="row"><b>Localização — conjunto BM</b><span>Brasília de Minas, Minas Gerais · Raio <code>25 km</code> · "Pessoas que moram neste local"</span></div>
-      <div class="row"><b>Idade</b><span><code>18</code> a <code>35</code></span></div>
+      <div class="row"><b>Orçamento</b><span>Não aparece — está na campanha</span></div>
+      <div class="row"><b>Público</b><span>Público Advantage+ (aberto)</span></div>
+      <div class="row"><b>Idade</b><span><code>18</code> a <code>55</code></span></div>
       <div class="row"><b>Gênero</b><span>Todos</span></div>
-      <div class="row"><b>Direcionamento detalhado</b><span>Interesses: <code>Autoescola</code> · <code>Carteira Nacional de Habilitação</code> · <code>Habilitação</code> · <code>Carro</code> · <code>Motocicleta</code> · <code>Detran</code>. Deixar "Advantage de direcionamento detalhado" ativado.</span></div>
+      <div class="row"><b>Direcionamento detalhado</b><span><strong>Nenhum.</strong> Deixar em branco — a localização é a segmentação.</span></div>
       <div class="row"><b>Idiomas</b><span>Português (Brasil)</span></div>
       <div class="row"><b>Posicionamentos</b><span>Posicionamentos Advantage+ (automático)</span></div>
     </div>
   </div>
-
-  <!-- NÍVEL ANÚNCIO -->
   <div class="level">
-    <div class="level-head"><div class="step">3</div><h3>Nível Anúncio — 5 por conjunto</h3><div class="sub">Formato: imagem única · Mídia: escolher na biblioteca pelo nome do arquivo · Botão: Enviar mensagem</div></div>
-
-    <div class="tip"><strong>Campos iguais em todos os anúncios da CP01:</strong> Identidade → Página Auto Escola Liderança + Instagram BM · Formato → Imagem única · Chamada para ação → <strong>Enviar mensagem</strong> · Modelo de mensagem → Iniciar conversas · Mensagem de saudação → <em>"Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação."</em></div>
-
-    <h4 style="margin-top:20px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--o)">Conjunto CJ — Coração de Jesus</h4>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-01-primeira-habilitacao.png" alt="AD01">
-      <div>
-        <h4>[CP01] CJ | AD01 | Copy A</h4>
-        <div class="badges"><span class="badge b-t">ad-01-primeira-habilitacao.png</span><span class="badge b-a">Acolhimento</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Tá pensando em tirar a habilitação e não sabe por onde começar?
-Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
-Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Sua primeira habilitação começa aqui</div>
-        <div class="line"><strong>Descrição:</strong> Categorias A, B e AB · 2 unidades na região</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-03-vagas-outubro.png" alt="AD03">
-      <div>
-        <h4>[CP01] CJ | AD03 | Copy C</h4>
-        <div class="badges"><span class="badge b-t">ad-03-vagas-outubro.png</span><span class="badge b-y">Urgência</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Outubro já começou e as turmas estão formando.
-Se você quer tirar a habilitação ainda este ano, o momento é agora. A gente te acompanha do primeiro contato até a CNH na mão.
-Manda um "oi" e começa essa semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Vagas abertas em outubro</div>
-        <div class="line"><strong>Descrição:</strong> Comece esta semana · WhatsApp direto</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-05-moto-cat-a.png" alt="AD05">
-      <div>
-        <h4>[CP01] CJ | AD05 | Copy Moto</h4>
-        <div class="badges"><span class="badge b-t">ad-05-moto-cat-a.png</span><span class="badge b-a">Cat. A</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Quer tirar a habilitação de moto? Na Liderança, você aprende no seu ritmo.
-Aulas práticas completas, moto própria da autoescola, e a gente te acompanha do começo ao fim.
-Manda um "oi" no WhatsApp e começa ainda esta semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Habilitação de moto — Categoria A</div>
-        <div class="line"><strong>Descrição:</strong> Aulas práticas completas · Yamaha Factor</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-08-rafael-cj.png" alt="AD08">
-      <div>
-        <h4>[CP01] CJ | AD08 | Copy B</h4>
-        <div class="badges"><span class="badge b-t">ad-08-rafael-cj.png</span><span class="badge b-o">Foto real · Rafael</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.
-A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.
-Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> +500 aprovados · O próximo pode ser você</div>
-        <div class="line"><strong>Descrição:</strong> Auto Escola Liderança · Coração de Jesus</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-12-aprovados-real.png" alt="AD12">
-      <div>
-        <h4>[CP01] CJ | AD12 | Copy B</h4>
-        <div class="badges"><span class="badge b-t">ad-12-aprovados-real.png</span><span class="badge b-o">Foto real · Aprovados</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.
-A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.
-Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Parabéns, aprovados!</div>
-        <div class="line"><strong>Descrição:</strong> +500 aprovados · Coração de Jesus - MG</div>
-      </div>
-    </div>
-
-    <h4 style="margin-top:28px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--o)">Conjunto BM — Brasília de Minas</h4>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-01-primeira-habilitacao.png" alt="AD01">
-      <div>
-        <h4>[CP01] BM | AD01 | Copy A</h4>
-        <div class="badges"><span class="badge b-t">ad-01-primeira-habilitacao.png</span><span class="badge b-a">Acolhimento</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Tá pensando em tirar a habilitação e não sabe por onde começar?
-Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
-Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Sua primeira habilitação começa aqui</div>
-        <div class="line"><strong>Descrição:</strong> Categorias A, B e AB · 2 unidades na região</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-03-vagas-outubro.png" alt="AD03">
-      <div>
-        <h4>[CP01] BM | AD03 | Copy C</h4>
-        <div class="badges"><span class="badge b-t">ad-03-vagas-outubro.png</span><span class="badge b-y">Urgência</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Outubro já começou e as turmas estão formando.
-Se você quer tirar a habilitação ainda este ano, o momento é agora. A gente te acompanha do primeiro contato até a CNH na mão.
-Manda um "oi" e começa essa semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Vagas abertas em outubro</div>
-        <div class="line"><strong>Descrição:</strong> Comece esta semana · WhatsApp direto</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-07-gabriel-bm.png" alt="AD07">
-      <div>
-        <h4>[CP01] BM | AD07 | Copy A</h4>
-        <div class="badges"><span class="badge b-t">ad-07-gabriel-bm.png</span><span class="badge b-o">Foto real · Gabriel</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Tá pensando em tirar a habilitação e não sabe por onde começar?
-Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
-Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Sua primeira habilitação começa aqui</div>
-        <div class="line"><strong>Descrição:</strong> Categorias A, B e AB · Brasília de Minas</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-10-moto-real.png" alt="AD10">
-      <div>
-        <h4>[CP01] BM | AD10 | Copy Moto</h4>
-        <div class="badges"><span class="badge b-t">ad-10-moto-real.png</span><span class="badge b-o">Foto real · Moto</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Quer tirar a habilitação de moto? Na Liderança, você aprende no seu ritmo.
-Aulas práticas completas, moto própria da autoescola, e a gente te acompanha do começo ao fim.
-Manda um "oi" no WhatsApp e começa ainda esta semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> Habilitação de moto — Categoria A</div>
-        <div class="line"><strong>Descrição:</strong> Aulas práticas completas · Yamaha Factor</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-11-fachada-carro.png" alt="AD11">
-      <div>
-        <h4>[CP01] BM | AD11 | Copy B</h4>
-        <div class="badges"><span class="badge b-t">ad-11-fachada-carro.png</span><span class="badge b-o">Foto real · Fachada</span></div>
-        <div class="f">Texto principal</div>
-        <p data-copy>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.
-A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.
-Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:10px"><strong>Título:</strong> 2 unidades pra te atender</div>
-        <div class="line"><strong>Descrição:</strong> Coração de Jesus e Brasília de Minas · Matricule-se agora</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip tip-green"><strong>Publicar e não mexer por 4 dias.</strong> O Gerenciador precisa de 48 a 96 horas de aprendizado. Se pausar, trocar criativo ou mudar orçamento nesse período, o aprendizado reinicia.</div>
-</section>
-
-<!-- CP02 -->
-<section class="section" id="cp02">
-  <div class="section-label">Campanha 2 · Nicho · R$ 5/dia</div>
-  <h2>CP02 — <span>Categoria D/E</span></h2>
-  <p class="section-desc">Caminhão. Público mais velho, raio maior, dois criativos competindo em cada cidade.</p>
-
-  <div class="level">
-    <div class="level-head"><div class="step">1</div><h3>Nível Campanha</h3></div>
+    <div class="level-head"><div class="step">2A</div><h3>Conjunto CJ</h3></div>
     <div class="kv">
-      <div class="row"><b>Objetivo</b><span>Engajamento</span></div>
-      <div class="row"><b>Nome da campanha</b><span><code>[CP02] Categoria D/E | Mensagens | Out/26</code></span></div>
-      <div class="row"><b>Categoria de anúncio especial</b><span>Nenhuma</span></div>
-      <div class="row"><b>Orçamento da campanha Advantage</b><span><strong>Ativado</strong></span></div>
-      <div class="row"><b>Orçamento</b><span>Diário · <code>R$ 5,00</code></span></div>
-      <div class="row"><b>Estratégia de lance</b><span>Volume mais alto</span></div>
+      <div class="row"><b>Nome</b><span><code>[LID] CJ | 18-55 | Raio 25km</code></span></div>
+      <div class="row"><b>Localização</b><span>Coração de Jesus, Minas Gerais · Raio <code>25 km</code> · <strong>Pessoas que moram neste local</strong></span></div>
+      <div class="row"><b>Número do WhatsApp</b><span><code>(38) 9 9920-5651</code></span></div>
     </div>
   </div>
-
   <div class="level">
-    <div class="level-head"><div class="step">2</div><h3>Nível Conjunto — criar 2</h3></div>
+    <div class="level-head"><div class="step">2B</div><h3>Conjunto BM</h3></div>
     <div class="kv">
-      <div class="row"><b>Nome do conjunto 1</b><span><code>[CP02] CJ | 21-50 | Raio 60km</code></span></div>
-      <div class="row"><b>Nome do conjunto 2</b><span><code>[CP02] BM | 21-50 | Raio 60km</code></span></div>
-      <div class="row"><b>Local da conversão</b><span>Aplicativos de mensagens → WhatsApp</span></div>
-      <div class="row"><b>Número do WhatsApp</b><span>CJ → <code>(38) 9 9920-5651</code> · BM → <code>(38) 9 9868-8520</code></span></div>
-      <div class="row"><b>Meta de desempenho</b><span>Maximizar o número de conversas</span></div>
-      <div class="row"><b>Localização</b><span>Cidade do conjunto · Raio <code>60 km</code> · "Pessoas que moram neste local"</span></div>
-      <div class="row"><b>Idade</b><span><code>21</code> a <code>50</code></span></div>
-      <div class="row"><b>Gênero</b><span>Todos (o Gerenciador vai pender para o masculino sozinho)</span></div>
-      <div class="row"><b>Direcionamento detalhado</b><span>Interesses: <code>Caminhão</code> · <code>Transporte rodoviário</code> · <code>Motorista de caminhão</code> · <code>Logística</code> · <code>Ford Cargo</code></span></div>
-      <div class="row"><b>Posicionamentos</b><span>Advantage+ (automático)</span></div>
-    </div>
-  </div>
-
-  <div class="level">
-    <div class="level-head"><div class="step">3</div><h3>Nível Anúncio — 2 por conjunto</h3><div class="sub">Mesmos criativos nas duas cidades, copies cruzadas para testar os dois ângulos</div></div>
-
-    <div class="tip"><strong>Mensagem de saudação para a CP02:</strong> <em>"Olá! Vi o anúncio da Liderança e quero informações sobre a habilitação de caminhão (Cat. D/E)."</em></div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-04-cat-de.png" alt="AD04">
-      <div>
-        <h4>[CP02] CJ | AD04 | Copy A &nbsp;·&nbsp; [CP02] BM | AD04 | Copy B</h4>
-        <div class="badges"><span class="badge b-t">ad-04-cat-de.png</span><span class="badge b-g">Design</span></div>
-        <div class="f">Copy A — Profissional (usar no conjunto CJ)</div>
-        <p data-copy>Precisa da habilitação de caminhão? A Liderança é referência em Cat. D e E na região.
-Nosso veículo de aula tem ar-condicionado e é o mesmo modelo usado no exame. A gente facilita tudo: matrícula, aulas e exame — sem complicação.
-Chama no WhatsApp e fala com a gente.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:6px"><strong>Título:</strong> Habilitação Cat. D e E — Caminhão</div>
-        <div class="line"><strong>Descrição:</strong> Veículo com ar-condicionado · Prático e teórico</div>
-        <div class="f" style="margin-top:14px">Copy B — Oportunidade (usar no conjunto BM)</div>
-        <p data-copy>Quer trabalhar como motorista profissional? O primeiro passo é a habilitação certa.
-A Liderança forma motoristas de caminhão (Cat. D e E) com veículo próprio, ar-condicionado e acompanhamento completo.
-Manda "quero" no WhatsApp e saiba como começar.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:6px"><strong>Título:</strong> Sua carreira começa com a CNH certa</div>
-        <div class="line"><strong>Descrição:</strong> Cat. D e E · Ford Cargo com ar-condicionado</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-09-caminhao-real.png" alt="AD09">
-      <div>
-        <h4>[CP02] CJ | AD09 | Copy B &nbsp;·&nbsp; [CP02] BM | AD09 | Copy A</h4>
-        <div class="badges"><span class="badge b-t">ad-09-caminhao-real.png</span><span class="badge b-o">Foto real · Ford Cargo 712</span></div>
-        <div class="line">Copies invertidas em relação ao AD04: no conjunto <strong>CJ</strong> usar a <strong>Copy B</strong>; no conjunto <strong>BM</strong> usar a <strong>Copy A</strong>. Assim cada cidade testa os dois ângulos com os dois criativos.</div>
-      </div>
+      <div class="row"><b>Nome</b><span><code>[LID] BM | 18-55 | Raio 25km</code></span></div>
+      <div class="row"><b>Localização</b><span>Brasília de Minas, Minas Gerais · Raio <code>25 km</code> · <strong>Pessoas que moram neste local</strong></span></div>
+      <div class="row"><b>Número do WhatsApp</b><span><code>(38) 9 9868-8520</code></span></div>
     </div>
   </div>
 </section>
 
-<!-- CP03 -->
-<section class="section" id="cp03">
-  <div class="section-label">Campanha 3 · Fundo de funil · R$ 5/dia · Entra em 13/10</div>
-  <h2>CP03 — <span>Remarketing</span></h2>
-  <p class="section-desc">Só para quem já demonstrou interesse. Depende de públicos personalizados que precisam existir antes da campanha — criar primeiro.</p>
+<!-- ANÚNCIOS -->
+<section class="section" id="anuncios">
+  <div class="section-label">Etapa 3</div>
+  <h2>Nível <span>Anúncio</span> — 11 por conjunto, 4 ativos</h2>
+  <p class="section-desc">Criar todos agora, com a copy indicada, e deixar só os marcados como ATIVO ligados. Os demais ficam pausados como reserva para a rotação. O Gabriel só entra em BM e o Rafael só em CJ.</p>
 
-  <div class="level">
-    <div class="level-head"><div class="step">0</div><h3>Criar os públicos personalizados</h3><div class="sub">Gerenciador → Públicos → Criar público → Público personalizado</div></div>
-    <div class="kv">
-      <div class="row"><b>Público 1</b><span>Fonte: <strong>Conta do Instagram</strong> (BM) · Evento: <em>Todos que interagiram com esta conta profissional</em> · Retenção: <code>30 dias</code> · Nome: <code>IG BM — Interação 30d</code></span></div>
-      <div class="row"><b>Público 2</b><span>Fonte: <strong>Página do Facebook</strong> · Evento: <em>Todos que interagiram com a Página</em> · Retenção: <code>30 dias</code> · Nome: <code>Página — Interação 30d</code></span></div>
-      <div class="row"><b>Público 3</b><span>Fonte: <strong>Página do Facebook</strong> · Evento: <em>Pessoas que enviaram mensagem para a Página</em> · Retenção: <code>30 dias</code> · Nome: <code>Mensagens 30d</code> — este é também o público de <strong>exclusão</strong> nas CP01 e CP02.</span></div>
-    </div>
-    <div class="tip tip-yellow"><strong>Depois de criar o Público 3,</strong> voltar nos quatro conjuntos das CP01 e CP02 e adicioná-lo em <em>Públicos personalizados → Excluir</em>. Assim quem já conversou não vê mais o anúncio de topo.</div>
-  </div>
+  <div class="tip"><strong>Campos iguais em todos os anúncios:</strong> Identidade → Página Liderança + Instagram BM · Formato → Imagem única · Mídia → escolher na biblioteca pelo nome do arquivo · Chamada para ação → <strong>Enviar mensagem</strong> · Modelo → Iniciar conversas. A mensagem de saudação muda por tipo de anúncio — está na seção de copies. Nome do anúncio segue o padrão <code>[LID] CJ | AD08 | Copy A</code>.</div>
 
-  <div class="level">
-    <div class="level-head"><div class="step">1</div><h3>Nível Campanha</h3></div>
-    <div class="kv">
-      <div class="row"><b>Objetivo</b><span>Engajamento</span></div>
-      <div class="row"><b>Nome da campanha</b><span><code>[CP03] Remarketing | Mensagens | Out/26</code></span></div>
-      <div class="row"><b>Orçamento da campanha Advantage</b><span><strong>Ativado</strong></span></div>
-      <div class="row"><b>Orçamento</b><span>Diário · <code>R$ 5,00</code></span></div>
-      <div class="row"><b>Programação</b><span>Data de início: <code>13/10/2026</code> às 06:00</span></div>
-    </div>
-  </div>
-
-  <div class="level">
-    <div class="level-head"><div class="step">2</div><h3>Nível Conjunto — criar 1</h3><div class="sub">Um conjunto só: o público já é pequeno, dividir por cidade quebraria a entrega</div></div>
-    <div class="kv">
-      <div class="row"><b>Nome do conjunto</b><span><code>[CP03] CJ+BM | Interação 30d</code></span></div>
-      <div class="row"><b>Local da conversão</b><span>Aplicativos de mensagens → WhatsApp</span></div>
-      <div class="row"><b>Número do WhatsApp</b><span>BM <code>(38) 9 9868-8520</code> (perfil ativo)</span></div>
-      <div class="row"><b>Públicos personalizados</b><span>Incluir: <code>IG BM — Interação 30d</code> + <code>Página — Interação 30d</code></span></div>
-      <div class="row"><b>Localização</b><span>Coração de Jesus <strong>e</strong> Brasília de Minas · Raio <code>40 km</code> cada</span></div>
-      <div class="row"><b>Idade</b><span><code>18</code> a <code>50</code></span></div>
-      <div class="row"><b>Direcionamento detalhado</b><span>Nenhum — o público personalizado já define quem vê</span></div>
-      <div class="row"><b>Posicionamentos</b><span>Advantage+</span></div>
-    </div>
-  </div>
-
-  <div class="level">
-    <div class="level-head"><div class="step">3</div><h3>Nível Anúncio — 5 anúncios</h3></div>
-
-    <div class="tip"><strong>Mensagem de saudação para a CP03:</strong> <em>"Oi! Vi de novo o anúncio da Liderança e quero tirar minhas dúvidas sobre a habilitação."</em></div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-06-duas-unidades.png" alt="AD06">
-      <div>
-        <h4>[CP03] AD06 | Copy A &nbsp;·&nbsp; [CP03] AD02 | Copy A</h4>
-        <div class="badges"><span class="badge b-t">ad-06-duas-unidades.png</span><span class="badge b-t">ad-02-aprovados.png</span><span class="badge b-r">Reengajamento</span></div>
-        <div class="f">Copy A — Reengajamento</div>
-        <p data-copy>Você deu uma olhada, mas ainda não começou. Normal — a decisão é importante.
-Mas sabia que a gente te acompanha em cada etapa? Matrícula, teórico, simulador, prática e exame.
-Chama no WhatsApp e tira suas dúvidas sem compromisso.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:6px"><strong>Título:</strong> A gente te acompanha do começo ao fim</div>
-        <div class="line"><strong>Descrição:</strong> Sem complicação · Chame no WhatsApp</div>
-      </div>
-    </div>
-
-    <div class="ad">
-      <img src="../06-CRIATIVOS-ADS/outubro/ad-12-aprovados-real.png" alt="AD12">
-      <div>
-        <h4>[CP03] AD12 | Copy B &nbsp;·&nbsp; [CP03] AD08 | Copy B &nbsp;·&nbsp; [CP03] AD11 | Copy B</h4>
-        <div class="badges"><span class="badge b-t">ad-12-aprovados-real.png</span><span class="badge b-t">ad-08-rafael-cj.png</span><span class="badge b-t">ad-11-fachada-carro.png</span><span class="badge b-r">Prova social + urgência</span></div>
-        <div class="f">Copy B — Prova social + urgência</div>
-        <p data-copy>Enquanto você pensa, nossos alunos estão passando no exame.
-Mais de 500 aprovados na região. Do primeiro contato até a CNH na mão — a gente cuida de tudo.
-Manda um "oi" e começa ainda essa semana.</p>
-        <button class="copybtn">Copiar texto</button>
-        <div class="line" style="margin-top:6px"><strong>Título:</strong> +500 aprovados · O próximo pode ser você</div>
-        <div class="line"><strong>Descrição:</strong> Vagas abertas em outubro</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MAPA -->
-<section class="section" id="mapa">
-  <div class="section-label">Visão geral</div>
-  <h2>Mapa dos <span>19 anúncios</span></h2>
-  <p class="section-desc">Para conferir no final: cada linha é um anúncio publicado.</p>
+  <h3 style="margin:24px 0 4px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--o)">Conjunto CJ — Coração de Jesus</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>#</th><th>Campanha</th><th>Conjunto</th><th>Criativo</th><th>Copy</th><th>WhatsApp</th></tr></thead>
+    <thead><tr><th></th><th>Status</th><th>Criativo</th><th>Copy</th><th>Papel</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>CP01</td><td>CJ</td><td><code>ad-01</code></td><td>A — Acolhimento</td><td>CJ</td></tr>
-      <tr><td>2</td><td>CP01</td><td>CJ</td><td><code>ad-03</code></td><td>C — Urgência</td><td>CJ</td></tr>
-      <tr><td>3</td><td>CP01</td><td>CJ</td><td><code>ad-05</code></td><td>Moto</td><td>CJ</td></tr>
-      <tr><td>4</td><td>CP01</td><td>CJ</td><td><code>ad-08</code></td><td>B — Prova social</td><td>CJ</td></tr>
-      <tr><td>5</td><td>CP01</td><td>CJ</td><td><code>ad-12</code></td><td>B — Prova social</td><td>CJ</td></tr>
-      <tr><td>6</td><td>CP01</td><td>BM</td><td><code>ad-01</code></td><td>A — Acolhimento</td><td>BM</td></tr>
-      <tr><td>7</td><td>CP01</td><td>BM</td><td><code>ad-03</code></td><td>C — Urgência</td><td>BM</td></tr>
-      <tr><td>8</td><td>CP01</td><td>BM</td><td><code>ad-07</code></td><td>A — Acolhimento</td><td>BM</td></tr>
-      <tr><td>9</td><td>CP01</td><td>BM</td><td><code>ad-10</code></td><td>Moto</td><td>BM</td></tr>
-      <tr><td>10</td><td>CP01</td><td>BM</td><td><code>ad-11</code></td><td>B — Prova social</td><td>BM</td></tr>
-      <tr><td>11</td><td>CP02</td><td>CJ</td><td><code>ad-04</code></td><td>A — Profissional</td><td>CJ</td></tr>
-      <tr><td>12</td><td>CP02</td><td>CJ</td><td><code>ad-09</code></td><td>B — Oportunidade</td><td>CJ</td></tr>
-      <tr><td>13</td><td>CP02</td><td>BM</td><td><code>ad-04</code></td><td>B — Oportunidade</td><td>BM</td></tr>
-      <tr><td>14</td><td>CP02</td><td>BM</td><td><code>ad-09</code></td><td>A — Profissional</td><td>BM</td></tr>
-      <tr><td>15</td><td>CP03</td><td>CJ+BM</td><td><code>ad-06</code></td><td>A — Reengajamento</td><td>BM</td></tr>
-      <tr><td>16</td><td>CP03</td><td>CJ+BM</td><td><code>ad-02</code></td><td>A — Reengajamento</td><td>BM</td></tr>
-      <tr><td>17</td><td>CP03</td><td>CJ+BM</td><td><code>ad-12</code></td><td>B — Prova social + urgência</td><td>BM</td></tr>
-      <tr><td>18</td><td>CP03</td><td>CJ+BM</td><td><code>ad-08</code></td><td>B — Prova social + urgência</td><td>BM</td></tr>
-      <tr><td>19</td><td>CP03</td><td>CJ+BM</td><td><code>ad-11</code></td><td>B — Prova social + urgência</td><td>BM</td></tr>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-08-rafael-cj.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-08 Rafael + carro</td><td>A — Acolhimento</td><td>Rosto real da unidade</td></tr>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-03-vagas-outubro.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-03 Vagas Outubro</td><td>C — Urgência</td><td>Design, chama atenção</td></tr>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-12-aprovados-real.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-12 Aprovados (foto)</td><td>B — Prova social</td><td>Alunos reais</td></tr>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-09-caminhao-real.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-09 Caminhão Ford Cargo</td><td>D/E — Profissional</td><td>Captura quem quer Cat. D/E</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-01-primeira-habilitacao.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-01 Primeira Habilitação</td><td>A — Acolhimento</td><td>1º substituto</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-02-aprovados.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-02 +500 Aprovados</td><td>B — Prova social</td><td>2º substituto</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-10-moto-real.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-10 Moto (foto)</td><td>Moto</td><td>3º substituto</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-11-fachada-carro.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-11 Fachada + carro</td><td>B — Prova social</td><td>Reserva</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-06-duas-unidades.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-06 2 Unidades</td><td>A — Acolhimento</td><td>Reserva</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-05-moto-cat-a.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-05 Moto (design)</td><td>Moto</td><td>Reserva</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-04-cat-de.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-04 Cat. D/E (design)</td><td>D/E — Oportunidade</td><td>Substituto do ad-09</td></tr>
     </tbody>
   </table></div>
+
+  <h3 style="margin:32px 0 4px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--o)">Conjunto BM — Brasília de Minas</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Status</th><th>Criativo</th><th>Copy</th><th>Papel</th></tr></thead>
+    <tbody>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-07-gabriel-bm.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-07 Gabriel + carro</td><td>A — Acolhimento</td><td>Rosto real da unidade</td></tr>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-03-vagas-outubro.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-03 Vagas Outubro</td><td>C — Urgência</td><td>Design, chama atenção</td></tr>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-11-fachada-carro.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-11 Fachada + carro</td><td>B — Prova social</td><td>Estrutura real de BM</td></tr>
+      <tr class="on"><td><img src="../06-CRIATIVOS-ADS/outubro/ad-09-caminhao-real.png" alt=""></td><td><span class="st st-on">Ativo</span></td><td>ad-09 Caminhão Ford Cargo</td><td>D/E — Profissional</td><td>Captura quem quer Cat. D/E</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-01-primeira-habilitacao.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-01 Primeira Habilitação</td><td>A — Acolhimento</td><td>1º substituto</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-12-aprovados-real.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-12 Aprovados (foto)</td><td>B — Prova social</td><td>2º substituto</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-10-moto-real.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-10 Moto (foto)</td><td>Moto</td><td>3º substituto</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-02-aprovados.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-02 +500 Aprovados</td><td>B — Prova social</td><td>Reserva</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-06-duas-unidades.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-06 2 Unidades</td><td>A — Acolhimento</td><td>Reserva</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-05-moto-cat-a.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-05 Moto (design)</td><td>Moto</td><td>Reserva</td></tr>
+      <tr><td><img src="../06-CRIATIVOS-ADS/outubro/ad-04-cat-de.png" alt=""></td><td><span class="st st-off">Pausado</span></td><td>ad-04 Cat. D/E (design)</td><td>D/E — Oportunidade</td><td>Substituto do ad-09</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tip tip-green" style="margin-top:20px"><strong>Lógica dos 4 ativos:</strong> um rosto real da própria unidade, um design de urgência, uma prova social e o caminhão. Quatro ângulos diferentes, zero redundância — o Gerenciador consegue testar com R$ 15/dia por conjunto.</div>
 </section>
 
-<!-- CHECKLIST FINAL -->
+<!-- COPIES -->
+<section class="section" id="copies">
+  <div class="section-label">Textos prontos</div>
+  <h2>As <span>5 copies</span></h2>
+  <p class="section-desc">Texto principal, título, descrição e mensagem de saudação do WhatsApp. O botão copia só o texto principal.</p>
+
+  <div class="copyblock">
+    <h4>Copy A — Acolhimento</h4>
+    <div class="used">Usada em: <code>ad-08</code> <code>ad-07</code> <code>ad-01</code> <code>ad-06</code></div>
+    <div class="f">Texto principal</div>
+    <p data-copy>Tá pensando em tirar a habilitação e não sabe por onde começar?
+Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
+Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p>
+    <button class="copybtn">Copiar texto</button>
+    <div class="line" style="margin-top:10px"><strong>Título:</strong> Sua primeira habilitação começa aqui</div>
+    <div class="line"><strong>Descrição:</strong> Categorias A, B e AB · 2 unidades na região</div>
+    <div class="line"><strong>Saudação WhatsApp:</strong> Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</div>
+  </div>
+
+  <div class="copyblock">
+    <h4>Copy B — Prova social</h4>
+    <div class="used">Usada em: <code>ad-12</code> <code>ad-11</code> <code>ad-02</code></div>
+    <div class="f">Texto principal</div>
+    <p data-copy>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.
+A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.
+Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p>
+    <button class="copybtn">Copiar texto</button>
+    <div class="line" style="margin-top:10px"><strong>Título:</strong> +500 aprovados · O próximo pode ser você</div>
+    <div class="line"><strong>Descrição:</strong> Auto Escola Liderança · Coração de Jesus e Brasília de Minas</div>
+    <div class="line"><strong>Saudação WhatsApp:</strong> Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</div>
+  </div>
+
+  <div class="copyblock">
+    <h4>Copy C — Urgência</h4>
+    <div class="used">Usada em: <code>ad-03</code></div>
+    <div class="f">Texto principal</div>
+    <p data-copy>Outubro já começou e as turmas estão formando.
+Se você quer tirar a habilitação ainda este ano, o momento é agora. A gente te acompanha do primeiro contato até a CNH na mão.
+Manda um "oi" e começa essa semana.</p>
+    <button class="copybtn">Copiar texto</button>
+    <div class="line" style="margin-top:10px"><strong>Título:</strong> Vagas abertas em outubro</div>
+    <div class="line"><strong>Descrição:</strong> Comece esta semana · WhatsApp direto</div>
+    <div class="line"><strong>Saudação WhatsApp:</strong> Olá! Vi o anúncio da Liderança e quero garantir minha vaga nas turmas de outubro.</div>
+  </div>
+
+  <div class="copyblock">
+    <h4>Copy D/E — Profissional</h4>
+    <div class="used">Usada em: <code>ad-09</code> · variante Oportunidade em <code>ad-04</code></div>
+    <div class="f">Texto principal</div>
+    <p data-copy>Precisa da habilitação de caminhão? A Liderança é referência em Cat. D e E na região.
+Nosso veículo de aula tem ar-condicionado e é o mesmo modelo usado no exame. A gente facilita tudo: matrícula, aulas e exame — sem complicação.
+Chama no WhatsApp e fala com a gente.</p>
+    <button class="copybtn">Copiar texto</button>
+    <div class="line" style="margin-top:10px"><strong>Título:</strong> Habilitação Cat. D e E — Caminhão</div>
+    <div class="line"><strong>Descrição:</strong> Veículo com ar-condicionado · Prático e teórico</div>
+    <div class="line"><strong>Saudação WhatsApp:</strong> Olá! Vi o anúncio e quero informações sobre a habilitação de caminhão (Cat. D/E).</div>
+    <div class="f" style="margin-top:14px">Variante Oportunidade (ad-04)</div>
+    <p data-copy>Quer trabalhar como motorista profissional? O primeiro passo é a habilitação certa.
+A Liderança forma motoristas de caminhão (Cat. D e E) com veículo próprio, ar-condicionado e acompanhamento completo.
+Manda "quero" no WhatsApp e saiba como começar.</p>
+    <button class="copybtn">Copiar texto</button>
+    <div class="line" style="margin-top:6px"><strong>Título:</strong> Sua carreira começa com a CNH certa</div>
+    <div class="line"><strong>Descrição:</strong> Cat. D e E · Ford Cargo com ar-condicionado</div>
+  </div>
+
+  <div class="copyblock">
+    <h4>Copy Moto</h4>
+    <div class="used">Usada em: <code>ad-10</code> <code>ad-05</code></div>
+    <div class="f">Texto principal</div>
+    <p data-copy>Quer tirar a habilitação de moto? Na Liderança, você aprende no seu ritmo.
+Aulas práticas completas, moto própria da autoescola, e a gente te acompanha do começo ao fim.
+Manda um "oi" no WhatsApp e começa ainda esta semana.</p>
+    <button class="copybtn">Copiar texto</button>
+    <div class="line" style="margin-top:10px"><strong>Título:</strong> Habilitação de moto — Categoria A</div>
+    <div class="line"><strong>Descrição:</strong> Aulas práticas completas · Yamaha Factor</div>
+    <div class="line"><strong>Saudação WhatsApp:</strong> Olá! Vi o anúncio da Liderança e quero informações sobre a habilitação de moto.</div>
+  </div>
+</section>
+
+<!-- FASE 2 -->
+<section class="section" id="fase2">
+  <div class="section-label">Dia 15 em diante</div>
+  <h2>Fase 2 — <span>decidida com dados</span></h2>
+  <p class="section-desc">Nos primeiros 14 dias ninguém mexe. No dia 15 a gente olha três números por conjunto: custo por conversa, conversas que viraram matrícula e qual anúncio levou mais verba.</p>
+  <div class="level">
+    <div class="kv">
+      <div class="row"><b>Rotação de anúncios</b><span>Pausar o ativo com maior custo por conversa e ligar o 1º substituto. <strong>Nunca trocar mais de um por conjunto de uma vez</strong> — senão o aprendizado reinicia.</span></div>
+      <div class="row"><b>Desequilíbrio entre cidades</b><span>Se o Gerenciador favorecer CJ ou BM, deixar. Não forçar divisão igual — ele está indo onde converte.</span></div>
+      <div class="row"><b>Caminhão sem entrega</b><span>Se o ad-09 ficou com menos de 5% da verba em 14 dias: pausar nos dois conjuntos e abrir campanha separada de teste, R$ 10/dia por 7 dias, público 21 a 55, raio 60 km, ad-09 + ad-04.</span></div>
+      <div class="row"><b>Remarketing</b><span>Criar público "Interação Instagram 30d". Se passar de mil pessoas, entra como terceiro conjunto na mesma campanha. Se não, o Instagram orgânico continua fazendo esse papel.</span></div>
+      <div class="row"><b>Exclusão</b><span>Criar público "Pessoas que enviaram mensagem para a Página — 30 dias" e adicionar em <em>Excluir</em> nos dois conjuntos. Quem já conversou para de ver o anúncio.</span></div>
+    </div>
+  </div>
+  <div class="tip tip-yellow"><strong>Expectativa realista com R$ 30/dia:</strong> 3 a 6 conversas por dia, 90 a 180 no mês, 15 a 40 matrículas vindas do anúncio. O restante da meta de 80 vem do Instagram orgânico, da base de ex-alunos e das ações presenciais. O gargalo mais provável não é o anúncio — é a velocidade de resposta no WhatsApp. Conversa respondida em 5 minutos converte o dobro de uma respondida em uma hora.</div>
+</section>
+
+<!-- CHECKLIST -->
 <section class="section" id="final">
   <div class="section-label">Antes de clicar em Publicar</div>
   <h2>Checklist <span>final</span></h2>
   <ul class="check" id="checklist">
     <li><input type="checkbox" id="c1"><label for="c1">Os dois números de WhatsApp aparecem como opção no nível do conjunto</label></li>
-    <li><input type="checkbox" id="c2"><label for="c2">Identidade do anúncio: Página Liderança + Instagram de Brasília de Minas (não o de Coração de Jesus)</label></li>
-    <li><input type="checkbox" id="c3"><label for="c3">CP01 e CP02 com "Orçamento da campanha Advantage" ativado — nenhum orçamento no nível do conjunto</label></li>
-    <li><input type="checkbox" id="c4"><label for="c4">Todos os conjuntos com "Pessoas que moram neste local" (não "todas as pessoas")</label></li>
-    <li><input type="checkbox" id="c5"><label for="c5">Botão "Enviar mensagem" em todos os 19 anúncios</label></li>
-    <li><input type="checkbox" id="c6"><label for="c6">Mensagem de saudação configurada em cada anúncio</label></li>
-    <li><input type="checkbox" id="c7"><label for="c7">Pré-visualização conferida no celular: texto não corta, imagem não corta</label></li>
-    <li><input type="checkbox" id="c8"><label for="c8">CP03 agendada para 13/10 — não publicar antes</label></li>
-    <li><input type="checkbox" id="c9"><label for="c9">Público "Mensagens 30d" criado e adicionado como exclusão nas CP01 e CP02</label></li>
-    <li><input type="checkbox" id="c10"><label for="c10">Equipes de CJ e BM avisadas no grupo: anúncios no ar, leads vão começar a chegar no WhatsApp</label></li>
+    <li><input type="checkbox" id="c2"><label for="c2">Identidade: Página Liderança + Instagram de Brasília de Minas (não o de Coração de Jesus)</label></li>
+    <li><input type="checkbox" id="c3"><label for="c3">"Orçamento da campanha Advantage" ativado com R$ 30 — nenhum orçamento no nível do conjunto</label></li>
+    <li><input type="checkbox" id="c4"><label for="c4">Dois conjuntos com "Pessoas que moram neste local", 18 a 55, sem direcionamento detalhado</label></li>
+    <li><input type="checkbox" id="c5"><label for="c5">22 anúncios criados (11 por conjunto), cada um com a copy certa</label></li>
+    <li><input type="checkbox" id="c6"><label for="c6">Exatamente 4 anúncios ativos em cada conjunto, os demais pausados</label></li>
+    <li><input type="checkbox" id="c7"><label for="c7">Botão "Enviar mensagem" e saudação configurada em todos</label></li>
+    <li><input type="checkbox" id="c8"><label for="c8">Pré-visualização conferida no celular: texto e imagem sem cortes</label></li>
+    <li><input type="checkbox" id="c9"><label for="c9">Equipes de CJ e BM avisadas: anúncios no ar, responder WhatsApp em até 5 minutos</label></li>
   </ul>
-
-  <div class="tip tip-red" style="margin-top:20px"><strong>Depois de publicar:</strong> primeiras 48h só observação. Conferir às 11h, 15h e 19h se os anúncios foram aprovados e se há gasto. Qualquer reprovação de anúncio, me avisar com print da mensagem da Meta.</div>
+  <div class="tip tip-red" style="margin-top:20px"><strong>Depois de publicar:</strong> primeiras 48h só observação. Conferir às 11h, 15h e 19h se os anúncios foram aprovados e se há gasto. Qualquer reprovação, avisar com print da mensagem da Meta. Nenhuma alteração até o dia 15.</div>
 </section>
 
 </div>
 
 <div style="text-align:center;padding:48px 24px 32px;font-size:12px;color:var(--dim);border-top:1px solid var(--border);margin-top:64px">
   <div style="font-family:var(--serif);font-size:16px;font-weight:700;color:var(--txt);margin-bottom:4px">ADS Company</div>
-  <div>Roteiro de Execução — Auto Escola Liderança — 07/10/2026</div>
+  <div>Roteiro de Execução — Auto Escola Liderança — revisado em 07/10/2026</div>
 </div>
 
 <script>
@@ -556,7 +381,7 @@ document.querySelectorAll('.copybtn').forEach(btn=>{
     navigator.clipboard.writeText(text).then(()=>{btn.textContent='Copiado';btn.classList.add('done');setTimeout(()=>{btn.textContent='Copiar texto';btn.classList.remove('done')},1800)}).catch(()=>{btn.textContent='Selecione e copie manualmente'});
   });
 });
-const CK='lideranca-roteiro-check';
+const CK='lideranca-roteiro-check-v2';
 let ck={};try{ck=JSON.parse(localStorage.getItem(CK)||'{}')}catch(e){}
 document.querySelectorAll('#checklist input').forEach(i=>{i.checked=!!ck[i.id];i.addEventListener('change',()=>{ck[i.id]=i.checked;try{localStorage.setItem(CK,JSON.stringify(ck))}catch(e){}})});
 const links=document.querySelectorAll('.top-nav a');
