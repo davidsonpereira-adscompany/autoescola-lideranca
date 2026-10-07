@@ -86,6 +86,14 @@ tbody td code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(
 .sum .st{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .st.ok{color:var(--green)} .st.adj{color:var(--yellow)} .st.pend{color:var(--dim)}
 @media(max-width:768px){.hero{padding:80px 20px 40px}.container{padding:0 16px 60px}}
+.blk .f{font-size:10px;color:var(--o);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-top:10px}
+.blk .f:first-of-type{margin-top:0}
+.cpline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px}
+.cpline .val{font-size:13px;color:var(--txt);font-family:ui-monospace,Menlo,monospace;background:rgba(255,255,255,.04);padding:4px 8px;border-radius:6px}
+.blk-name .cpline{margin-top:6px}
+.copybtn{font-size:11px;font-weight:600;color:var(--o);background:rgba(255,92,0,.08);border:1px solid rgba(255,92,0,.25);border-radius:6px;padding:3px 10px;cursor:pointer;font-family:var(--sans);margin-top:6px}
+.copybtn:hover{background:rgba(255,92,0,.16)}
+.copybtn.done{color:var(--green);border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.08)}
 </style>
 </head>
 <body>
@@ -131,6 +139,7 @@ tbody td code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(
   <div class="section-label">6 pe&ccedil;as</div>
   <h2>Criativos <span>est&aacute;ticos</span></h2>
   <p class="section-desc">Cada criativo aparece no feed e nos stories. O mesmo arquivo funciona nos dois &mdash; o Instagram adapta o recorte. Todas as imagens s&atilde;o 1080&times;1080.</p>
+  <div class="tip tip-green"><strong>Para subir no Gerenciador:</strong> cada pe&ccedil;a traz o nome do an&uacute;ncio no padr&atilde;o, o texto principal, t&iacute;tulo, descri&ccedil;&atilde;o e sauda&ccedil;&atilde;o do WhatsApp &mdash; tudo com bot&atilde;o de copiar. A etiqueta ao lado do nome diz se o an&uacute;ncio nasce ativo ou pausado. Estrutura completa no <a href="../07-TRAFEGO-PAGO/roteiro-execucao-gerenciador.html" style="color:var(--o)">Roteiro de Execu&ccedil;&atilde;o</a>.</div>
 
   <!-- === AD 01 === -->
   <div class="cr" data-k="A">
@@ -147,11 +156,21 @@ tbody td code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Homens e mulheres de 18 a 35 anos, raio de 40 km de Cora&ccedil;&atilde;o de Jesus e Bras&iacute;lia de Minas.
 Interesses: Autoescola, CNH, Habilita&ccedil;&atilde;o, Carro pr&oacute;prio, DETRAN.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>T&aacute; pensando em tirar a habilita&ccedil;&atilde;o e n&atilde;o sabe por onde come&ccedil;ar?
-Calma. Aqui na Lideran&ccedil;a a gente cuida de tudo pra voc&ecirc; &mdash; do primeiro contato at&eacute; a CNH na m&atilde;o.
-Mais de 500 aprovados na regi&atilde;o. Manda um &ldquo;oi&rdquo; no WhatsApp e descubra como come&ccedil;ar ainda esta semana.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Sua primeira habilita&ccedil;&atilde;o come&ccedil;a aqui</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Categorias A, B e AB &middot; 2 unidades na regi&atilde;o</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD01 | Copy A</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · 1º substituto</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD01 | Copy A</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · 1º substituto</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy A</h4>
+        <div class="f">Texto principal</div>
+        <p>Tá pensando em tirar a habilitação e não sabe por onde começar?
+Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
+Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Sua primeira habilitação começa aqui</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Categorias A, B e AB · 2 unidades na região</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -172,11 +191,21 @@ Mais de 500 aprovados na regi&atilde;o. Manda um &ldquo;oi&rdquo; no WhatsApp e 
         <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Usado na CP01 (topo) e na CP03 (remarketing).</div>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01 + quem j&aacute; interagiu com o Instagram nos &uacute;ltimos 30 dias (remarketing).</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Mais de 500 alunos j&aacute; passaram por aqui e sa&iacute;ram com a CNH na m&atilde;o.
-A Lideran&ccedil;a acompanha voc&ecirc; em cada etapa: matr&iacute;cula, aulas te&oacute;ricas, simulador, aulas pr&aacute;ticas e exame.
-Sem complica&ccedil;&atilde;o, sem enrola&ccedil;&atilde;o. Chama no WhatsApp e fala com a gente.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> +500 aprovados &middot; O pr&oacute;ximo pode ser voc&ecirc;</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Auto Escola Lideran&ccedil;a &middot; Cora&ccedil;&atilde;o de Jesus e Bras&iacute;lia de Minas</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD02 | Copy B</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · 2º substituto</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD02 | Copy B</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Reserva</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy B</h4>
+        <div class="f">Texto principal</div>
+        <p>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.
+A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.
+Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">+500 aprovados · O próximo pode ser você</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Auto Escola Liderança · Coração de Jesus e Brasília de Minas</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -197,11 +226,21 @@ Sem complica&ccedil;&atilde;o, sem enrola&ccedil;&atilde;o. Chama no WhatsApp e 
         <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Design gr&aacute;fico puro &mdash; sem foto.</div>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01. Este criativo testa o &acirc;ngulo de urg&ecirc;ncia contra os de acolhimento (01) e prova social (02).</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Outubro j&aacute; come&ccedil;ou e as turmas est&atilde;o formando.
-Se voc&ecirc; quer tirar a habilita&ccedil;&atilde;o ainda este ano, o momento &eacute; agora. A gente te acompanha do primeiro contato at&eacute; a CNH na m&atilde;o.
-Manda um &ldquo;oi&rdquo; e come&ccedil;a essa semana.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Vagas abertas em outubro</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Comece esta semana &middot; WhatsApp direto</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD03 | Copy C</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD03 | Copy C</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy C</h4>
+        <div class="f">Texto principal</div>
+        <p>Outubro já começou e as turmas estão formando.
+Se você quer tirar a habilitação ainda este ano, o momento é agora. A gente te acompanha do primeiro contato até a CNH na mão.
+Manda um "oi" e começa essa semana.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Vagas abertas em outubro</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Comece esta semana · WhatsApp direto</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero garantir minha vaga nas turmas de outubro.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -223,11 +262,21 @@ Manda um &ldquo;oi&rdquo; e come&ccedil;a essa semana.</p>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Homens e mulheres de 21 a 50 anos (70% masculino), raio de 60 km.
 Interesses: Caminh&atilde;o, Transporte, Motorista profissional, Caminh&atilde;o Cargo.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Precisa da habilita&ccedil;&atilde;o de caminh&atilde;o? A Lideran&ccedil;a &eacute; refer&ecirc;ncia em Cat. D e E na regi&atilde;o.
-Nosso ve&iacute;culo de aula tem ar-condicionado e &eacute; o mesmo modelo usado no exame. A gente facilita tudo: matr&iacute;cula, aulas e exame &mdash; sem complica&ccedil;&atilde;o.
-Chama no WhatsApp e fala com a gente.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Habilita&ccedil;&atilde;o Cat. D e E &mdash; Caminh&atilde;o</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Ve&iacute;culo com ar-condicionado &middot; Pr&aacute;tico e te&oacute;rico</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD04 | Copy D/E Oport.</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Substituto do AD09</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD04 | Copy D/E Oport.</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Substituto do AD09</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy D/E Oport.</h4>
+        <div class="f">Texto principal</div>
+        <p>Quer trabalhar como motorista profissional? O primeiro passo é a habilitação certa.
+A Liderança forma motoristas de caminhão (Cat. D e E) com veículo próprio, ar-condicionado e acompanhamento completo.
+Manda "quero" no WhatsApp e saiba como começar.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Sua carreira começa com a CNH certa</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Cat. D e E · Ford Cargo com ar-condicionado</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio e quero informações sobre a habilitação de caminhão (Cat. D/E).</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -248,11 +297,21 @@ Chama no WhatsApp e fala com a gente.</p>
         <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Roda dentro da CP01 junto com os criativos 01, 02 e 03.</div>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01, com interesse adicional em Moto e Motociclismo. O Instagram descobre se este criativo performa melhor que os outros e mostra mais.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Quer tirar a habilita&ccedil;&atilde;o de moto? Na Lideran&ccedil;a, voc&ecirc; aprende no seu ritmo.
-Aulas pr&aacute;ticas completas, moto pr&oacute;pria da autoescola, e a gente te acompanha do come&ccedil;o ao fim.
-Manda um &ldquo;oi&rdquo; no WhatsApp e come&ccedil;a ainda esta semana.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Habilita&ccedil;&atilde;o de moto &mdash; Categoria A</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Aulas pr&aacute;ticas completas &middot; Yamaha Factor</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD05 | Copy Moto</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Reserva</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD05 | Copy Moto</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Reserva</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy Moto</h4>
+        <div class="f">Texto principal</div>
+        <p>Quer tirar a habilitação de moto? Na Liderança, você aprende no seu ritmo.
+Aulas práticas completas, moto própria da autoescola, e a gente te acompanha do começo ao fim.
+Manda um "oi" no WhatsApp e começa ainda esta semana.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Habilitação de moto — Categoria A</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Aulas práticas completas · Yamaha Factor</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero informações sobre a habilitação de moto.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -273,11 +332,21 @@ Manda um &ldquo;oi&rdquo; no WhatsApp e come&ccedil;a ainda esta semana.</p>
         <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Refor&ccedil;a que tem unidade perto do lead.</div>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Todo o p&uacute;blico da CP01 + remarketing. Funciona como an&uacute;ncio de confian&ccedil;a &mdash; &ldquo;a gente t&aacute; perto de voc&ecirc;&rdquo;.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Voc&ecirc; deu uma olhada, mas ainda n&atilde;o come&ccedil;ou. Normal &mdash; a decis&atilde;o &eacute; importante.
-Mas sabia que a gente te acompanha em cada etapa? Matr&iacute;cula, te&oacute;rico, simulador, pr&aacute;tica e exame.
-Chama no WhatsApp e tira suas d&uacute;vidas sem compromisso.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> A gente te acompanha do come&ccedil;o ao fim</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> 2 unidades &middot; Cora&ccedil;&atilde;o de Jesus e Bras&iacute;lia de Minas</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD06 | Copy A</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Reserva</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD06 | Copy A</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Reserva</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy A</h4>
+        <div class="f">Texto principal</div>
+        <p>Tá pensando em tirar a habilitação e não sabe por onde começar?
+Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
+Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Sua primeira habilitação começa aqui</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Categorias A, B e AB · 2 unidades na região</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -308,11 +377,20 @@ Chama no WhatsApp e tira suas d&uacute;vidas sem compromisso.</p>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01: 18 a 35 anos, raio de 40 km de BM e CJ.
 Testar este criativo com foto real contra os designs gr&aacute;ficos (01, 02, 03) para ver qual performa melhor.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>T&aacute; pensando em tirar a habilita&ccedil;&atilde;o e n&atilde;o sabe por onde come&ccedil;ar?
-Calma. Aqui na Lideran&ccedil;a a gente cuida de tudo pra voc&ecirc; &mdash; do primeiro contato at&eacute; a CNH na m&atilde;o.
-Mais de 500 aprovados na regi&atilde;o. Manda um &ldquo;oi&rdquo; no WhatsApp e descubra como come&ccedil;ar ainda esta semana.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Sua primeira habilita&ccedil;&atilde;o come&ccedil;a aqui</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Categorias A, B e AB &middot; Bras&iacute;lia de Minas</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] BM | AD07 | Copy A</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy A</h4>
+        <div class="f">Texto principal</div>
+        <p>Tá pensando em tirar a habilitação e não sabe por onde começar?
+Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
+Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Sua primeira habilitação começa aqui</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Categorias A, B e AB · 2 unidades na região</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -334,11 +412,20 @@ Mais de 500 aprovados na regi&atilde;o. Manda um &ldquo;oi&rdquo; no WhatsApp e 
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01 + remarketing (quem j&aacute; interagiu nos &uacute;ltimos 30 dias).
 Rosto real gera confian&ccedil;a &mdash; ideal para remarketing.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Mais de 500 alunos j&aacute; passaram por aqui e sa&iacute;ram com a CNH na m&atilde;o.
-A Lideran&ccedil;a acompanha voc&ecirc; em cada etapa: matr&iacute;cula, aulas te&oacute;ricas, simulador, aulas pr&aacute;ticas e exame.
-Sem complica&ccedil;&atilde;o, sem enrola&ccedil;&atilde;o. Chama no WhatsApp e fala com a gente.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> +500 aprovados &middot; O pr&oacute;ximo pode ser voc&ecirc;</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Auto Escola Lideran&ccedil;a &middot; Cora&ccedil;&atilde;o de Jesus</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD08 | Copy A</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy A</h4>
+        <div class="f">Texto principal</div>
+        <p>Tá pensando em tirar a habilitação e não sabe por onde começar?
+Calma. Aqui na Liderança a gente cuida de tudo pra você — do primeiro contato até a CNH na mão.
+Mais de 500 aprovados na região. Manda um "oi" no WhatsApp e descubra como começar ainda esta semana.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Sua primeira habilitação começa aqui</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Categorias A, B e AB · 2 unidades na região</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -360,11 +447,21 @@ Sem complica&ccedil;&atilde;o, sem enrola&ccedil;&atilde;o. Chama no WhatsApp e 
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Homens e mulheres de 21 a 50 anos (70% masculino), raio de 60 km.
 Interesses: Caminh&atilde;o, Transporte, Motorista profissional. Ver o ve&iacute;culo real com ar-condicionado gera confian&ccedil;a.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Precisa da habilita&ccedil;&atilde;o de caminh&atilde;o? A Lideran&ccedil;a &eacute; refer&ecirc;ncia em Cat. D e E na regi&atilde;o.
-Nosso ve&iacute;culo de aula tem ar-condicionado e &eacute; o mesmo modelo usado no exame. A gente facilita tudo: matr&iacute;cula, aulas e exame &mdash; sem complica&ccedil;&atilde;o.
-Chama no WhatsApp e fala com a gente.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Habilita&ccedil;&atilde;o Cat. D e E &mdash; Caminh&atilde;o</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Ford Cargo 712 com ar-condicionado &middot; Mesmo modelo do exame</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD09 | Copy D/E</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD09 | Copy D/E</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy D/E</h4>
+        <div class="f">Texto principal</div>
+        <p>Precisa da habilitação de caminhão? A Liderança é referência em Cat. D e E na região.
+Nosso veículo de aula tem ar-condicionado e é o mesmo modelo usado no exame. A gente facilita tudo: matrícula, aulas e exame — sem complicação.
+Chama no WhatsApp e fala com a gente.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Habilitação Cat. D e E — Caminhão</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Veículo com ar-condicionado · Prático e teórico</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio e quero informações sobre a habilitação de caminhão (Cat. D/E).</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -386,11 +483,21 @@ Chama no WhatsApp e fala com a gente.</p>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01 com interesse em Moto e Motociclismo.
 Testar contra o criativo 05 (design gr&aacute;fico) para ver qual performa melhor.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Quer tirar a habilita&ccedil;&atilde;o de moto? Na Lideran&ccedil;a, voc&ecirc; aprende no seu ritmo.
-Aulas pr&aacute;ticas completas, moto pr&oacute;pria da autoescola, e a gente te acompanha do come&ccedil;o ao fim.
-Manda um &ldquo;oi&rdquo; no WhatsApp e come&ccedil;a ainda esta semana.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Habilita&ccedil;&atilde;o de moto &mdash; Categoria A</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Aulas pr&aacute;ticas completas &middot; Yamaha Factor</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD10 | Copy Moto</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · 3º substituto</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD10 | Copy Moto</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · 3º substituto</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy Moto</h4>
+        <div class="f">Texto principal</div>
+        <p>Quer tirar a habilitação de moto? Na Liderança, você aprende no seu ritmo.
+Aulas práticas completas, moto própria da autoescola, e a gente te acompanha do começo ao fim.
+Manda um "oi" no WhatsApp e começa ainda esta semana.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">Habilitação de moto — Categoria A</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Aulas práticas completas · Yamaha Factor</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero informações sobre a habilitação de moto.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -412,11 +519,21 @@ Manda um &ldquo;oi&rdquo; no WhatsApp e come&ccedil;a ainda esta semana.</p>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Todo o p&uacute;blico da CP01 + remarketing.
 Fachada real transmite solidez e credibilidade &mdash; &ldquo;a gente existe de verdade, t&aacute; aqui perto&rdquo;.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Voc&ecirc; deu uma olhada, mas ainda n&atilde;o come&ccedil;ou. Normal &mdash; a decis&atilde;o &eacute; importante.
-Mas sabia que a gente te acompanha em cada etapa? Matr&iacute;cula, te&oacute;rico, simulador, pr&aacute;tica e exame.
-Chama no WhatsApp e tira suas d&uacute;vidas sem compromisso.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> 2 unidades pra te atender</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Cora&ccedil;&atilde;o de Jesus e Bras&iacute;lia de Minas &middot; Matricule-se agora</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD11 | Copy B</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · Reserva</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD11 | Copy B</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy B</h4>
+        <div class="f">Texto principal</div>
+        <p>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.
+A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.
+Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">+500 aprovados · O próximo pode ser você</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Auto Escola Liderança · Coração de Jesus e Brasília de Minas</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -438,11 +555,21 @@ Chama no WhatsApp e tira suas d&uacute;vidas sem compromisso.</p>
       </div>
       <div class="blk"><h4>Para quem aparece</h4><p>Todo o p&uacute;blico da CP01 + remarketing.
 Foto de pessoas reais comemorando &eacute; o formato que mais gera confian&ccedil;a em an&uacute;ncios de servi&ccedil;o.</p></div>
-      <div class="blk"><h4>Texto que vai junto</h4><p>Mais de 500 alunos j&aacute; passaram por aqui e sa&iacute;ram com a CNH na m&atilde;o.
-A Lideran&ccedil;a acompanha voc&ecirc; em cada etapa: matr&iacute;cula, aulas te&oacute;ricas, simulador, aulas pr&aacute;ticas e exame.
-Sem complica&ccedil;&atilde;o, sem enrola&ccedil;&atilde;o. Chama no WhatsApp e fala com a gente.</p>
-        <div class="small"><strong>T&iacute;tulo:</strong> Parab&eacute;ns, aprovados!</div>
-        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> +500 aprovados &middot; Cora&ccedil;&atilde;o de Jesus - MG</div>
+      <div class="blk blk-name"><h4>Nome do anúncio no Gerenciador</h4>
+        <div class="cpline"><span class="val">[LID] CJ | AD12 | Copy B</span><button class="copybtn">Copiar</button><span class="badge b-g">Ativo</span></div>
+        <div class="cpline"><span class="val">[LID] BM | AD12 | Copy B</span><button class="copybtn">Copiar</button><span class="badge b-t">Pausado · 2º substituto</span></div>
+      </div>
+      <div class="blk"><h4>Texto que vai junto — Copy B</h4>
+        <div class="f">Texto principal</div>
+        <p>Mais de 500 alunos já passaram por aqui e saíram com a CNH na mão.
+A Liderança acompanha você em cada etapa: matrícula, aulas teóricas, simulador, aulas práticas e exame.
+Sem complicação, sem enrolação. Chama no WhatsApp e fala com a gente.</p><button class="copybtn">Copiar texto</button>
+        <div class="f">Título</div>
+        <div class="cpline"><span class="val">+500 aprovados · O próximo pode ser você</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Descrição</div>
+        <div class="cpline"><span class="val">Auto Escola Liderança · Coração de Jesus e Brasília de Minas</span><button class="copybtn">Copiar</button></div>
+        <div class="f">Saudação do WhatsApp</div>
+        <div class="cpline"><span class="val">Olá! Vi o anúncio da Liderança e quero saber como começar minha habilitação.</span><button class="copybtn">Copiar</button></div>
       </div>
       <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
       <textarea class="obs" placeholder="O que mudar?"></textarea>
@@ -546,6 +673,7 @@ render();
 const links=document.querySelectorAll('.top-nav a');
 const obs2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const l=document.querySelector('.top-nav a[href="#'+e.target.id+'"]');if(l)l.classList.add('active')}}),{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('.section[id]').forEach(s=>obs2.observe(s));
+document.querySelectorAll('.copybtn').forEach(b=>{b.addEventListener('click',()=>{const t=b.previousElementSibling.textContent.trim();navigator.clipboard.writeText(t).then(()=>{const o=b.textContent;b.textContent='Copiado';b.classList.add('done');setTimeout(()=>{b.textContent=o;b.classList.remove('done')},1500)})})});
 </script>
 </body>
 </html>
