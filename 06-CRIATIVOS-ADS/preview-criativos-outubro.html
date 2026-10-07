@@ -3,319 +3,372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preview Criativos — Outubro 2026 · Auto Escola Liderança</title>
+<title>Criativos de Outubro &mdash; Auto Escola Lideran&ccedil;a | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap');
-
-  :root {
-    --bg: #060606;
-    --surface: #111111;
-    --surface-2: #1A1A1A;
-    --border: #2A2A2A;
-    --text: #F5F5F5;
-    --muted: #999;
-    --laranja: #FF5C00;
-    --amarelo: #FFD700;
-    --verde: #22C55E;
-  }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    padding: 2rem 1rem;
-  }
-
-  .container { max-width: 1100px; margin: 0 auto; }
-
-  .header {
-    text-align: center;
-    padding: 2.5rem 2rem;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
-    margin-bottom: 2rem;
-  }
-  .header-badge {
-    display: inline-block;
-    background: var(--laranja);
-    color: #FFF;
-    font-size: .65rem;
-    font-weight: 700;
-    padding: .25rem .75rem;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    margin-bottom: .75rem;
-  }
-  .header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: .35rem;
-  }
-  .header h1 span { color: var(--amarelo); }
-  .header .subtitle { color: var(--muted); font-size: .85rem; }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform .2s, border-color .2s;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: var(--amarelo);
-  }
-
-  .card-img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    display: block;
-    background: var(--surface-2);
-  }
-
-  .card-body { padding: 1.25rem; }
-
-  .card-campaign {
-    display: inline-block;
-    font-size: .6rem; font-weight: 700;
-    padding: .2rem .5rem; border-radius: 3px;
-    text-transform: uppercase; letter-spacing: .04em;
-    margin-bottom: .5rem;
-  }
-  .cp01 { background: rgba(59,130,246,.12); color: #3B82F6; }
-  .cp02 { background: rgba(34,197,94,.12); color: #22C55E; }
-  .cp03 { background: rgba(239,68,68,.12); color: #EF4444; }
-
-  .card-title {
-    font-size: 1rem; font-weight: 700;
-    margin-bottom: .25rem;
-  }
-  .card-desc {
-    font-size: .78rem; color: var(--muted);
-    margin-bottom: 1rem;
-  }
-
-  .btn-download {
-    display: inline-flex;
-    align-items: center;
-    gap: .4rem;
-    background: var(--amarelo);
-    color: #000;
-    font-size: .78rem;
-    font-weight: 700;
-    padding: .5rem 1.25rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: opacity .2s;
-  }
-  .btn-download:hover { opacity: .85; }
-  .btn-download svg { width: 14px; height: 14px; }
-
-  .fotos-section {
-    margin-top: 2.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem;
-  }
-  .fotos-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    margin-bottom: .5rem;
-  }
-  .fotos-section p { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
-
-  .fotos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: .75rem;
-  }
-  .foto-thumb {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    cursor: pointer;
-    transition: transform .2s;
-  }
-  .foto-thumb:hover { transform: scale(1.05); }
-  .foto-label {
-    font-size: .68rem; color: var(--muted);
-    text-align: center; margin-top: .25rem;
-  }
-
-  .footer {
-    text-align: center;
-    padding: 1.5rem;
-    font-size: .72rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
-  }
-
-  @media (max-width: 600px) {
-    .grid { grid-template-columns: 1fr; }
-    .fotos-grid { grid-template-columns: repeat(2, 1fr); }
-    body { padding: 1rem .75rem; }
-  }
+:root{--o:#FF5C00;--bg:#060606;--card:#111;--card2:#141414;--border:rgba(255,255,255,0.06);--txt:#F5F5F5;--dim:#888;--green:#34D399;--yellow:#FBBF24;--red:#EF4444;--azul:#3B82F6;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.top-nav{position:sticky;top:0;z-index:100;background:rgba(6,6,6,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:12px;overflow-x:auto}
+.top-nav a{color:var(--dim);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;padding:6px 12px;border-radius:6px;transition:all .2s}
+.top-nav a:hover{color:var(--txt);background:rgba(255,255,255,.04)}
+.top-nav a.active{color:var(--o);background:rgba(255,92,0,.08)}
+.back-btn{position:fixed;top:56px;left:12px;z-index:200;display:flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(6,6,6,.85);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:8px;color:var(--dim);font-size:11px;font-weight:500;letter-spacing:.04em;text-decoration:none;transition:all .2s}
+.back-btn:hover{color:var(--txt);border-color:rgba(255,92,0,.3)}
+.back-btn svg{width:12px;height:12px;stroke:currentColor;stroke-width:2;fill:none}
+.hero{padding:100px 32px 56px;text-align:center;background:linear-gradient(180deg,rgba(255,215,0,.06) 0%,transparent 60%)}
+.hero-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);background:rgba(255,92,0,.1);padding:6px 16px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,5vw,50px);font-weight:700;line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:var(--o)}
+.hero p{font-size:16px;color:var(--dim);max-width:640px;margin:0 auto 28px}
+.hero-meta{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:13px;color:var(--dim)}
+.hero-meta strong{color:var(--txt);font-weight:600}
+.container{max-width:1040px;margin:0 auto;padding:0 24px 80px}
+.section{margin-top:64px;scroll-margin-top:80px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--o);margin-bottom:8px}
+.section h2{font-family:var(--serif);font-size:clamp(24px,3.5vw,34px);font-weight:700;line-height:1.2;margin-bottom:8px}
+.section h2 span{color:var(--o)}
+.section-desc{color:var(--dim);font-size:14px;margin-bottom:28px;max-width:720px}
+.tip{background:rgba(255,92,0,.04);border-left:3px solid var(--o);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;color:rgba(245,245,245,.78);margin:14px 0;line-height:1.7}
+.tip strong{color:var(--txt)}
+.tip-green{border-left-color:var(--green);background:rgba(52,211,153,.04)}
+.tip-yellow{border-left-color:var(--yellow);background:rgba(251,191,36,.04)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+.card h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.card p{font-size:13px;color:var(--dim)}
+.cr{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px;display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
+@media(max-width:760px){.cr{grid-template-columns:1fr}}
+.cr img{width:100%;border-radius:12px;display:block;border:1px solid rgba(255,255,255,.08)}
+.cr h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 12px}
+.badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:6px}
+.b-o{background:rgba(255,92,0,.1);color:var(--o)}
+.b-a{background:rgba(59,130,246,.12);color:var(--azul)}
+.b-g{background:rgba(52,211,153,.12);color:var(--green)}
+.b-y{background:rgba(251,191,36,.12);color:var(--yellow)}
+.b-r{background:rgba(239,68,68,.12);color:var(--red)}
+.b-t{background:rgba(255,255,255,.05);color:var(--dim)}
+.blk{background:rgba(255,255,255,.025);border-radius:10px;padding:14px 16px;margin-top:10px}
+.blk h4{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);margin-bottom:8px}
+.blk p{font-size:13px;color:rgba(245,245,245,.82);white-space:pre-line}
+.blk .small{font-size:12px;color:var(--dim);white-space:normal;margin-top:6px}
+.place{display:grid;grid-template-columns:1fr;gap:6px;margin-top:10px}
+.place .row{display:grid;grid-template-columns:150px 110px 1fr;gap:10px;font-size:12px;padding:8px 12px;background:rgba(255,215,0,.05);border:1px solid rgba(255,215,0,.15);border-radius:8px;align-items:center}
+.place .row b{color:var(--txt);font-size:12px}
+.place .row code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--green);word-break:break-all}
+.place .row .f{color:var(--dim)}
+@media(max-width:600px){.place .row{grid-template-columns:1fr}}
+.approve{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.approve label{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;padding:8px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.1)}
+.approve label.ok{border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.06)}
+.approve label.adj{border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.06)}
+.approve input{accent-color:var(--green)}
+.approve input.adj{accent-color:var(--yellow)}
+.obs{width:100%;margin-top:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 12px;color:var(--txt);font-family:var(--sans);font-size:13px;resize:vertical;min-height:44px}
+.obs:focus{outline:none;border-color:var(--o)}
+.fotos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:14px}
+.fotos-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
+.fotos-grid .f-label{font-size:11px;color:var(--dim);text-align:center;margin-top:4px}
+.tree{background:#0b0b0b;border:1px solid var(--border);border-radius:12px;padding:18px 20px;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.8;color:rgba(245,245,245,.85);overflow-x:auto;white-space:pre}
+.tree b{color:var(--o)}
+.tree i{color:var(--dim);font-style:normal}
+.tbl-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+thead th{text-align:left;padding:12px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--o);background:var(--card2);border-bottom:1px solid var(--border)}
+tbody td{padding:11px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody td code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--green)}
+.sum{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px}
+.sum .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:14px}
+.sum .row:last-child{border-bottom:none}
+.sum .st{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.st.ok{color:var(--green)} .st.adj{color:var(--yellow)} .st.pend{color:var(--dim)}
+@media(max-width:768px){.hero{padding:80px 20px 40px}.container{padding:0 16px 60px}}
 </style>
 </head>
 <body>
+
+<nav class="top-nav">
+  <a href="#como" class="active">Como aprovar</a>
+  <a href="#criativos">Criativos</a>
+  <a href="#fotos">Fotos reais</a>
+  <a href="#arquivos">Onde est&aacute; salvo</a>
+  <a href="#resumo">Resumo</a>
+</nav>
+<a href="../01-ONBOARDING/index.html" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Central</a>
+
+<section class="hero">
+  <div class="hero-badge">Criativos &mdash; Campanha de Outubro</div>
+  <h1>As pe&ccedil;as que v&atilde;o <span>para o ar</span></h1>
+  <p>6 criativos est&aacute;ticos para Meta Ads + 8 fotos reais da autoescola para uso direto. Cada pe&ccedil;a j&aacute; vem com posicionamento, p&uacute;blico e copy prontos. Olhe cada uma, marque &ldquo;Aprovado&rdquo; ou &ldquo;Ajustar&rdquo; e escreva o que quer mudar.</p>
+  <div class="hero-meta">
+    <span><strong>Criativos:</strong> 6 pe&ccedil;as</span>
+    <span><strong>Fotos reais:</strong> 8 dispon&iacute;veis</span>
+    <span><strong>V&iacute;deos:</strong> aguardando grava&ccedil;&atilde;o</span>
+  </div>
+</section>
+
 <div class="container">
 
-<div class="header">
-  <span class="header-badge">Criativos para Meta Ads</span>
-  <h1>Preview — <span>Outubro 2026</span></h1>
-  <p class="subtitle">6 criativos estáticos (feed 1080×1080) + fotos reais para uso direto</p>
-</div>
+<!-- COMO APROVAR -->
+<section class="section" id="como">
+  <div class="section-label">Antes de olhar</div>
+  <h2>Como <span>aprovar</span></h2>
+  <div class="cards">
+    <div class="card"><h3>1. Olhe no celular</h3><p>&Eacute; onde o cliente vai ver o an&uacute;ncio. Abra esta p&aacute;gina no celular e role com calma.</p></div>
+    <div class="card"><h3>2. Confira a informa&ccedil;&atilde;o</h3><p>O texto est&aacute; certo? O telefone est&aacute; atualizado? A foto representa bem a autoescola?</p></div>
+    <div class="card"><h3>3. Marque e escreva</h3><p>&ldquo;Aprovado&rdquo; ou &ldquo;Ajustar&rdquo; em cada pe&ccedil;a. No &ldquo;Ajustar&rdquo;, escreva o que mudar. Fica salvo neste navegador.</p></div>
+    <div class="card"><h3>4. Avise no grupo</h3><p>Mandou &ldquo;aprovado&rdquo; no grupo, Davidson sobe na campanha no mesmo dia.</p></div>
+  </div>
+  <div class="tip"><strong>Objetivo de todos os an&uacute;ncios:</strong> a pessoa toca em <em>Enviar mensagem</em> e abre o WhatsApp da unidade mais pr&oacute;xima (BM ou CJ). O texto principal, t&iacute;tulo e descri&ccedil;&atilde;o ficam nos campos do an&uacute;ncio &mdash; n&atilde;o na imagem.</div>
+</section>
 
-<div class="grid">
+<!-- CRIATIVOS -->
+<section class="section" id="criativos">
+  <div class="section-label">6 pe&ccedil;as</div>
+  <h2>Criativos <span>est&aacute;ticos</span></h2>
+  <p class="section-desc">Cada criativo aparece no feed e nos stories. O mesmo arquivo funciona nos dois &mdash; o Instagram adapta o recorte. Todas as imagens s&atilde;o 1080&times;1080.</p>
 
-  <!-- AD 01 -->
-  <div class="card">
-    <img class="card-img" src="outubro/ad-01-primeira-habilitacao.png" alt="Ad 01 — Primeira Habilitação">
-    <div class="card-body">
-      <span class="card-campaign cp01">CP01 — Primeira Habilitação</span>
-      <div class="card-title">Porta-voz + CTA WhatsApp</div>
-      <div class="card-desc">Instrutor ao lado do veículo de aula. Headline: "Sua primeira habilitação começa aqui"</div>
-      <a href="outubro/ad-01-primeira-habilitacao.png" download class="btn-download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download 1080×1080
-      </a>
+  <!-- === AD 01 === -->
+  <div class="cr" data-k="A">
+    <div><img src="outubro/ad-01-primeira-habilitacao.png" alt="Primeira Habilita&ccedil;&atilde;o"></div>
+    <div>
+      <h3>01 &mdash; &ldquo;Sua primeira habilita&ccedil;&atilde;o come&ccedil;a aqui&rdquo;</h3>
+      <div class="badges"><span class="badge b-a">CP01 &middot; Primeira Habilita&ccedil;&atilde;o</span><span class="badge b-t">Topo de funil</span></div>
+      <div class="blk"><h4>Onde aparece</h4>
+        <div class="place">
+          <div class="row"><b>Feed Instagram + Facebook</b><span class="f">1:1 &middot; 1080&times;1080</span><code>outubro/ad-01-primeira-habilitacao.png</code></div>
+          <div class="row"><b>Stories + Reels</b><span class="f">recorte autom&aacute;tico</span><code>mesmo arquivo</code></div>
+        </div>
+        <div class="small">Bot&atilde;o do an&uacute;ncio: <strong>Enviar mensagem</strong> (abre o WhatsApp).</div>
+      </div>
+      <div class="blk"><h4>Para quem aparece</h4><p>Homens e mulheres de 18 a 35 anos, raio de 40 km de Cora&ccedil;&atilde;o de Jesus e Bras&iacute;lia de Minas.
+Interesses: Autoescola, CNH, Habilita&ccedil;&atilde;o, Carro pr&oacute;prio, DETRAN.</p></div>
+      <div class="blk"><h4>Texto que vai junto</h4><p>T&aacute; pensando em tirar a habilita&ccedil;&atilde;o e n&atilde;o sabe por onde come&ccedil;ar?
+Calma. Aqui na Lideran&ccedil;a a gente cuida de tudo pra voc&ecirc; &mdash; do primeiro contato at&eacute; a CNH na m&atilde;o.
+Mais de 500 aprovados na regi&atilde;o. Manda um &ldquo;oi&rdquo; no WhatsApp e descubra como come&ccedil;ar ainda esta semana.</p>
+        <div class="small"><strong>T&iacute;tulo:</strong> Sua primeira habilita&ccedil;&atilde;o come&ccedil;a aqui</div>
+        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Categorias A, B e AB &middot; 2 unidades na regi&atilde;o</div>
+      </div>
+      <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
+      <textarea class="obs" placeholder="O que mudar?"></textarea>
     </div>
   </div>
 
-  <!-- AD 02 -->
-  <div class="card">
-    <img class="card-img" src="outubro/ad-02-aprovados.png" alt="Ad 02 — Aprovados">
-    <div class="card-body">
-      <span class="card-campaign cp01">CP01 / CP03</span>
-      <div class="card-title">+500 Aprovados — Prova Social</div>
-      <div class="card-desc">Grupo de aprovados celebrando. Headline: "+500 aprovados — O próximo pode ser você"</div>
-      <a href="outubro/ad-02-aprovados.png" download class="btn-download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download 1080×1080
-      </a>
+  <!-- === AD 02 === -->
+  <div class="cr" data-k="B">
+    <div><img src="outubro/ad-02-aprovados.png" alt="+500 Aprovados"></div>
+    <div>
+      <h3>02 &mdash; &ldquo;+500 aprovados &mdash; O pr&oacute;ximo pode ser voc&ecirc;&rdquo;</h3>
+      <div class="badges"><span class="badge b-a">CP01 &middot; Primeira Habilita&ccedil;&atilde;o</span><span class="badge b-r">CP03 &middot; Remarketing</span><span class="badge b-t">Prova social</span></div>
+      <div class="blk"><h4>Onde aparece</h4>
+        <div class="place">
+          <div class="row"><b>Feed Instagram + Facebook</b><span class="f">1:1 &middot; 1080&times;1080</span><code>outubro/ad-02-aprovados.png</code></div>
+          <div class="row"><b>Stories + Reels</b><span class="f">recorte autom&aacute;tico</span><code>mesmo arquivo</code></div>
+        </div>
+        <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Usado na CP01 (topo) e na CP03 (remarketing).</div>
+      </div>
+      <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01 + quem j&aacute; interagiu com o Instagram nos &uacute;ltimos 30 dias (remarketing).</p></div>
+      <div class="blk"><h4>Texto que vai junto</h4><p>Mais de 500 alunos j&aacute; passaram por aqui e sa&iacute;ram com a CNH na m&atilde;o.
+A Lideran&ccedil;a acompanha voc&ecirc; em cada etapa: matr&iacute;cula, aulas te&oacute;ricas, simulador, aulas pr&aacute;ticas e exame.
+Sem complica&ccedil;&atilde;o, sem enrola&ccedil;&atilde;o. Chama no WhatsApp e fala com a gente.</p>
+        <div class="small"><strong>T&iacute;tulo:</strong> +500 aprovados &middot; O pr&oacute;ximo pode ser voc&ecirc;</div>
+        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Auto Escola Lideran&ccedil;a &middot; Cora&ccedil;&atilde;o de Jesus e Bras&iacute;lia de Minas</div>
+      </div>
+      <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
+      <textarea class="obs" placeholder="O que mudar?"></textarea>
     </div>
   </div>
 
-  <!-- AD 03 -->
-  <div class="card">
-    <img class="card-img" src="outubro/ad-03-vagas-outubro.png" alt="Ad 03 — Vagas Outubro">
-    <div class="card-body">
-      <span class="card-campaign cp01">CP01 — Urgência</span>
-      <div class="card-title">Vagas Abertas em Outubro</div>
-      <div class="card-desc">Design gráfico puro. Headline: "Vagas abertas em outubro — Comece ainda esta semana"</div>
-      <a href="outubro/ad-03-vagas-outubro.png" download class="btn-download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download 1080×1080
-      </a>
+  <!-- === AD 03 === -->
+  <div class="cr" data-k="C">
+    <div><img src="outubro/ad-03-vagas-outubro.png" alt="Vagas Abertas em Outubro"></div>
+    <div>
+      <h3>03 &mdash; &ldquo;Vagas abertas em outubro&rdquo;</h3>
+      <div class="badges"><span class="badge b-a">CP01 &middot; Primeira Habilita&ccedil;&atilde;o</span><span class="badge b-y">Urg&ecirc;ncia</span></div>
+      <div class="blk"><h4>Onde aparece</h4>
+        <div class="place">
+          <div class="row"><b>Feed Instagram + Facebook</b><span class="f">1:1 &middot; 1080&times;1080</span><code>outubro/ad-03-vagas-outubro.png</code></div>
+          <div class="row"><b>Stories + Reels</b><span class="f">recorte autom&aacute;tico</span><code>mesmo arquivo</code></div>
+        </div>
+        <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Design gr&aacute;fico puro &mdash; sem foto.</div>
+      </div>
+      <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01. Este criativo testa o &acirc;ngulo de urg&ecirc;ncia contra os de acolhimento (01) e prova social (02).</p></div>
+      <div class="blk"><h4>Texto que vai junto</h4><p>Outubro j&aacute; come&ccedil;ou e as turmas est&atilde;o formando.
+Se voc&ecirc; quer tirar a habilita&ccedil;&atilde;o ainda este ano, o momento &eacute; agora. A gente te acompanha do primeiro contato at&eacute; a CNH na m&atilde;o.
+Manda um &ldquo;oi&rdquo; e come&ccedil;a essa semana.</p>
+        <div class="small"><strong>T&iacute;tulo:</strong> Vagas abertas em outubro</div>
+        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Comece esta semana &middot; WhatsApp direto</div>
+      </div>
+      <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
+      <textarea class="obs" placeholder="O que mudar?"></textarea>
     </div>
   </div>
 
-  <!-- AD 04 -->
-  <div class="card">
-    <img class="card-img" src="outubro/ad-04-cat-de.png" alt="Ad 04 — Cat D/E">
-    <div class="card-body">
-      <span class="card-campaign cp02">CP02 — Categoria D/E</span>
-      <div class="card-title">Habilitação Cat. D e E — Caminhão</div>
-      <div class="card-desc">Ford Cargo com branding. Headline: "Habilitação Cat. D e E — Caminhão com ar-condicionado"</div>
-      <a href="outubro/ad-04-cat-de.png" download class="btn-download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download 1080×1080
-      </a>
+  <!-- === AD 04 === -->
+  <div class="cr" data-k="D">
+    <div><img src="outubro/ad-04-cat-de.png" alt="Cat. D e E"></div>
+    <div>
+      <h3>04 &mdash; &ldquo;Habilita&ccedil;&atilde;o Cat. D e E &mdash; Caminh&atilde;o&rdquo;</h3>
+      <div class="badges"><span class="badge b-g">CP02 &middot; Categoria D/E</span><span class="badge b-t">Nicho</span></div>
+      <div class="blk"><h4>Onde aparece</h4>
+        <div class="place">
+          <div class="row"><b>Feed Instagram + Facebook</b><span class="f">1:1 &middot; 1080&times;1080</span><code>outubro/ad-04-cat-de.png</code></div>
+          <div class="row"><b>Stories + Reels</b><span class="f">recorte autom&aacute;tico</span><code>mesmo arquivo</code></div>
+        </div>
+        <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Campanha separada com or&ccedil;amento pr&oacute;prio (R$ 5/dia).</div>
+      </div>
+      <div class="blk"><h4>Para quem aparece</h4><p>Homens e mulheres de 21 a 50 anos (70% masculino), raio de 60 km.
+Interesses: Caminh&atilde;o, Transporte, Motorista profissional, Caminh&atilde;o Cargo.</p></div>
+      <div class="blk"><h4>Texto que vai junto</h4><p>Precisa da habilita&ccedil;&atilde;o de caminh&atilde;o? A Lideran&ccedil;a &eacute; refer&ecirc;ncia em Cat. D e E na regi&atilde;o.
+Nosso ve&iacute;culo de aula tem ar-condicionado e &eacute; o mesmo modelo usado no exame. A gente facilita tudo: matr&iacute;cula, aulas e exame &mdash; sem complica&ccedil;&atilde;o.
+Chama no WhatsApp e fala com a gente.</p>
+        <div class="small"><strong>T&iacute;tulo:</strong> Habilita&ccedil;&atilde;o Cat. D e E &mdash; Caminh&atilde;o</div>
+        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Ve&iacute;culo com ar-condicionado &middot; Pr&aacute;tico e te&oacute;rico</div>
+      </div>
+      <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
+      <textarea class="obs" placeholder="O que mudar?"></textarea>
     </div>
   </div>
 
-  <!-- AD 05 -->
-  <div class="card">
-    <img class="card-img" src="outubro/ad-05-moto-cat-a.png" alt="Ad 05 — Moto Cat A">
-    <div class="card-body">
-      <span class="card-campaign cp01">CP01 — Moto</span>
-      <div class="card-title">Categoria A — Habilitação de Moto</div>
-      <div class="card-desc">Yamaha Factor com logo. Headline: "Habilitação de moto — Aulas práticas completas"</div>
-      <a href="outubro/ad-05-moto-cat-a.png" download class="btn-download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download 1080×1080
-      </a>
+  <!-- === AD 05 === -->
+  <div class="cr" data-k="E">
+    <div><img src="outubro/ad-05-moto-cat-a.png" alt="Moto Cat. A"></div>
+    <div>
+      <h3>05 &mdash; &ldquo;Habilita&ccedil;&atilde;o de moto &mdash; Categoria A&rdquo;</h3>
+      <div class="badges"><span class="badge b-a">CP01 &middot; Primeira Habilita&ccedil;&atilde;o</span><span class="badge b-t">Cat. A espec&iacute;fico</span></div>
+      <div class="blk"><h4>Onde aparece</h4>
+        <div class="place">
+          <div class="row"><b>Feed Instagram + Facebook</b><span class="f">1:1 &middot; 1080&times;1080</span><code>outubro/ad-05-moto-cat-a.png</code></div>
+          <div class="row"><b>Stories + Reels</b><span class="f">recorte autom&aacute;tico</span><code>mesmo arquivo</code></div>
+        </div>
+        <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Roda dentro da CP01 junto com os criativos 01, 02 e 03.</div>
+      </div>
+      <div class="blk"><h4>Para quem aparece</h4><p>Mesmo p&uacute;blico da CP01, com interesse adicional em Moto e Motociclismo. O Instagram descobre se este criativo performa melhor que os outros e mostra mais.</p></div>
+      <div class="blk"><h4>Texto que vai junto</h4><p>Quer tirar a habilita&ccedil;&atilde;o de moto? Na Lideran&ccedil;a, voc&ecirc; aprende no seu ritmo.
+Aulas pr&aacute;ticas completas, moto pr&oacute;pria da autoescola, e a gente te acompanha do come&ccedil;o ao fim.
+Manda um &ldquo;oi&rdquo; no WhatsApp e come&ccedil;a ainda esta semana.</p>
+        <div class="small"><strong>T&iacute;tulo:</strong> Habilita&ccedil;&atilde;o de moto &mdash; Categoria A</div>
+        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> Aulas pr&aacute;ticas completas &middot; Yamaha Factor</div>
+      </div>
+      <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
+      <textarea class="obs" placeholder="O que mudar?"></textarea>
     </div>
   </div>
 
-  <!-- AD 06 -->
-  <div class="card">
-    <img class="card-img" src="outubro/ad-06-duas-unidades.png" alt="Ad 06 — Duas Unidades">
-    <div class="card-body">
-      <span class="card-campaign cp01">CP01 / CP03 — Institucional</span>
-      <div class="card-title">2 Unidades pra Te Atender</div>
-      <div class="card-desc">Design institucional. Coração de Jesus + Brasília de Minas com pins de localização</div>
-      <a href="outubro/ad-06-duas-unidades.png" download class="btn-download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download 1080×1080
-      </a>
+  <!-- === AD 06 === -->
+  <div class="cr" data-k="F">
+    <div><img src="outubro/ad-06-duas-unidades.png" alt="2 Unidades"></div>
+    <div>
+      <h3>06 &mdash; &ldquo;2 unidades pra te atender&rdquo;</h3>
+      <div class="badges"><span class="badge b-a">CP01</span><span class="badge b-r">CP03 &middot; Remarketing</span><span class="badge b-t">Institucional</span></div>
+      <div class="blk"><h4>Onde aparece</h4>
+        <div class="place">
+          <div class="row"><b>Feed Instagram + Facebook</b><span class="f">1:1 &middot; 1080&times;1080</span><code>outubro/ad-06-duas-unidades.png</code></div>
+          <div class="row"><b>Stories + Reels</b><span class="f">recorte autom&aacute;tico</span><code>mesmo arquivo</code></div>
+        </div>
+        <div class="small">Bot&atilde;o: <strong>Enviar mensagem</strong>. Refor&ccedil;a que tem unidade perto do lead.</div>
+      </div>
+      <div class="blk"><h4>Para quem aparece</h4><p>Todo o p&uacute;blico da CP01 + remarketing. Funciona como an&uacute;ncio de confian&ccedil;a &mdash; &ldquo;a gente t&aacute; perto de voc&ecirc;&rdquo;.</p></div>
+      <div class="blk"><h4>Texto que vai junto</h4><p>Voc&ecirc; deu uma olhada, mas ainda n&atilde;o come&ccedil;ou. Normal &mdash; a decis&atilde;o &eacute; importante.
+Mas sabia que a gente te acompanha em cada etapa? Matr&iacute;cula, te&oacute;rico, simulador, pr&aacute;tica e exame.
+Chama no WhatsApp e tira suas d&uacute;vidas sem compromisso.</p>
+        <div class="small"><strong>T&iacute;tulo:</strong> A gente te acompanha do come&ccedil;o ao fim</div>
+        <div class="small"><strong>Descri&ccedil;&atilde;o:</strong> 2 unidades &middot; Cora&ccedil;&atilde;o de Jesus e Bras&iacute;lia de Minas</div>
+      </div>
+      <div class="approve"><label class="ok"><input type="checkbox" data-s="ok"> Aprovado</label><label class="adj"><input type="checkbox" class="adj" data-s="adj"> Ajustar</label></div>
+      <textarea class="obs" placeholder="O que mudar?"></textarea>
     </div>
   </div>
 
-</div>
+  <div class="tip tip-yellow"><strong>V&iacute;deos pendentes:</strong> os roteiros do Gabriel (BM) e do Samuel (CJ) j&aacute; foram entregues. Assim que gravarem e enviarem, os v&iacute;deos entram como criativos na CP01 &mdash; formato que mais converte em autoescola.</div>
+</section>
 
 <!-- FOTOS REAIS -->
-<div class="fotos-section">
-  <h2>Fotos Reais — Uso Direto como Criativo</h2>
-  <p>Estas fotos podem ser enviadas diretamente no Gerenciador de Anúncios como criativos alternativos. O texto vai nos campos do anúncio (texto principal, título, descrição), não na imagem.</p>
-
+<section class="section" id="fotos">
+  <div class="section-label">Uso direto como criativo</div>
+  <h2>Fotos <span>reais</span> da autoescola</h2>
+  <p class="section-desc">Estas fotos podem ser enviadas diretamente no Gerenciador de An&uacute;ncios como criativos alternativos. O texto vai nos campos do an&uacute;ncio (texto principal, t&iacute;tulo, descri&ccedil;&atilde;o) &mdash; n&atilde;o na imagem. Testar foto real vs. design gr&aacute;fico &eacute; um dos melhores testes A/B.</p>
   <div class="fotos-grid">
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/porta-voz-bm-ao-lado-carro.jpg" alt="Gabriel BM">
-      <div class="foto-label">Gabriel — BM</div>
-    </div>
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/porta-voz-cj-ao-lado-carro.jpg" alt="Rafael CJ">
-      <div class="foto-label">Rafael — CJ</div>
-    </div>
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/carro-aula-bm-lateral.jpg" alt="Carro BM">
-      <div class="foto-label">Carro aula — BM</div>
-    </div>
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/fachada-brasilia-de-minas-01.jpg" alt="Fachada BM">
-      <div class="foto-label">Fachada — BM</div>
-    </div>
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/fachada-coracao-de-jesus-01.jpg" alt="Fachada CJ">
-      <div class="foto-label">Fachada — CJ</div>
-    </div>
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/post-aprovados-cat-b-grupo-5.jpeg" alt="Aprovados Cat B">
-      <div class="foto-label">Aprovados — Cat. B</div>
-    </div>
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/veiculo-categoria-d-frente.jpeg" alt="Caminhão">
-      <div class="foto-label">Caminhão — Cat. D</div>
-    </div>
-    <div>
-      <img class="foto-thumb" src="../04-MIDIAS/moto-aula-yamaha-factor-cj.jpeg" alt="Moto">
-      <div class="foto-label">Moto — Yamaha Factor</div>
-    </div>
+    <div><img src="../04-MIDIAS/porta-voz-bm-ao-lado-carro.jpg" alt="Gabriel BM"><div class="f-label">Gabriel &mdash; BM</div></div>
+    <div><img src="../04-MIDIAS/porta-voz-cj-ao-lado-carro.jpg" alt="Rafael CJ"><div class="f-label">Rafael &mdash; CJ</div></div>
+    <div><img src="../04-MIDIAS/carro-aula-bm-lateral.jpg" alt="Carro BM"><div class="f-label">Carro aula &mdash; BM</div></div>
+    <div><img src="../04-MIDIAS/fachada-brasilia-de-minas-01.jpg" alt="Fachada BM"><div class="f-label">Fachada &mdash; BM</div></div>
+    <div><img src="../04-MIDIAS/fachada-coracao-de-jesus-01.jpg" alt="Fachada CJ"><div class="f-label">Fachada &mdash; CJ</div></div>
+    <div><img src="../04-MIDIAS/post-aprovados-cat-b-grupo-5.jpeg" alt="Aprovados"><div class="f-label">Aprovados &mdash; Cat. B</div></div>
+    <div><img src="../04-MIDIAS/veiculo-categoria-d-frente.jpeg" alt="Caminh&atilde;o"><div class="f-label">Caminh&atilde;o &mdash; Cat. D</div></div>
+    <div><img src="../04-MIDIAS/moto-aula-yamaha-factor-cj.jpeg" alt="Moto"><div class="f-label">Moto &mdash; Yamaha Factor</div></div>
   </div>
+</section>
+
+<!-- ONDE ESTÁ SALVO -->
+<section class="section" id="arquivos">
+  <div class="section-label">Para subir na biblioteca do Gerenciador</div>
+  <h2>Onde est&aacute; <span>salvo</span></h2>
+  <p class="section-desc">Tudo que vai para o ar est&aacute; na pasta <code>06-CRIATIVOS-ADS/outubro/</code>, j&aacute; no tamanho certo (1080&times;1080). Basta arrastar para a biblioteca de m&iacute;dia no Gerenciador de An&uacute;ncios.</p>
+  <div class="tree"><b>AUTOESCOLA LIDERANCA/06-CRIATIVOS-ADS/</b>
+├── outubro/
+│   ├── ad-01-primeira-habilitacao.png   <i>1080&times;1080 &middot; CP01</i>
+│   ├── ad-02-aprovados.png              <i>1080&times;1080 &middot; CP01 / CP03</i>
+│   ├── ad-03-vagas-outubro.png          <i>1080&times;1080 &middot; CP01</i>
+│   ├── ad-04-cat-de.png                 <i>1080&times;1080 &middot; CP02</i>
+│   ├── ad-05-moto-cat-a.png            <i>1080&times;1080 &middot; CP01</i>
+│   └── ad-06-duas-unidades.png          <i>1080&times;1080 &middot; CP01 / CP03</i>
+├── estrategia-outubro.html              <i>Estrat&eacute;gia completa das 3 campanhas</i>
+├── preview-criativos-outubro.html       <i>Esta p&aacute;gina</i>
+├── roteiros-gabriel.html                <i>Roteiros de v&iacute;deo &mdash; BM</i>
+└── roteiros-samuel.html                 <i>Roteiros de v&iacute;deo &mdash; CJ</i>
+
+<b>Fotos reais</b> (n&atilde;o precisam de design, sobem direto):
+04-MIDIAS/                               <i>17 fotos: porta-vozes, fachadas, ve&iacute;culos, aprovados</i></div>
+
+  <div class="tbl-wrap" style="margin-top:16px"><table>
+    <thead><tr><th>Criativo</th><th>Campanha</th><th>Formato</th><th>Bot&atilde;o</th></tr></thead>
+    <tbody>
+      <tr><td>01 &mdash; Primeira Habilita&ccedil;&atilde;o</td><td>CP01</td><td>1:1 &middot; 1080&times;1080 &middot; PNG</td><td>Enviar mensagem &rarr; WhatsApp</td></tr>
+      <tr><td>02 &mdash; +500 Aprovados</td><td>CP01 / CP03</td><td>1:1 &middot; 1080&times;1080 &middot; PNG</td><td>Enviar mensagem &rarr; WhatsApp</td></tr>
+      <tr><td>03 &mdash; Vagas Outubro</td><td>CP01</td><td>1:1 &middot; 1080&times;1080 &middot; PNG</td><td>Enviar mensagem &rarr; WhatsApp</td></tr>
+      <tr><td>04 &mdash; Cat. D/E</td><td>CP02</td><td>1:1 &middot; 1080&times;1080 &middot; PNG</td><td>Enviar mensagem &rarr; WhatsApp</td></tr>
+      <tr><td>05 &mdash; Moto Cat. A</td><td>CP01</td><td>1:1 &middot; 1080&times;1080 &middot; PNG</td><td>Enviar mensagem &rarr; WhatsApp</td></tr>
+      <tr><td>06 &mdash; 2 Unidades</td><td>CP01 / CP03</td><td>1:1 &middot; 1080&times;1080 &middot; PNG</td><td>Enviar mensagem &rarr; WhatsApp</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- RESUMO -->
+<section class="section" id="resumo">
+  <div class="section-label">Situa&ccedil;&atilde;o</div>
+  <h2>Resumo da <span>aprova&ccedil;&atilde;o</span></h2>
+  <div class="sum" id="sum"></div>
+  <div class="tip tip-green" style="margin-top:16px"><strong>Depois de marcar tudo:</strong> mandar no grupo &ldquo;aprovei os criativos&rdquo; (ou tirar print desta parte). Davidson sobe na campanha e confirma o hor&aacute;rio em que entrou no ar.</div>
+</section>
+
 </div>
 
-<div class="footer">
-  ADS Company · Auto Escola Liderança · Criativos Meta Ads · Outubro 2026
+<div style="text-align:center;padding:48px 24px 32px;font-size:12px;color:var(--dim);border-top:1px solid var(--border);margin-top:64px">
+  <div style="font-family:var(--serif);font-size:16px;font-weight:700;color:var(--txt);margin-bottom:4px">ADS Company</div>
+  <div>Criativos de Outubro &mdash; Auto Escola Lideran&ccedil;a &mdash; revisados em 07/10/2026</div>
 </div>
 
-</div>
+<script>
+const KEY='lideranca-criativos-out';
+const NAMES={A:'01 — Primeira Habilitação',B:'02 — +500 Aprovados',C:'03 — Vagas Outubro',D:'04 — Cat. D/E Caminhão',E:'05 — Moto Cat. A',F:'06 — 2 Unidades'};
+let state={};try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+document.querySelectorAll('[data-k]').forEach(el=>{
+  const k=el.dataset.k, ok=el.querySelector('input[data-s=ok]'), adj=el.querySelector('input[data-s=adj]'), obs=el.querySelector('.obs');
+  const s=state[k]||{};ok.checked=s.st==='ok';adj.checked=s.st==='adj';obs.value=s.obs||'';
+  const save=()=>{state[k]={st:ok.checked?'ok':adj.checked?'adj':'',obs:obs.value};try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){};render()};
+  ok.addEventListener('change',()=>{if(ok.checked)adj.checked=false;save()});
+  adj.addEventListener('change',()=>{if(adj.checked)ok.checked=false;save()});
+  obs.addEventListener('input',save);
+});
+function render(){const el=document.getElementById('sum');el.innerHTML=Object.keys(NAMES).map(k=>{const s=(state[k]||{}).st||'';const cls=s==='ok'?'ok':s==='adj'?'adj':'pend';const t=s==='ok'?'Aprovado':s==='adj'?'Ajustar':'Pendente';return `<div class="row"><span>${NAMES[k]}</span><span class="st ${cls}">${t}</span></div>`}).join('')}
+render();
+const links=document.querySelectorAll('.top-nav a');
+const obs2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const l=document.querySelector('.top-nav a[href="#'+e.target.id+'"]');if(l)l.classList.add('active')}}),{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('.section[id]').forEach(s=>obs2.observe(s));
+</script>
 </body>
 </html>
