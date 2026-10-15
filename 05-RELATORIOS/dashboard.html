@@ -102,12 +102,12 @@
   /* ===== balões de ajuda ("i") ===== */
   .info { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1px solid rgba(255,92,0,.55); color: var(--laranja); font: 700 9px/1 var(--sans); letter-spacing: 0; text-transform: none; vertical-align: middle; margin-left: 1px; cursor: help; position: relative; background: #fff; flex-shrink: 0; }
   .info:hover, .info.aberto { background: var(--laranja); color: #fff; }
-  .info .balao { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: 250px; max-width: calc(100vw - 32px); background: #1C1917; color: #fff; font: 400 12.5px/1.5 var(--sans); letter-spacing: 0; text-transform: none; text-align: left; padding: 10px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); z-index: 60; white-space: normal; cursor: default; }
-  .info .balao::before { content: ""; position: absolute; top: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 10px; height: 10px; background: #1C1917; }
-  .info .balao b { color: #FFB080; font-weight: 600; }
-  .info:hover .balao, .info.aberto .balao { display: block; }
-  .info.dir .balao { left: auto; right: -6px; transform: none; } .info.dir .balao::before { left: auto; right: 9px; transform: rotate(45deg); }
-  .info.esq .balao { left: -6px; transform: none; } .info.esq .balao::before { left: 9px; transform: rotate(45deg); }
+  .info .balao { display: none !important; }
+  /* balão único, fixo na tela: nunca é cortado por tabela, card ou rolagem */
+  #balao-global { position: fixed; display: none; width: 260px; max-width: calc(100vw - 24px); background: #1C1917; color: #fff; font: 400 12.5px/1.5 var(--sans); letter-spacing: 0; text-transform: none; text-align: left; padding: 10px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); z-index: 1000; white-space: normal; pointer-events: none; }
+  #balao-global b { color: #FFB080; font-weight: 600; }
+  #balao-global::before { content: ""; position: absolute; width: 10px; height: 10px; background: #1C1917; transform: rotate(45deg); left: var(--seta, 50%); margin-left: -5px; top: -5px; }
+  #balao-global.acima::before { top: auto; bottom: -5px; }
   th .info { border-color: rgba(107,101,96,.5); color: var(--cinza); }
   th .info:hover, th .info.aberto { background: var(--cinza); color: #fff; border-color: var(--cinza); }
   .secao-titulo .info { margin-left: 8px; }
@@ -231,6 +231,7 @@
 
 </div>
 
+<div id="balao-global" role="tooltip"></div>
 <div class="rodape">ADS Company · Auto Escola Liderança · Painel atualizado automaticamente todos os dias às 7h · adscompany.pro</div>
 
 <script>
@@ -325,18 +326,37 @@ function comInfo(txt, chave) {
   const i = t.lastIndexOf(" ");
   return i < 0 ? '<span class="nw">' + t + ic + '</span>' : t.slice(0, i) + ' <span class="nw">' + t.slice(i + 1) + ic + '</span>';
 }
+const BALAO = () => document.getElementById("balao-global");
+function mostrarBalao(el) {
+  const b = BALAO(), txt = el.querySelector(".balao"); if (!b || !txt) return;
+  b.innerHTML = txt.innerHTML; b.classList.remove("acima"); b.style.display = "block";
+  const r = el.getBoundingClientRect(), M = 12, W = b.offsetWidth, H = b.offsetHeight;
+  let left = r.left + r.width / 2 - W / 2;
+  left = Math.max(M, Math.min(window.innerWidth - W - M, left));
+  let top = r.bottom + 10;
+  if (top + H > window.innerHeight - M) { top = r.top - H - 10; b.classList.add("acima"); }
+  if (top < M) { top = M; }
+  b.style.left = left + "px"; b.style.top = top + "px";
+  b.style.setProperty("--seta", Math.max(14, Math.min(W - 14, r.left + r.width / 2 - left)) + "px");
+}
+function esconderBalao() { if (window.__demo) return; const b = BALAO(); if (b) b.style.display = "none"; document.querySelectorAll(".info.aberto").forEach(x => x.classList.remove("aberto")); }
 function abrirInfo(e, el) {
   e.stopPropagation();
   const jaAberto = el.classList.contains("aberto");
-  document.querySelectorAll(".info.aberto").forEach(x => x.classList.remove("aberto"));
+  esconderBalao();
   if (jaAberto) return;
-  el.classList.add("aberto");
-  const r = el.getBoundingClientRect();
-  el.classList.toggle("dir", r.left > window.innerWidth - 150);
-  el.classList.toggle("esq", r.left < 140);
+  el.classList.add("aberto"); mostrarBalao(el);
 }
-document.addEventListener("click", () => document.querySelectorAll(".info.aberto").forEach(x => x.classList.remove("aberto")));
-document.addEventListener("keydown", e => { if (e.key === "Escape") document.querySelectorAll(".info.aberto").forEach(x => x.classList.remove("aberto")); });
+document.addEventListener("mouseover", e => { const el = e.target.closest(".info"); if (el && !document.querySelector(".info.aberto")) mostrarBalao(el); });
+document.addEventListener("mouseout", e => { const el = e.target.closest(".info"); if (el && !el.classList.contains("aberto")) { const b = BALAO(); if (b) b.style.display = "none"; } });
+document.addEventListener("focusin", e => { const el = e.target.closest(".info"); if (el) mostrarBalao(el); });
+document.addEventListener("focusout", e => { if (e.target.closest(".info") && !document.querySelector(".info.aberto")) { const b = BALAO(); if (b) b.style.display = "none"; } });
+document.addEventListener("click", esconderBalao);
+document.addEventListener("keydown", e => { if (e.key === "Escape") esconderBalao(); });
+window.addEventListener("scroll", esconderBalao, true);
+window.addEventListener("resize", esconderBalao);
+// uso interno de conferência: #demo=<rótulo> abre o balão daquele rótulo
+function demoAbrir(rotulo) { const el = [...document.querySelectorAll(".info")].find(x => (x.getAttribute("aria-label") || "") === "O que é " + rotulo + "?"); if (!el) { document.body.dataset.demo = "nao encontrado: " + rotulo; return; } window.__demo = true; el.scrollIntoView({ block: "center", behavior: "instant" }); el.classList.add("aberto"); mostrarBalao(el); const rb = BALAO().getBoundingClientRect(), re = el.getBoundingClientRect(); document.body.dataset.demo = JSON.stringify({ rotulo, balao: [Math.round(rb.left), Math.round(rb.top), Math.round(rb.right), Math.round(rb.bottom)], icone: [Math.round(re.left), Math.round(re.top)], tela: [window.innerWidth, window.innerHeight], texto: BALAO().textContent.length }); }
 
 function iniciar() {
 const D = window.DADOS;
@@ -482,7 +502,7 @@ function render(ini, fim) {
     `<tr><td>${dataBRcompleta(d.data)}</td><td class="num">${inteiro(d.alcance)}</td><td class="num">${inteiro(d.impressoes)}</td><td class="num">${moeda(d.impressoes ? d.investido / d.impressoes * 1000 : 0)}</td><td class="num">${moeda(d.investido)}</td><td class="num ${d.conversas === maxConv ? "forte" : ""}">${d.conversas}</td><td class="num">${d.conversas ? moeda(d.investido / d.conversas) : "—"}</td></tr>`));
 
   desenharGrafico(sel, prevLista);
-  if (location.hash === "#demo") { const f = document.querySelector(".kpi .info"); if (f) f.classList.add("aberto"); }
+  if (location.hash.startsWith("#demo=")) demoAbrir(decodeURIComponent(location.hash.slice(6)));
 }
 
 let GRAF = null;
@@ -618,7 +638,7 @@ aplicarPreset("30");
     const m = g.innerHTML.trim().match(/^([\s\S]*?)(\S+)$/);
     if (m && !/[<>]/.test(m[2])) g.innerHTML = m[1] + '<span class="nw">' + m[2] + info(t) + '</span>'; else g.insertAdjacentHTML("beforeend", info(t));
   });
-  if (location.hash === "#demo") { aplicarPreset("4"); const f = document.querySelector(".kpi .info"); if (f) f.classList.add("aberto"); const g = document.querySelector(".secao-titulo .info"); if (g) g.classList.add("aberto"); if (window.demoHover) window.demoHover(2); }
+  if (location.hash.startsWith("#demo=")) demoAbrir(decodeURIComponent(location.hash.slice(6)));
 
 
 }
