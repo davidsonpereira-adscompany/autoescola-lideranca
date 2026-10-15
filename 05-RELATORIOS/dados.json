@@ -1,0 +1,661 @@
+{
+  "atualizado_em": "2026-10-14T22:40:00-03:00",
+  "fonte": "Gerenciador de Anúncios (Meta) — conta 1114773581250921 · leitura via Windsor.ai até a Meta liberar o conector",
+  "campanha": {
+    "id": "120254021728130249",
+    "nome": "[CP01] Engajamento Mensagens — WhatsApp (07/10/26)",
+    "inicio": "2026-10-07",
+    "orcamento_dia": 36,
+    "status": "ACTIVE",
+    "observacao": "R$ 15/dia por unidade (CJ e BM) + R$ 6/dia na campanha de visitas ao perfil do Instagram"
+  },
+  "metas": {
+    "matriculas_mes": 60,
+    "matriculas_contrato_mes": 80,
+    "ticket": 900,
+    "custo_conversa_bom": 5,
+    "custo_conversa_atencao": 10,
+    "custo_conversa_teto": 15,
+    "conversas_dia_meta": 6,
+    "ancora": "3 alunos por mês pagam todo o investimento"
+  },
+  "dias": [
+    {
+      "data": "2026-10-07",
+      "investido": 11.36,
+      "conversas": 2,
+      "alcance": 1418,
+      "impressoes": 1939,
+      "cliques": 17,
+      "engajamentos": 23,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 5.21,
+          "conversas": 2,
+          "alcance": 619
+        },
+        "BM | Brasília de Minas": {
+          "investido": 6.15,
+          "conversas": 0,
+          "alcance": 849
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-08",
+      "investido": 34.4,
+      "conversas": 11,
+      "alcance": 3407,
+      "impressoes": 5579,
+      "cliques": 40,
+      "engajamentos": 53,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 17.67,
+          "conversas": 2,
+          "alcance": 1808
+        },
+        "BM | Brasília de Minas": {
+          "investido": 16.73,
+          "conversas": 9,
+          "alcance": 1825
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-09",
+      "investido": 38.06,
+      "conversas": 11,
+      "alcance": 4399,
+      "impressoes": 6402,
+      "cliques": 65,
+      "engajamentos": 1192,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 17.03,
+          "conversas": 6,
+          "alcance": 1865
+        },
+        "BM | Brasília de Minas": {
+          "investido": 17.04,
+          "conversas": 5,
+          "alcance": 1899
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 3.99,
+          "conversas": 0,
+          "alcance": 947
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-10",
+      "investido": 24.81,
+      "conversas": 8,
+      "alcance": 3813,
+      "impressoes": 4620,
+      "cliques": 37,
+      "engajamentos": 1122,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 9.16,
+          "conversas": 5,
+          "alcance": 1193
+        },
+        "BM | Brasília de Minas": {
+          "investido": 9.59,
+          "conversas": 3,
+          "alcance": 1360
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 6.06,
+          "conversas": 0,
+          "alcance": 1347
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-11",
+      "investido": 30.61,
+      "conversas": 4,
+      "alcance": 4175,
+      "impressoes": 5297,
+      "cliques": 65,
+      "engajamentos": 1113,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 11.53,
+          "conversas": 2,
+          "alcance": 1262
+        },
+        "BM | Brasília de Minas": {
+          "investido": 11.76,
+          "conversas": 2,
+          "alcance": 1626
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 7.32,
+          "conversas": 0,
+          "alcance": 1552
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-12",
+      "investido": 31.11,
+      "conversas": 5,
+      "alcance": 3827,
+      "impressoes": 4650,
+      "cliques": 39,
+      "engajamentos": 1145,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 13.02,
+          "conversas": 2,
+          "alcance": 971
+        },
+        "BM | Brasília de Minas": {
+          "investido": 11.26,
+          "conversas": 3,
+          "alcance": 1218
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 6.83,
+          "conversas": 0,
+          "alcance": 1682
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-13",
+      "investido": 49.27,
+      "conversas": 6,
+      "alcance": 5483,
+      "impressoes": 6800,
+      "cliques": 53,
+      "engajamentos": 1648,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 21.28,
+          "conversas": 1,
+          "alcance": 1820
+        },
+        "BM | Brasília de Minas": {
+          "investido": 22.18,
+          "conversas": 5,
+          "alcance": 2250
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 5.81,
+          "conversas": 0,
+          "alcance": 1634
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-14",
+      "investido": 46.77,
+      "conversas": 7,
+      "alcance": 6119,
+      "impressoes": 8058,
+      "cliques": 48,
+      "engajamentos": 1611,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 20.87,
+          "conversas": 1,
+          "alcance": 2437
+        },
+        "BM | Brasília de Minas": {
+          "investido": 21.34,
+          "conversas": 6,
+          "alcance": 3053
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 4.56,
+          "conversas": 0,
+          "alcance": 1136
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    }
+  ],
+  "grupos": [
+    {
+      "id": "120254021728140249",
+      "nome": "CJ | Coração de Jesus",
+      "investido": 115.77,
+      "conversas": 21,
+      "alcance": 7251,
+      "impressoes": 15912,
+      "cliques": 103,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254022219800249",
+      "nome": "BM | Brasília de Minas",
+      "investido": 116.05,
+      "conversas": 33,
+      "alcance": 8590,
+      "impressoes": 18045,
+      "cliques": 102,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254054880830249",
+      "nome": "IG | Visitas ao perfil",
+      "investido": 34.57,
+      "conversas": 0,
+      "alcance": 6203,
+      "impressoes": 9388,
+      "cliques": 159,
+      "status": "ACTIVE"
+    }
+  ],
+  "anuncios": [
+    {
+      "id": "120254021728120249",
+      "nome": "CJ · Primeira habilitação (arte)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021915750249",
+      "nome": "CJ · +500 aprovados (arte)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021931190249",
+      "nome": "CJ · Vagas em outubro (arte)",
+      "grupo": "CJ",
+      "investido": 1.26,
+      "conversas": 1,
+      "alcance": 98,
+      "impressoes": 135,
+      "cliques": 1,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021935710249",
+      "nome": "CJ · Caminhão Cat. D e E (arte)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021938590249",
+      "nome": "CJ · Moto Cat. A (arte)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021946210249",
+      "nome": "CJ · 2 unidades (arte)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021954210249",
+      "nome": "CJ · Gabriel + carro (foto)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021959530249",
+      "nome": "CJ · Samuel + carro (foto)",
+      "grupo": "CJ",
+      "investido": 18.71,
+      "conversas": 5,
+      "alcance": 1860,
+      "impressoes": 3134,
+      "cliques": 22,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021965940249",
+      "nome": "CJ · Caminhão Ford Cargo (foto)",
+      "grupo": "CJ",
+      "investido": 9.58,
+      "conversas": 0,
+      "alcance": 901,
+      "impressoes": 1408,
+      "cliques": 16,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021972210249",
+      "nome": "CJ · Moto Yamaha (foto)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021975490249",
+      "nome": "CJ · Fachada + carro (foto)",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254021981880249",
+      "nome": "CJ · Aprovados Cat. B (foto)",
+      "grupo": "CJ",
+      "investido": 13.95,
+      "conversas": 0,
+      "alcance": 1591,
+      "impressoes": 2230,
+      "cliques": 23,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254054832750249",
+      "nome": "CJ · Vídeo do Samuel",
+      "grupo": "CJ",
+      "investido": 72.24,
+      "conversas": 15,
+      "alcance": 5388,
+      "impressoes": 8995,
+      "cliques": 41,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144167570249",
+      "nome": "CJ · Samuel + carro — arte da equipe",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144170520249",
+      "nome": "CJ · +500 aprovados — arte da equipe",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144170620249",
+      "nome": "CJ · Vagas em outubro — arte da equipe",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144170680249",
+      "nome": "CJ · Caminhão Cat. D e E — arte da equipe",
+      "grupo": "CJ",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254022219730249",
+      "nome": "BM · Primeira habilitação (arte)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 1,
+      "impressoes": 7,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219710249",
+      "nome": "BM · +500 aprovados (arte)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219740249",
+      "nome": "BM · Vagas em outubro (arte)",
+      "grupo": "BM",
+      "investido": 0.6,
+      "conversas": 0,
+      "alcance": 61,
+      "impressoes": 77,
+      "cliques": 2,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219720249",
+      "nome": "BM · Caminhão Cat. D e E (arte)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219820249",
+      "nome": "BM · Moto Cat. A (arte)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219750249",
+      "nome": "BM · 2 unidades (arte)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219810249",
+      "nome": "BM · Gabriel + carro (foto)",
+      "grupo": "BM",
+      "investido": 8.47,
+      "conversas": 3,
+      "alcance": 895,
+      "impressoes": 1344,
+      "cliques": 10,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219760249",
+      "nome": "BM · Samuel + carro (foto)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219780249",
+      "nome": "BM · Caminhão Ford Cargo (foto)",
+      "grupo": "BM",
+      "investido": 2.9,
+      "conversas": 2,
+      "alcance": 374,
+      "impressoes": 522,
+      "cliques": 5,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219770249",
+      "nome": "BM · Moto Yamaha (foto)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219830249",
+      "nome": "BM · Fachada + carro (foto)",
+      "grupo": "BM",
+      "investido": 20.96,
+      "conversas": 5,
+      "alcance": 2097,
+      "impressoes": 3812,
+      "cliques": 27,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254022219790249",
+      "nome": "BM · Aprovados Cat. B (foto)",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "PAUSED"
+    },
+    {
+      "id": "120254054759260249",
+      "nome": "BM · Vídeo do Samuel",
+      "grupo": "BM",
+      "investido": 83.12,
+      "conversas": 23,
+      "alcance": 7276,
+      "impressoes": 12283,
+      "cliques": 58,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144170720249",
+      "nome": "BM · 2 unidades — arte da equipe",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144170790249",
+      "nome": "BM · Moto Cat. A — arte da equipe",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144171080249",
+      "nome": "BM · Caminhão Cat. D e E — arte da equipe",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254144171350249",
+      "nome": "BM · +500 aprovados — arte da equipe",
+      "grupo": "BM",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120254054880810249",
+      "nome": "IG · Vídeo do Samuel",
+      "grupo": "IG",
+      "investido": 34.57,
+      "conversas": 0,
+      "alcance": 6203,
+      "impressoes": 9388,
+      "cliques": 159,
+      "status": "ACTIVE"
+    }
+  ],
+  "atualizacoes": [
+    "2026-10-14T22:40:00-03:00"
+  ],
+  "leitura": "<strong>A campanha fechou a primeira semana acima do esperado.</strong> Desde 07/10 investimos R$ 266,39 e 54 pessoas chamaram a autoescola no WhatsApp — R$ 4,93 por conversa, bem abaixo do teto de R$ 15 combinado. Brasília de Minas está trazendo conversa mais barata (33 conversas a R$ 3,52) do que Coração de Jesus (21 a R$ 5,51). O vídeo do Samuel é o anúncio que mais traz gente: 7 em cada 10 conversas vieram dele. Hoje (14/10) entraram no ar os seis anúncios feitos pela equipe da autoescola, no lugar das artes anteriores; a leitura dos próximos dias vai dizer quais ficam. Próximo passo: anotar as matrículas na planilha (coluna amarela) para o painel mostrar o custo real por aluno."
+}
