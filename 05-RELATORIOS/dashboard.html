@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painel de Resultados — Auto Escola Liderança | ADS Company</title>
+<title>Relatório de Campanhas — Auto Escola Liderança | ADS Company</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -102,12 +102,11 @@
   /* ===== balões de ajuda ("i") ===== */
   .info { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1px solid rgba(255,92,0,.55); color: var(--laranja); font: 700 9px/1 var(--sans); letter-spacing: 0; text-transform: none; vertical-align: middle; margin-left: 1px; cursor: help; position: relative; background: #fff; flex-shrink: 0; }
   .info:hover, .info.aberto { background: var(--laranja); color: #fff; }
-  .info .balao { display: none !important; }
-  /* balão único, fixo na tela: nunca é cortado por tabela, card ou rolagem */
-  #balao-global { position: fixed; display: none; width: 260px; max-width: calc(100vw - 24px); background: #1C1917; color: #fff; font: 400 12.5px/1.5 var(--sans); letter-spacing: 0; text-transform: none; text-align: left; padding: 10px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); z-index: 1000; white-space: normal; pointer-events: none; }
-  #balao-global b { color: #FFB080; font-weight: 600; }
-  #balao-global::before { content: ""; position: absolute; width: 10px; height: 10px; background: #1C1917; transform: rotate(45deg); left: var(--seta, 50%); margin-left: -5px; top: -5px; }
+  .info .balao { display: none; }
+  #balao-global { position: fixed; display: none; width: 260px; max-width: calc(100vw - 24px); background: #1C1917; color: #fff; font: 400 12.5px/1.5 var(--sans); letter-spacing: 0; text-transform: none; text-align: left; padding: 10px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); z-index: 9999; pointer-events: none; white-space: normal; max-height: calc(100vh - 16px); overflow-y: auto; }
+  #balao-global::before { content: ""; position: absolute; top: -5px; left: var(--seta, 50%); margin-left: -5px; width: 10px; height: 10px; background: #1C1917; transform: rotate(45deg); }
   #balao-global.acima::before { top: auto; bottom: -5px; }
+  #balao-global b { color: #FFB080; font-weight: 600; }
   th .info { border-color: rgba(107,101,96,.5); color: var(--cinza); }
   th .info:hover, th .info.aberto { background: var(--cinza); color: #fff; border-color: var(--cinza); }
   .secao-titulo .info { margin-left: 8px; }
@@ -115,7 +114,7 @@
   /* ===== funil ===== */
   .funil-wrap { display: grid; grid-template-columns: minmax(180px, 34%) 1fr; gap: 10px 36px; align-items: stretch; }
   .funil-img { width: 100%; height: auto; display: block; align-self: center; }
-  .funil-etapas { display: grid; grid-template-rows: repeat(4, 1fr); }
+  .funil-etapas { display: grid; grid-template-rows: repeat(3, 1fr); }
   .funil-etapa { display: flex; flex-direction: column; justify-content: center; padding: 10px 0 10px 18px; border-left: 3px solid var(--cor); }
   .funil-etapa + .funil-etapa { border-top: 1px solid var(--borda); }
   .funil-etapa .nome { font-size: .6rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--cinza); }
@@ -125,7 +124,7 @@
   @media (max-width: 640px) { .funil-wrap { grid-template-columns: 1fr; } .funil-img { max-width: 220px; margin: 0 auto; } .funil-etapa { padding-left: 14px; } }
   /* ===== gráfico ===== */
   .grafico-wrap { position: relative; }
-  .tip { position: absolute; display: none; pointer-events: none; background: #1C1917; color: #fff; font-size: 12px; line-height: 1.5; padding: 9px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); z-index: 40; min-width: 170px; white-space: nowrap; }
+  .tip { position: absolute; display: none; pointer-events: none; background: #1C1917; color: #fff; font-size: 12px; line-height: 1.5; padding: 9px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); z-index: 40; min-width: 150px; max-width: min(300px, calc(100% - 8px)); white-space: normal; }
   .tip b { color: #FFB080; font-weight: 600; }
   .tip .t-data { font-weight: 600; margin-bottom: 2px; text-transform: capitalize; }
   .tip .t-prev { color: #B5AFA9; border-top: 1px solid rgba(255,255,255,.15); margin-top: 5px; padding-top: 5px; }
@@ -136,7 +135,7 @@
 <body>
 
 <div class="topo">
-  <div style="display:flex;align-items:center;gap:14px"><a href="../01-ONBOARDING/index.html" style="font-size:.7rem;color:var(--cinza);text-decoration:none;letter-spacing:.08em">&larr; Central</a><div class="topo-nome">ADS <em>Company</em></div></div>
+  <div style="display:flex;align-items:center;gap:14px"><a href="../index.html" style="font-size:.7rem;color:var(--cinza);text-decoration:none;letter-spacing:.08em">&larr; Central</a><div class="topo-nome">ADS <em>Company</em></div></div>
   <div class="filtro" id="filtro">
     <button data-dias="7">7 dias</button>
     <button data-dias="14">14 dias</button>
@@ -149,7 +148,7 @@
 </div>
 
 <div class="hero">
-  <div class="hero-tag">Painel de Resultados</div>
+  <div class="hero-tag">Relatório de Campanhas</div>
   <h1 id="titulo-cliente">—</h1>
   <p id="atualizado-em">—</p>
   <div class="periodo-atual" id="periodo-atual">—</div>
@@ -179,8 +178,8 @@
   </div>
 
   <div class="secao">
-    <div class="secao-titulo"><span class="num">02</span><h2>Do anúncio à matrícula</h2></div>
-    <p class="secao-sub">O caminho de quem vê o anúncio até virar aluno, no período selecionado.</p>
+    <div class="secao-titulo"><span class="num">02</span><h2>Do anúncio à conversa</h2></div>
+    <p class="secao-sub">O caminho do público até o WhatsApp no período selecionado.</p>
     <div class="painel" id="funil"></div>
   </div>
 
@@ -203,11 +202,11 @@
   </div>
 
   <div class="secao">
-    <div class="secao-titulo"><span class="num">05</span><h2>Por unidade</h2></div>
-    <p class="secao-sub">Investimento, conversas no WhatsApp, custo por conversa e pessoas alcançadas em cada unidade no período selecionado.</p>
+    <div class="secao-titulo"><span class="num">05</span><h2>Campanhas</h2></div>
+    <p class="secao-sub">Investimento, conversas geradas, custo por conversa e alcance de cada campanha no período selecionado.</p>
     <div class="tabela-scroll" style="max-height:none">
       <table>
-        <thead><tr><th>Unidade</th><th class="num">Investido</th><th class="num">Conversas</th><th class="num">Custo por conversa</th><th class="num">Alcance</th></tr></thead>
+        <thead><tr><th>Campanha</th><th class="num">Investido</th><th class="num">Conversas</th><th class="num">Custo por conversa</th><th class="num">Alcance</th></tr></thead>
         <tbody id="tabela-campanhas"></tbody>
       </table>
     </div>
@@ -231,8 +230,7 @@
 
 </div>
 
-<div id="balao-global" role="tooltip"></div>
-<div class="rodape">ADS Company · Auto Escola Liderança · Painel atualizado automaticamente todos os dias às 7h · adscompany.pro</div>
+<div class="rodape">ADS Company · Auto Escola Liderança · Relatório atualizado automaticamente todos os dias às 7h · adscompany.pro</div>
 
 <script>
 // ================== DADOS — carregados de dados.json (atualizado pela rotina diária das 7h) ==================
@@ -249,11 +247,11 @@ function mapear(J) {
     campanhas: d.campanhas || {}
   }));
   return {
-    cliente: "AUTO ESCOLA LIDERANÇA",
+    cliente: "VIVIANE UTILIDADES",
     atualizado_em: atualizado,
-    metas: { matriculas_mes: (J.metas || {}).matriculas_mes || 60, conversas_dia_meta: (J.metas || {}).conversas_dia_meta || 6, custo_conversa_teto: (J.metas || {}).custo_conversa_teto || 15, ancora: (J.metas || {}).ancora || "3 alunos por mês pagam todo o investimento" },
+    metas: { faturamento_mes: (J.metas || {}).faturamento_mes || 110000, vendas_extras_dia: (J.metas || {}).vendas_extras_dia || 5, ancora: "5 vendas extras por dia pagam o serviço" },
     campanhas_ativas: ativas,
-    leitura: J.leitura || "<strong>Campanha no ar desde 07/10.</strong> Nos primeiros dias o Instagram ainda está aprendendo para quem mostrar os anúncios — os números começam a estabilizar a partir do terceiro dia. A leitura do gestor é atualizada a cada manhã junto com os dados.",
+    leitura: J.leitura || "<strong>Campanha no ar desde 07/10 às 17h.</strong> Nos primeiros dias o Instagram ainda está aprendendo para quem mostrar os anúncios — os números começam a estabilizar a partir do terceiro dia. A leitura do gestor é atualizada a cada manhã junto com os dados.",
     dias
   };
 }
@@ -277,11 +275,11 @@ Promise.all([
 
 // ===== balões de ajuda: o que cada número quer dizer, em linguagem de loja =====
 const AJUDA = {
-  "Valor investido": "Quanto o Instagram e o Facebook cobraram no cartão da autoescola no período. O combinado é <b>R$ 15 por dia em cada unidade</b> (Coração de Jesus e Brasília de Minas) mais R$ 6 por dia para trazer gente ao perfil do Instagram.",
-  "Conversas iniciadas": "Pessoas que tocaram no anúncio e <b>abriram uma conversa no WhatsApp da autoescola</b>. É o resultado que a campanha busca: cada conversa é um possível aluno.",
-  "Custo por conversa": "Quanto custou, em média, cada pessoa que chamou no WhatsApp (investido ÷ conversas). <b>Até R$ 5 é ótimo</b>; o teto combinado é R$ 15.",
-  "Matrículas registradas": "Alunos que a autoescola anotou na planilha como matriculados a partir do WhatsApp. Depende do preenchimento diário da equipe.",
-  "Custo por matrícula": "Quanto foi investido em anúncio para cada aluno matriculado (investido ÷ matrículas). Compare com o valor do pacote: <b>3 alunos por mês pagam todo o investimento</b>.",
+  "Valor investido": "Quanto o Instagram e o Facebook cobraram no cartão da loja no período. O teto combinado é <b>R$ 30 por dia</b>.",
+  "Conversas iniciadas": "Pessoas que tocaram no anúncio e <b>abriram uma conversa no WhatsApp da loja</b>. É o resultado que a campanha busca.",
+  "Custo por conversa": "Quanto custou, em média, cada pessoa que chamou no WhatsApp (investido ÷ conversas). <b>Até R$ 5 é bom</b>; acima disso, ajustamos.",
+  "Vendas registradas": "Vendas que a loja anotou na planilha como vindas do WhatsApp ou do anúncio. Depende do preenchimento diário.",
+  "Retorno por real investido": "Para cada R$ 1 investido, quanto voltou em vendas registradas. <b>3x</b> quer dizer que cada real virou três.",
   "Pessoas alcançadas": "Quantas pessoas diferentes viram o anúncio pelo menos uma vez no período.",
   "Impressões": "Quantas vezes o anúncio apareceu na tela — conta repetições para a mesma pessoa.",
   "Frequência": "Quantas vezes, em média, cada pessoa viu o anúncio. <b>Acima de 3</b> começa a cansar e a gente troca a arte.",
@@ -289,32 +287,31 @@ const AJUDA = {
   "Cliques": "Quantas vezes alguém <b>tocou no anúncio</b>. Nem todo toque vira conversa.",
   "CTR": "De cada 100 vezes que o anúncio apareceu, em quantas alguém tocou. Mostra se a arte <b>chama atenção</b>.",
   "Custo por clique": "Quanto custou, em média, cada toque no anúncio.",
-  "Engajamentos": "Toda reação ao anúncio: curtidas, comentários, compartilhamentos, salvamentos e toques. O vídeo faz esse número subir muito.",
-  "Matrículas do mês (registradas na planilha)": "Quantos alunos se matricularam no mês, pela planilha da autoescola, comparado com a meta do mês. A barra enche conforme a equipe anota.",
-  "Conversas no WhatsApp por dia": "Média de pessoas por dia que chamaram no WhatsApp pelo anúncio, contra a meta de <b>6 por dia</b>.",
-  "Toques no anúncio": "Quantas vezes alguém tocou no anúncio. A porcentagem mostra quantos dos que viram chegaram a tocar.",
-  "Conversas no WhatsApp": "Quem, depois de tocar, realmente abriu conversa com a autoescola. A porcentagem mostra quantos toques viraram conversa.",
-  "Matrículas": "Quem, depois de conversar, virou aluno — pela planilha da autoescola. É o número que importa no fim do mês.",
+  "Engajamentos": "Toda reação ao anúncio: curtidas, comentários, compartilhamentos, salvamentos e toques.",
+  "Meta de faturamento do mês (valor vendido registrado)": "Quanto a loja vendeu pelo WhatsApp no mês (pela planilha), comparado com a meta de faturamento. A barra enche conforme as vendas são anotadas.",
+  "Vendas por dia atribuídas às campanhas": "Média de vendas por dia que vieram da campanha, contra a meta de <b>5 por dia</b> — o número que paga o serviço e os anúncios.",
+  "Cliques no anúncio": "Quantas vezes alguém tocou no anúncio. A porcentagem mostra quantos dos que viram chegaram a tocar.",
+  "Conversas no WhatsApp": "Quem, depois de tocar, realmente abriu conversa com a loja. A porcentagem mostra quantos toques viraram conversa.",
   "Dia com mais conversas": "O dia do período em que mais gente chamou no WhatsApp pelo anúncio.",
   "Dia de maior alcance": "O dia em que o anúncio foi visto pelo maior número de pessoas diferentes.",
-  "Unidade mais eficiente": "A unidade (ou grupo de anúncios) que trouxe conversas pelo <b>menor custo</b>.",
+  "Campanha mais eficiente": "O grupo de anúncios que trouxe conversas pelo <b>menor custo</b> — é para onde vale mandar mais verba.",
   "Média de conversas por dia": "Total de conversas dividido pelos dias do período selecionado.",
-  "Unidade": "Cada linha é um grupo de anúncios: Coração de Jesus, Brasília de Minas e o grupo que leva gente ao perfil do Instagram. A bolinha verde = ligado; cinza = pausado.",
-  "Investido": "Quanto foi gasto naquela linha (unidade ou dia).",
+  "Campanha": "Cada linha é um grupo de anúncios: um público e um tipo de produto (vestidos, masculino, família). A bolinha verde = ligado; cinza = pausado.",
+  "Investido": "Quanto foi gasto naquela linha (grupo ou dia).",
   "Conversas": "Pessoas que abriram conversa no WhatsApp pelo anúncio naquela linha.",
   "Alcance": "Pessoas diferentes que viram o anúncio naquela linha.",
   "Data": "Um dia por linha. Os números de ontem podem mudar um pouco até 48 h — o Meta termina de contar com atraso.",
   "Placar de metas": "Como o mês está indo contra as metas combinadas. Independe do filtro de período lá em cima.",
-  "Do anúncio à matrícula": "O caminho das pessoas: quem viu → quem tocou → quem chamou no WhatsApp → quem se matriculou. Cada etapa mostra quanto passou da anterior.",
+  "Do anúncio à conversa": "O caminho das pessoas: quem viu → quem tocou → quem chamou no WhatsApp. Cada etapa mostra quanto passou da anterior.",
   "Evolução diária": "Linha laranja = conversas por dia (passe o mouse nos pontos para ver o dia). Linha escura = quanto foi investido em cada dia. A linha tracejada cinza, quando aparece, mostra os mesmos dias do período anterior, para comparar.",
   "Destaques do período": "Os pontos altos do período selecionado, calculados automaticamente.",
-  "Por unidade": "Desempenho de cada unidade no período. Cada unidade tem seu próprio valor por dia e seu próprio número de WhatsApp.",
+  "Campanhas": "Desempenho de cada grupo de anúncios no período. O dinheiro do dia é dividido entre eles automaticamente, indo mais para quem traz conversa mais barata.",
   "Detalhamento dia a dia": "Os mesmos números, abertos por dia. O dia com mais conversas aparece em laranja.",
   "Leitura do gestor": "Resumo, em linguagem simples, do que os números dizem e qual é o próximo passo. Atualizado todas as manhãs.",
-  "Investimento × Resultado": "O essencial: quanto entrou de dinheiro e quanto voltou em conversas e matrículas.",
-  "Alcance e entrega": "Quantas pessoas viram, quantas vezes e a que preço. Diz se o anúncio está chegando bem nas duas cidades.",
+  "Investimento × Resultado": "O essencial: quanto entrou de dinheiro e quanto voltou em conversas e vendas.",
+  "Alcance e entrega": "Quantas pessoas viram, quantas vezes e a que preço. Diz se o anúncio está chegando bem na região.",
   "Cliques e engajamento": "Se as pessoas estão parando no anúncio e interagindo. Diz se a arte e o texto estão chamando atenção.",
-  "variação": "A seta compara com o período anterior do mesmo tamanho. <b>Verde = melhorou para a autoescola</b>, vermelho = piorou. \"Sem comparativo\" = ainda não há período anterior."
+  "variação": "A seta compara com o período anterior do mesmo tamanho. <b>Verde = melhorou para a loja</b>, vermelho = piorou. \"Sem comparativo\" = ainda não há período anterior."
 };
 function info(chave) {
   const t = AJUDA[chave]; if (!t) return "";
@@ -326,37 +323,44 @@ function comInfo(txt, chave) {
   const i = t.lastIndexOf(" ");
   return i < 0 ? '<span class="nw">' + t + ic + '</span>' : t.slice(0, i) + ' <span class="nw">' + t.slice(i + 1) + ic + '</span>';
 }
-const BALAO = () => document.getElementById("balao-global");
-function mostrarBalao(el) {
-  const b = BALAO(), txt = el.querySelector(".balao"); if (!b || !txt) return;
-  b.innerHTML = txt.innerHTML; b.classList.remove("acima"); b.style.display = "block";
-  const r = el.getBoundingClientRect(), M = 12, W = b.offsetWidth, H = b.offsetHeight;
-  let left = r.left + r.width / 2 - W / 2;
-  left = Math.max(M, Math.min(window.innerWidth - W - M, left));
-  let top = r.bottom + 10;
-  if (top + H > window.innerHeight - M) { top = r.top - H - 10; b.classList.add("acima"); }
-  if (top < M) { top = M; }
-  b.style.left = left + "px"; b.style.top = top + "px";
-  b.style.setProperty("--seta", Math.max(14, Math.min(W - 14, r.left + r.width / 2 - left)) + "px");
+const BALAO = document.createElement("div"); BALAO.id = "balao-global"; document.body.appendChild(BALAO);
+let infoAberto = null;
+function posicionarBalao(el) {
+  const fonte = el.querySelector(".balao"); if (!fonte) return;
+  BALAO.innerHTML = fonte.innerHTML; BALAO.style.display = "block"; BALAO.classList.remove("acima");
+  const r = el.getBoundingClientRect(), w = BALAO.offsetWidth, h = BALAO.offsetHeight;
+  const vw = window.innerWidth, vh = window.innerHeight, margem = 12;
+  const centro = r.left + r.width / 2;
+  let left = Math.round(Math.max(margem, Math.min(vw - w - margem, centro - w / 2)));
+  let top = Math.round(r.bottom + 10);
+  if (top + h > vh - 8 && r.top - h - 10 > 8) { top = Math.round(r.top - h - 10); BALAO.classList.add("acima"); }
+  top = Math.max(8, top);
+  BALAO.style.left = left + "px"; BALAO.style.top = top + "px";
+  BALAO.style.setProperty("--seta", Math.max(12, Math.min(w - 12, centro - left)) + "px");
 }
-function esconderBalao() { if (window.__demo) return; const b = BALAO(); if (b) b.style.display = "none"; document.querySelectorAll(".info.aberto").forEach(x => x.classList.remove("aberto")); }
+function esconderBalao() { if (infoAberto) return; BALAO.style.display = "none"; }
 function abrirInfo(e, el) {
   e.stopPropagation();
-  const jaAberto = el.classList.contains("aberto");
-  esconderBalao();
-  if (jaAberto) return;
-  el.classList.add("aberto"); mostrarBalao(el);
+  const jaAberto = infoAberto === el;
+  document.querySelectorAll(".info.aberto").forEach(x => x.classList.remove("aberto"));
+  infoAberto = null;
+  if (jaAberto) { BALAO.style.display = "none"; return; }
+  el.classList.add("aberto"); infoAberto = el; posicionarBalao(el);
 }
-document.addEventListener("mouseover", e => { const el = e.target.closest(".info"); if (el && !document.querySelector(".info.aberto")) mostrarBalao(el); });
-document.addEventListener("mouseout", e => { const el = e.target.closest(".info"); if (el && !el.classList.contains("aberto")) { const b = BALAO(); if (b) b.style.display = "none"; } });
-document.addEventListener("focusin", e => { const el = e.target.closest(".info"); if (el) mostrarBalao(el); });
-document.addEventListener("focusout", e => { if (e.target.closest(".info") && !document.querySelector(".info.aberto")) { const b = BALAO(); if (b) b.style.display = "none"; } });
-document.addEventListener("click", esconderBalao);
-document.addEventListener("keydown", e => { if (e.key === "Escape") esconderBalao(); });
-window.addEventListener("scroll", esconderBalao, true);
-window.addEventListener("resize", esconderBalao);
-// uso interno de conferência: #demo=<rótulo> abre o balão daquele rótulo
-function demoAbrir(rotulo) { const el = [...document.querySelectorAll(".info")].find(x => (x.getAttribute("aria-label") || "") === "O que é " + rotulo + "?"); if (!el) { document.body.dataset.demo = "nao encontrado: " + rotulo; return; } window.__demo = true; el.scrollIntoView({ block: "center", behavior: "instant" }); el.classList.add("aberto"); mostrarBalao(el); const rb = BALAO().getBoundingClientRect(), re = el.getBoundingClientRect(); document.body.dataset.demo = JSON.stringify({ rotulo, balao: [Math.round(rb.left), Math.round(rb.top), Math.round(rb.right), Math.round(rb.bottom)], icone: [Math.round(re.left), Math.round(re.top)], tela: [window.innerWidth, window.innerHeight], texto: BALAO().textContent.length }); }
+function fecharInfo() { document.querySelectorAll(".info.aberto").forEach(x => x.classList.remove("aberto")); infoAberto = null; BALAO.style.display = "none"; }
+document.addEventListener("mouseover", e => { const el = e.target.closest(".info"); if (el && el.querySelector(".balao") && !infoAberto) posicionarBalao(el); });
+document.addEventListener("mouseout", e => { const el = e.target.closest(".info"); if (el && !infoAberto) esconderBalao(); });
+document.addEventListener("focusin", e => { const el = e.target.closest(".info"); if (el && el.querySelector(".balao")) posicionarBalao(el); });
+document.addEventListener("focusout", e => { if (e.target.closest(".info")) esconderBalao(); });
+document.addEventListener("click", fecharInfo);
+document.addEventListener("keydown", e => { if (e.key === "Escape") fecharInfo(); });
+window.addEventListener("scroll", () => { if (infoAberto) posicionarBalao(infoAberto); }, true);
+window.addEventListener("resize", () => { if (infoAberto) posicionarBalao(infoAberto); });
+function demoInfo(chave) {
+  const lista = [...document.querySelectorAll('.info[aria-label="O que é ' + chave + '?"]')];
+  const el = lista[lista.length - 1]; if (!el) return;
+  el.classList.add("aberto"); infoAberto = el; posicionarBalao(el);
+}
 
 function iniciar() {
 const D = window.DADOS;
@@ -415,8 +419,8 @@ function render(ini, fim) {
     kpi("Valor investido", moeda(A.investido), deltaChip(A.investido, P && P.investido, null), { destaque: 1 }),
     kpi("Conversas iniciadas", inteiro(A.conversas), deltaChip(A.conversas, P && P.conversas, false), { destaque: 1, laranja: 1 }),
     kpi("Custo por conversa", moeda(A.custo_conversa), deltaChip(A.custo_conversa, P && P.custo_conversa, true), { destaque: 1 }),
-    kpi("Matrículas registradas", inteiro(A.vendas), deltaChip(A.vendas, P && P.vendas, false), { destaque: 1 }),
-    kpi("Custo por matrícula", A.vendas ? moeda(A.investido / A.vendas) : "—", A.vendas ? deltaChip(A.investido / A.vendas, P && P.vendas ? P.investido / P.vendas : null, true) : '<span class="delta neutro">— aguardando a planilha</span>', { destaque: 1, laranja: 1 })
+    kpi("Vendas registradas", inteiro(A.vendas), deltaChip(A.vendas, P && P.vendas, false), { destaque: 1 }),
+    kpi("Retorno por real investido", A.retorno.toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + "x", deltaChip(A.retorno, P && P.retorno, false), { destaque: 1, laranja: 1 })
   ]);
   g("kpis-alcance", [
     kpi("Pessoas alcançadas", inteiro(A.alcance), deltaChip(A.alcance, P && P.alcance, false)),
@@ -435,24 +439,23 @@ function render(ini, fim) {
   const mesRef = sel[n - 1].data.slice(0, 7);
   const doMes = DIAS.filter(d => d.data.slice(0, 7) === mesRef);
   const AM = agregar(doMes);
-  const diasDoMes = doMes.length || 1;
-  const mediaConversasDia = AM.conversas / diasDoMes;
+  const diasComVenda = doMes.filter(d => d.vendas > 0).length || 1;
+  const mediaVendasDia = AM.vendas / diasComVenda;
   document.getElementById("placar-sub").textContent = "Acompanhamento do mês " + mesRef.slice(5, 7) + "/" + mesRef.slice(0, 4) + " (independente do filtro acima). Âncora do projeto: " + D.metas.ancora + ".";
   const barra = (nome, atual, meta, fmt) => {
     const pct = Math.min(100, Math.round(atual / meta * 100));
     return `<div style="margin-bottom:18px"><div class="meta-linha"><span>${comInfo(nome)}</span><span><strong>${fmt(atual)}</strong> / ${fmt(meta)} · ${pct}%</span></div><div class="meta-barra"><div style="width:${pct}%"></div></div></div>`;
   };
   g("placar", [
-    barra("Matrículas do mês (registradas na planilha)", AM.vendas, D.metas.matriculas_mes, v => inteiro(v) + (v === 1 ? " matrícula" : " matrículas")),
-    barra("Conversas no WhatsApp por dia", mediaConversasDia, D.metas.conversas_dia_meta, v => v.toLocaleString("pt-BR", { maximumFractionDigits: 1 }))
+    barra("Meta de faturamento do mês (valor vendido registrado)", AM.valor_vendido, D.metas.faturamento_mes, v => "R$ " + inteiro(v)),
+    barra("Vendas por dia atribuídas às campanhas", mediaVendasDia, D.metas.vendas_extras_dia, v => v.toLocaleString("pt-BR", { maximumFractionDigits: 1 }))
   ]);
 
   // Funil
   const funil = [
     { nome: "Pessoas alcançadas", valor: A.alcance, cor: "#CFC8C2" },
-    { nome: "Toques no anúncio", valor: A.cliques, cor: "#FFB080" },
-    { nome: "Conversas no WhatsApp", valor: A.conversas, cor: "#FF5C00" },
-    { nome: "Matrículas", valor: A.vendas, cor: "#1C1917" }
+    { nome: "Cliques no anúncio", valor: A.cliques, cor: "#FFB080" },
+    { nome: "Conversas no WhatsApp", valor: A.conversas, cor: "#FF5C00" }
   ];
   const pctTxt = (a, b) => b ? (a / b * 100).toFixed(1).replace(".", ",") + "%" : "—";
   g("funil", [
@@ -460,8 +463,7 @@ function render(ini, fim) {
     ...funil.map((f, i) => {
       const taxa = i === 0
         ? "Todo mundo que viu o anúncio no período"
-        : (i === 3 && !f.valor) ? "Aparece quando a autoescola anota as matrículas na planilha"
-        : "<b>" + pctTxt(f.valor, funil[i - 1].valor) + "</b> da etapa anterior" + (i >= 2 ? " · <b>" + pctTxt(f.valor, funil[0].valor) + "</b> de quem foi alcançado" : "");
+        : "<b>" + pctTxt(f.valor, funil[i - 1].valor) + "</b> da etapa anterior" + (i === 2 ? " · <b>" + pctTxt(f.valor, funil[0].valor) + "</b> de quem foi alcançado" : "");
       return `<div class="funil-etapa" style="--cor:${f.cor}"><div class="nome">${comInfo(f.nome)}</div><div class="valor">${inteiro(f.valor)}</div><div class="taxa">${taxa}</div></div>`;
     }),
     '</div></div>'
@@ -485,7 +487,7 @@ function render(ini, fim) {
   g("destaques", [
     `<div class="destaque"><div class="rotulo">${comInfo("Dia com mais conversas")}</div><div class="valor">${dataBR(diaMaisConversas.data)} — ${diaMaisConversas.conversas} conversas</div></div>`,
     `<div class="destaque"><div class="rotulo">${comInfo("Dia de maior alcance")}</div><div class="valor">${dataBR(diaMaiorAlcance.data)} — ${inteiro(diaMaiorAlcance.alcance)} pessoas</div></div>`,
-    melhor ? `<div class="destaque"><div class="rotulo">${comInfo("Unidade mais eficiente")}</div><div class="valor">${melhor.nome.split("—")[0].trim()}</div><div class="sub">${moeda(melhor.custo)} por conversa</div></div>` : "",
+    melhor ? `<div class="destaque"><div class="rotulo">${comInfo("Campanha mais eficiente")}</div><div class="valor">${melhor.nome.split("—")[0].trim()}</div><div class="sub">${moeda(melhor.custo)} por conversa</div></div>` : "",
     `<div class="destaque"><div class="rotulo">${comInfo("Média de conversas por dia")}</div><div class="valor">${(A.conversas / n).toLocaleString("pt-BR", { maximumFractionDigits: 1 })}</div></div>`
   ]);
 
@@ -502,7 +504,6 @@ function render(ini, fim) {
     `<tr><td>${dataBRcompleta(d.data)}</td><td class="num">${inteiro(d.alcance)}</td><td class="num">${inteiro(d.impressoes)}</td><td class="num">${moeda(d.impressoes ? d.investido / d.impressoes * 1000 : 0)}</td><td class="num">${moeda(d.investido)}</td><td class="num ${d.conversas === maxConv ? "forte" : ""}">${d.conversas}</td><td class="num">${d.conversas ? moeda(d.investido / d.conversas) : "—"}</td></tr>`));
 
   desenharGrafico(sel, prevLista);
-  if (location.hash.startsWith("#demo=")) demoAbrir(decodeURIComponent(location.hash.slice(6)));
 }
 
 let GRAF = null;
@@ -583,7 +584,7 @@ function desenharGrafico(sel, prev) {
       + (p ? `<div class="t-prev">Período anterior (${dataBR(p.data)}): ${p.conversas}${plural(p.conversas)}</div>` : "");
     tip.style.display = "block";
     const px = GRAF.X(i), tw = tip.offsetWidth, th = tip.offsetHeight;
-    tip.style.left = Math.max(0, Math.min(GRAF.W - tw, px - tw / 2)) + "px";
+    tip.style.left = Math.max(4, Math.min(GRAF.W - tw - 4, px - tw / 2)) + "px";
     const yAlvo = GRAF.Yc(d.conversas) - th - 16;
     tip.style.top = (yAlvo < 0 ? GRAF.Yc(d.conversas) + 16 : yAlvo) + "px";
     if (marcado !== i) {
@@ -638,7 +639,8 @@ aplicarPreset("30");
     const m = g.innerHTML.trim().match(/^([\s\S]*?)(\S+)$/);
     if (m && !/[<>]/.test(m[2])) g.innerHTML = m[1] + '<span class="nw">' + m[2] + info(t) + '</span>'; else g.insertAdjacentHTML("beforeend", info(t));
   });
-  if (location.hash.startsWith("#demo=")) demoAbrir(decodeURIComponent(location.hash.slice(6)));
+  if (location.hash === "#demo") { aplicarPreset("4"); const f = document.querySelector(".kpi .info"); if (f) { f.classList.add("aberto"); infoAberto = f; posicionarBalao(f); } if (window.demoHover) window.demoHover(2); }
+  if (location.hash.startsWith("#demo:")) setTimeout(() => demoInfo(decodeURIComponent(location.hash.slice(6))), 50);
 
 
 }
