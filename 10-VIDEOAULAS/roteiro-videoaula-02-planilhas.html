@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro — Videoaula 2: Planilhas de Controle e Metas | Auto Escola Liderança</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--o:#FF5C00;--bg:#060606;--card:#111;--border:rgba(255,255,255,.08);--txt:#F5F5F5;--dim:#9A948E;--green:#34D399;--yellow:#FBBF24;--sans:'Inter',sans-serif;--serif:'Playfair Display',serif;--fs:30px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.6}
+.bar{position:sticky;top:0;z-index:50;background:rgba(6,6,6,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+.bar a{color:var(--dim);text-decoration:none}
+.bar .ctl{display:flex;gap:8px;align-items:center}
+.bar button{background:var(--card);border:1px solid var(--border);color:var(--txt);padding:6px 12px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:13px}
+.bar button:hover{border-color:var(--o)}
+.bar .prog{color:var(--o);font-weight:700;min-width:90px;text-align:center}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px 60vh}
+h1{font-family:var(--serif);font-size:40px;font-weight:700;margin-bottom:8px}
+h1 span{color:var(--o)}
+.sub{color:var(--dim);font-size:16px;margin-bottom:28px}
+.prep{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin-bottom:36px;font-size:16px}
+.prep h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--o);margin-bottom:10px}
+.prep li{margin-left:20px;margin-bottom:6px}
+.prep code{color:var(--green);font-size:14px}
+.sec{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:44px 0 12px;padding-top:24px;border-top:1px solid var(--border)}
+.blk{background:var(--card);border:1px solid var(--border);border-left:4px solid transparent;border-radius:14px;padding:22px 26px;margin-bottom:18px;transition:border-color .2s,background .2s;scroll-margin-top:110px}
+.blk.on{border-left-color:var(--o);background:#151210}
+.blk .n{font-size:12px;color:var(--dim);letter-spacing:.1em;margin-bottom:6px}
+.blk .n b{color:var(--o)}
+.blk .tela{font-size:15px;color:var(--yellow);margin-bottom:12px;padding-left:14px;border-left:2px solid var(--yellow)}
+.blk .tela b{color:#fff}
+.blk .fala{font-size:var(--fs);line-height:1.45;color:#fff;white-space:pre-line}
+.blk .fala em{color:var(--o);font-style:normal;font-weight:600}
+.cores{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:14px}
+.cores span{padding:4px 10px;border-radius:6px;border:1px solid var(--border)}
+.c-azul{background:#1d3557;color:#cfe3ff}.c-amarelo{background:#6b5300;color:#ffe9a3}.c-cinza{background:#3a3a3a;color:#ddd}.c-laranja{background:#7a2e00;color:#ffd1b3}
+.fim{margin-top:40px;padding:22px 26px;border:1px dashed var(--border);border-radius:14px;font-size:15px;color:var(--dim)}
+@media(max-width:700px){:root{--fs:22px}h1{font-size:30px}.wrap{padding:24px 16px 50vh}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="../01-ONBOARDING/index.html">&larr; Central</a>
+  <div class="ctl">
+    <button onclick="fonte(-2)">A−</button><button onclick="fonte(2)">A+</button>
+    <button onclick="ir(-1)">◀ anterior</button><span class="prog" id="prog">1 / 1</span><button onclick="ir(1)">próximo ▶</button>
+  </div>
+</div>
+<div class="wrap">
+  <h1>Videoaula 2 — <span>Planilhas de Controle e Metas</span></h1>
+  <p class="sub">Roteiro de gravação · ~9 minutos · Setas do teclado (ou Espaço) para avançar. O bloco aceso é o que você está falando.</p>
+
+  <div class="prep">
+    <h2>Antes de apertar REC</h2>
+    <ul>
+      <li>Abra as duas planilhas no Drive do cliente (CLIENTES › A.C 37 #AUTO ESCOLA LIDERANÇA MG › PLANILHAS), cada uma em uma aba:
+        <b>Controle Diário e Metas</b> e <b>Projeção de Metas</b>.</li>
+      <li>Deixe o painel aberto em uma terceira aba para mostrar o efeito no final.</li>
+      <li>Vai lançar uma matrícula de demonstração na linha de <b>hoje</b>: 1 matrícula, R$ 900. No fim do vídeo, apague (ou, se já houver matrícula real do dia, lance a real).</li>
+      <li>O código de cores que você vai repetir várias vezes:</li>
+    </ul>
+    <div class="cores"><span class="c-azul">🔵 Azul = entra sozinho (anúncios)</span><span class="c-amarelo">🟡 Amarelo = a equipe preenche</span><span class="c-cinza">⚪ Cinza = fórmula, não mexer</span><span class="c-laranja">🟠 Laranja = ADS Company define</span></div>
+  </div>
+
+  <div class="sec">Abertura</div>
+  <div class="blk"><div class="n">BLOCO <b>1</b> · ~40 s</div>
+    <div class="tela">TELA: câmera em você; depois a pasta PLANILHAS no Drive com os dois arquivos.</div>
+    <div class="fala">Olá de novo, equipe da Liderança! Nesta segunda videoaula eu apresento as <em>duas planilhas</em> que trabalham junto com o painel.
+
+A primeira é o <em>Controle Diário e Metas</em>: um dia por linha, onde entra tudo o que acontece. A segunda é a <em>Projeção de Metas</em>: ela olha o mês e diz se estamos no ritmo de bater a meta.
+
+As duas ficam na pasta PLANILHAS, dentro da pasta do projeto no Drive de vocês. São planilhas do Google: abrem no celular e no computador, sem instalar nada.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>2</b> · ~45 s</div>
+    <div class="tela">TELA: abra o Controle Diário. Mostre a legenda de cores no topo (linha 2).</div>
+    <div class="fala">Antes de tudo, a regra das <em>cores</em>, que vale para as duas planilhas:
+
+Célula <em>azul</em> é preenchida sozinha com os dados dos anúncios. Vocês nunca precisam digitar nela.
+
+Célula <em>amarela</em> é a de vocês: é onde a equipe anota o que aconteceu na autoescola.
+
+Célula <em>cinza</em> é conta feita pela planilha — não se mexe.
+
+E as poucas <em>laranjas</em>, na Projeção, são as metas, que a gente define junto.
+
+A planilha está protegida: se alguém tentar digitar fora do amarelo, ela avisa. Isso é de propósito, para ninguém apagar uma fórmula sem querer.</div></div>
+
+  <div class="sec">Controle Diário</div>
+  <div class="blk"><div class="n">BLOCO <b>3</b> · ~50 s</div>
+    <div class="tela">TELA: aponte o cabeçalho (linha 4) e as primeiras linhas preenchidas (07/10 em diante). Role até o fim para mostrar 13/12 e a linha TOTAL.</div>
+    <div class="fala">Cada linha é <em>um dia</em>, de 7 de outubro, quando o primeiro anúncio entrou no ar, até 13 de dezembro, fim do contrato. As colunas são:
+
+Data e dia da semana. <em>Investido</em>, em azul: quanto foi gasto em anúncio naquele dia. <em>Conversas no WhatsApp</em>, também em azul: quantas pessoas chamaram pelo anúncio.
+
+Depois, em cinza, o <em>custo por conversa</em>, que a planilha calcula sozinha.
+
+E a última linha, lá embaixo, é o <em>TOTAL</em> do contrato inteiro.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>4</b> · ~40 s</div>
+    <div class="tela">TELA: aponte as colunas azuis C e D. Mostre que os dias já passados estão preenchidos e os futuros, vazios.</div>
+    <div class="fala">Olha as colunas azuis: os dias que já passaram estão preenchidos, e os dias futuros, vazios. Isso é porque elas são alimentadas <em>automaticamente</em>, todo dia, com o mesmo dado que vai para o painel.
+
+Vocês nunca vão digitar aqui. Se algum dia aparecer um valor diferente do que vocês viram no painel, é só o atraso normal de contagem do Instagram — ele corrige em um ou dois dias.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>5</b> · ~1 min</div>
+    <div class="tela">TELA: aponte as colunas amarelas <b>F · Matrículas</b> e <b>G · Valor das matrículas (R$)</b>. Clique na célula F da linha de hoje.</div>
+    <div class="fala">Agora a parte de vocês, as duas colunas <em>amarelas</em>.
+
+"Matrículas": quantos alunos <em>fecharam</em> naquele dia tendo chegado pelo WhatsApp — ou seja, que vieram do anúncio. Conta no dia em que a matrícula é feita, não no dia em que a pessoa chamou.
+
+"Valor das matrículas": a soma do que esses alunos fecharam. Se um fechou a categoria B por 900 reais e outro a AB por 1.400, lança 2 matrículas e 2.300 reais.
+
+Se no dia não fechou nenhuma, pode deixar em branco — branco quer dizer zero.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>6</b> · ~50 s</div>
+    <div class="tela">TELA: digite <b>1</b> em F e <b>900</b> em G na linha de hoje. Aponte a coluna H (retorno) mudando sozinha.</div>
+    <div class="fala">Vou lançar uma de exemplo: hoje, 1 matrícula, 900 reais.
+
+Repara que a última coluna, <em>"Retorno por real investido"</em>, mudou sozinha: ela divide o valor das matrículas pelo investido no dia. Se aparecer 3, quer dizer que cada real colocado em anúncio voltou como três reais em matrícula.
+
+É esse número que mostra, no fim do mês, se o anúncio está se pagando. Lembrando da nossa conta: <em>três alunos por mês pagam todo o investimento</em>.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>7</b> · ~45 s</div>
+    <div class="tela">TELA: câmera em você, ou a planilha parada na linha de hoje.</div>
+    <div class="fala">Três combinados sobre o preenchimento:
+
+Primeiro: <em>quem</em>. Uma pessoa por unidade fica responsável — na prática, quem fecha a matrícula lança na hora, ou no fim do expediente.
+
+Segundo: <em>quando</em>. Todo dia, até o fim do dia. Em uma hora o número já está no painel e na projeção.
+
+Terceiro: <em>o que conta</em>. Só matrícula que veio pelo WhatsApp do anúncio. Aluno que entrou pela indicação de um amigo ou passou na porta não entra aqui — senão a gente perde a noção do que o anúncio está trazendo de verdade.</div></div>
+
+  <div class="sec">Projeção de Metas</div>
+  <div class="blk"><div class="n">BLOCO <b>8</b> · ~45 s</div>
+    <div class="tela">TELA: abra a Projeção de Metas, aba <b>OUTUBRO 2026</b>. Mostre as três abas embaixo (outubro, novembro, dezembro).</div>
+    <div class="fala">A segunda planilha é a <em>Projeção de Metas</em>. Tem uma aba para cada mês do contrato: outubro, novembro e dezembro.
+
+Ela não é para preencher — é para <em>ler</em>. Tudo aqui é calculado a partir do que vocês lançam no Controle Diário.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>9</b> · ~50 s</div>
+    <div class="tela">TELA: aponte as linhas 3 e 4 (<b>Meta do mês — Faturamento</b> e <b>Meta do mês — Matrículas</b>, laranjas) e a linha 5 (dias previstos).</div>
+    <div class="fala">No topo estão as <em>metas do mês</em>, nas células laranjas: para outubro, 60 matrículas, que a 900 reais cada dão 54 mil reais. Novembro, 80 matrículas. Dezembro, que termina dia 13, 40.
+
+Essas metas foram definidas por nós dois juntos no início do projeto. Se a autoescola mudar o preço do pacote ou quiser rever a meta, é só me falar que eu ajusto.
+
+Logo abaixo, "Dias previstos de anúncio no mês": quantos dias o anúncio fica no ar naquele mês.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>10</b> · ~50 s</div>
+    <div class="tela">TELA: aponte as linhas 6, 7 e 8 (<b>Dias trabalhados · Faturamento acumulado · Nº de matrículas</b>). Se a matrícula de exemplo já entrou, mostre o "1" e os "R$ 900,00".</div>
+    <div class="fala">O bloco do meio é o que já aconteceu: <em>dias trabalhados</em>, <em>faturamento acumulado</em> e <em>número de matrículas</em> do mês.
+
+Esses três entram sozinhos, a cada hora, a partir do Controle Diário. A matrícula de exemplo que eu lancei há pouco vai aparecer aqui: 1 matrícula, 900 reais.
+
+Quanto mais vocês lançam, mais verdadeira fica essa foto do mês.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>11</b> · ~1 min</div>
+    <div class="tela">TELA: aponte as linhas 10, 11 e 12 (<b>Projeção de fechamento · % da meta alcançada · Ritmo necessário por dia</b>).</div>
+    <div class="fala">E o bloco de baixo é o que <em>vai</em> acontecer se o ritmo continuar.
+
+"Projeção de fechamento": a planilha pega o que já vendeu, divide pelos dias trabalhados e projeta para o mês inteiro. É a resposta para "se continuar assim, fecho o mês com quanto?".
+
+"% da meta alcançada": quanto da meta já está no bolso.
+
+E "Ritmo necessário por dia": quanto precisa vender por dia, daqui até o fim do mês, para bater a meta. Esse número é o <em>termômetro</em> da equipe: se ele está subindo, a gente precisa apertar; se está caindo, estamos no caminho.</div></div>
+
+  <div class="sec">Fechando o ciclo</div>
+  <div class="blk"><div class="n">BLOCO <b>12</b> · ~45 s</div>
+    <div class="tela">TELA: volte ao painel. Mostre "Matrículas registradas" e o Placar de metas (se a sincronização da hora já rodou, o "1" aparece; se não, diga que aparece em até uma hora).</div>
+    <div class="fala">Agora o ciclo completo. A matrícula que eu lancei na planilha chega ao <em>painel</em> em até uma hora: aparece no card "Matrículas registradas", o painel calcula o custo por matrícula, a barra do placar enche um pouquinho, e o último degrau do funil deixa de ser zero.
+
+É assim que as três peças conversam: o anúncio traz a conversa, vocês anotam a matrícula, e o painel mostra se a conta fecha.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>13</b> · ~30 s</div>
+    <div class="tela">TELA: volte ao Controle Diário e <b>apague a matrícula de exemplo</b> (F e G da linha de hoje) — a menos que seja real.</div>
+    <div class="fala">Vou apagar o exemplo para não sujar o número de vocês. Quando a primeira matrícula real fechar, é esse mesmo caminho: clicou na linha do dia, lançou, pronto.</div></div>
+
+  <div class="blk"><div class="n">BLOCO <b>14</b> · ~40 s</div>
+    <div class="tela">TELA: câmera em você.</div>
+    <div class="fala">Resumindo:
+
+Planilha de <em>Controle Diário</em>: só duas colunas são de vocês, matrículas e valor. Todo dia.
+
+Planilha de <em>Projeção</em>: é só para ler. Ela diz se o mês vai fechar na meta e quanto falta por dia.
+
+Tudo o mais — investimento, conversas, painel, parciais no grupo — acontece sozinho.
+
+Dúvida, é só chamar no grupo. Um abraço, e vamos encher essa coluna de matrículas!</div></div>
+
+  <div class="fim">Fim do roteiro 2. Duração estimada: 8 a 10 minutos. Depois de gravar: baixar o vídeo do Meet, renomear para <code>videoaula-02-planilhas-controle-e-metas.mp4</code>, subir em CLIENTES › A.C 37 › VIDEOAULAS e mandar os dois links no grupo com uma mensagem curta ("Gravei dois vídeos de 10 minutos mostrando o painel e as planilhas — vale assistir hoje").</div>
+</div>
+<script>
+const B=[...document.querySelectorAll('.blk')];let i=0;
+function marcar(){B.forEach((b,k)=>b.classList.toggle('on',k===i));document.getElementById('prog').textContent=(i+1)+' / '+B.length;B[i].scrollIntoView({behavior:'smooth',block:'start'})}
+function ir(d){i=Math.max(0,Math.min(B.length-1,i+d));marcar()}
+function fonte(d){const r=document.documentElement,v=parseInt(getComputedStyle(r).getPropertyValue('--fs'))+d;r.style.setProperty('--fs',Math.max(16,Math.min(48,v))+'px')}
+document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();ir(1)}if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();ir(-1)}});
+B.forEach((b,k)=>b.addEventListener('click',()=>{i=k;marcar()}));
+marcar();
+</script>
+</body>
+</html>
