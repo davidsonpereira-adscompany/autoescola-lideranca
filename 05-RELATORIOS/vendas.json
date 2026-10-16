@@ -1,5 +1,13 @@
 {
-  "atualizado_em": "2026-10-14T22:37-03:00",
+  "atualizado_em": "2026-10-16T16:11-03:00",
   "fonte": "Controle Diário (planilha da cliente)",
-  "vendas": []
+  "vendas": [
+    {
+      "data": "2026-10-10",
+      "vendas": 2,
+      "valor_vendido": 700.0,
+      "vendas_cj": 1,
+      "vendas_bm": 1
+    }
+  ]
 }
