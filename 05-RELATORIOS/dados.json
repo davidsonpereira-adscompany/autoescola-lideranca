@@ -10,14 +10,16 @@
     "observacao": "R$ 15/dia por unidade (CJ e BM) + R$ 6/dia na campanha de visitas ao perfil do Instagram"
   },
   "metas": {
-    "matriculas_mes": 60,
-    "matriculas_contrato_mes": 80,
+    "matriculas_mes": 80,
+    "matriculas_cj": 50,
+    "matriculas_bm": 30,
     "ticket": 900,
+    "faturamento_mes": 72000,
     "custo_conversa_bom": 5,
     "custo_conversa_atencao": 10,
     "custo_conversa_teto": 15,
-    "conversas_dia_meta": 6,
-    "ancora": "3 alunos por mês pagam todo o investimento"
+    "ancora": "3 alunos por mês pagam todo o investimento",
+    "origem": "Kick-off de 17/09/2026: 80 alunos novos por mês (50 CJ + 30 BM)"
   },
   "dias": [
     {
