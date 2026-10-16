@@ -4,7 +4,7 @@
     "aba": "CONTROLE DIÁRIO",
     "linha_inicio": 5,
     "linha_fim": 72,
-    "colunas": { "data": "A", "investido": "C", "conversas": "D", "vendas": "F", "valor_vendido": "G" }
+    "colunas": { "data": "A", "investido": "C", "conversas": "D", "vendas_cj": "F", "vendas_bm": "G", "valor_vendido": "H" }
   },
   "projecao": {
     "id": "1sJdKNb2HWVsZNjpke8bssYJuZMt72e8e53X0BFQouq8",

@@ -67,14 +67,23 @@ def linhas_controle():
     rng = f"{c['aba']}!{col['data']}{c['linha_inicio']}:{col['valor_vendido']}{c['linha_fim']}"
     linhas = ler(c["id"], rng)
     idx = lambda letra: ord(letra) - ord("A")
+    duas = "vendas_cj" in col and "vendas_bm" in col   # cliente com duas unidades (CJ e BM)
     out = {}
     for i, row in enumerate(linhas):
-        row = row + [""] * 8
+        row = row + [""] * 10
         d = data_iso(row[idx(col["data"])])
-        if d:
-            out[d] = {"linha": c["linha_inicio"] + i,
-                      "investido": numero(row[idx(col["investido"])]), "conversas": numero(row[idx(col["conversas"])]),
-                      "vendas": numero(row[idx(col["vendas"])]), "valor_vendido": numero(row[idx(col["valor_vendido"])])}
+        if not d:
+            continue
+        item = {"linha": c["linha_inicio"] + i,
+                "investido": numero(row[idx(col["investido"])]), "conversas": numero(row[idx(col["conversas"])]),
+                "valor_vendido": numero(row[idx(col["valor_vendido"])])}
+        if duas:
+            cj, bm = numero(row[idx(col["vendas_cj"])]), numero(row[idx(col["vendas_bm"])])
+            item["vendas_cj"], item["vendas_bm"] = cj, bm
+            item["vendas"] = None if cj is None and bm is None else (cj or 0) + (bm or 0)
+        else:
+            item["vendas"] = numero(row[idx(col["vendas"])])
+        out[d] = item
     return out
 
 
@@ -100,7 +109,10 @@ def volta():
     vendas = []
     for d, v in sorted(mapa.items()):
         if v["vendas"] is not None or v["valor_vendido"] is not None:
-            vendas.append({"data": d, "vendas": int(v["vendas"] or 0), "valor_vendido": round(v["valor_vendido"] or 0, 2)})
+            item = {"data": d, "vendas": int(v["vendas"] or 0), "valor_vendido": round(v["valor_vendido"] or 0, 2)}
+            if "vendas_cj" in v:
+                item["vendas_cj"], item["vendas_bm"] = int(v["vendas_cj"] or 0), int(v["vendas_bm"] or 0)
+            vendas.append(item)
     saida = {"atualizado_em": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-3))).isoformat(timespec="minutes"),
              "fonte": "Controle Diário (planilha da cliente)", "vendas": vendas}
     p = os.path.join(BASE, "vendas.json")
