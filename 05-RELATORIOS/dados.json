@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-21T07:06:00-03:00",
+  "atualizado_em": "2026-10-22T07:06:00-03:00",
   "fonte": "Gerenciador de Anúncios (Meta) — conta 1114773581250921 · leitura via Windsor.ai até a Meta liberar o conector",
   "campanha": {
     "id": "120254021728130249",
@@ -26,7 +26,7 @@
       "data": "2026-10-07",
       "investido": 11.36,
       "conversas": 2,
-      "alcance": 0,
+      "alcance": 1418,
       "impressoes": 1939,
       "cliques": 17,
       "engajamentos": 23,
@@ -34,10 +34,15 @@
         "CJ | Coração de Jesus": {
           "investido": 5.21,
           "conversas": 2,
-          "alcance": 0
+          "alcance": 619
         },
         "BM | Brasília de Minas": {
           "investido": 6.15,
+          "conversas": 0,
+          "alcance": 849
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 0.0,
           "conversas": 0,
           "alcance": 0
         }
@@ -49,7 +54,7 @@
       "data": "2026-10-08",
       "investido": 34.4,
       "conversas": 11,
-      "alcance": 0,
+      "alcance": 3407,
       "impressoes": 5579,
       "cliques": 40,
       "engajamentos": 53,
@@ -57,11 +62,16 @@
         "CJ | Coração de Jesus": {
           "investido": 17.67,
           "conversas": 2,
-          "alcance": 0
+          "alcance": 1808
         },
         "BM | Brasília de Minas": {
           "investido": 16.73,
           "conversas": 9,
+          "alcance": 1825
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 0.0,
+          "conversas": 0,
           "alcance": 0
         }
       },
@@ -72,7 +82,7 @@
       "data": "2026-10-09",
       "investido": 38.06,
       "conversas": 11,
-      "alcance": 0,
+      "alcance": 4399,
       "impressoes": 6402,
       "cliques": 65,
       "engajamentos": 1192,
@@ -80,17 +90,17 @@
         "CJ | Coração de Jesus": {
           "investido": 17.03,
           "conversas": 6,
-          "alcance": 0
+          "alcance": 1865
         },
         "BM | Brasília de Minas": {
           "investido": 17.04,
           "conversas": 5,
-          "alcance": 0
+          "alcance": 1890
         },
         "IG | Visitas ao perfil": {
           "investido": 3.99,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 947
         }
       },
       "vendas": null,
@@ -100,7 +110,7 @@
       "data": "2026-10-10",
       "investido": 24.81,
       "conversas": 8,
-      "alcance": 0,
+      "alcance": 3813,
       "impressoes": 4620,
       "cliques": 37,
       "engajamentos": 1122,
@@ -108,17 +118,17 @@
         "CJ | Coração de Jesus": {
           "investido": 9.16,
           "conversas": 5,
-          "alcance": 0
+          "alcance": 1193
         },
         "BM | Brasília de Minas": {
           "investido": 9.59,
           "conversas": 3,
-          "alcance": 0
+          "alcance": 1360
         },
         "IG | Visitas ao perfil": {
           "investido": 6.06,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1347
         }
       },
       "vendas": null,
@@ -128,7 +138,7 @@
       "data": "2026-10-11",
       "investido": 30.61,
       "conversas": 4,
-      "alcance": 0,
+      "alcance": 4175,
       "impressoes": 5297,
       "cliques": 65,
       "engajamentos": 1113,
@@ -136,17 +146,17 @@
         "CJ | Coração de Jesus": {
           "investido": 11.53,
           "conversas": 2,
-          "alcance": 0
+          "alcance": 1262
         },
         "BM | Brasília de Minas": {
           "investido": 11.76,
           "conversas": 2,
-          "alcance": 0
+          "alcance": 1626
         },
         "IG | Visitas ao perfil": {
           "investido": 7.32,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1552
         }
       },
       "vendas": null,
@@ -156,7 +166,7 @@
       "data": "2026-10-12",
       "investido": 31.11,
       "conversas": 5,
-      "alcance": 0,
+      "alcance": 3827,
       "impressoes": 4650,
       "cliques": 39,
       "engajamentos": 1145,
@@ -164,17 +174,17 @@
         "CJ | Coração de Jesus": {
           "investido": 13.02,
           "conversas": 2,
-          "alcance": 0
+          "alcance": 971
         },
         "BM | Brasília de Minas": {
           "investido": 11.26,
           "conversas": 3,
-          "alcance": 0
+          "alcance": 1218
         },
         "IG | Visitas ao perfil": {
           "investido": 6.83,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1682
         }
       },
       "vendas": null,
@@ -184,7 +194,7 @@
       "data": "2026-10-13",
       "investido": 49.27,
       "conversas": 6,
-      "alcance": 0,
+      "alcance": 5483,
       "impressoes": 6800,
       "cliques": 53,
       "engajamentos": 1648,
@@ -192,17 +202,17 @@
         "CJ | Coração de Jesus": {
           "investido": 21.28,
           "conversas": 1,
-          "alcance": 0
+          "alcance": 1820
         },
         "BM | Brasília de Minas": {
           "investido": 22.18,
           "conversas": 5,
-          "alcance": 0
+          "alcance": 2237
         },
         "IG | Visitas ao perfil": {
           "investido": 5.81,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1634
         }
       },
       "vendas": null,
@@ -212,7 +222,7 @@
       "data": "2026-10-14",
       "investido": 50.18,
       "conversas": 7,
-      "alcance": 0,
+      "alcance": 6625,
       "impressoes": 8774,
       "cliques": 52,
       "engajamentos": 1679,
@@ -220,17 +230,17 @@
         "CJ | Coração de Jesus": {
           "investido": 22.37,
           "conversas": 1,
-          "alcance": 0
+          "alcance": 2656
         },
         "BM | Brasília de Minas": {
           "investido": 22.54,
           "conversas": 6,
-          "alcance": 0
+          "alcance": 3145
         },
         "IG | Visitas ao perfil": {
           "investido": 5.27,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1299
         }
       },
       "vendas": null,
@@ -240,7 +250,7 @@
       "data": "2026-10-15",
       "investido": 36.44,
       "conversas": 9,
-      "alcance": 0,
+      "alcance": 5298,
       "impressoes": 7265,
       "cliques": 71,
       "engajamentos": 454,
@@ -248,17 +258,17 @@
         "CJ | Coração de Jesus": {
           "investido": 15.75,
           "conversas": 4,
-          "alcance": 0
+          "alcance": 2113
         },
         "BM | Brasília de Minas": {
           "investido": 15.38,
           "conversas": 5,
-          "alcance": 0
+          "alcance": 2127
         },
         "IG | Visitas ao perfil": {
           "investido": 5.31,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1328
         }
       },
       "vendas": null,
@@ -268,7 +278,7 @@
       "data": "2026-10-16",
       "investido": 29.33,
       "conversas": 14,
-      "alcance": 0,
+      "alcance": 5000,
       "impressoes": 6376,
       "cliques": 65,
       "engajamentos": 424,
@@ -276,17 +286,17 @@
         "CJ | Coração de Jesus": {
           "investido": 12.02,
           "conversas": 7,
-          "alcance": 0
+          "alcance": 1907
         },
         "BM | Brasília de Minas": {
           "investido": 11.87,
           "conversas": 7,
-          "alcance": 0
+          "alcance": 2190
         },
         "IG | Visitas ao perfil": {
           "investido": 5.44,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1314
         }
       },
       "vendas": null,
@@ -296,7 +306,7 @@
       "data": "2026-10-17",
       "investido": 24.44,
       "conversas": 6,
-      "alcance": 0,
+      "alcance": 4870,
       "impressoes": 5795,
       "cliques": 64,
       "engajamentos": 440,
@@ -304,17 +314,17 @@
         "CJ | Coração de Jesus": {
           "investido": 8.55,
           "conversas": 1,
-          "alcance": 0
+          "alcance": 1499
         },
         "BM | Brasília de Minas": {
           "investido": 9.87,
           "conversas": 5,
-          "alcance": 0
+          "alcance": 2052
         },
         "IG | Visitas ao perfil": {
           "investido": 6.02,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1446
         }
       },
       "vendas": null,
@@ -324,7 +334,7 @@
       "data": "2026-10-18",
       "investido": 23.88,
       "conversas": 1,
-      "alcance": 0,
+      "alcance": 4764,
       "impressoes": 5451,
       "cliques": 38,
       "engajamentos": 396,
@@ -332,17 +342,17 @@
         "CJ | Coração de Jesus": {
           "investido": 7.94,
           "conversas": 1,
-          "alcance": 0
+          "alcance": 1434
         },
         "BM | Brasília de Minas": {
           "investido": 9.05,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1977
         },
         "IG | Visitas ao perfil": {
           "investido": 6.89,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1456
         }
       },
       "vendas": null,
@@ -352,7 +362,7 @@
       "data": "2026-10-19",
       "investido": 39.14,
       "conversas": 6,
-      "alcance": 0,
+      "alcance": 5918,
       "impressoes": 7868,
       "cliques": 72,
       "engajamentos": 496,
@@ -360,17 +370,17 @@
         "CJ | Coração de Jesus": {
           "investido": 20.08,
           "conversas": 3,
-          "alcance": 0
+          "alcance": 2667
         },
         "BM | Brasília de Minas": {
           "investido": 12.63,
           "conversas": 3,
-          "alcance": 0
+          "alcance": 2055
         },
         "IG | Visitas ao perfil": {
           "investido": 6.43,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1606
         }
       },
       "vendas": null,
@@ -378,27 +388,27 @@
     },
     {
       "data": "2026-10-20",
-      "investido": 56.45,
+      "investido": 56.56,
       "conversas": 10,
-      "alcance": 0,
-      "impressoes": 9729,
+      "alcance": 6996,
+      "impressoes": 9748,
       "cliques": 78,
-      "engajamentos": 389,
+      "engajamentos": 391,
       "campanhas": {
         "CJ | Coração de Jesus": {
-          "investido": 24.52,
+          "investido": 24.61,
           "conversas": 5,
-          "alcance": 0
+          "alcance": 2912
         },
         "BM | Brasília de Minas": {
           "investido": 26.24,
           "conversas": 5,
-          "alcance": 0
+          "alcance": 3304
         },
         "IG | Visitas ao perfil": {
-          "investido": 5.69,
+          "investido": 5.71,
           "conversas": 0,
-          "alcance": 0
+          "alcance": 1225
         }
       },
       "vendas": null,
@@ -406,27 +416,55 @@
     },
     {
       "data": "2026-10-21",
-      "investido": 5.32,
-      "conversas": 1,
-      "alcance": 778,
-      "impressoes": 864,
-      "cliques": 6,
-      "engajamentos": 33,
+      "investido": 38.42,
+      "conversas": 10,
+      "alcance": 6001,
+      "impressoes": 7101,
+      "cliques": 57,
+      "engajamentos": 363,
       "campanhas": {
         "CJ | Coração de Jesus": {
-          "investido": 2.18,
-          "conversas": 1,
-          "alcance": 223
+          "investido": 17.67,
+          "conversas": 7,
+          "alcance": 2470
         },
         "BM | Brasília de Minas": {
-          "investido": 2.69,
-          "conversas": 0,
-          "alcance": 475
+          "investido": 15.66,
+          "conversas": 3,
+          "alcance": 2723
         },
         "IG | Visitas ao perfil": {
-          "investido": 0.31,
+          "investido": 5.09,
           "conversas": 0,
-          "alcance": 73
+          "alcance": 1096
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-10-22",
+      "investido": 2.82,
+      "conversas": 0,
+      "alcance": 498,
+      "impressoes": 532,
+      "cliques": 3,
+      "engajamentos": 21,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 1.33,
+          "conversas": 0,
+          "alcance": 186
+        },
+        "BM | Brasília de Minas": {
+          "investido": 1.15,
+          "conversas": 0,
+          "alcance": 208
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 0.38,
+          "conversas": 0,
+          "alcance": 92
         }
       },
       "vendas": null,
@@ -437,31 +475,31 @@
     {
       "id": "120254021728140249",
       "nome": "CJ | Coração de Jesus",
-      "investido": 208.39,
-      "conversas": 43,
-      "alcance": 12901,
-      "impressoes": 32474,
-      "cliques": 226,
+      "investido": 225.22,
+      "conversas": 49,
+      "alcance": 13530,
+      "impressoes": 35374,
+      "cliques": 243,
       "status": "ACTIVE"
     },
     {
       "id": "120254022219800249",
       "nome": "BM | Brasília de Minas",
-      "investido": 205.04,
-      "conversas": 58,
-      "alcance": 14382,
-      "impressoes": 36166,
-      "cliques": 256,
+      "investido": 219.1,
+      "conversas": 61,
+      "alcance": 15101,
+      "impressoes": 38820,
+      "cliques": 281,
       "status": "ACTIVE"
     },
     {
       "id": "120254054880830249",
       "nome": "IG | Visitas ao perfil",
-      "investido": 71.37,
+      "investido": 76.56,
       "conversas": 0,
-      "alcance": 10487,
-      "impressoes": 18769,
-      "cliques": 279,
+      "alcance": 10967,
+      "impressoes": 20010,
+      "cliques": 292,
       "status": "ACTIVE"
     }
   ],
@@ -745,10 +783,10 @@
       "id": "120254054832750249",
       "nome": "CJ · AD 13 - VIDEO",
       "grupo": "CJ",
-      "investido": 72.69,
+      "investido": 72.7,
       "conversas": 15,
-      "alcance": 5440,
-      "impressoes": 9088,
+      "alcance": 5441,
+      "impressoes": 9091,
       "cliques": 41,
       "status": "ACTIVE"
     },
@@ -756,43 +794,43 @@
       "id": "120254054880810249",
       "nome": "IG · AD 13 - VIDEO",
       "grupo": "IG",
-      "investido": 71.37,
+      "investido": 76.56,
       "conversas": 0,
-      "alcance": 10485,
-      "impressoes": 18768,
-      "cliques": 279,
+      "alcance": 10967,
+      "impressoes": 20010,
+      "cliques": 292,
       "status": "ACTIVE"
     },
     {
       "id": "120254144167570249",
       "nome": "CJ · AD 14 - SAMUEL (CLIENTE)",
       "grupo": "CJ",
-      "investido": 23.1,
-      "conversas": 5,
-      "alcance": 3187,
-      "impressoes": 4581,
-      "cliques": 30,
+      "investido": 27.08,
+      "conversas": 6,
+      "alcance": 3559,
+      "impressoes": 5383,
+      "cliques": 33,
       "status": "ACTIVE"
     },
     {
       "id": "120254144170520249",
       "nome": "CJ · AD 15 - APROVADOS (CLIENTE)",
       "grupo": "CJ",
-      "investido": 7.04,
+      "investido": 10.67,
       "conversas": 0,
-      "alcance": 801,
-      "impressoes": 1110,
-      "cliques": 13,
+      "alcance": 1189,
+      "impressoes": 1697,
+      "cliques": 17,
       "status": "ACTIVE"
     },
     {
       "id": "120254144170620249",
       "nome": "CJ · AD 16 - VAGAS OUTUBRO (CLIENTE)",
       "grupo": "CJ",
-      "investido": 1.13,
+      "investido": 1.15,
       "conversas": 0,
-      "alcance": 115,
-      "impressoes": 165,
+      "alcance": 118,
+      "impressoes": 170,
       "cliques": 0,
       "status": "ACTIVE"
     },
@@ -800,55 +838,55 @@
       "id": "120254144170680249",
       "nome": "CJ · AD 17 - CAT D E E (CLIENTE)",
       "grupo": "CJ",
-      "investido": 60.87,
-      "conversas": 17,
-      "alcance": 5182,
-      "impressoes": 10604,
-      "cliques": 80,
+      "investido": 70.08,
+      "conversas": 22,
+      "alcance": 5633,
+      "impressoes": 12110,
+      "cliques": 90,
       "status": "ACTIVE"
     },
     {
       "id": "120254144170720249",
       "nome": "BM · AD 19 - 2 UNIDADES (CLIENTE)",
       "grupo": "BM",
-      "investido": 4.83,
+      "investido": 5.21,
       "conversas": 2,
-      "alcance": 756,
-      "impressoes": 1041,
-      "cliques": 6,
+      "alcance": 783,
+      "impressoes": 1086,
+      "cliques": 7,
       "status": "ACTIVE"
     },
     {
       "id": "120254144170790249",
       "nome": "BM · AD 18 - CAT A MOTO (CLIENTE)",
       "grupo": "BM",
-      "investido": 3.52,
+      "investido": 3.87,
       "conversas": 1,
-      "alcance": 520,
-      "impressoes": 742,
-      "cliques": 2,
+      "alcance": 547,
+      "impressoes": 795,
+      "cliques": 4,
       "status": "ACTIVE"
     },
     {
       "id": "120254144171080249",
       "nome": "BM · AD 17 - CAT D E E (CLIENTE)",
       "grupo": "BM",
-      "investido": 24.15,
-      "conversas": 9,
-      "alcance": 3294,
-      "impressoes": 5525,
-      "cliques": 46,
+      "investido": 29.6,
+      "conversas": 10,
+      "alcance": 3760,
+      "impressoes": 6708,
+      "cliques": 55,
       "status": "ACTIVE"
     },
     {
       "id": "120254144171350249",
       "nome": "BM · AD 15 - APROVADOS (CLIENTE)",
       "grupo": "BM",
-      "investido": 55.57,
-      "conversas": 12,
-      "alcance": 6391,
-      "impressoes": 10695,
-      "cliques": 99,
+      "investido": 63.41,
+      "conversas": 14,
+      "alcance": 6893,
+      "impressoes": 12064,
+      "cliques": 112,
       "status": "ACTIVE"
     }
   ],
@@ -861,7 +899,8 @@
     "2026-10-18T07:10:00-03:00",
     "2026-10-19T07:05:43-03:00",
     "2026-10-20T07:10:00-03:00",
-    "2026-10-21T07:06:00-03:00"
+    "2026-10-21T07:06:00-03:00",
+    "2026-10-22T07:06:00-03:00"
   ],
-  "leitura": "<strong>As campanhas seguem ativas e trazendo conversas no WhatsApp.</strong> Desde 07/10 já foram investidos R$ 484,80 e 101 conversas iniciadas (custo médio de R$ 4,80 por conversa); ontem (20/10) foram R$ 56,45 investidos e 10 conversas, mantendo o custo bem abaixo do teto combinado. Brasília de Minas segue trazendo mais gente (58 conversas no total), com destaque para os anúncios \"AD 17 - CAT D E E\" e \"AD 15 - APROVADOS\"; o próximo passo é manter o ritmo atual e reforçar esses anúncios que mais convertem."
+  "leitura": "<strong>O investimento desde o início (07/10) passou de R$ 575 e já trouxe 120 conversas no WhatsApp, com custo médio de cerca de R$ 4,80 por conversa.</strong> Ontem (21/10) foram R$ 38,42 investidos e 10 conversas iniciadas, com Brasília de Minas liderando na captação de interesse e o anúncio \"AD 13 - VIDEO\" entre os que mais trazem pessoas. Próximo passo: manter o ritmo atual e seguir priorizando os anúncios que estão trazendo mais conversas."
 }
