@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Reels — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card2:#161616;--border:rgba(255,255,255,0.07);--branco:#F5F5F5;--texto:#B4B4B4;--texto2:#777;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:15px}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .indice{display:flex;gap:8px;flex-wrap:wrap}
+  .indice a{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--texto);text-decoration:none;padding:5px 11px;border:1px solid var(--border);border-radius:20px}
+  .indice a:hover{color:var(--laranja);border-color:rgba(255,92,0,.4)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.07) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.1rem);font-weight:700;line-height:1.15;max-width:800px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:640px;line-height:1.7}
+  .section{max-width:900px;margin:0 auto;padding:52px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:8px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.2;margin-bottom:10px}
+  .section h2 em{font-style:italic;color:var(--laranja)}
+  .section>p{color:var(--texto);margin-bottom:14px;max-width:760px}
+  .section>p strong{color:var(--branco)}
+  .tres{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+  .tipo{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 22px 20px;border-top:3px solid var(--cor)}
+  .tipo .n{font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--cor)}
+  .tipo .nome{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--cor);margin:8px 0 6px}
+  .tipo p{font-size:13.5px;color:var(--texto)}
+  .destaque{background:rgba(255,92,0,0.06);border:1px solid rgba(255,92,0,0.18);border-radius:14px;padding:18px 22px;margin:18px 0;color:var(--texto);font-size:14px}
+  .destaque strong{color:var(--branco)}
+  .ordem{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0 4px}
+  .ordem span{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px;border:1px solid var(--border)}
+  .ordem .t{color:var(--azul);border-color:rgba(59,139,255,.35)}.ordem .m{color:var(--amarelo);border-color:rgba(234,179,8,.35)}.ordem .f{color:var(--verde);border-color:rgba(34,197,94,.35)}
+  .ordem i{color:var(--texto2);font-style:normal}
+  .specs{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 20px}
+  .specs span{font-size:12px;color:var(--texto);background:var(--card);border:1px solid var(--border);border-radius:8px;padding:6px 12px}
+  .specs span b{color:var(--branco);font-weight:600}
+  .formatos{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+  .formato{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:grid;grid-template-columns:34px 1fr;gap:14px}
+  .formato .num{width:30px;height:30px;border-radius:50%;background:var(--cor);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .formato h3{font-size:1rem;font-weight:600;margin-bottom:4px}
+  .formato .como{font-size:13px;color:var(--texto);margin-bottom:10px}
+  .formato ul{list-style:none;padding:0}
+  .formato li{font-size:13.5px;color:var(--branco);padding:7px 0 7px 16px;position:relative;border-top:1px dashed var(--border)}
+  .formato li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:var(--cor)}
+  .formato li em{color:var(--texto);font-style:normal}
+  .teste{margin-top:18px;padding:14px 18px;border-left:3px solid var(--cor);background:var(--card2);border-radius:0 12px 12px 0;font-size:14px;color:var(--texto)}
+  .teste b{color:var(--branco)}
+  .blocos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  .bloco{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+  .bloco .et{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--laranja);margin-bottom:6px}
+  .bloco h3{font-size:1rem;margin-bottom:6px}
+  .bloco p{font-size:13px;color:var(--texto)}
+  .ficha{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-top:18px}
+  .ficha-cab{display:flex;align-items:center;gap:14px;padding:18px 24px;border-bottom:1px solid var(--border);background:var(--card2);flex-wrap:wrap}
+  .ficha-cab .ordinal{font-family:var(--serif);font-size:1.6rem;color:var(--cor);line-height:1}
+  .ficha-cab .tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--cor);border:1px solid var(--cor);border-radius:20px;padding:3px 10px}
+  .ficha-cab h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;flex:1;min-width:200px}
+  .ficha-cab .dur{font-size:12px;color:var(--texto)}
+  .ficha-body{padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:18px 26px}
+  .campo{min-width:0}
+  .campo .rot{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--texto2);margin-bottom:6px}
+  .campo p,.campo li{font-size:14px;color:var(--branco)}
+  .campo p.cinza,.campo li em{color:var(--texto);font-style:normal}
+  .campo ol{padding-left:18px}.campo li{margin:6px 0}
+  .campo li b{color:var(--cor)}
+  .campo.full{grid-column:1/-1}
+  .tela{background:#000;border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-weight:700;font-size:15px;line-height:1.4}
+  .tela small{display:block;font-weight:400;color:var(--texto2);font-size:11px;margin-top:6px}
+  .gancho{font-family:var(--serif);font-size:1.15rem;line-height:1.4}
+  .chamado{color:var(--verde);font-weight:600}
+  .regras{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .regra{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;gap:14px}
+  .regra .ic{width:34px;height:34px;border-radius:10px;background:rgba(255,92,0,0.1);border:1px solid rgba(255,92,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:700;font-size:13px}
+  .regra h3{font-size:.95rem;margin-bottom:2px}
+  .regra p{font-size:13px;color:var(--texto)}
+  .passos{counter-reset:p;list-style:none;margin-top:14px}
+  .passos li{counter-increment:p;position:relative;padding:12px 0 12px 44px;border-top:1px solid var(--border);color:var(--texto);font-size:14px}
+  .passos li::before{content:counter(p);position:absolute;left:0;top:12px;width:28px;height:28px;border-radius:50%;background:var(--laranja);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .passos li b{color:var(--branco)}
+  .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:860px){.tres,.blocos{grid-template-columns:1fr}.ficha-body,.regras{grid-template-columns:1fr}}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:40px 20px}.nav-title{display:none}}
+  @media print{.nav-bar{display:none}body{background:#fff;color:#111}.section>p,.tipo p,.formato .como,.bloco p,.regra p,.campo p.cinza{color:#444}.formato li,.campo p,.campo li,.ficha-cab h3,.section h2,.hero h1,.regra h3,.formato h3,.bloco h3{color:#111}.tela{background:#f3f3f3;color:#111}.tipo,.formato,.bloco,.ficha,.regra,.destaque,.teste{background:#fff;border-color:#ddd;break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-left"><a href="index.html" class="btn-voltar">&#8592; CALENDÁRIO</a><span class="nav-title">Guia de Reels</span></div>
+  <div class="indice"><a href="#cadencia">A regra</a><a href="#topo">Topo</a><a href="#meio">Meio</a><a href="#fundo">Fundo</a><a href="#roteiro">Roteiro</a><a href="#ciclo">5 Reels prontos</a><a href="#gravacao">Gravação</a></div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Auto Escola Liderança · Instagram</p>
+  <h1>Guia de Reels: <em>três que trazem gente, um que apresenta, um que matricula</em></h1>
+  <p class="hero-sub">Este é o manual de vídeo curto da autoescola. Ele explica a regra que organiza os Reels de cada mês, mostra os formatos que funcionam para quem vende habilitação e entrega um ciclo de cinco vídeos prontos para gravar com o celular.</p>
+</header>
+
+<!-- ================= 1. A REGRA ================= -->
+<section class="section" id="cadencia">
+  <p class="section-num">01 · A regra</p>
+  <h2>A cada cinco Reels: <em>3 + 1 + 1</em></h2>
+  <p>Pense no perfil da Liderança como a sala de espera da autoescola. Tem gente que nunca ouviu falar de vocês, tem gente que já está olhando os preços e tem gente que só precisa de um empurrão para fechar. Um vídeo só não fala com os três ao mesmo tempo. Por isso, a cada cinco vídeos publicados, a divisão é sempre a mesma:</p>
+
+  <div class="tres">
+    <div class="tipo" style="--cor:var(--azul)"><div class="n">3</div><div class="nome">De topo · trazer gente nova</div><p>São os vídeos que o Instagram mostra para quem ainda não segue a autoescola. Fazem a pessoa rir, se reconhecer ou marcar um amigo. Não vendem nada.</p></div>
+    <div class="tipo" style="--cor:var(--amarelo)"><div class="n">1</div><div class="nome">De meio · apresentar a autoescola</div><p>Para quem acabou de chegar e está decidindo se confia. Mostra a aula de verdade, o instrutor de verdade, o aluno aprovado de verdade.</p></div>
+    <div class="tipo" style="--cor:var(--verde)"><div class="n">1</div><div class="nome">De fundo · matricular</div><p>Para quem já conhece e está a um passo de chamar no WhatsApp. Aqui a oferta é clara e o caminho é um só.</p></div>
+  </div>
+
+  <div class="destaque"><strong>Por que nessa proporção?</strong> A maioria dos perfis de autoescola publica só oferta (preço, vaga, promoção) e por isso ninguém novo chega; ou publica só piada e tem muita visualização e nenhuma matrícula. Os três de topo enchem a sala, o de meio apresenta a casa, o de fundo faz a matrícula. Tirar qualquer um dos três quebra a corrente.</div>
+
+  <p><strong>Ritmo.</strong> Cinco Reels por semana fecham um ciclo por semana, que é o ideal. Com três por semana, o ciclo fecha a cada dez dias e funciona do mesmo jeito, desde que a ordem seja respeitada: nunca dois de fundo seguidos e sempre mais topo do que o resto.</p>
+  <p><strong>Ordem dentro do ciclo.</strong> O de meio prepara o terreno e o de fundo colhe no final, quando o perfil está aquecido:</p>
+  <div class="ordem"><span class="t">Topo</span><i>→</i><span class="t">Topo</span><i>→</i><span class="m">Meio</span><i>→</i><span class="t">Topo</span><i>→</i><span class="f">Fundo</span></div>
+</section>
+
+<!-- ================= 2. TOPO ================= -->
+<section class="section" id="topo" style="--cor:var(--azul)">
+  <p class="section-num" style="color:var(--azul)">02 · Reels de topo</p>
+  <h2>Encher a sala: <em>fazer o dedo parar</em></h2>
+  <p>O vídeo de topo não vende, não explica o pacote, não pede nada. Ele faz a pessoa que nunca pensou na Liderança se reconhecer na tela e mandar para um amigo. É o vídeo que mais gente vê e o mais fácil de gravar.</p>
+  <div class="specs"><span><b>Duração:</b> 5 a 15 segundos</span><span><b>Gancho:</b> nos 2 primeiros segundos</span><span><b>Tela:</b> frase grande, o vídeo precisa funcionar no mudo</span><span><b>Áudio:</b> música do momento quando couber</span><span><b>Tom:</b> zero institucional</span></div>
+
+  <div class="formatos">
+    <div class="formato"><div class="num">1</div><div><h3>Frase na tela</h3><p class="como">A pessoa aparece (parada, andando, encostada no carro) e a frase carrega tudo. Trinta segundos de gravação, texto por cima, publicado. É o formato mais fácil de produzir.</p><ul>
+      <li>"Se medo de dirigir desse carteira, muita gente já tinha até a de carreta." <em>Samuel encostado no carro, braços cruzados.</em></li>
+      <li>"Reprovar na prova não é o fim. Desistir é." <em>Instrutor olhando a pista do exame.</em></li>
+      <li>"Carteira cara é a que você nunca tira. Cada ano adiando é mais um ano de carona." <em>Priscila na recepção, olhando a câmera.</em></li>
+      <li>"Primeira aula: todo mundo chega achando que vai bater. Ninguém bate." <em>Carro saindo devagar do pátio.</em></li>
+    </ul></div></div>
+    <div class="formato"><div class="num">2</div><div><h3>POV (você na cena)</h3><p class="como">"POV: você quando..." coloca quem assiste dentro de uma situação que ele vive. Cenas curtas, uma atrás da outra.</p><ul>
+      <li>"POV: você na véspera da prova prática." <em>Olhando o teto, assistindo vídeo de baliza de madrugada, ensaiando com volante imaginário.</em></li>
+      <li>"POV: sua primeira aula e o instrutor dizendo 'calma, está indo bem'." <em>Câmera no banco de trás, mãos tremendo no volante.</em></li>
+      <li>"POV: você e seu amigo marcaram de tirar a carteira juntos, um em Coração de Jesus e outro em Brasília de Minas." <em>Vídeo gravado nas duas unidades.</em></li>
+    </ul></div></div>
+    <div class="formato"><div class="num">3</div><div><h3>Novelinha (dois personagens)</h3><p class="como">A mesma pessoa grava os dois lados de uma conversa, trocando boné, óculos ou lado da tela. Um é o aluno com o medo ou a desculpa, o outro responde. O humor traz o alcance, a verdade da situação traz a identificação.</p><ul>
+      <li>Aluno: "Eu não nasci pra dirigir." Instrutor: "Já ouvi isso de todo mundo que hoje dirige todo dia."</li>
+      <li>Aluno: "Quanto custa?" Atendente: "Depende: carro, moto, os dois ou carreta?" Aluno: "...tem carreta?"</li>
+      <li>Aluno: "Reprovei, vou desistir." Instrutor: "Reprovou em quê?" Aluno: "Na baliza." Instrutor: "Então é isso que a gente vai treinar."</li>
+      <li>Aluno: "É caro." Atendente: "Mais caro que depender de carona até os trinta?"</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">4</div><div><h3>Reagindo a algo</h3><p class="como">O instrutor assiste a um vídeo ou notícia no canto da tela e comenta com opinião forte. Comentário gera resposta, resposta gera entrega.</p><ul>
+      <li>Reagindo a um vídeo de baliza desastrosa da internet: "O erro foi antes de virar o volante. Olha aqui."</li>
+      <li>Reagindo a uma mudança nas regras da habilitação: "O que muda para quem vai tirar a carteira agora."</li>
+      <li>Reagindo ao comentário "autoescola é tudo igual": "Não é. Pergunta para quem reprovou duas vezes em outro lugar."</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">5</div><div><h3>Meme ou tendência adaptada</h3><p class="como">Pegar o áudio ou o formato que está subindo na semana e vestir com a vida da autoescola. Vale só na semana em que está rodando.</p><ul>
+      <li>"Eu dizendo que vou tirar a carteira ano que vem, pelo quinto ano seguido."</li>
+      <li>"Expectativa da primeira aula × realidade da primeira aula." <em>Expectativa: filme de ação. Realidade: carro parado no pátio aprendendo a embreagem.</em></li>
+      <li>"O instrutor paciente × o aluno na quinta tentativa de arrancar na ladeira."</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">6</div><div><h3>Flagrante do dia a dia</h3><p class="como">A cena real que todo aluno reconhece, gravada no ambiente da autoescola, sem ensaio.</p><ul>
+      <li>"Todo aluno que entra na recepção faz a mesma pergunta: 'demora quanto?'"</li>
+      <li>O aluno saindo do exame e ligando para a mãe antes de falar com qualquer pessoa.</li>
+      <li>A turma inteira em silêncio quando o instrutor fala "hoje tem baliza".</li>
+    </ul></div></div>
+  </div>
+  <div class="teste"><b>O teste do topo:</b> se alguém que nunca ouviu falar da Liderança assistir, ele ri, se identifica ou discorda? Se a resposta é "ele precisaria conhecer a autoescola para entender", o vídeo não é de topo.</div>
+</section>
+
+<!-- ================= 3. MEIO ================= -->
+<section class="section" id="meio" style="--cor:var(--amarelo)">
+  <p class="section-num" style="color:var(--amarelo)">03 · Reel de meio</p>
+  <h2>Apresentar a autoescola: <em>mostrar que é de verdade</em></h2>
+  <p>Quem chegou pelo topo decide aqui se confia. O vídeo de meio mostra a aula, o instrutor, o processo e o resultado, sem pedir nada ainda. É a hora de ouvir a voz do Samuel e do Gabriel.</p>
+  <div class="specs"><span><b>Duração:</b> 20 a 45 segundos</span><span><b>Fala:</b> pode e deve ter</span><span><b>Imagem:</b> o real, nada de arte pronta</span><span><b>Legenda:</b> sempre embutida</span></div>
+
+  <div class="formatos">
+    <div class="formato"><div class="num">1</div><div><h3>Bastidor</h3><p class="como">Como a aula acontece por dentro. O que o aluno só vê depois de matriculado: a preparação, o cuidado, o capricho. Bastidor convence porque prova.</p><ul>
+      <li>A primeira aula de um aluno que chegou tremendo: carro parado, mãos no volante, primeira saída e o sorriso no fim.</li>
+      <li>A van saindo cedo para o exame em Montes Claros, com o instrutor revisando os pontos de atenção no caminho.</li>
+      <li>A carreta sendo preparada para a aula da categoria E.</li>
+      <li>A sala teórica cinco minutos antes de começar: café, livro, nervosismo.</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">2</div><div><h3>Antes e depois</h3><p class="como">A prova visual mais forte que existe. Abre no depois (o resultado), volta para o antes e fecha no depois de novo.</p><ul>
+      <li>A aluna com a CNH na mão, depois ela na primeira aula com medo de arrancar, depois a CNH de novo.</li>
+      <li>A baliza na aula um e a baliza na aula oito, do mesmo aluno.</li>
+      <li>O aluno que reprovou em outra cidade e a foto dele aprovado pela Liderança.</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">3</div><div><h3>Mito ou verdade</h3><p class="como">Pega a crença errada mais comum sobre habilitação e desmonta em trinta segundos. A autoescola vira referência e o vídeo é salvo.</p><ul>
+      <li>"Reprovou uma vez, perdeu tudo?" Mito. O que acontece de verdade é que você refaz só a parte em que reprovou.</li>
+      <li>"Carro automático não vale para tirar a carteira?" Mito. A categoria B pode ser feita em veículo automático.</li>
+      <li>"Para começar, tem que ir ao Detran?" Mito. Começa chamando a autoescola, que cuida da papelada.</li>
+      <li>"Quem tem medo de dirigir não consegue a carteira?" Mito. É justamente para isso que existe instrutor paciente e aula no seu ritmo.</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">4</div><div><h3>Respondendo uma pergunta real</h3><p class="como">Pega uma dúvida que chegou pelo WhatsApp ou pela caixinha e responde em vídeo. Quem tem a mesma dúvida se sente atendido antes de virar aluno.</p><ul>
+      <li>"Essa semana me perguntaram: quanto tempo leva para tirar a habilitação?"</li>
+      <li>"Por que as taxas do Estado não entram no pacote da autoescola?"</li>
+      <li>"Dá para fazer a categoria E aqui na região?"</li>
+      <li>"Posso fazer as aulas em Brasília de Minas e a prova em Montes Claros?"</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">5</div><div><h3>Novelinha que ensina</h3><p class="como">Os dois personagens de novo, mas agora a conversa explica alguma coisa. O aluno traz a dúvida ou o medo; o instrutor resolve com simplicidade.</p><ul>
+      <li>Aluno: "Tenho medo de dirigir na rua." Instrutor: "Ninguém começa na rua. Primeiro o pátio, depois a rua tranquila, depois o trânsito. No seu tempo."</li>
+      <li>Aluno: "E se eu reprovar?" Instrutor: "Você refaz a aula que faltou e volta para a prova. Reprovar não zera nada."</li>
+      <li>Aluno: "Por que não posso só pagar o Detran?" Atendente: "Pode, mas aí você faz sozinho tudo o que a gente faz por você."</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">6</div><div><h3>Um dia na Liderança</h3><p class="como">Um dia da autoescola em cortes rápidos. Humaniza e mostra movimento: ninguém confia em autoescola parada.</p><ul>
+      <li>Abre a unidade, primeira aula saindo, atendimento no WhatsApp, almoço da equipe, van voltando do exame, aprovado da tarde comemorando.</li>
+      <li>Um dia de exame em Montes Claros, da saída da van ao abraço na volta.</li>
+    </ul></div></div>
+  </div>
+  <div class="teste"><b>O teste do meio:</b> depois de assistir, a pessoa aprendeu algo novo sobre habilitação ou viu uma prova de que a Liderança entrega? Se sim, é de meio.</div>
+</section>
+
+<!-- ================= 4. FUNDO ================= -->
+<section class="section" id="fundo" style="--cor:var(--verde)">
+  <p class="section-num" style="color:var(--verde)">04 · Reel de fundo</p>
+  <h2>Matricular: <em>um convite, um caminho</em></h2>
+  <p>Fala com quem já viu os outros vídeos e precisa só de clareza e de um empurrão. Aqui a oferta é dita com todas as letras e o caminho é um só: o WhatsApp da unidade.</p>
+  <div class="specs"><span><b>Duração:</b> 15 a 30 segundos</span><span><b>Uma oferta</b> por vídeo</span><span><b>Um chamado</b> por vídeo</span><span><b>Urgência:</b> só quando for verdade (vagas, prazo, condição)</span></div>
+
+  <div class="formatos">
+    <div class="formato"><div class="num">1</div><div><h3>Convite direto</h3><p class="como">Olho na câmera: para quem é, o que resolve, o que a pessoa faz agora. Problema em três segundos, solução em dez, chamado em cinco.</p><ul>
+      <li>"Matrículas abertas para as turmas de novembro em Coração de Jesus e Brasília de Minas. Chama no WhatsApp da sua unidade."</li>
+      <li>"Está adiando a habilitação porque acha caro? Aqui parcela no cartão e a gente cuida de tudo. Chama no WhatsApp que a gente monta o seu pacote."</li>
+      <li>"Chegou a carreta. Primeira turma da categoria E com vagas limitadas. Chama no WhatsApp e garante a sua."</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">2</div><div><h3>Depoimento de aluno</h3><p class="como">O aluno fala, ou a mensagem dele no WhatsApp aparece na tela com a voz do Samuel lendo, e o vídeo fecha com o convite. É o fundo que menos parece propaganda.</p><ul>
+      <li>"Habilitei na Liderança. Pergunta para mim como foi." Aluno com a CNH na mão, uma frase, e o Samuel fecha: "Quer a sua? Chama no WhatsApp."</li>
+      <li>Print de uma aluna agradecendo o instrutor pela paciência, narrado, e o convite no final.</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">3</div><div><h3>Caso real resumido</h3><p class="como">"Essa semana recebemos um aluno que..." Situação, o que foi feito, resultado, convite.</p><ul>
+      <li>"Essa semana recebemos uma aluna que tinha reprovado duas vezes em outra cidade. Fizemos três aulas só de baliza. Passou. Se você está assim, chama a gente."</li>
+      <li>"Chegou um aluno de Montes Claros que não conseguia vaga lá. Matriculou em Brasília de Minas, fez as aulas aqui e a gente levou para o exame. Se você está longe, chama."</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">4</div><div><h3>Resposta ao motivo nº 1 de não fechar</h3><p class="como">O motivo mais comum de a pessoa não se matricular, respondido de frente, com o convite no fim.</p><ul>
+      <li>Preço: "Acha caro? Vem entender o que está incluído e como parcela. Chama no WhatsApp que a gente mostra."</li>
+      <li>Medo: "Medo de dirigir? A gente vai no seu ritmo, com instrutor paciente. Chama e marca a primeira aula."</li>
+      <li>Tempo: "Não tem tempo? A gente encaixa as aulas no seu horário. Manda um oi."</li>
+    </ul></div></div>
+    <div class="formato"><div class="num">5</div><div><h3>Bastidor com convite</h3><p class="como">Mostra a entrega acontecendo e fecha com o convite. Meio e fundo no mesmo vídeo, com o peso no chamado.</p><ul>
+      <li>A van saindo para Montes Claros: "A próxima turma de exame já está marcada. Quem se matricular esta semana entra nela. Chama no WhatsApp."</li>
+      <li>Aula da carreta acontecendo: "Essa é a turma da categoria E. Ainda tem vaga para a próxima. Chama."</li>
+    </ul></div></div>
+  </div>
+  <div class="teste"><b>O teste do fundo:</b> terminando o vídeo, a pessoa sabe exatamente o que fazer e onde clicar? Se ficou dúvida, o chamado falhou.</div>
+</section>
+
+<!-- ================= 5. ROTEIRO ================= -->
+<section class="section" id="roteiro">
+  <p class="section-num">05 · O roteiro de todo Reel</p>
+  <h2>Três blocos, <em>sem exceção</em></h2>
+  <p>Seja de topo, de meio ou de fundo, todo Reel da Liderança tem a mesma espinha. Quem grava não precisa inventar estrutura, só preencher os três blocos.</p>
+  <div class="blocos">
+    <div class="bloco"><div class="et">Bloco 1 · 0 a 3 segundos</div><h3>Gancho</h3><p>A frase ou a cena que paralisa o dedo. Pergunta direta ("Você também faz isso na véspera da prova?"), afirmação forte ("Reprovar não é o fim"), número ("3 erros de quem reprova na baliza") ou cena inesperada. O gancho é a maior parte do resultado do vídeo.</p></div>
+    <div class="bloco"><div class="et">Bloco 2</div><h3>Desenvolvimento</h3><p>Entrega o que o gancho prometeu, sem rodeio. Cortou o "oi, gente, tudo bem?", cortou a logo animada, cortou a apresentação. Começa dentro do assunto.</p></div>
+    <div class="bloco"><div class="et">Bloco 3</div><h3>Fechamento com direção</h3><p>Mesmo no topo, o vídeo termina apontando para algo: "me conta nos comentários", "marca aquele amigo", "salva para não esquecer". No fundo, o fechamento é o convite para o WhatsApp.</p></div>
+  </div>
+</section>
+
+<!-- ================= 6. CICLO PRONTO ================= -->
+<section class="section" id="ciclo">
+  <p class="section-num">06 · Ciclo pronto para gravar</p>
+  <h2>Cinco Reels, <em>na ordem certa</em></h2>
+  <p>Este é o primeiro ciclo da Liderança. Dá para gravar tudo numa manhã, com o celular e o microfone de lapela. A ordem de publicação é a ordem abaixo.</p>
+
+  <!-- REEL 1 -->
+  <div class="ficha" style="--cor:var(--azul)">
+    <div class="ficha-cab"><span class="ordinal">1</span><span class="tag">Topo · Frase na tela</span><h3>O medo que vira carteira</h3><span class="dur">8 a 10 segundos · sem fala</span></div>
+    <div class="ficha-body">
+      <div class="campo"><div class="rot">Gancho</div><p class="gancho">"Se medo de dirigir desse carteira..."</p></div>
+      <div class="campo"><div class="rot">Cena</div><p class="cinza">Samuel encostado no carro da autoescola, braços cruzados, olhando para a câmera e depois para o lado, como quem pensa. Gabriel grava a mesma cena em Brasília de Minas.</p></div>
+      <div class="campo full"><div class="rot">Roteiro em três blocos</div><ol>
+        <li><b>Gancho:</b> a frase aparece grande assim que o vídeo abre: "Se medo de dirigir desse carteira...".</li>
+        <li><b>Desenvolvimento:</b> corte seco, segunda frase: "...muita gente já tinha até a de carreta." Samuel balança a cabeça rindo.</li>
+        <li><b>Fechamento:</b> terceira frase: "Medo todo mundo tem. Carteira tem quem começa."</li>
+      </ol></div>
+      <div class="campo"><div class="rot">Texto na tela</div><div class="tela">Se medo de dirigir desse carteira...<br>...muita gente já tinha até a de carreta.<br>Medo todo mundo tem. Carteira tem quem começa.<small>Três frases, uma por vez, centralizadas e um pouco abaixo do meio da tela.</small></div></div>
+      <div class="campo"><div class="rot">Chamado (na legenda)</div><p class="chamado">Marca aquele amigo que vive dizendo que não nasceu para dirigir.</p><p class="cinza" style="margin-top:8px">Música do momento, volume baixo. Legenda curta: a frase do vídeo mais o chamado.</p></div>
+    </div>
+  </div>
+
+  <!-- REEL 2 -->
+  <div class="ficha" style="--cor:var(--azul)">
+    <div class="ficha-cab"><span class="ordinal">2</span><span class="tag">Topo · Novelinha</span><h3>"Eu não nasci pra dirigir"</h3><span class="dur">12 a 15 segundos · com fala</span></div>
+    <div class="ficha-body">
+      <div class="campo"><div class="rot">Gancho</div><p class="gancho">Aluno, desanimado: "Eu não nasci pra dirigir."</p></div>
+      <div class="campo"><div class="rot">Cena</div><p class="cinza">Dois personagens gravados pela mesma pessoa ou por duas (Priscila faz o aluno, Samuel faz o instrutor). Aluno no banco do passageiro com boné; instrutor no banco do motorista. Troca de lado da tela marca quem fala.</p></div>
+      <div class="campo full"><div class="rot">Roteiro em três blocos</div><ol>
+        <li><b>Gancho:</b> aluno: "Eu não nasci pra dirigir."</li>
+        <li><b>Desenvolvimento:</b> instrutor, tranquilo: "Já ouvi isso de todo mundo que hoje dirige todo dia." Aluno: "Mas eu travo." Instrutor: "Travar é a primeira aula. Dirigir é a oitava."</li>
+        <li><b>Fechamento:</b> instrutor para a câmera: "Quem aí já falou isso e hoje dirige? Comenta."</li>
+      </ol></div>
+      <div class="campo"><div class="rot">Texto na tela</div><div class="tela">"Eu não nasci pra dirigir."<br>Travar é a primeira aula. Dirigir é a oitava.<small>Legenda das falas embutida. Frase final em destaque.</small></div></div>
+      <div class="campo"><div class="rot">Chamado</div><p class="chamado">Comenta se você já falou isso e hoje dirige.</p></div>
+    </div>
+  </div>
+
+  <!-- REEL 3 -->
+  <div class="ficha" style="--cor:var(--amarelo)">
+    <div class="ficha-cab"><span class="ordinal">3</span><span class="tag">Meio · Bastidor</span><h3>A primeira aula de quem chegou tremendo</h3><span class="dur">30 a 40 segundos · Samuel narra</span></div>
+    <div class="ficha-body">
+      <div class="campo"><div class="rot">Gancho</div><p class="gancho">"Essa aluna chegou hoje dizendo que ia desistir antes de começar."</p></div>
+      <div class="campo"><div class="rot">Cena</div><p class="cinza">Aula real, com autorização da aluna (pode aparecer só de costas ou pelas mãos). Três momentos gravados: carro parado no pátio, primeira saída devagar, fim da aula com ela sorrindo. Samuel narra por cima, gravado depois com o microfone de lapela.</p></div>
+      <div class="campo full"><div class="rot">Roteiro em três blocos</div><ol>
+        <li><b>Gancho:</b> imagem das mãos no volante, carro parado. Narração: "Essa aluna chegou hoje dizendo que ia desistir antes de começar."</li>
+        <li><b>Desenvolvimento:</b> "Primeira aula ninguém sai para a rua. A gente fica no pátio, aprende a embreagem, arranca, para, arranca de novo. Quando ela sentiu o carro responder, o medo virou curiosidade." Imagens da primeira saída.</li>
+        <li><b>Fechamento:</b> imagem dela sorrindo no fim. "Quarenta minutos depois ela perguntou quando é a próxima. É assim que começa."</li>
+      </ol></div>
+      <div class="campo"><div class="rot">Texto na tela</div><div class="tela">Primeira aula: pátio, não rua.<br>O medo virou curiosidade.<br>"Quando é a próxima?"<small>Uma frase por bloco, acompanhando a narração.</small></div></div>
+      <div class="campo"><div class="rot">Chamado</div><p class="chamado">Salva este vídeo para quem está adiando a primeira aula.</p></div>
+    </div>
+  </div>
+
+  <!-- REEL 4 -->
+  <div class="ficha" style="--cor:var(--azul)">
+    <div class="ficha-cab"><span class="ordinal">4</span><span class="tag">Topo · POV</span><h3>Véspera da prova prática</h3><span class="dur">10 a 12 segundos · sem fala</span></div>
+    <div class="ficha-body">
+      <div class="campo"><div class="rot">Gancho</div><p class="gancho">"POV: você na véspera da prova prática."</p></div>
+      <div class="campo"><div class="rot">Cena</div><p class="cinza">Quatro cenas de dois a três segundos, gravadas pela Priscila ou por um aluno que topar: olhando para o teto na cama, assistindo a vídeo de baliza no celular de madrugada, ensaiando a baliza com um volante imaginário, acordando antes do despertador.</p></div>
+      <div class="campo full"><div class="rot">Roteiro em três blocos</div><ol>
+        <li><b>Gancho:</b> frase "POV: você na véspera da prova prática" sobre a cena de olhar para o teto.</li>
+        <li><b>Desenvolvimento:</b> as três cenas seguintes em corte seco, uma frase pequena em cada: "vídeo de baliza às duas da manhã", "baliza imaginária", "acordou antes do despertador".</li>
+        <li><b>Fechamento:</b> última tela, fundo preto: "Respira. Quem treinou passa."</li>
+      </ol></div>
+      <div class="campo"><div class="rot">Texto na tela</div><div class="tela">POV: você na véspera da prova prática<br>Respira. Quem treinou passa.<small>Frases pequenas nas cenas do meio; frase final grande.</small></div></div>
+      <div class="campo"><div class="rot">Chamado</div><p class="chamado">Comenta: foi assim com você?</p></div>
+    </div>
+  </div>
+
+  <!-- REEL 5 -->
+  <div class="ficha" style="--cor:var(--verde)">
+    <div class="ficha-cab"><span class="ordinal">5</span><span class="tag">Fundo · Convite direto</span><h3>Matrículas abertas nas duas unidades</h3><span class="dur">20 a 25 segundos · Samuel e Gabriel, um por unidade</span></div>
+    <div class="ficha-body">
+      <div class="campo"><div class="rot">Gancho</div><p class="gancho">"Está adiando a habilitação porque acha caro ou acha que não vai conseguir?"</p></div>
+      <div class="campo"><div class="rot">Cena</div><p class="cinza">Samuel em frente à unidade de Coração de Jesus; Gabriel em frente à de Brasília de Minas. Mesma fala, cada um publica no perfil da sua unidade. Olho na câmera, da cintura para cima, microfone de lapela.</p></div>
+      <div class="campo full"><div class="rot">Roteiro em três blocos</div><ol>
+        <li><b>Gancho (3 s):</b> "Está adiando a habilitação porque acha caro ou acha que não vai conseguir?"</li>
+        <li><b>Desenvolvimento (12 s):</b> "Na Liderança a gente parcela no cartão, cuida da papelada do primeiro documento até o exame e vai no seu ritmo, com instrutor que tem paciência. As matrículas de novembro estão abertas aqui em Coração de Jesus (ou Brasília de Minas)."</li>
+        <li><b>Fechamento (5 s):</b> "Chama no WhatsApp da unidade, o link está na bio, que a gente monta o seu pacote hoje."</li>
+      </ol></div>
+      <div class="campo"><div class="rot">Texto na tela</div><div class="tela">Matrículas abertas · Novembro<br>Parcela no cartão · Cuidamos de tudo · No seu ritmo<br>Chama no WhatsApp · link na bio<small>Legenda da fala embutida mais estas três linhas de apoio.</small></div></div>
+      <div class="campo"><div class="rot">Chamado (um só)</div><p class="chamado">Chama no WhatsApp da sua unidade: link na bio.</p><p class="cinza" style="margin-top:8px">Não misturar com "comenta" nem "salva". Neste vídeo o caminho é um.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. GRAVAÇÃO ================= -->
+<section class="section" id="gravacao">
+  <p class="section-num">07 · Regras de gravação</p>
+  <h2>Com o celular, <em>sem perfeccionismo</em></h2>
+  <p>Vídeo verdadeiro e simples traz mais aluno do que produção engessada. O que mais atrasa calendário não é a qualidade, é o prazo. Estas regras bastam.</p>
+  <div class="regras">
+    <div class="regra"><div class="ic">9:16</div><div><h3>Celular em pé, sempre</h3><p>Nada de vídeo deitado reaproveitado. Reels é vertical.</p></div></div>
+    <div class="regra"><div class="ic">LUZ</div><div><h3>De frente para a janela</h3><p>Nunca de costas para a luz. Fim de tarde escuro dá vídeo ruim: grave de manhã ou perto da porta.</p></div></div>
+    <div class="regra"><div class="ic">SOM</div><div><h3>Lapela ligada, lugar silencioso</h3><p>Toda fala com o microfone de lapela. Se o lugar estiver barulhento, troque pelo formato de frase na tela.</p></div></div>
+    <div class="regra"><div class="ic">TXT</div><div><h3>Legenda embutida em toda fala</h3><p>A maioria assiste sem som. Legenda centralizada, um pouco abaixo do meio, dentro da área segura.</p></div></div>
+    <div class="regra"><div class="ic">LOTE</div><div><h3>Grave os cinco de uma vez</h3><p>Uma ou duas horas por semana. Troque a camisa entre um vídeo e outro para parecer dias diferentes.</p></div></div>
+    <div class="regra"><div class="ic">ROSTO</div><div><h3>Gente real na tela</h3><p>Samuel, Gabriel, instrutores e alunos aparecem mais do que arte pronta. Perfil sem rosto é panfleto.</p></div></div>
+    <div class="regra"><div class="ic">CORTE</div><div><h3>Corte seco, zero transição</h3><p>Uma fala termina, a outra começa. Sem efeito, sem logo animada, sem "oi, gente".</p></div></div>
+    <div class="regra"><div class="ic">PT</div><div><h3>Português impecável</h3><p>Toda frase de tela e legenda revisada antes de publicar. Erro de acento na tela tira a credibilidade da autoescola.</p></div></div>
+  </div>
+
+  <div class="destaque" style="margin-top:22px"><strong>Como falar.</strong> Sempre o que o aluno ganha, nunca o nome técnico do processo. "Você só dirige, a gente cuida da papelada" em vez de "emitimos o RENACH e agendamos a biometria". E a mesma regra vale para este guia: aqui não entra palavra de agência; fala-se em gente nova, em quem chegou agora e em conversa iniciada no WhatsApp.</div>
+</section>
+
+<!-- ================= 8. CALENDÁRIO ================= -->
+<section class="section" id="calendario">
+  <p class="section-num">08 · Como vira o calendário do mês</p>
+  <h2>Deste guia <em>para a semana da Priscila</em></h2>
+  <p>Todo mês, o calendário de conteúdo nasce destas páginas, assim:</p>
+  <ol class="passos">
+    <li><b>Levantar as dez dores e desejos</b> mais fortes de quem procura a Liderança: medo de dirigir, reprovação, preço, tempo, primeira aula, instrutor paciente, distância do exame, categoria E, carona, independência.</li>
+    <li><b>Distribuir pelo ciclo</b>, semana a semana: topo, topo, meio, topo, fundo.</li>
+    <li><b>Escrever cada Reel por completo</b>, como as fichas da seção 06: tipo, formato, gancho, roteiro em três blocos, texto de tela e chamado. A Priscila só grava.</li>
+    <li><b>Publicar no hub do mês</b>, dentro do Calendário de Conteúdo, junto com a rotina de stories e os posts de feed.</li>
+    <li><b>Olhar o que funcionou</b> no fim do ciclo. O formato que trouxe mais gente ganha peso no ciclo seguinte.</li>
+  </ol>
+</section>
+
+<footer class="doc-footer">Auto Escola Liderança · Guia de Reels · Base do Calendário de Conteúdo · Outubro 2026 · ADS Company — Assessoria de Marketing e Performance</footer>
+</body>
+</html>
