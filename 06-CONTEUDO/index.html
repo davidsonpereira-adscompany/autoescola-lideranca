@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendário de Conteúdo — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card-hover:#161616;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .meses{display:flex;gap:8px;flex-wrap:wrap}
+  .meses a{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--texto);text-decoration:none;padding:5px 12px;border:1px solid var(--border);border-radius:20px}
+  .meses a:hover{color:var(--laranja);border-color:rgba(255,92,0,.4)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:600px;line-height:1.7}
+  .section{max-width:900px;margin:0 auto;padding:48px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;margin-bottom:6px}
+  .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
+  .grupo{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--texto2);font-weight:700;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+  .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
+  .doc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .doc-card{display:flex;align-items:stretch;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s}
+  .doc-card:hover{background:var(--card-hover);border-color:rgba(255,92,0,0.2);transform:translateY(-2px)}
+  .doc-card.pendente{opacity:.6;cursor:default}.doc-card.pendente:hover{transform:none;background:var(--card);border-color:var(--border)}
+  .doc-card-accent{width:5px;flex-shrink:0}
+  .doc-card-body{padding:22px 26px;flex:1}
+  .doc-card-tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .doc-card-title{font-family:var(--serif);font-size:1.15rem;color:var(--branco);margin-bottom:6px}
+  .doc-card-desc{font-size:13px;color:var(--texto);line-height:1.6}
+  .doc-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+  .doc-card-status{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+  .status-ready{background:rgba(34,197,94,0.1);color:#22C55E;border:1px solid rgba(34,197,94,0.2)}
+  .status-pending{background:rgba(234,179,8,0.1);color:#EAB308;border:1px solid rgba(234,179,8,0.25)}
+  .status-live{background:rgba(59,139,255,0.1);color:#3B8BFF;border:1px solid rgba(59,139,255,0.25)}
+  .doc-card-arrow{color:var(--texto2);transition:color .2s}.doc-card:hover .doc-card-arrow{color:var(--laranja)}
+  .doc-card-arrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+  .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:36px 20px}.doc-card-body{padding:18px 20px}}
+  @media(max-width:480px){.hero h1{font-size:1.5rem}.nav-title{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-bar">
+  <div class="nav-left"><a href="../01-ONBOARDING/index.html" class="btn-voltar">&#8592; CENTRAL</a><span class="nav-title">Calendário de Conteúdo · Orgânico</span></div>
+  <div class="meses"><a href="#outubro">Outubro 2026</a><a href="#novembro">Novembro 2026</a><a href="#dezembro">Dezembro 2026</a></div>
+</nav>
+<header class="hero">
+  <p class="hero-eyebrow">Auto Escola Liderança · Instagram orgânico</p>
+  <h1>Calendário de <em>Conteúdo</em></h1>
+  <p class="hero-sub">Tudo o que vai para o Instagram sem ser anúncio: estratégia de feed, stories e Reels de cada mês e os materiais prontos para publicar. Os anúncios ficam em Criativos para Tráfego Pago.</p>
+</header>
+<section class="section" id="outubro">
+  <p class="section-num">Mês 1 · Outubro 2026</p>
+  <h2>Conteúdo orgânico de outubro</h2>
+  <p>O que a equipe publica por conta própria nos dois perfis: feed, stories e Reels. Aqui não entram anúncios.</p>
+  <div class="grupo">Estratégia do mês</div>
+  <div class="doc-grid">
+    <a href="#" class="doc-card pendente" onclick="return false">
+      <div class="doc-card-accent" style="background:var(--amarelo);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--amarelo);">Feed · Stories · Reels</div>
+        <div class="doc-card-title">Calendário de pautas de outubro</div>
+        <div class="doc-card-desc">Planejamento semanal de publicações com tema, formato e legenda de cada post.</div>
+        <div class="doc-card-footer"><span class="doc-card-status status-pending">Em produção</span><div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+      </div>
+    </a>
+  </div>
+  <div class="grupo">Materiais prontos para publicar</div>
+  <div class="doc-grid">
+    <a href="outubro/reels-samuel.html" class="doc-card">
+      <div class="doc-card-accent" style="background:var(--laranja);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--laranja);">Reels · dois perfis</div>
+        <div class="doc-card-title">Vídeo do Samuel — como publicar e legenda</div>
+        <div class="doc-card-desc">Orientação de publicação (capa, horário, Stories, grupo dos alunos) e a legenda pronta para o Reels nas duas unidades.</div>
+        <div class="doc-card-footer"><span class="doc-card-status status-ready">Concluído</span><div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+      </div>
+    </a>
+    <a href="../06-CRIATIVOS-ADS/roteiros-categoria-e.html" class="doc-card">
+      <div class="doc-card-accent" style="background:var(--roxo);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--roxo);">Reels · 3 roteiros</div>
+        <div class="doc-card-title">Vídeo da Categoria E — roteiros e legendas</div>
+        <div class="doc-card-desc">Três roteiros para gravar com o Samuel ou o Gabriel, cada um com a legenda pronta para o Reels.</div>
+        <div class="doc-card-footer"><span class="doc-card-status status-ready">Concluído</span><div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="section" id="novembro">
+  <p class="section-num">Mês 2 · Novembro 2026</p>
+  <h2>Planejamento de novembro</h2>
+  <p>Os materiais deste mês entram aqui assim que forem produzidos e aprovados.</p>
+  <div class="doc-grid">
+    <a href="#" class="doc-card pendente" onclick="return false">
+      <div class="doc-card-accent" style="background:var(--texto2);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--texto2);">Em preparação</div>
+        <div class="doc-card-title">Planejamento em andamento</div>
+        <div class="doc-card-desc">A estratégia do mês é definida na virada do mês anterior, com base nos resultados do painel.</div>
+        <div class="doc-card-footer"><span class="doc-card-status status-pending">Em breve</span><div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="section" id="dezembro">
+  <p class="section-num">Mês 3 · Dezembro 2026</p>
+  <h2>Planejamento de dezembro</h2>
+  <p>Os materiais deste mês entram aqui assim que forem produzidos e aprovados.</p>
+  <div class="doc-grid">
+    <a href="#" class="doc-card pendente" onclick="return false">
+      <div class="doc-card-accent" style="background:var(--texto2);"></div>
+      <div class="doc-card-body">
+        <div class="doc-card-tag" style="color:var(--texto2);">Em preparação</div>
+        <div class="doc-card-title">Planejamento em andamento</div>
+        <div class="doc-card-desc">A estratégia do mês é definida na virada do mês anterior, com base nos resultados do painel.</div>
+        <div class="doc-card-footer"><span class="doc-card-status status-pending">Em breve</span><div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+      </div>
+    </a>
+  </div>
+</section>
+<footer class="doc-footer">Auto Escola Liderança · Calendário de Conteúdo · ADS Company — Assessoria de Marketing e Performance</footer>
+</body>
+</html>

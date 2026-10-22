@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criativos da equipe — Outubro 2026 — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card-hover:#161616;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .meses{display:flex;gap:8px;flex-wrap:wrap}
+  .meses a{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--texto);text-decoration:none;padding:5px 12px;border:1px solid var(--border);border-radius:20px}
+  .meses a:hover{color:var(--laranja);border-color:rgba(255,92,0,.4)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:600px;line-height:1.7}
+  .section{max-width:900px;margin:0 auto;padding:48px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;margin-bottom:6px}
+  .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
+  .grupo{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--texto2);font-weight:700;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+  .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
+  .doc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .doc-card{display:flex;align-items:stretch;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s}
+  .doc-card:hover{background:var(--card-hover);border-color:rgba(255,92,0,0.2);transform:translateY(-2px)}
+  .doc-card.pendente{opacity:.6;cursor:default}.doc-card.pendente:hover{transform:none;background:var(--card);border-color:var(--border)}
+  .doc-card-accent{width:5px;flex-shrink:0}
+  .doc-card-body{padding:22px 26px;flex:1}
+  .doc-card-tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .doc-card-title{font-family:var(--serif);font-size:1.15rem;color:var(--branco);margin-bottom:6px}
+  .doc-card-desc{font-size:13px;color:var(--texto);line-height:1.6}
+  .doc-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+  .doc-card-status{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+  .status-ready{background:rgba(34,197,94,0.1);color:#22C55E;border:1px solid rgba(34,197,94,0.2)}
+  .status-pending{background:rgba(234,179,8,0.1);color:#EAB308;border:1px solid rgba(234,179,8,0.25)}
+  .status-live{background:rgba(59,139,255,0.1);color:#3B8BFF;border:1px solid rgba(59,139,255,0.25)}
+  .doc-card-arrow{color:var(--texto2);transition:color .2s}.doc-card:hover .doc-card-arrow{color:var(--laranja)}
+  .doc-card-arrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+  .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:36px 20px}.doc-card-body{padding:18px 20px}}
+  @media(max-width:480px){.hero h1{font-size:1.5rem}.nav-title{display:none}}
+.galeria{max-width:1000px;margin:0 auto;padding:40px 32px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}.peca{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}.peca img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}.peca figcaption{padding:14px 18px;display:flex;flex-direction:column;gap:2px}.peca .ad{font-size:10px;font-weight:700;letter-spacing:.15em;color:var(--laranja)}.peca strong{font-family:var(--serif);font-weight:400;font-size:1.05rem}.peca small{font-size:12px;color:var(--texto)}@media(max-width:600px){.galeria{padding:24px 16px}}</style>
+</head>
+<body>
+<nav class="nav-bar"><div class="nav-left"><a href="index.html" class="btn-voltar">&#8592; CRIATIVOS</a><span class="nav-title">Outubro 2026 · Criativos da equipe</span></div><span class="nav-badge">ADS Company</span></nav>
+<header class="hero"><p class="hero-eyebrow">Outubro 2026 · No ar desde 14/10</p><h1>Criativos da <em>equipe da autoescola</em></h1><p class="hero-sub">As seis peças produzidas pela Priscila que passaram a ser o padrão da campanha. Os textos de cada anúncio (texto principal, título e saudação) estão na galeria completa de outubro, nas peças AD14 a AD19.</p></header>
+<div class="galeria">
+    <figure class="peca"><img src="cliente/cliente-01-samuel-primeira-habilitacao.jpg" alt="Samuel — primeira habilitação" loading="lazy"><figcaption><span class="ad">AD14</span><strong>Samuel — primeira habilitação</strong><small>No ar em: Coração de Jesus</small></figcaption></figure>
+    <figure class="peca"><img src="cliente/cliente-02-aprovados.jpg" alt="Alunos aprovados" loading="lazy"><figcaption><span class="ad">AD15</span><strong>Alunos aprovados</strong><small>No ar em: Coração de Jesus e Brasília de Minas</small></figcaption></figure>
+    <figure class="peca"><img src="cliente/cliente-03-vagas-outubro.jpg" alt="Vagas de outubro" loading="lazy"><figcaption><span class="ad">AD16</span><strong>Vagas de outubro</strong><small>No ar em: Coração de Jesus</small></figcaption></figure>
+    <figure class="peca"><img src="cliente/cliente-04-cat-d-e.jpg" alt="Categorias D e E" loading="lazy"><figcaption><span class="ad">AD17</span><strong>Categorias D e E</strong><small>No ar em: Coração de Jesus e Brasília de Minas</small></figcaption></figure>
+    <figure class="peca"><img src="cliente/cliente-05-cat-a-moto.jpg" alt="Categoria A — moto" loading="lazy"><figcaption><span class="ad">AD18</span><strong>Categoria A — moto</strong><small>No ar em: Brasília de Minas</small></figcaption></figure>
+    <figure class="peca"><img src="cliente/cliente-06-duas-unidades.jpg" alt="Duas unidades" loading="lazy"><figcaption><span class="ad">AD19</span><strong>Duas unidades</strong><small>No ar em: Brasília de Minas</small></figcaption></figure>
+</div>
+<footer class="doc-footer">Auto Escola Liderança · Criativos para Tráfego Pago · Outubro 2026 · ADS Company</footer>
+</body>
+</html>

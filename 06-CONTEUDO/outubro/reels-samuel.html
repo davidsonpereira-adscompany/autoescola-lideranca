@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reels — Vídeo do Samuel — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card-hover:#161616;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .meses{display:flex;gap:8px;flex-wrap:wrap}
+  .meses a{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--texto);text-decoration:none;padding:5px 12px;border:1px solid var(--border);border-radius:20px}
+  .meses a:hover{color:var(--laranja);border-color:rgba(255,92,0,.4)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:600px;line-height:1.7}
+  .section{max-width:900px;margin:0 auto;padding:48px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;margin-bottom:6px}
+  .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
+  .grupo{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--texto2);font-weight:700;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+  .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
+  .doc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .doc-card{display:flex;align-items:stretch;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s}
+  .doc-card:hover{background:var(--card-hover);border-color:rgba(255,92,0,0.2);transform:translateY(-2px)}
+  .doc-card.pendente{opacity:.6;cursor:default}.doc-card.pendente:hover{transform:none;background:var(--card);border-color:var(--border)}
+  .doc-card-accent{width:5px;flex-shrink:0}
+  .doc-card-body{padding:22px 26px;flex:1}
+  .doc-card-tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .doc-card-title{font-family:var(--serif);font-size:1.15rem;color:var(--branco);margin-bottom:6px}
+  .doc-card-desc{font-size:13px;color:var(--texto);line-height:1.6}
+  .doc-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+  .doc-card-status{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+  .status-ready{background:rgba(34,197,94,0.1);color:#22C55E;border:1px solid rgba(34,197,94,0.2)}
+  .status-pending{background:rgba(234,179,8,0.1);color:#EAB308;border:1px solid rgba(234,179,8,0.25)}
+  .status-live{background:rgba(59,139,255,0.1);color:#3B8BFF;border:1px solid rgba(59,139,255,0.25)}
+  .doc-card-arrow{color:var(--texto2);transition:color .2s}.doc-card:hover .doc-card-arrow{color:var(--laranja)}
+  .doc-card-arrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+  .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:36px 20px}.doc-card-body{padding:18px 20px}}
+  @media(max-width:480px){.hero h1{font-size:1.5rem}.nav-title{display:none}}
+.doc{max-width:760px;margin:0 auto;padding:40px 32px}.doc h2{font-family:var(--serif);font-size:1.4rem;margin:32px 0 12px}.doc p,.doc li{color:var(--texto);font-size:15px}.doc ol{padding-left:22px}.doc li{margin:8px 0}.doc li b{color:var(--branco)}.caixa{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 26px;margin:14px 0}.caixa pre{font-family:inherit;white-space:pre-wrap;color:var(--branco);font-size:15px;line-height:1.7}.btn{display:inline-block;margin-top:12px;background:var(--laranja);color:#fff;border:none;border-radius:8px;padding:10px 18px;font:600 13px var(--sans);cursor:pointer}.ok{color:var(--verde);font-size:13px;margin-left:10px}@media(max-width:600px){.doc{padding:28px 16px}}</style>
+</head>
+<body>
+<nav class="nav-bar"><div class="nav-left"><a href="../index.html" class="btn-voltar">&#8592; CALENDÁRIO</a><span class="nav-title">Outubro 2026 · Reels</span></div><span class="nav-badge">ADS Company</span></nav>
+<header class="hero"><p class="hero-eyebrow">Outubro 2026 · Instagram orgânico</p><h1>Vídeo do Samuel: <em>como publicar</em></h1><p class="hero-sub">A versão final do vídeo (corte seco, legenda centralizada) é a mesma que está nos anúncios. Publicada nos dois perfis, ela reforça a confiança de quem vê o anúncio e entra no perfil.</p></header>
+<div class="doc">
+  <h2>Passo a passo</h2>
+  <ol>
+    <li><b>Formato Reels</b>, não publicação comum. Usar o arquivo final, sem transições.</li>
+    <li><b>Capa</b> com o rosto do Samuel e o texto: "Tire sua CNH com quem acompanha do começo ao fim".</li>
+    <li><b>Horário:</b> entre 18h e 20h, ou no horário de almoço.</li>
+    <li><b>Depois de publicar:</b> compartilhar nos Stories com o link do WhatsApp e mandar no grupo dos alunos pedindo para repostarem nos status (vale o desconto que a autoescola já oferece).</li>
+    <li><b>Fixar</b> o Reels no topo do perfil, nas duas unidades.</li>
+  </ol>
+  <h2>Legenda pronta</h2>
+  <p>A mesma legenda serve para os dois perfis. É só copiar.</p>
+  <div class="caixa"><pre id="legenda">Tirar a CNH não precisa ser uma aventura solitária. 🚗
+
+Aqui na Liderança a gente acompanha você do começo ao fim: da aula teórica até o dia do exame.
+
+✅ Instrutores que explicam com paciência
+✅ Veículos novos
+✅ Centenas de alunos aprovados na região
+
+Quer começar ainda esta semana?
+📲 Chama no WhatsApp:
+Coração de Jesus: (38) 9920-5651
+Brasília de Minas: (38) 9868-8520
+
+#AutoEscolaLiderança #CNH #PrimeiraHabilitação #CoraçãoDeJesus #BrasíliaDeMinas #NorteDeMinas #Autoescola</pre><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('legenda').innerText).then(function(){document.getElementById('ok').textContent='Copiado!'})">Copiar legenda</button><span class="ok" id="ok"></span></div>
+  <h2>Para os próximos vídeos</h2>
+  <ol>
+    <li><b>Começar já falando</b>, sem pausa nos três primeiros segundos.</li>
+    <li><b>Usar o microfone de lapela</b> que a autoescola já tem.</li>
+    <li><b>Edição:</b> corte seco entre as falas e legenda centralizada, um pouco abaixo do meio da tela.</li>
+  </ol>
+</div>
+<footer class="doc-footer">Auto Escola Liderança · Calendário de Conteúdo · Outubro 2026 · ADS Company</footer>
+</body>
+</html>
