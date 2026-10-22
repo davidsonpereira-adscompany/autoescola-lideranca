@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiros de Vídeo — Categoria E · Auto Escola Liderança</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #6B7280;
+    --accent: #FF5C00;
+    --accent-light: #FFF7F2;
+    --border: #E5E7EB;
+    --success: #059669;
+    --success-light: #ECFDF5;
+    --warn: #D97706;
+    --warn-light: #FEF3C7;
+    --blue: #2563EB;
+    --blue-light: #EFF6FF;
+  }
+
+  @page { size: A4; margin: 18mm 16mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 20mm 18mm;
+    max-width: 210mm;
+    margin: 0 auto;
+  }
+
+  .nav { font-size: .75rem; margin-bottom: 1.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .nav a { color: var(--muted); text-decoration: none; }
+  .nav a:hover { color: var(--accent); }
+
+  .header { border-bottom: 3px solid var(--accent); padding-bottom: 1rem; margin-bottom: 2rem; }
+  .header-badge {
+    display: inline-block; background: var(--accent); color: #FFF;
+    font-size: .65rem; font-weight: 700; padding: .2rem .6rem; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: .06em; margin-bottom: .5rem;
+  }
+  .header h1 { font-size: 1.4rem; font-weight: 800; color: var(--text); margin-bottom: .25rem; }
+  .header .subtitle { font-size: .85rem; color: var(--muted); }
+  .meta-row { display: flex; gap: 2rem; margin-top: .75rem; flex-wrap: wrap; }
+  .meta-item { font-size: .78rem; color: var(--muted); }
+  .meta-item strong { color: var(--text); font-weight: 600; }
+
+  .intro {
+    background: var(--accent-light); border-radius: 8px; padding: 1rem 1.25rem;
+    font-size: .88rem; margin-bottom: 2rem;
+  }
+  .intro p { margin-bottom: .4rem; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  .roteiro { margin-bottom: 2.5rem; page-break-inside: avoid; }
+  .roteiro-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent); color: #FFF; font-size: .85rem; font-weight: 700; margin-right: .5rem;
+  }
+  .roteiro-header { display: flex; align-items: center; margin-bottom: .75rem; padding-bottom: .5rem; border-bottom: 2px solid var(--accent-light); }
+  .roteiro-title { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+  .roteiro-angle { font-size: .78rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; margin-top: .1rem; }
+
+  .tag-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag { display: inline-block; font-size: .68rem; font-weight: 600; padding: .2rem .6rem; border-radius: 3px; }
+  .tag-orange { background: var(--accent-light); color: var(--accent); }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+  .tag-green { background: var(--success-light); color: var(--success); }
+
+  .scene-box { background: var(--blue-light); border-left: 3px solid var(--blue); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin-bottom: 1rem; }
+  .scene-label { font-weight: 700; color: var(--blue); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .3rem; }
+  .scene-box p { font-size: .88rem; margin-bottom: .3rem; }
+  .scene-box p:last-child { margin-bottom: 0; }
+
+  .script-box { background: #FAFAFA; border: 2px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; }
+  .script-label { font-weight: 700; color: var(--accent); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .6rem; }
+  .script-box p { font-size: 1.05rem; line-height: 2; margin-bottom: .6rem; }
+  .script-box p:last-child { margin-bottom: 0; }
+  .script-box .gancho { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+  .script-box .cta { font-weight: 700; color: var(--success); }
+
+  .timing-box { background: var(--success-light); border-left: 3px solid var(--success); padding: .8rem 1.25rem; border-radius: 0 6px 6px 0; margin-bottom: 1rem; }
+  .timing-label { font-weight: 700; color: var(--success); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .3rem; }
+  .timing-box p { font-size: .85rem; }
+
+  .tips-box { background: var(--warn-light); border-left: 3px solid var(--warn); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin-bottom: 1rem; }
+  .tips-label { font-weight: 700; color: var(--warn); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem; }
+  .tips-box ul { list-style: none; padding: 0; }
+  .tips-box li { font-size: .85rem; padding: .3rem 0 .3rem 1.2rem; position: relative; }
+  .tips-box li::before { content: ""; position: absolute; left: 0; top: .55rem; width: 6px; height: 6px; border-radius: 50%; background: var(--warn); }
+
+  .copy-box { background: #FFF; border: 1px dashed var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+  .copy-label { font-weight: 700; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem; }
+  .copy-box pre { font-family: inherit; font-size: .9rem; white-space: pre-wrap; line-height: 1.6; }
+
+  .separator { border: none; border-top: 2px dashed var(--border); margin: 2rem 0; }
+  .footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: .72rem; color: var(--muted); text-align: center; }
+  h2 { font-size: 1rem; font-weight: 700; color: var(--accent); margin: 1.5rem 0 .75rem; padding-bottom: .3rem; border-bottom: 1px solid var(--border); }
+
+  @media print {
+    body { padding: 0; }
+    .nav { display: none; }
+    .roteiro, .script-box, .scene-box, .tips-box, .timing-box, .copy-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="../01-ONBOARDING/index.html">&larr; Central de Documentos</a>
+  <a href="roteiros-samuel.html">Roteiros do Samuel</a>
+  <a href="roteiros-gabriel.html">Roteiros do Gabriel</a>
+</div>
+
+<div class="header">
+  <span class="header-badge">Vídeos · Instagram e anúncios</span>
+  <h1>Roteiros de Vídeo — Categoria E (carreta)</h1>
+  <p class="subtitle">Auto Escola Liderança · Divulgação da nova categoria</p>
+  <div class="meta-row">
+    <span class="meta-item"><strong>Porta-voz:</strong> Samuel (ou Gabriel, na unidade onde a carreta estiver)</span>
+    <span class="meta-item"><strong>Formato:</strong> Vertical 9:16</span>
+    <span class="meta-item"><strong>Uso:</strong> Reels nos dois perfis + anúncio para WhatsApp</span>
+    <span class="meta-item"><strong>Data:</strong> Outubro 2026</span>
+  </div>
+</div>
+
+<div class="intro">
+  <p><strong>Para quem é esse vídeo:</strong> gente que já tem CNH (B, C ou D) e trabalha, ou quer trabalhar, com transporte. É um público mais velho e mais decidido do que o da primeira habilitação. O tom é de profissional falando com profissional.</p>
+  <p><strong>O que a gente quer que a pessoa entenda em poucos segundos:</strong> agora dá para fazer a categoria E aqui na região, com carreta própria, pacote completo e deslocamento para o exame incluído, sem precisar se virar sozinho na cidade grande.</p>
+  <p><strong>São três roteiros com ângulos diferentes.</strong> Gravar pelo menos o 1 e o 3. Cada um tem a legenda pronta para publicar no Instagram.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROTEIRO 1 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="roteiro">
+  <div class="roteiro-header">
+    <span class="roteiro-num">1</span>
+    <div>
+      <div class="roteiro-title">Chegou a carreta da Liderança</div>
+      <div class="roteiro-angle">Novidade + Mostrar o veículo</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag tag-orange">20–25 seg</span>
+    <span class="tag tag-blue">Anúncio da novidade</span>
+    <span class="tag tag-green">Cat. E</span>
+  </div>
+
+  <div class="scene-box">
+    <p class="scene-label">Cenário</p>
+    <p><strong>Onde:</strong> Em frente à carreta, com a plotagem da Liderança aparecendo. Começar com o celular mostrando o veículo inteiro e caminhar até enquadrar o porta-voz da cintura para cima.</p>
+    <p><strong>Enquadramento:</strong> Vertical. Nos primeiros segundos, a carreta é a estrela; depois, o rosto.</p>
+    <p><strong>Tom:</strong> Orgulho de quem está mostrando uma conquista. Energia alta no começo.</p>
+  </div>
+
+  <div class="script-box">
+    <p class="script-label">Fala</p>
+    <p class="gancho">"Olha o que chegou na Liderança."</p>
+    <p>"Essa é a nossa carreta. A partir de agora, quem quer tirar a categoria E não precisa mais sair da região para isso."</p>
+    <p>"São dez aulas práticas, com instrutor acompanhando, e a gente ainda leva você para o exame."</p>
+    <p>"Carteira E é porta aberta para trabalhar com transporte de carga, com salário melhor e mais oportunidade."</p>
+    <p class="cta">"Chama a gente no WhatsApp e garante sua vaga na primeira turma."</p>
+  </div>
+
+  <div class="timing-box">
+    <p class="timing-label">Marcação de tempo</p>
+    <p><strong>0–3s:</strong> Gancho com a carreta aparecendo inteira · <strong>3–15s:</strong> Novidade e o que está incluído · <strong>15–22s:</strong> Benefício profissional · <strong>22–25s:</strong> Chamada para o WhatsApp</p>
+  </div>
+
+  <div class="tips-box">
+    <p class="tips-label">Dicas de gravação</p>
+    <ul>
+      <li>Gravar em duas partes se ficar mais fácil: primeiro só a carreta (passando a câmera devagar), depois a fala. A edição junta com corte seco.</li>
+      <li>Se der, abrir a porta da cabine e mostrar o interior por dois segundos. Imagem de veículo grande segura a atenção.</li>
+      <li>Falar "categoria E" e "carreta" sempre juntos: muita gente conhece só um dos dois nomes.</li>
+      <li>Nada de transição na edição. Corte seco e legenda centralizada, um pouco abaixo do meio, como no vídeo do Samuel.</li>
+    </ul>
+  </div>
+
+  <div class="copy-box">
+    <p class="copy-label">Legenda pronta para o Reels</p>
+<pre>🚛 Chegou a carreta da Liderança!
+
+Agora você tira a categoria E aqui na região, sem precisar se virar sozinho em outra cidade.
+
+✅ 10 aulas práticas com instrutor
+✅ Carreta própria da autoescola
+✅ Deslocamento para o exame incluído
+✅ Parcelamento em até 10x sem juros
+
+Carteira E é mais oportunidade e salário melhor no transporte de carga.
+
+📲 Chama no WhatsApp e garante sua vaga na primeira turma:
+Coração de Jesus: (38) 9920-5651
+Brasília de Minas: (38) 9868-8520
+
+#AutoEscolaLiderança #CategoriaE #Carreta #CNH #CoraçãoDeJesus #BrasíliaDeMinas #NorteDeMinas #Caminhoneiro</pre>
+  </div>
+</div>
+
+<hr class="separator" style="page-break-after: always;">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROTEIRO 2 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="roteiro">
+  <div class="roteiro-header">
+    <span class="roteiro-num">2</span>
+    <div>
+      <div class="roteiro-title">Você já tem a B. E se ela valesse mais?</div>
+      <div class="roteiro-angle">Carreira + Retorno financeiro</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag tag-orange">20–25 seg</span>
+    <span class="tag tag-blue">Convencimento</span>
+    <span class="tag tag-green">Cat. D e E</span>
+  </div>
+
+  <div class="scene-box">
+    <p class="scene-label">Cenário</p>
+    <p><strong>Onde:</strong> Sentado ou encostado na carreta, ou dentro da cabine com a porta aberta. Fundo simples.</p>
+    <p><strong>Enquadramento:</strong> Vertical, do peito para cima. Mais próximo do que o roteiro 1: aqui é conversa, não vitrine.</p>
+    <p><strong>Tom:</strong> Calmo e direto. Como quem dá um conselho a um conhecido.</p>
+  </div>
+
+  <div class="script-box">
+    <p class="script-label">Fala</p>
+    <p class="gancho">"Você já tem CNH e está ganhando pouco? Então presta atenção."</p>
+    <p>"Quem dirige carreta não falta trabalho. Transporte de grãos, de carga, de combustível... tudo passa pela categoria E."</p>
+    <p>"E o que segurava muita gente era ter que ir para a cidade grande, pagar aula lá e ainda voltar para o exame."</p>
+    <p>"Agora a Liderança faz tudo isso aqui. A carreta é nossa, as aulas são aqui e a gente leva você para o exame."</p>
+    <p class="cta">"Manda um 'oi' no WhatsApp que eu te explico como funciona e quanto fica."</p>
+  </div>
+
+  <div class="timing-box">
+    <p class="timing-label">Marcação de tempo</p>
+    <p><strong>0–3s:</strong> Gancho que filtra quem já tem CNH · <strong>3–10s:</strong> Oportunidade de trabalho · <strong>10–18s:</strong> O problema de antes e a solução de agora · <strong>18–25s:</strong> Chamada para o WhatsApp</p>
+  </div>
+
+  <div class="tips-box">
+    <p class="tips-label">Dicas de gravação</p>
+    <ul>
+      <li>Trocar "transporte de grãos, de carga, de combustível" pelo que mais roda na região. Falar o que a pessoa vê na estrada todo dia.</li>
+      <li>Não falar valor no vídeo. O valor vai na conversa do WhatsApp, onde dá para explicar o parcelamento e o desconto.</li>
+      <li>Pode contar nos dedos os três pontos: carreta nossa, aulas aqui, levamos ao exame.</li>
+      <li>Se o Samuel travar, gravar frase por frase e juntar na edição com corte seco. Ninguém percebe.</li>
+    </ul>
+  </div>
+
+  <div class="copy-box">
+    <p class="copy-label">Legenda pronta para o Reels</p>
+<pre>Você já tem CNH e quer ganhar mais? 🚛
+
+Quem dirige carreta não fica sem trabalho. E o que segurava muita gente era precisar ir para a cidade grande fazer tudo.
+
+Agora não precisa mais:
+✅ A carreta é da Liderança
+✅ As aulas são aqui na região
+✅ A gente leva você para o exame
+
+Categoria E com acompanhamento do começo ao fim.
+
+📲 Manda um "oi" no WhatsApp que a gente explica como funciona e quanto fica:
+Coração de Jesus: (38) 9920-5651
+Brasília de Minas: (38) 9868-8520
+
+#AutoEscolaLiderança #CategoriaE #Carreta #CNH #MudançaDeCategoria #CoraçãoDeJesus #BrasíliaDeMinas #NorteDeMinas</pre>
+  </div>
+</div>
+
+<hr class="separator" style="page-break-after: always;">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROTEIRO 3 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="roteiro">
+  <div class="roteiro-header">
+    <span class="roteiro-num">3</span>
+    <div>
+      <div class="roteiro-title">Três perguntas que todo mundo faz sobre a categoria E</div>
+      <div class="roteiro-angle">Tirar dúvidas + Autoridade</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag tag-orange">25–30 seg</span>
+    <span class="tag tag-blue">Educativo</span>
+    <span class="tag tag-green">Cat. E</span>
+  </div>
+
+  <div class="scene-box">
+    <p class="scene-label">Cenário</p>
+    <p><strong>Onde:</strong> Na recepção ou no pátio, com a carreta ao fundo se possível.</p>
+    <p><strong>Enquadramento:</strong> Vertical, da cintura para cima. Pode usar a legenda na tela para numerar as perguntas.</p>
+    <p><strong>Tom:</strong> Didático e tranquilo. É o dono da autoescola respondendo o que o pessoal pergunta no balcão.</p>
+  </div>
+
+  <div class="script-box">
+    <p class="script-label">Fala</p>
+    <p class="gancho">"Três perguntas que todo mundo me faz sobre a categoria E."</p>
+    <p>"Primeira: precisa ter qual carteira antes? Precisa já ter a categoria B há pelo menos um ano, ou ter a C ou a D."</p>
+    <p>"Segunda: o exame é aqui? A prova prática é em Montes Claros, mas a gente leva você. O deslocamento já está incluído no pacote."</p>
+    <p>"Terceira: quanto tempo leva? São dez aulas práticas. Com a agenda certinha, em poucas semanas você está pronto para o exame."</p>
+    <p class="cta">"Ficou alguma dúvida? Chama no WhatsApp que eu respondo pessoalmente."</p>
+  </div>
+
+  <div class="timing-box">
+    <p class="timing-label">Marcação de tempo</p>
+    <p><strong>0–3s:</strong> Gancho das três perguntas · <strong>3–22s:</strong> Uma resposta curta por pergunta, com pausa entre elas · <strong>22–28s:</strong> Chamada para o WhatsApp</p>
+  </div>
+
+  <div class="tips-box">
+    <p class="tips-label">Dicas de gravação</p>
+    <ul>
+      <li><strong>Antes de gravar, a Priscila confere as três respostas</strong> (exigência de carteira anterior, cidade do exame e prazo). O roteiro usa o que está na tabela de serviços; se algo mudou, ajusta a fala.</li>
+      <li>Gravar cada pergunta como um bloco separado. Facilita a edição e o Samuel não precisa decorar tudo de uma vez.</li>
+      <li>Na edição, colocar o número da pergunta na legenda (1, 2, 3). Ajuda quem assiste sem som.</li>
+      <li>Esse vídeo rende também como três Stories separados, um por pergunta.</li>
+    </ul>
+  </div>
+
+  <div class="copy-box">
+    <p class="copy-label">Legenda pronta para o Reels</p>
+<pre>As 3 perguntas que todo mundo faz sobre a categoria E 🚛👇
+
+1️⃣ Precisa ter qual carteira antes?
+Já ter a categoria B há pelo menos um ano, ou ter a C ou a D.
+
+2️⃣ O exame é aqui?
+A prova prática é em Montes Claros, mas a gente leva você. O deslocamento já está incluído.
+
+3️⃣ Quanto tempo leva?
+São 10 aulas práticas. Com a agenda certinha, em poucas semanas você está pronto.
+
+Ficou alguma dúvida? 📲 Chama no WhatsApp que a gente responde pessoalmente:
+Coração de Jesus: (38) 9920-5651
+Brasília de Minas: (38) 9868-8520
+
+#AutoEscolaLiderança #CategoriaE #Carreta #CNH #CoraçãoDeJesus #BrasíliaDeMinas #NorteDeMinas #Caminhoneiro</pre>
+  </div>
+</div>
+
+<hr class="separator">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- DICAS GERAIS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<h2>Regras gerais para os três vídeos</h2>
+
+<div class="tips-box" style="border-left-color: var(--accent);">
+  <ul>
+    <li><strong>Nunca decorar</strong>: ler o roteiro, entender a ideia e falar com as próprias palavras.</li>
+    <li><strong>Olhar na câmera</strong>, como se estivesse falando com um conhecido no balcão.</li>
+    <li><strong>Gravar sempre na vertical</strong> (celular em pé), com o microfone de lapela ligado.</li>
+    <li><strong>Luz natural</strong>, de manhã ou no fim da tarde. Evitar sol direto no rosto e contraluz.</li>
+    <li><strong>Edição:</strong> corte seco entre as falas, sem efeito de transição. Legenda centralizada e um pouco abaixo do meio, dentro da área segura.</li>
+    <li><strong>Mandar duas ou três versões</strong> de cada roteiro no grupo. A gente escolhe a melhor e devolve com a orientação de publicação.</li>
+    <li><strong>Publicação:</strong> o mesmo vídeo vai como Reels nos dois perfis e entra também nos anúncios, apontando para o WhatsApp da unidade.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  ADS Company · Auto Escola Liderança · Roteiros de vídeo · Categoria E · Outubro 2026
+</div>
+
+</body>
+</html>
