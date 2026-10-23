@@ -6,19 +6,19 @@
 <title>Reels — Vídeo do Samuel — Auto Escola Liderança | ADS Company</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card-hover:#161616;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  :root{--laranja:#FF5C00;--preto:#FFFFFF;--card:#FFFFFF;--card2:#F7F7F5;--card-hover:#FFFBF8;--border:#E6E6E3;--branco:#1A1A1A;--texto:#5C5C5C;--texto2:#8A8A8A;--verde:#15803D;--amarelo:#B45309;--azul:#1D4ED8;--roxo:#7E22CE;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
   body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
-  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid #D9D9D5;color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
   .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
   .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
   .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
   .meses{display:flex;gap:8px;flex-wrap:wrap}
   .meses a{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--texto);text-decoration:none;padding:5px 12px;border:1px solid var(--border);border-radius:20px}
   .meses a:hover{color:var(--laranja);border-color:rgba(255,92,0,.4)}
-  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.08) 0%,transparent 70%),linear-gradient(180deg,#FFFBF8 0%,#FFFFFF 100%)}
   .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
   .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
   .hero h1 em{font-style:italic;color:var(--laranja)}
@@ -32,7 +32,7 @@
   .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
   .doc-grid{display:grid;grid-template-columns:1fr;gap:14px}
   .doc-card{display:flex;align-items:stretch;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s}
-  .doc-card:hover{background:var(--card-hover);border-color:rgba(255,92,0,0.2);transform:translateY(-2px)}
+  .doc-card:hover{border-color:var(--laranja);box-shadow:0 6px 24px rgba(0,0,0,.06);transform:translateY(-1px)}
   .doc-card.pendente{opacity:.6;cursor:default}.doc-card.pendente:hover{transform:none;background:var(--card);border-color:var(--border)}
   .doc-card-accent{width:5px;flex-shrink:0}
   .doc-card-body{padding:22px 26px;flex:1}
@@ -41,9 +41,9 @@
   .doc-card-desc{font-size:13px;color:var(--texto);line-height:1.6}
   .doc-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
   .doc-card-status{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
-  .status-ready{background:rgba(34,197,94,0.1);color:#22C55E;border:1px solid rgba(34,197,94,0.2)}
-  .status-pending{background:rgba(234,179,8,0.1);color:#EAB308;border:1px solid rgba(234,179,8,0.25)}
-  .status-live{background:rgba(59,139,255,0.1);color:#3B8BFF;border:1px solid rgba(59,139,255,0.25)}
+  .status-ready{background:#ECFDF3;color:#15803D;border:1px solid #BBE7C8}
+  .status-pending{background:#FFF7E6;color:#B45309;border:1px solid #F5D9A6}
+  .status-live{background:#EEF4FF;color:#1D4ED8;border:1px solid #C7D7FB}
   .doc-card-arrow{color:var(--texto2);transition:color .2s}.doc-card:hover .doc-card-arrow{color:var(--laranja)}
   .doc-card-arrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
   .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}

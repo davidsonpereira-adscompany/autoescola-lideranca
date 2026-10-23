@@ -6,18 +6,18 @@
 <title>Guia de Reels — Auto Escola Liderança | ADS Company</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card2:#161616;--border:rgba(255,255,255,0.07);--branco:#F5F5F5;--texto:#B4B4B4;--texto2:#777;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  :root{--laranja:#FF5C00;--preto:#FFFFFF;--card:#FFFFFF;--card2:#F7F7F5;--card-hover:#FFFBF8;--border:#E6E6E3;--branco:#1A1A1A;--texto:#5C5C5C;--texto2:#8A8A8A;--verde:#15803D;--amarelo:#B45309;--azul:#1D4ED8;--roxo:#7E22CE;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
   body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:15px}
-  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .btn-voltar{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;border:1px solid #D9D9D5;color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
   .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
   .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
   .indice{display:flex;gap:8px;flex-wrap:wrap}
   .indice a{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--texto);text-decoration:none;padding:5px 11px;border:1px solid var(--border);border-radius:20px}
   .indice a:hover{color:var(--laranja);border-color:rgba(255,92,0,.4)}
-  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.07) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.08) 0%,transparent 70%),linear-gradient(180deg,#FFFBF8 0%,#FFFFFF 100%)}
   .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
   .hero h1{font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.1rem);font-weight:700;line-height:1.15;max-width:800px;margin-bottom:18px}
   .hero h1 em{font-style:italic;color:var(--laranja)}
@@ -34,7 +34,7 @@
   .tipo .n{font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--cor)}
   .tipo .nome{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--cor);margin:8px 0 6px}
   .tipo p{font-size:13.5px;color:var(--texto)}
-  .destaque{background:rgba(255,92,0,0.06);border:1px solid rgba(255,92,0,0.18);border-radius:14px;padding:18px 22px;margin:18px 0;color:var(--texto);font-size:14px}
+  .destaque{background:#FFF3EC;border:1px solid #FFD6BF;border-radius:14px;padding:18px 22px;margin:18px 0;color:var(--texto);font-size:14px}
   .destaque strong{color:var(--branco)}
   .ordem{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0 4px}
   .ordem span{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px;border:1px solid var(--border)}
@@ -73,13 +73,13 @@
   .campo ol{padding-left:18px}.campo li{margin:6px 0}
   .campo li b{color:var(--cor)}
   .campo.full{grid-column:1/-1}
-  .tela{background:#000;border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-weight:700;font-size:15px;line-height:1.4}
-  .tela small{display:block;font-weight:400;color:var(--texto2);font-size:11px;margin-top:6px}
+  .tela{background:#111;color:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-weight:700;font-size:15px;line-height:1.4}
+  .tela small{display:block;font-weight:400;color:#AAA;font-size:11px;margin-top:6px}
   .gancho{font-family:var(--serif);font-size:1.15rem;line-height:1.4}
   .chamado{color:var(--verde);font-weight:600}
   .regras{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
   .regra{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;gap:14px}
-  .regra .ic{width:34px;height:34px;border-radius:10px;background:rgba(255,92,0,0.1);border:1px solid rgba(255,92,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:700;font-size:13px}
+  .regra .ic{width:34px;height:34px;border-radius:10px;background:#FFF3EC;border:1px solid #FFD6BF;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--laranja);font-weight:700;font-size:13px}
   .regra h3{font-size:.95rem;margin-bottom:2px}
   .regra p{font-size:13px;color:var(--texto)}
   .passos{counter-reset:p;list-style:none;margin-top:14px}
@@ -89,7 +89,7 @@
   .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
   @media(max-width:860px){.tres,.blocos{grid-template-columns:1fr}.ficha-body,.regras{grid-template-columns:1fr}}
   @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:40px 20px}.nav-title{display:none}}
-  @media print{.nav-bar{display:none}body{background:#fff;color:#111}.section>p,.tipo p,.formato .como,.bloco p,.regra p,.campo p.cinza{color:#444}.formato li,.campo p,.campo li,.ficha-cab h3,.section h2,.hero h1,.regra h3,.formato h3,.bloco h3{color:#111}.tela{background:#f3f3f3;color:#111}.tipo,.formato,.bloco,.ficha,.regra,.destaque,.teste{background:#fff;border-color:#ddd;break-inside:avoid}}
+  @media print{.nav-bar{display:none}}
 </style>
 </head>
 <body>
