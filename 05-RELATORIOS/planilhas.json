@@ -9,9 +9,11 @@
       "investido": "C",
       "conversas": "D",
       "vendas_cj": "F",
-      "vendas_bm": "G",
-      "valor_vendido": "H"
-    }
+      "valor_cj": "G",
+      "vendas_bm": "H",
+      "valor_bm": "I"
+    },
+    "observacao": "J, K e L são fórmulas (totais e retorno); a sincronização lê só as amarelas F a I e calcula os totais."
   },
   "projecao": {
     "id": "1WaP88oxvKjGqDSWnAhJ916mRy6F4dCWB6xI-cA0iZ1E",

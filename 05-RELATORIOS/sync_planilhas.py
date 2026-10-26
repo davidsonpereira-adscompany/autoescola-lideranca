@@ -2,7 +2,7 @@
 """Sincroniza o painel com as planilhas da cliente (Google Sheets via Maton).
 
 ida   : dados.json  -> Controle Diário (colunas azuis: investido e conversas, por data)
-volta : Controle Diário (colunas amarelas: vendas e valor vendido) -> vendas.json (lido pelo painel)
+volta : Controle Diário (colunas amarelas: matrículas e valor por unidade) -> vendas.json (lido pelo painel)
         e Projeção de Metas (dias trabalhados, vendas acumuladas, nº de vendas, por mês)
 
 Uso: python3 sync_planilhas.py [ida|volta|tudo]   (padrão: tudo)
@@ -64,25 +64,32 @@ def data_iso(v):
 
 def linhas_controle():
     c = CFG["controle"]; col = c["colunas"]
-    rng = f"{c['aba']}!{col['data']}{c['linha_inicio']}:{col['valor_vendido']}{c['linha_fim']}"
+    ultima = max(col.values(), key=lambda L: ord(L))
+    rng = f"{c['aba']}!{col['data']}{c['linha_inicio']}:{ultima}{c['linha_fim']}"
     linhas = ler(c["id"], rng)
     idx = lambda letra: ord(letra) - ord("A")
     duas = "vendas_cj" in col and "vendas_bm" in col   # cliente com duas unidades (CJ e BM)
     out = {}
     for i, row in enumerate(linhas):
-        row = row + [""] * 10
+        row = row + [""] * 14
         d = data_iso(row[idx(col["data"])])
         if not d:
             continue
         item = {"linha": c["linha_inicio"] + i,
-                "investido": numero(row[idx(col["investido"])]), "conversas": numero(row[idx(col["conversas"])]),
-                "valor_vendido": numero(row[idx(col["valor_vendido"])])}
+                "investido": numero(row[idx(col["investido"])]), "conversas": numero(row[idx(col["conversas"])])}
         if duas:
             cj, bm = numero(row[idx(col["vendas_cj"])]), numero(row[idx(col["vendas_bm"])])
-            item["vendas_cj"], item["vendas_bm"] = cj, bm
+            vcj = numero(row[idx(col["valor_cj"])]) if "valor_cj" in col else None
+            vbm = numero(row[idx(col["valor_bm"])]) if "valor_bm" in col else None
+            item.update({"vendas_cj": cj, "vendas_bm": bm, "valor_cj": vcj, "valor_bm": vbm})
             item["vendas"] = None if cj is None and bm is None else (cj or 0) + (bm or 0)
+            if "valor_vendido" in col:   # planilhas antigas: valor total numa coluna só
+                item["valor_vendido"] = numero(row[idx(col["valor_vendido"])])
+            else:
+                item["valor_vendido"] = None if vcj is None and vbm is None else (vcj or 0) + (vbm or 0)
         else:
             item["vendas"] = numero(row[idx(col["vendas"])])
+            item["valor_vendido"] = numero(row[idx(col["valor_vendido"])])
         out[d] = item
     return out
 
@@ -112,6 +119,7 @@ def volta():
             item = {"data": d, "vendas": int(v["vendas"] or 0), "valor_vendido": round(v["valor_vendido"] or 0, 2)}
             if "vendas_cj" in v:
                 item["vendas_cj"], item["vendas_bm"] = int(v["vendas_cj"] or 0), int(v["vendas_bm"] or 0)
+                item["valor_cj"], item["valor_bm"] = round(v.get("valor_cj") or 0, 2), round(v.get("valor_bm") or 0, 2)
             vendas.append(item)
     saida = {"atualizado_em": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-3))).isoformat(timespec="minutes"),
              "fonte": "Controle Diário (planilha da cliente)", "vendas": vendas}

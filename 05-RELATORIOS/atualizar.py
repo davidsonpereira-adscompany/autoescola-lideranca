@@ -39,13 +39,15 @@ for d in payload.get("dias", []):
     for k in METRICAS:
         novo[k] = d.get(k, atual.get(k, 0)) or 0
     novo["campanhas"] = d.get("campanhas") or atual.get("campanhas") or {}
-    novo["vendas"] = atual.get("vendas")
-    novo["valor_vendido"] = atual.get("valor_vendido")
+    for k in ("vendas", "valor_vendido", "vendas_cj", "vendas_bm", "valor_cj", "valor_bm"):
+        if k in atual:
+            novo[k] = atual.get(k)
     dias[d["data"]] = novo
 for v in payload.get("vendas", []):
     base = dias.get(v["data"]) or {"data": v["data"], **{k: 0 for k in METRICAS}, "campanhas": {}}
-    base["vendas"] = v.get("vendas")
-    base["valor_vendido"] = v.get("valor_vendido")
+    for k in ("vendas", "valor_vendido", "vendas_cj", "vendas_bm", "valor_cj", "valor_bm"):
+        if k in v:
+            base[k] = v.get(k)
     dias[v["data"]] = base
 dados["dias"] = [dias[k] for k in sorted(dias)]
 

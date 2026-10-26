@@ -203,10 +203,10 @@
 
   <div class="secao">
     <div class="secao-titulo"><span class="num">05</span><h2>Por unidade</h2></div>
-    <p class="secao-sub">Investimento, conversas no WhatsApp, custo por conversa e pessoas alcançadas em cada unidade no período selecionado.</p>
+    <p class="secao-sub">Investimento, conversas no WhatsApp, custo por conversa, pessoas alcançadas e matrículas registradas na planilha em cada unidade, no período selecionado.</p>
     <div class="tabela-scroll" style="max-height:none">
       <table>
-        <thead><tr><th>Unidade</th><th class="num">Investido</th><th class="num">Conversas</th><th class="num">Custo por conversa</th><th class="num">Alcance</th></tr></thead>
+        <thead><tr><th>Unidade</th><th class="num">Investido</th><th class="num">Conversas</th><th class="num">Custo por conversa</th><th class="num">Alcance</th><th class="num">Matrículas registradas</th><th class="num">Valor matriculado</th></tr></thead>
         <tbody id="tabela-campanhas"></tbody>
       </table>
     </div>
@@ -243,7 +243,7 @@ function mapear(J) {
     data: d.data,
     investido: +d.investido || 0, conversas: +d.conversas || 0, cliques: +d.cliques || 0,
     alcance: +d.alcance || 0, impressoes: +d.impressoes || 0, engajamentos: +d.engajamentos || 0,
-    vendas: +d.vendas || 0, valor_vendido: +d.valor_vendido || 0,
+    vendas: +d.vendas || 0, valor_vendido: +d.valor_vendido || 0, vendas_cj: +d.vendas_cj || 0, vendas_bm: +d.vendas_bm || 0, valor_cj: +d.valor_cj || 0, valor_bm: +d.valor_bm || 0,
     campanhas: d.campanhas || {}
   }));
   return {
@@ -261,7 +261,7 @@ Promise.all([
 ]).then(([J, V]) => {
   // matrículas registradas pela autoescola na planilha (sincronizadas automaticamente) entram por data
   const porData = {}; (V.vendas || []).forEach(v => { porData[v.data] = v; });
-  (J.dias || []).forEach(d => { const v = porData[d.data]; if (v) { d.vendas = v.vendas; d.valor_vendido = v.valor_vendido; } });
+  (J.dias || []).forEach(d => { const v = porData[d.data]; if (v) { d.vendas = v.vendas; d.valor_vendido = v.valor_vendido; d.vendas_cj = v.vendas_cj; d.vendas_bm = v.vendas_bm; d.valor_cj = v.valor_cj; d.valor_bm = v.valor_bm; } });
   window.DADOS = mapear(J);
   if (!window.DADOS.dias.length) {
     document.getElementById("titulo-cliente").innerHTML = "Resultados de <em>Auto Escola Liderança</em>";
@@ -293,6 +293,8 @@ const AJUDA = {
   "Investido": "Quanto foi gasto naquela linha (unidade ou dia).",
   "Conversas": "Pessoas que abriram conversa no WhatsApp pelo anúncio naquela linha.",
   "Alcance": "Pessoas diferentes que viram o anúncio naquela linha.",
+  "Matrículas registradas": "Alunos que a autoescola anotou na planilha como matriculados a partir do WhatsApp do anúncio, nesta unidade. Depende do preenchimento diário da equipe.",
+  "Valor matriculado": "Soma, em reais, do que os alunos desta unidade fecharam no período, pela planilha da autoescola.",
   "Data": "Um dia por linha. Os números de ontem podem mudar um pouco até 48 h — o Meta termina de contar com atraso.",
   "Placar de metas": "Como o mês está indo contra as metas combinadas. Independe do filtro de período lá em cima.",
   "Evolução diária": "Linha laranja = conversas por dia (passe o mouse nos pontos para ver o dia). Linha escura = quanto foi investido em cada dia. A linha tracejada cinza, quando aparece, mostra os mesmos dias do período anterior, para comparar.",
@@ -376,7 +378,7 @@ document.getElementById("atualizado-em").textContent = "Atualizado automaticamen
 document.getElementById("leitura").innerHTML = D.leitura;
 
 function agregar(lista) {
-  const a = { investido: 0, conversas: 0, cliques: 0, alcance: 0, impressoes: 0, engajamentos: 0, vendas: 0, valor_vendido: 0 };
+  const a = { investido: 0, conversas: 0, cliques: 0, alcance: 0, impressoes: 0, engajamentos: 0, vendas: 0, valor_vendido: 0, vendas_cj: 0, vendas_bm: 0, valor_cj: 0, valor_bm: 0 };
   lista.forEach(d => { for (const k in a) a[k] += d[k] || 0; });
   a.custo_conversa = a.conversas ? a.investido / a.conversas : 0;
   a.cpm = a.impressoes ? a.investido / a.impressoes * 1000 : 0;
@@ -500,7 +502,9 @@ function render(ini, fim) {
   g("tabela-campanhas", Object.keys(porCampanha).map(nome => {
     const c = porCampanha[nome];
     const ativa = D.campanhas_ativas[nome] !== false;
-    return `<tr><td><span class="status ${ativa ? "" : "pausada"}"></span>${nome}</td><td class="num">${moeda(c.investido)}</td><td class="num">${inteiro(c.conversas)}</td><td class="num">${c.conversas ? moeda(c.investido / c.conversas) : "—"}</td><td class="num">${inteiro(c.alcance)}</td></tr>`;
+    const sigla = nome.slice(0, 2).toUpperCase(); const un = sigla === "CJ" ? { m: A.vendas_cj, v: A.valor_cj } : sigla === "BM" ? { m: A.vendas_bm, v: A.valor_bm } : null;
+    const extra = un ? `<td class="num">${inteiro(un.m)}</td><td class="num">${un.v ? moeda(un.v) : "—"}</td>` : `<td class="num">—</td><td class="num">—</td>`;
+    return `<tr><td><span class="status ${ativa ? "" : "pausada"}"></span>${nome}</td><td class="num">${moeda(c.investido)}</td><td class="num">${inteiro(c.conversas)}</td><td class="num">${c.conversas ? moeda(c.investido / c.conversas) : "—"}</td><td class="num">${inteiro(c.alcance)}</td>${extra}</tr>`;
   }));
 
   // Tabela dia a dia
