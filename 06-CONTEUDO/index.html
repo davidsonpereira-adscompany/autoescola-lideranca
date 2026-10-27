@@ -32,7 +32,7 @@
   .section>p strong{color:var(--text)}
   .grupo{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted2);font-weight:700;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
   .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
-  .doc-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.doc-grid>.doc-card:only-child{grid-column:1/-1}@media(max-width:700px){.doc-grid{grid-template-columns:1fr}}
   .doc-card{display:flex;align-items:stretch;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .2s;color:var(--text)}
   .doc-card:hover{border-color:var(--laranja);box-shadow:0 6px 24px rgba(0,0,0,.06);transform:translateY(-1px)}
   .doc-card.pendente{opacity:.65;cursor:default}.doc-card.pendente:hover{transform:none;box-shadow:none;border-color:var(--border)}
@@ -173,8 +173,8 @@
       <div class="doc-card-body">
         <div class="doc-card-tag" style="color:var(--laranja);">02/11 a 30/11 · dia a dia</div>
         <div class="doc-card-title">Calendário de novembro</div>
-        <div class="doc-card-desc">Três fases do mês, rotina de stories com as ações da Black, treze Reels com ficha completa, dez posts de feed e a tabela dia a dia. Campos [Condição] aguardam os detalhes da autoescola.</div>
-        <div class="doc-card-footer"><span class="doc-card-status status-pending">Aguarda condição da Black</span><div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+        <div class="doc-card-desc">Três fases do mês, rotina de stories com as ações da Black, treze Reels com ficha completa, dez posts de feed e a tabela dia a dia. Condição da Black confirmada: pacotes Premium e Diamante, nas duas unidades.</div>
+        <div class="doc-card-footer"><span class="doc-card-status status-ready">Concluído</span><div class="doc-card-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
       </div>
     </a>
   </div>

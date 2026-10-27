@@ -30,7 +30,7 @@
   .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
   .grupo{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--texto2);font-weight:700;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
   .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
-  .doc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.doc-grid>.doc-card:only-child{grid-column:1/-1}@media(max-width:700px){.doc-grid{grid-template-columns:1fr}}
   .doc-card{display:flex;align-items:stretch;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s}
   .doc-card:hover{background:var(--card-hover);border-color:rgba(255,92,0,0.2);transform:translateY(-2px)}
   .doc-card.pendente{opacity:.6;cursor:default}.doc-card.pendente:hover{transform:none;background:var(--card);border-color:var(--border)}
