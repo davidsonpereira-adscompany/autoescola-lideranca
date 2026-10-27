@@ -1,7 +1,12 @@
 {
   "evolution_url": "https://evolutionv2.adscompany.app.br",
   "instancia": "ADS COMPANY DC",
-  "destinos": ["120363428317554088@g.us"],
-  "copia": ["557799982666"],
-  "observacao": "destinos = grupo A.C 37 #AUTO ESCOLA LIDERANÇA MG. copia = WhatsApp do Davidson. Para pausar o envio ao grupo, deixe destinos = []."
+  "destinos": [
+    "120363428317554088@g.us"
+  ],
+  "copia": [
+    "557799982666"
+  ],
+  "observacao": "destinos = grupo A.C 37 #AUTO ESCOLA LIDERANÇA MG. copia = WhatsApp do Davidson. Para pausar o envio ao grupo, deixe destinos = []. mensagem_extra = texto enviado logo depois da parcial, aos mesmos destinos (deixe vazio para não enviar).",
+  "mensagem_extra": "📊 *Painel de Resultados ao vivo*\nAcompanhe os números de hoje, por unidade e dia a dia (abre direto no celular):\nhttps://davidsonpereira-adscompany.github.io/autoescola-lideranca/05-RELATORIOS/dashboard.html"
 }

@@ -4,7 +4,7 @@
 Uso: python3 enviar_parcial.py [AAAA-MM-DD] [--somente-copia]
  - sem data: usa a data de hoje em Brasília.
  - --somente-copia: manda só para os números de "copia" (teste), não para o grupo.
-Precisa de EVOLUTION_APIKEY no ambiente. Registra os envios em parciais/.enviadas para nunca repetir o mesmo dia.
+Precisa de EVOLUTION_APIKEY no ambiente. Depois da parcial envia a 'mensagem_extra' do parcial.json (link do painel). Registra os envios em parciais/.enviadas para nunca repetir o mesmo dia.
 """
 import json, os, sys, datetime, urllib.request, urllib.parse
 
@@ -29,12 +29,18 @@ if data in enviadas and not somente_copia:
 texto = open(arq, encoding="utf-8").read().strip()
 destinos = ([] if somente_copia else CFG.get("destinos", [])) + CFG.get("copia", [])
 url = CFG["evolution_url"].rstrip("/") + "/message/sendText/" + urllib.parse.quote(CFG["instancia"])
+extra = (CFG.get("mensagem_extra") or "").strip()   # 2ª mensagem (link do painel), enviada logo após a parcial
+import time
+def enviar(numero, msg):
+    req = urllib.request.Request(url, method="POST", data=json.dumps({"number": numero, "text": msg}).encode(),
+                                 headers={"apikey": KEY, "Content-Type": "application/json"})
+    urllib.request.urlopen(req, timeout=60)
 ok = 0
 for numero in destinos:
-    req = urllib.request.Request(url, method="POST", data=json.dumps({"number": numero, "text": texto}).encode(),
-                                 headers={"apikey": KEY, "Content-Type": "application/json"})
     try:
-        urllib.request.urlopen(req, timeout=60); ok += 1; print("enviado para", numero)
+        enviar(numero, texto); ok += 1; print("enviado para", numero)
+        if extra:
+            time.sleep(2); enviar(numero, extra); print("  + link do painel para", numero)
     except urllib.error.HTTPError as e:
         print("ERRO", e.code, "para", numero, ":", e.read().decode()[:300])
     except Exception as e:

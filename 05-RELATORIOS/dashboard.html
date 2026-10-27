@@ -44,7 +44,7 @@
   .grupo { margin-top: 28px; }
   .grupo-titulo { font-size: .68rem; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--cinza); margin-bottom: 12px; }
   .grupo-titulo em { color: var(--laranja); font-style: normal; }
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 12px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 12px; }
   .kpi { background: var(--card); border: 1px solid var(--borda); border-radius: 12px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(20,10,0,0.04); }
   .kpi.destaque-kpi { border-color: rgba(255,92,0,.4); background: linear-gradient(180deg, rgba(255,92,0,.05), var(--card)); }
   .kpi .rotulo { font-size: .6rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--cinza); min-height: 26px; }
@@ -249,7 +249,7 @@ function mapear(J) {
   return {
     cliente: "Auto Escola Liderança",  // NOME DO CLIENTE — a implantação troca junto com o restante
     atualizado_em: atualizado,
-    metas: { matriculas_mes: (J.metas || {}).matriculas_mes || 80, matriculas_cj: (J.metas || {}).matriculas_cj || 50, matriculas_bm: (J.metas || {}).matriculas_bm || 30, custo_conversa_teto: (J.metas || {}).custo_conversa_teto || 15, ancora: (J.metas || {}).ancora || "3 alunos por mês pagam todo o investimento" },
+    metas: { faturamento_mes: (J.metas || {}).faturamento_mes || 72000, matriculas_mes: (J.metas || {}).matriculas_mes || 80, matriculas_cj: (J.metas || {}).matriculas_cj || 50, matriculas_bm: (J.metas || {}).matriculas_bm || 30, custo_conversa_teto: (J.metas || {}).custo_conversa_teto || 15, ancora: (J.metas || {}).ancora || "3 alunos por mês pagam todo o investimento" },
     campanhas_ativas: ativas,
     leitura: J.leitura || "<strong>Campanha no ar desde 07/10 às 17h.</strong> Nos primeiros dias o Instagram ainda está aprendendo para quem mostrar os anúncios — os números começam a estabilizar a partir do terceiro dia. A leitura do gestor é atualizada a cada manhã junto com os dados.",
     dias
@@ -306,6 +306,8 @@ const AJUDA = {
   "Cliques e engajamento": "Se as pessoas estão parando no anúncio e interagindo. Diz se a arte e o texto estão chamando atenção.",
   "variação": "A seta compara com o período anterior do mesmo tamanho. <b>Verde = melhorou para a autoescola</b>, vermelho = piorou. \"Sem comparativo\" = ainda não há período anterior.",
   "Matrículas registradas": "Alunos que a autoescola anotou na planilha como matriculados a partir do WhatsApp do anúncio. Depende do preenchimento diário da equipe.",
+  "Valor das matrículas": "Soma, em reais, de tudo o que os alunos matriculados pelo anúncio fecharam no período, pela planilha da autoescola. É o dinheiro que entrou por causa da campanha.",
+  "Faturamento do mês (valor das matrículas)": "Quanto entrou em matrículas no mês, pela planilha, contra a meta combinada de <b>R$ 72 mil por mês</b> (80 alunos a R$ 900). A barra enche conforme a equipe lança os valores.",
   "Custo por matrícula": "Quanto foi investido em anúncio para cada aluno matriculado (investido ÷ matrículas). Compare com o valor do pacote: <b>3 alunos por mês pagam todo o investimento</b>.",
   "Matrículas do mês (registradas na planilha)": "Quantos alunos se matricularam no mês, pela planilha da autoescola, contra a meta combinada no início do projeto: <b>80 por mês</b> (50 em Coração de Jesus e 30 em Brasília de Minas). A barra enche conforme a equipe anota.",
   "Ritmo do mês (projeção de fechamento)": "Se o mês continuar no ritmo atual de matrículas, onde ele vai terminar. Compara com a meta de <b>80 alunos novos</b>: barra cheia = ritmo suficiente para bater a meta.",
@@ -423,6 +425,7 @@ function render(ini, fim) {
     kpi("Conversas iniciadas", inteiro(A.conversas), deltaChip(A.conversas, P && P.conversas, false), { destaque: 1, laranja: 1 }),
     kpi("Custo por conversa", moeda(A.custo_conversa), deltaChip(A.custo_conversa, P && P.custo_conversa, true), { destaque: 1 }),
     kpi("Matrículas registradas", inteiro(A.vendas), deltaChip(A.vendas, P && P.vendas, false), { destaque: 1 }),
+    kpi("Valor das matrículas", A.valor_vendido ? moeda(A.valor_vendido) : "—", A.valor_vendido ? deltaChip(A.valor_vendido, P && P.valor_vendido, false) : '<span class="delta neutro">— aguardando a planilha</span>', { destaque: 1 }),
     kpi("Custo por matrícula", A.vendas ? moeda(A.investido / A.vendas) : "—", A.vendas ? deltaChip(A.investido / A.vendas, P && P.vendas ? P.investido / P.vendas : null, true) : '<span class="delta neutro">— aguardando a planilha</span>', { destaque: 1, laranja: 1 })
   ]);
   g("kpis-alcance", [
@@ -446,14 +449,15 @@ function render(ini, fim) {
   const ultimoDia = +doMes[doMes.length - 1].data.slice(8, 10);
   const diasDecorridos = doMes.length || 1;
   const projecaoMes = AM.vendas / diasDecorridos * (diasDecorridos + Math.max(0, diasNoMes - ultimoDia));
-  document.getElementById("placar-sub").textContent = "Acompanhamento do mês " + mesRef.slice(5, 7) + "/" + mesRef.slice(0, 4) + " (independente do filtro acima). Meta combinada: " + D.metas.matriculas_mes + " alunos novos por mês — " + D.metas.matriculas_cj + " em Coração de Jesus e " + D.metas.matriculas_bm + " em Brasília de Minas. Âncora do projeto: " + D.metas.ancora + ".";
+  document.getElementById("placar-sub").textContent = "Acompanhamento do mês " + mesRef.slice(5, 7) + "/" + mesRef.slice(0, 4) + " (independente do filtro acima). Meta combinada: " + D.metas.matriculas_mes + " alunos novos por mês — " + D.metas.matriculas_cj + " em Coração de Jesus e " + D.metas.matriculas_bm + " em Brasília de Minas — e R$ " + inteiro(D.metas.faturamento_mes) + " em matrículas. Âncora do projeto: " + D.metas.ancora + ".";
   const barra = (nome, atual, meta, fmt) => {
     const pct = Math.min(100, Math.round(atual / meta * 100));
     return `<div style="margin-bottom:18px"><div class="meta-linha"><span>${comInfo(nome)}</span><span><strong>${fmt(atual)}</strong> / ${fmt(meta)} · ${pct}%</span></div><div class="meta-barra"><div style="width:${pct}%"></div></div></div>`;
   };
   g("placar", [
     barra("Matrículas do mês (registradas na planilha)", AM.vendas, D.metas.matriculas_mes, v => inteiro(v) + (Math.round(v) === 1 ? " matrícula" : " matrículas")),
-    barra("Ritmo do mês (projeção de fechamento)", projecaoMes, D.metas.matriculas_mes, v => inteiro(v) + (Math.round(v) === 1 ? " matrícula" : " matrículas"))
+    barra("Ritmo do mês (projeção de fechamento)", projecaoMes, D.metas.matriculas_mes, v => inteiro(v) + (Math.round(v) === 1 ? " matrícula" : " matrículas")),
+    barra("Faturamento do mês (valor das matrículas)", AM.valor_vendido, D.metas.faturamento_mes, v => "R$ " + inteiro(v))
   ]);
 
   // Funil
