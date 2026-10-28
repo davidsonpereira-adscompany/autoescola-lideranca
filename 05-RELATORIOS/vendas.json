@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-27T17:41-03:00",
+  "atualizado_em": "2026-10-28T13:37-03:00",
   "fonte": "Controle Diário (planilha da cliente)",
   "vendas": [
     {
@@ -22,11 +22,11 @@
     },
     {
       "data": "2026-10-09",
-      "vendas": 0,
-      "valor_vendido": 395.0,
-      "vendas_cj": 0,
+      "vendas": 1,
+      "valor_vendido": 1030.0,
+      "vendas_cj": 1,
       "vendas_bm": 0,
-      "valor_cj": 0,
+      "valor_cj": 635.0,
       "valor_bm": 395.0
     },
     {
@@ -76,20 +76,20 @@
     },
     {
       "data": "2026-10-15",
-      "vendas": 0,
-      "valor_vendido": 1680.0,
-      "vendas_cj": 0,
+      "vendas": 1,
+      "valor_vendido": 2230.0,
+      "vendas_cj": 1,
       "vendas_bm": 0,
-      "valor_cj": 0,
+      "valor_cj": 550.0,
       "valor_bm": 1680.0
     },
     {
       "data": "2026-10-16",
-      "vendas": 0,
-      "valor_vendido": 0,
-      "vendas_cj": 0,
+      "vendas": 1,
+      "valor_vendido": 2290.0,
+      "vendas_cj": 1,
       "vendas_bm": 0,
-      "valor_cj": 0,
+      "valor_cj": 2290.0,
       "valor_bm": 0
     },
     {
@@ -112,11 +112,11 @@
     },
     {
       "data": "2026-10-19",
-      "vendas": 3,
-      "valor_vendido": 2400.0,
-      "vendas_cj": 0,
+      "vendas": 4,
+      "valor_vendido": 3100.0,
+      "vendas_cj": 1,
       "vendas_bm": 3,
-      "valor_cj": 0,
+      "valor_cj": 700.0,
       "valor_bm": 2400.0
     },
     {
@@ -175,11 +175,11 @@
     },
     {
       "data": "2026-10-26",
-      "vendas": 0,
-      "valor_vendido": 0,
-      "vendas_cj": 0,
+      "vendas": 1,
+      "valor_vendido": 850.0,
+      "vendas_cj": 1,
       "vendas_bm": 0,
-      "valor_cj": 0,
+      "valor_cj": 850.0,
       "valor_bm": 0
     },
     {
@@ -190,6 +190,15 @@
       "vendas_bm": 0,
       "valor_cj": 2000.0,
       "valor_bm": 1400.0
+    },
+    {
+      "data": "2026-10-28",
+      "vendas": 1,
+      "valor_vendido": 1200.0,
+      "vendas_cj": 1,
+      "vendas_bm": 0,
+      "valor_cj": 1200.0,
+      "valor_bm": 0
     }
   ]
 }
