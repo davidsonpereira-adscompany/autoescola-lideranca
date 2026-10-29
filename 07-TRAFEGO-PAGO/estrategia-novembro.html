@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estratégia de Tráfego — Novembro 2026 — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card-hover:#161616;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--vermelho:#EF4444;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:640px;line-height:1.7}
+  .meta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+  .meta-item{font-size:12px;color:var(--texto);border:1px solid var(--border);border-radius:20px;padding:6px 14px}
+  .meta-item b{color:var(--branco);font-weight:600}
+  .section{max-width:900px;margin:0 auto;padding:48px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;margin-bottom:6px}
+  .section h2 em{font-style:italic;color:var(--laranja)}
+  .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
+  .grupo{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--texto2);font-weight:700;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+  .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:8px}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+  .kpi .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--texto2);font-weight:700}
+  .kpi .v{font-family:var(--serif);font-size:1.6rem;line-height:1.2;margin-top:4px}
+  .kpi .s{font-size:12px;color:var(--texto);margin-top:2px}
+  table.t{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 10px}
+  table.t th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  table.t td{padding:10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--branco)}
+  table.t td.m{color:var(--texto);font-size:12.5px}
+  table.t tr.tot td{font-weight:700;background:rgba(255,255,255,.02)}
+  .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
+  .tag-ok{color:var(--verde);border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.08)}
+  .tag-at{color:var(--amarelo);border-color:rgba(234,179,8,.3);background:rgba(234,179,8,.08)}
+  .tag-no{color:var(--vermelho);border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.08)}
+  .tag-az{color:var(--azul);border-color:rgba(59,139,255,.3);background:rgba(59,139,255,.08)}
+  .tag-rx{color:var(--roxo);border-color:rgba(192,132,252,.3);background:rgba(192,132,252,.08)}
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .bloco{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+  .bloco .et{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .bloco h3{font-family:var(--serif);font-weight:400;font-size:1.1rem;margin-bottom:8px}
+  .bloco p,.bloco li{font-size:13.5px;color:var(--texto)}
+  .bloco ul{padding-left:18px}
+  .bloco li{margin-bottom:4px}
+  .bloco strong{color:var(--branco);font-weight:600}
+  .bloco:only-child{grid-column:1/-1}
+  .full{grid-column:1/-1}
+  .destaque{background:rgba(255,92,0,.07);border:1px solid rgba(255,92,0,.25);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--branco);margin:16px 0}
+  .destaque strong{color:var(--laranja)}
+  .timeline{display:flex;flex-direction:column;gap:0;margin-top:6px}
+  .ti{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)}
+  .ti .d{font-family:var(--serif);font-size:1rem;color:var(--laranja)}
+  .ti .x{font-size:13.5px;color:var(--texto)}
+  .ti .x strong{color:var(--branco);font-weight:600}
+  .check{list-style:none;padding:0}
+  .check li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--texto)}
+  .check li::before{content:"";width:16px;height:16px;border:1.5px solid rgba(255,255,255,.25);border-radius:4px;flex-shrink:0;margin-top:5px}
+  .check li strong{color:var(--branco);font-weight:600}
+  .check code{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:rgba(255,255,255,.06);padding:1px 6px;border-radius:4px;color:var(--branco)}
+  a.link{color:var(--laranja);text-decoration:none}a.link:hover{text-decoration:underline}
+  .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:36px 20px}.doc-grid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.ti{grid-template-columns:1fr;gap:4px}table.t{font-size:12.5px}table.t td,table.t th{padding:8px 6px}}
+  @media(max-width:480px){.hero h1{font-size:1.5rem}.nav-title{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-bar"><div class="nav-left"><a href="index.html" class="btn-voltar">&#8592; TRÁFEGO PAGO</a><span class="nav-title">Novembro 2026 · Estratégia de campanha</span></div><span class="nav-badge">ADS Company</span></nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Novembro 2026 · Black da Liderança</p>
+  <h1>Estratégia de tráfego: <em>o mês da Black</em></h1>
+  <p class="hero-sub">O que outubro ensinou, o que muda a partir de terça 03/11 e como a campanha acompanha a Black até 30/11, sem aumentar o orçamento.</p>
+  <div class="meta-row">
+    <span class="meta-item">Orçamento <b>R$ 36 por dia</b> (igual a outubro)</span>
+    <span class="meta-item">Início <b>terça 03/11, 9h</b></span>
+    <span class="meta-item">Fim <b>segunda 30/11</b></span>
+    <span class="meta-item">Painel <b>atualizado todo dia às 7h</b></span>
+  </div>
+</header>
+
+<section class="section" id="outubro">
+  <p class="section-num">01 · O que outubro ensinou</p>
+  <h2>Resultado de 07 a 28/10, <em>em números simples</em></h2>
+  <p>Vinte e dois dias de campanha com uma campanha de mensagens para o WhatsApp, um grupo de anúncios por unidade e um grupo pequeno levando gente ao perfil do Instagram. Os números abaixo vêm do Gerenciador e da planilha de Controle Diário preenchida pela equipe.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="l">Investido</div><div class="v">R$ 770</div><div class="s">R$ 35 por dia, em média</div></div>
+    <div class="kpi"><div class="l">Conversas no WhatsApp</div><div class="v">150</div><div class="s">quase 7 por dia</div></div>
+    <div class="kpi"><div class="l">Custo por conversa</div><div class="v">R$ 5,13</div><div class="s">meta: até R$ 5</div></div>
+    <div class="kpi"><div class="l">Matrículas registradas</div><div class="v">13</div><div class="s">8 em Coração de Jesus · 5 em Brasília de Minas</div></div>
+    <div class="kpi"><div class="l">Valor matriculado</div><div class="v">R$ 21.345</div><div class="s">R$ 27 de retorno para cada R$ 1 investido</div></div>
+    <div class="kpi"><div class="l">Custo por matrícula</div><div class="v">R$ 59</div><div class="s">com ticket médio de R$ 1.640</div></div>
+  </div>
+
+  <div class="grupo">Por unidade</div>
+  <table class="t">
+    <thead><tr><th>Grupo de anúncios</th><th>Investido</th><th>Conversas</th><th>Custo por conversa</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td>Brasília de Minas</td><td>R$ 325,59</td><td>85</td><td>R$ 3,83</td><td><span class="tag tag-ok">Melhor unidade</span></td></tr>
+      <tr><td>Coração de Jesus</td><td>R$ 327,62</td><td>66</td><td>R$ 4,96</td><td><span class="tag tag-at">Precisa de peça nova</span></td></tr>
+      <tr><td>Visitas ao perfil do Instagram</td><td>R$ 118,78</td><td>1</td><td>R$ 118,78</td><td><span class="tag tag-no">Não compensou</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grupo">Por anúncio (os que receberam verba)</div>
+  <table class="t">
+    <thead><tr><th>Anúncio</th><th>Onde</th><th>Conversas</th><th>Custo por conversa</th><th>Decisão para novembro</th></tr></thead>
+    <tbody>
+      <tr><td>AD 17 · Categorias D e E (peça da Priscila)</td><td class="m">CJ + BM</td><td>51</td><td>R$ 3,34 em CJ · R$ 3,69 em BM</td><td><span class="tag tag-ok">Continua no ar</span></td></tr>
+      <tr><td>AD 13 · Vídeo do Samuel</td><td class="m">CJ + BM</td><td>39</td><td>R$ 5,40 em CJ · R$ 3,60 em BM</td><td><span class="tag tag-az">Fica até o vídeo da Black entrar</span></td></tr>
+      <tr><td>AD 15 · Aprovados</td><td class="m">CJ + BM</td><td>24</td><td>R$ 4,68 em BM · R$ 41,36 em CJ</td><td><span class="tag tag-at">Só em BM, na versão Black</span></td></tr>
+      <tr><td>AD 18 · Moto, categoria A</td><td class="m">BM</td><td>11</td><td>R$ 3,17</td><td><span class="tag tag-ok">Vira a peça de moto da Black</span></td></tr>
+      <tr><td>AD 14 · Samuel</td><td class="m">CJ</td><td>8</td><td>R$ 4,89</td><td><span class="tag tag-at">Sai; o Samuel volta na peça geral da Black</span></td></tr>
+      <tr><td>AD 19 · Duas unidades</td><td class="m">BM</td><td>2</td><td>R$ 4,14</td><td><span class="tag tag-no">Pausar</span></td></tr>
+      <tr><td>AD 16 · Vagas de outubro</td><td class="m">CJ</td><td>0</td><td>—</td><td><span class="tag tag-no">Pausar (venceu)</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grupo">As sete lições</div>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">1 · Ângulo mais forte</div><h3>Caminhão e ônibus puxam a conversa</h3><p>A peça de categorias D e E trouxe uma em cada três conversas do mês, nas duas unidades, com o menor custo. Na Black ela continua e ganha uma versão com o valor.</p></div>
+    <div class="bloco"><div class="et">2 · Vídeo vende mais</div><h3>O vídeo do Samuel é o segundo melhor anúncio</h3><p>Um único vídeo de 20 segundos trouxe 39 conversas. O vídeo da Black, gravado na sexta 30/10, é a peça mais importante de novembro.</p></div>
+    <div class="bloco"><div class="et">3 · Diferença entre unidades</div><h3>Brasília de Minas responde melhor</h3><p>Mesma verba, 85 conversas contra 66. Coração de Jesus não recebe mais verba (regra do projeto): recebe peças novas e o Samuel em vídeo.</p></div>
+    <div class="bloco"><div class="et">4 · Prova social só onde funciona</div><h3>Aprovados converte em BM, não em CJ</h3><p>A mesma peça custou R$ 4,68 por conversa em Brasília de Minas e R$ 41 em Coração de Jesus. Em novembro, aprovados só em BM.</p></div>
+    <div class="bloco"><div class="et">5 · O que não compensou</div><h3>Visitas ao perfil: R$ 118 por uma conversa</h3><p>Levar gente ao perfil do Instagram não virou conversa. Os mesmos R$ 6 por dia passam a mostrar a Black para quem já conversou com a Liderança e não fechou.</p></div>
+    <div class="bloco"><div class="et">6 · Ritmo da semana</div><h3>Domingo e feriado rendem pouco</h3><p>Domingo 18/10 trouxe uma conversa. Novembro tem três feriados (02, 15 e 20): a campanha continua ligada, mas nenhuma mudança é feita nesses dias.</p></div>
+    <div class="bloco full"><div class="et">7 · A maior alavanca</div><h3>150 conversas viraram 13 matrículas: 9 em cada 100</h3><p>O anúncio faz a pessoa chamar; quem fecha é o atendimento. A Black dá o motivo para fechar agora, e o manual de atendimento continua valendo: resposta em até 5 minutos, dois contatos em 48 horas, tabela da Black na mão. Se a taxa subir de 9 para 15 em cada 100, novembro dobra o resultado com a mesma verba.</p></div>
+  </div>
+</section>
+
+<section class="section" id="estrutura">
+  <p class="section-num">02 · O que muda em novembro</p>
+  <h2>Mesma campanha, mesma verba, <em>anúncios da Black</em></h2>
+  <p>A campanha de outubro continua ligada, porque já aprendeu quem responde. O que muda são os anúncios dentro dela e o destino dos R$ 6 por dia que iam para o perfil do Instagram.</p>
+  <table class="t">
+    <thead><tr><th>Grupo de anúncios</th><th>Verba por dia</th><th>Para quem</th><th>O que mostra</th></tr></thead>
+    <tbody>
+      <tr><td>CJ · Coração de Jesus</td><td>R$ 15</td><td class="m">18 a 45 anos, 25 km ao redor de Coração de Jesus, só quem mora na região</td><td class="m">Black geral com o Samuel, carro, carro e moto, caminhão e ônibus, vídeo da Black</td></tr>
+      <tr><td>BM · Brasília de Minas</td><td>R$ 15</td><td class="m">18 a 45 anos, 30 km ao redor de Brasília de Minas, só quem mora na região</td><td class="m">Black geral com o Gabriel, moto, caminhão e ônibus, aprovados, vídeo da Black</td></tr>
+      <tr><td>RMK · Quem já conversou <span class="tag tag-rx">novo</span></td><td>R$ 6</td><td class="m">Quem interagiu com os perfis ou mandou mensagem nos últimos 60 dias, nas duas cidades</td><td class="m">Black geral (fachada) e aprovados; a partir de 19/11, a contagem regressiva</td></tr>
+      <tr class="tot"><td>Total</td><td>R$ 36</td><td class="m" colspan="2">Igual a outubro. Nenhum aumento de orçamento em nenhuma fase.</td></tr>
+    </tbody>
+  </table>
+  <div class="destaque"><strong>Regra que não muda:</strong> otimizar é trocar anúncio, pausar o que ficou caro e mudar público. Orçamento só muda com decisão do Davidson. O grupo de visitas ao perfil é pausado em 03/11 e os R$ 6 por dia nascem no grupo RMK, dentro da mesma campanha.</div>
+</section>
+
+<section class="section" id="anuncios">
+  <p class="section-num">03 · Anúncios da Black</p>
+  <h2>Oito peças, <em>cada uma com um papel</em></h2>
+  <p>As peças seguem o padrão que a Priscila criou em outubro (foto real da autoescola, texto grande e botão de WhatsApp), com a tarja da Black. As imagens, os textos de cada anúncio e a saudação do WhatsApp estão na <a class="link" href="../06-CRIATIVOS-ADS/criativos-black-novembro.html">galeria de criativos da Black</a>. Os roteiros do vídeo estão em <a class="link" href="../06-CRIATIVOS-ADS/roteiros-black.html">roteiros da Black</a>.</p>
+  <table class="t">
+    <thead><tr><th>Anúncio</th><th>Peça</th><th>Entra em</th><th>Onde</th><th>Papel</th></tr></thead>
+    <tbody>
+      <tr><td>AD 20</td><td>Black geral · Samuel (CJ) / Gabriel (BM)</td><td>03/11</td><td class="m">CJ · BM</td><td class="m">Abre a Black: novembro inteiro, todas as categorias</td></tr>
+      <tr><td>AD 21</td><td>Carro: 10 aulas por R$ 850</td><td>03/11</td><td class="m">CJ</td><td class="m">O pacote mais procurado, com o valor na cara</td></tr>
+      <tr><td>AD 22</td><td>Moto: 10 aulas por R$ 700</td><td>03/11</td><td class="m">BM</td><td class="m">Repete o acerto da peça de moto de outubro</td></tr>
+      <tr><td>AD 23</td><td>Carro e moto por R$ 1.350</td><td>03/11</td><td class="m">CJ · RMK</td><td class="m">Pacote completo para quem quer as duas carteiras</td></tr>
+      <tr><td>AD 24</td><td>Caminhão e ônibus na Black</td><td>03/11</td><td class="m">CJ · BM</td><td class="m">Versão Black do melhor anúncio de outubro</td></tr>
+      <tr><td>AD 25</td><td>+500 aprovados na Black</td><td>03/11</td><td class="m">BM · RMK</td><td class="m">Prova social, só onde funcionou</td></tr>
+      <tr><td>AD 26</td><td>Última semana: a Black acaba dia 30</td><td>19/11</td><td class="m">CJ · BM · RMK</td><td class="m">Urgência real nos últimos doze dias</td></tr>
+      <tr><td>AD 27</td><td>Vídeo da Black · Samuel e Gabriel</td><td>04 ou 05/11</td><td class="m">CJ · BM</td><td class="m">Peça principal do mês; substitui o vídeo de outubro</td></tr>
+    </tbody>
+  </table>
+  <div class="grupo">Continuam de outubro</div>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Fica</div><h3>AD 17 · Categorias D e E</h3><p>Continua nas duas unidades enquanto o custo por conversa ficar abaixo de R$ 5. Se o AD 24 (versão Black) ficar melhor por uma semana, o AD 17 sai.</p></div>
+    <div class="bloco"><div class="et">Fica até 05/11</div><h3>AD 13 · Vídeo do Samuel</h3><p>Segura a conversa nos dois primeiros dias. Pausa no dia em que o vídeo da Black (AD 27) entrar no ar.</p></div>
+    <div class="bloco full"><div class="et">Pausam em 03/11</div><h3>AD 14, AD 15, AD 16, AD 18 e AD 19</h3><p>Todos têm versão Black ou já cumpriram o papel. Pausar, nunca excluir: o histórico fica guardado para dezembro.</p></div>
+  </div>
+</section>
+
+<section class="section" id="cronograma">
+  <p class="section-num">04 · Cronograma</p>
+  <h2>De sexta 30/10 a segunda 30/11, <em>dia a dia</em></h2>
+  <p>O cronograma casa com o calendário de conteúdo: a condição sai no grupo VIP às 9h de terça 03/11 e os anúncios entram antes disso, para quem vê o anúncio já encontrar a condição no grupo.</p>
+  <div class="timeline">
+    <div class="ti"><div class="d">Sex 30/10</div><div class="x"><strong>Gravação e aprovação.</strong> Samuel e Gabriel gravam o vídeo da Black de manhã (roteiro pronto). As oito peças de imagem vão para a Priscila aprovar no mesmo dia.</div></div>
+    <div class="ti"><div class="d">Sáb 31/10 a seg 02/11</div><div class="x"><strong>Nada muda.</strong> Feriado de Finados na segunda. Campanha de outubro segue no ar. Peças aprovadas já sobem no Gerenciador em modo pausado.</div></div>
+    <div class="ti"><div class="d">Ter 03/11, 7h às 9h</div><div class="x"><strong>Vira a chave.</strong> Pausar AD 14, 15, 16, 18, 19 e o grupo de visitas ao perfil. Ativar AD 20 a AD 25 nos grupos indicados. Criar o grupo RMK com R$ 6 por dia. Conferir se cada anúncio abre o WhatsApp certo. Às 9h a condição sai no grupo VIP.</div></div>
+    <div class="ti"><div class="d">Qua 04 ou qui 05/11</div><div class="x"><strong>Vídeo da Black entra.</strong> AD 27 nos dois grupos, assim que o vídeo estiver editado e aprovado. No mesmo dia, pausar o AD 13.</div></div>
+    <div class="ti"><div class="d">Qua 04 a sex 06/11</div><div class="x"><strong>Leitura, sem mexer.</strong> Os anúncios novos precisam de três dias para o Gerenciador aprender. Só pausa quem gastar R$ 30 sem nenhuma conversa.</div></div>
+    <div class="ti"><div class="d">Seg 09/11</div><div class="x"><strong>Primeira rotação.</strong> Pausar peças acima de R$ 10 por conversa com mais de R$ 30 gastos. Entre AD 17 e AD 24, fica o mais barato. Parcial de segunda vai ao grupo com a leitura da primeira semana de Black.</div></div>
+    <div class="ti"><div class="d">Ter 10 a sex 13/11</div><div class="x"><strong>Semana do Café.</strong> A arte do convite do Café da Black (feed de 12/11) pode entrar como anúncio de stories nos dois grupos por três dias, dentro da mesma verba. Opcional: só se a Priscila tiver a arte pronta até terça.</div></div>
+    <div class="ti"><div class="d">Seg 16/11</div><div class="x"><strong>Segunda rotação.</strong> Mesma regra de 09/11. Se houver fotos do Café com autorização, uma peça de aprovados ou de bastidor entra em BM.</div></div>
+    <div class="ti"><div class="d">Qui 19/11</div><div class="x"><strong>Contagem regressiva.</strong> AD 26 (última semana) entra nos três grupos, junto com as peças que estiverem rendendo.</div></div>
+    <div class="ti"><div class="d">Seg 23/11</div><div class="x"><strong>Última semana.</strong> AD 26 vira a peça principal; só ficam com ele o vídeo da Black e a melhor peça de cada unidade.</div></div>
+    <div class="ti"><div class="d">Sex 27/11</div><div class="x"><strong>Sexta de Black.</strong> Nenhuma mudança no Gerenciador. O dia é do WhatsApp: equipe respondendo rápido e stories de hora em hora.</div></div>
+    <div class="ti"><div class="d">Seg 30/11</div><div class="x"><strong>Último dia.</strong> Campanha segue ligada até o fim do dia. Na terça 01/12, pausar as peças da Black e reativar AD 17 e o vídeo da Black sem a condição, até o plano de dezembro.</div></div>
+  </div>
+</section>
+
+<section class="section" id="regras">
+  <p class="section-num">05 · Regras de acompanhamento</p>
+  <h2>Como a campanha é cuidada <em>durante o mês</em></h2>
+  <p>Leitura automática todos os dias às 7h no painel. Parcial no grupo de WhatsApp às segundas, quartas e sextas, com o link do painel. Rotação de anúncios só às segundas, exceto para pausar o que claramente não funciona.</p>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Termômetro do custo por conversa</div><ul><li><strong>Até R$ 5:</strong> bom, não mexe.</li><li><strong>De R$ 5 a R$ 10:</strong> atenção, troca de peça na segunda seguinte.</li><li><strong>Acima de R$ 15:</strong> teto, pausa na hora.</li></ul></div>
+    <div class="bloco"><div class="et">Quando uma peça sai</div><ul><li>Gastou R$ 30 e não trouxe nenhuma conversa.</li><li>Ficou acima de R$ 10 por conversa por uma semana inteira.</li><li>Existe uma versão Black melhor rodando no mesmo grupo.</li></ul></div>
+    <div class="bloco"><div class="et">O que nunca se faz</div><ul><li>Aumentar o orçamento sem o Davidson decidir.</li><li>Mexer em feriado, fim de semana ou nos três primeiros dias de uma peça nova.</li><li>Excluir anúncio: só pausar.</li></ul></div>
+    <div class="bloco"><div class="et">Atendimento anda junto</div><ul><li>Cada conversa de anúncio recebe a tabela da Black no primeiro contato.</li><li>Dois contatos em 48 horas para quem não respondeu.</li><li>Matrícula lançada na planilha no mesmo dia, com a unidade certa.</li></ul></div>
+  </div>
+</section>
+
+<section class="section" id="metas">
+  <p class="section-num">06 · Metas de novembro</p>
+  <h2>O que a verba precisa <em>entregar</em></h2>
+  <p>Vinte e oito dias de campanha com R$ 36 por dia dão cerca de R$ 1.000 no mês. A conta abaixo usa o custo de outubro como piso e a Black como motivo para a conversa virar matrícula.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="l">Investimento do mês</div><div class="v">R$ 1.008</div><div class="s">28 dias × R$ 36</div></div>
+    <div class="kpi"><div class="l">Conversas</div><div class="v">200+</div><div class="s">até R$ 5 por conversa</div></div>
+    <div class="kpi"><div class="l">Matrículas vindas do anúncio</div><div class="v">25 a 30</div><div class="s">13 a 15 em cada 100 conversas</div></div>
+    <div class="kpi"><div class="l">Custo por matrícula</div><div class="v">até R$ 40</div><div class="s">outubro: R$ 59</div></div>
+    <div class="kpi"><div class="l">Meta da autoescola</div><div class="v">80</div><div class="s">50 CJ + 30 BM, com grupo VIP, orgânico e Café</div></div>
+    <div class="kpi"><div class="l">Faturamento</div><div class="v">R$ 72 mil</div><div class="s">meta do kick-off</div></div>
+  </div>
+  <div class="destaque"><strong>Leitura honesta:</strong> o anúncio sozinho não entrega 80 matrículas com R$ 36 por dia. Ele entrega as conversas; a Black, o grupo VIP, o Café e o atendimento fazem o resto. Por isso o painel mostra as matrículas por unidade e o valor matriculado: é esse número que diz se o mês foi bom.</div>
+</section>
+
+<section class="section" id="execucao">
+  <p class="section-num">07 · Execução em 03/11</p>
+  <h2>Checklist da manhã <em>da virada</em></h2>
+  <p>Para fazer no Gerenciador entre 7h e 9h. Nomes dos anúncios no mesmo padrão de outubro, para o painel reconhecer.</p>
+  <ul class="check">
+    <li><strong>Subir as peças</strong> AD 20 a AD 25 em cada grupo indicado, com os textos da galeria. Botão: Enviar mensagem (WhatsApp). Nomes: <code>AD 20 - BLACK GERAL</code>, <code>AD 21 - BLACK CARRO</code>, <code>AD 22 - BLACK MOTO</code>, <code>AD 23 - BLACK CARRO E MOTO</code>, <code>AD 24 - BLACK CAT D E E</code>, <code>AD 25 - BLACK APROVADOS</code>.</li>
+    <li><strong>Conferir a saudação</strong> do WhatsApp de cada anúncio: a de CJ abre o número de Coração de Jesus; a de BM, o de Brasília de Minas.</li>
+    <li><strong>Pausar</strong> AD 14, AD 15, AD 16, AD 18 e AD 19. Deixar AD 13 e AD 17 ativos.</li>
+    <li><strong>Pausar o grupo</strong> de visitas ao perfil do Instagram.</li>
+    <li><strong>Criar o grupo RMK</strong> dentro da campanha atual: R$ 6 por dia; público = quem interagiu com os perfis do Instagram e do Facebook ou mandou mensagem nos últimos 60 dias; localização = as duas cidades; anúncios AD 23 e AD 25 (saudação com o número de CJ e pedido para informar a cidade).</li>
+    <li><strong>Avisar a equipe</strong> no grupo: a partir de hoje toda conversa de anúncio recebe a tabela da Black no primeiro contato.</li>
+    <li><strong>Quarta ou quinta:</strong> subir o vídeo da Black como <code>AD 27 - BLACK VIDEO</code> nos dois grupos e pausar AD 13.</li>
+    <li><strong>Quinta 19/11:</strong> subir <code>AD 26 - BLACK ULTIMA SEMANA</code> nos três grupos.</li>
+  </ul>
+</section>
+
+<footer class="doc-footer">Auto Escola Liderança · Estratégia de Tráfego Pago · Novembro 2026 · ADS Company</footer>
+</body>
+</html>

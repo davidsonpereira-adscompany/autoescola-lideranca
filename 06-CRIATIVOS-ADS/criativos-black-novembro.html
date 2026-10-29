@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criativos da Black — Novembro 2026 — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card-hover:#161616;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:640px;line-height:1.7}
+  .section{max-width:1000px;margin:0 auto;padding:40px 32px}
+  .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
+  .destaque{background:rgba(255,92,0,.07);border:1px solid rgba(255,92,0,.25);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--branco);margin:0 0 26px}
+  .destaque strong{color:var(--laranja)}
+  .destaque a{color:var(--laranja)}
+  .peca{display:grid;grid-template-columns:380px 1fr;gap:0;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:22px}
+  .peca img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+  .peca .lado{padding:22px 26px}
+  .ad{font-size:10px;font-weight:700;letter-spacing:.15em;color:var(--laranja);text-transform:uppercase}
+  .peca h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:4px 0 8px}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
+  .b-cj{color:var(--azul);border-color:rgba(59,139,255,.3)}.b-bm{color:var(--verde);border-color:rgba(34,197,94,.3)}.b-rmk{color:var(--roxo);border-color:rgba(192,132,252,.3)}.b-dt{color:var(--amarelo);border-color:rgba(234,179,8,.3)}
+  .rot{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--texto2);font-weight:700;margin:12px 0 4px}
+  .cp{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+  .cp p,.cp span{flex:1;font-size:13.5px;color:var(--branco);white-space:pre-wrap;line-height:1.55}
+  .cp button{flex-shrink:0;background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--texto);font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer;font-family:var(--sans)}
+  .cp button:hover{border-color:var(--laranja);color:var(--laranja)}
+  .cp button.ok{border-color:var(--verde);color:var(--verde)}
+  .dois{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .arquivo{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--texto);margin-top:10px}
+  .doc-footer{max-width:1000px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:860px){.peca{grid-template-columns:1fr}.dois{grid-template-columns:1fr}}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:32px 16px}.peca .lado{padding:18px 18px}}
+  @media(max-width:480px){.hero h1{font-size:1.5rem}.nav-title{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-bar"><div class="nav-left"><a href="index.html" class="btn-voltar">&#8592; CRIATIVOS</a><span class="nav-title">Novembro 2026 · Criativos da Black</span></div><span class="nav-badge">ADS Company</span></nav>
+<header class="hero"><p class="hero-eyebrow">Novembro 2026 · Entram no ar em 03/11</p><h1>Criativos da <em>Black da Liderança</em></h1><p class="hero-sub">Nove peças no padrão da equipe (foto real, texto grande e botão de WhatsApp), com os textos de cada anúncio prontos para copiar. Todas em 1080 por 1080: o mesmo arquivo serve para feed e stories.</p></header>
+
+<section class="section">
+  <div class="destaque"><strong>Como usar:</strong> cada peça traz o nome do anúncio no Gerenciador, onde entra, o texto principal, o título, a descrição e a saudação do WhatsApp. O botão do anúncio é sempre <strong>Enviar mensagem</strong>. A ordem de entrada e as regras do mês estão na <a href="../07-TRAFEGO-PAGO/estrategia-novembro.html">estratégia de novembro</a>. Antes de subir, a Priscila aprova as peças na sexta 30/10.</div>
+
+  <!-- AD 20 CJ -->
+  <div class="peca">
+    <img src="novembro/bk-01-black-geral-cj.jpg" alt="Black da Liderança — Samuel, Coração de Jesus" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 20 · Coração de Jesus</span>
+      <h3>Black da Liderança: novembro inteiro (Samuel)</h3>
+      <div class="badges"><span class="badge b-cj">Grupo CJ</span><span class="badge b-dt">Entra em 03/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 20 - BLACK GERAL</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🖤 Novembro inteiro é Black na Liderança.
+
+Carro, moto, carro e moto, categoria D e categoria E com condição especial até 30/11, aqui em Coração de Jesus.
+
+✅ Curso de legislação e material incluídos
+✅ 5x sem juros no cartão
+✅ Sem limite de vagas
+
+👉 Chama no WhatsApp e recebe a tabela completa da Black.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Black da Liderança: novembro inteiro</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Coração de Jesus · condição especial até 30/11</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi a Black da Liderança e quero receber a tabela completa.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-01-black-geral-cj.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 20 BM -->
+  <div class="peca">
+    <img src="novembro/bk-01-black-geral-bm.jpg" alt="Black da Liderança — Gabriel, Brasília de Minas" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 20 · Brasília de Minas</span>
+      <h3>Black da Liderança: novembro inteiro (Gabriel)</h3>
+      <div class="badges"><span class="badge b-bm">Grupo BM</span><span class="badge b-dt">Entra em 03/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 20 - BLACK GERAL</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🖤 Novembro inteiro é Black na Liderança.
+
+Carro, moto, carro e moto, categoria D e categoria E com condição especial até 30/11, aqui em Brasília de Minas.
+
+✅ Curso de legislação e material incluídos
+✅ 5x sem juros no cartão
+✅ Sem limite de vagas
+
+👉 Chama no WhatsApp e recebe a tabela completa da Black.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Black da Liderança: novembro inteiro</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Brasília de Minas · condição especial até 30/11</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi a Black da Liderança e quero receber a tabela completa.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-01-black-geral-bm.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 21 -->
+  <div class="peca">
+    <img src="novembro/bk-02-black-carro.jpg" alt="Carro: 10 aulas por R$ 850" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 21 · Carro</span>
+      <h3>Carro: 10 aulas por R$ 850</h3>
+      <div class="badges"><span class="badge b-cj">Grupo CJ</span><span class="badge b-dt">Entra em 03/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 21 - BLACK CARRO</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🚗 Carro: 10 aulas por R$ 850 na Black da Liderança.
+
+Com curso de legislação e material. No cartão, 5x sem juros. Vale até 30/11.
+
+Também tem pacote de 5, 15 e 20 aulas, e desconto para quem já fez o curso de legislação.
+
+👉 Chama no WhatsApp e garante o seu antes de acabar.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Carro: 10 aulas por R$ 850</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Com legislação · 5x sem juros · até 30/11</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi a Black da Liderança e quero saber mais sobre o pacote de carro.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-02-black-carro.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 22 -->
+  <div class="peca">
+    <img src="novembro/bk-03-black-moto.jpg" alt="Moto: 10 aulas por R$ 700" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 22 · Moto</span>
+      <h3>Moto: 10 aulas por R$ 700</h3>
+      <div class="badges"><span class="badge b-bm">Grupo BM</span><span class="badge b-dt">Entra em 03/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 22 - BLACK MOTO</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🏍️ Moto: 10 aulas por R$ 700 na Black da Liderança.
+
+Com curso de legislação e material. No cartão, 5x sem juros. Vale até 30/11.
+
+Também tem pacote de 5, 15 e 20 aulas, e desconto para quem já fez o curso de legislação.
+
+👉 Chama no WhatsApp e garante o seu antes de acabar.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Moto: 10 aulas por R$ 700</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Com legislação · 5x sem juros · até 30/11</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi a Black da Liderança e quero saber mais sobre o pacote de moto.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-03-black-moto.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 23 -->
+  <div class="peca">
+    <img src="novembro/bk-04-black-carro-e-moto.jpg" alt="Carro e moto por R$ 1.350" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 23 · Carro e moto</span>
+      <h3>Carro e moto por R$ 1.350</h3>
+      <div class="badges"><span class="badge b-cj">Grupo CJ</span><span class="badge b-rmk">Grupo RMK</span><span class="badge b-dt">Entra em 03/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 23 - BLACK CARRO E MOTO</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🚗🏍️ Carro e moto juntos: 10 aulas de cada por R$ 1.350 na Black da Liderança.
+
+Duas carteiras de uma vez, com curso de legislação e material. No cartão, 5x sem juros. Vale até 30/11, nas duas unidades.
+
+Também tem 5 + 5, 15 + 15 e 20 + 20 aulas.
+
+👉 Chama no WhatsApp e recebe a tabela completa.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Carro e moto por R$ 1.350</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>10 aulas de cada · com legislação · até 30/11</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi a Black da Liderança e quero saber mais sobre o pacote de carro e moto.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-04-black-carro-e-moto.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 24 -->
+  <div class="peca">
+    <img src="novembro/bk-05-black-cat-d-e.jpg" alt="Caminhão e ônibus na Black" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 24 · Categorias D e E</span>
+      <h3>Caminhão e ônibus na Black</h3>
+      <div class="badges"><span class="badge b-cj">Grupo CJ</span><span class="badge b-bm">Grupo BM</span><span class="badge b-dt">Entra em 03/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 24 - BLACK CAT D E E</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🚛🚍 Já tem a carteira e quer trabalhar com caminhão ou ônibus?
+
+Na Black da Liderança:
+• Categoria D por R$ 1.300 ou 10x de R$ 150
+• Categoria E por R$ 2.000 ou 10x de R$ 225
+
+10 aulas, veículo e deslocamento para o exame incluídos. Veículos com ar-condicionado. Vale até 30/11.
+
+👉 Chama no WhatsApp e garante sua vaga.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Categoria D e E na Black</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>D por R$ 1.300 · E por R$ 2.000 · 10x sem juros</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi a Black da Liderança e quero saber mais sobre a categoria D ou E.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-05-black-cat-d-e.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 25 -->
+  <div class="peca">
+    <img src="novembro/bk-06-black-aprovados.jpg" alt="+500 aprovados na Black" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 25 · Aprovados</span>
+      <h3>+500 aprovados: na Black, o próximo é você</h3>
+      <div class="badges"><span class="badge b-bm">Grupo BM</span><span class="badge b-rmk">Grupo RMK</span><span class="badge b-dt">Entra em 03/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 25 - BLACK APROVADOS</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🎉 Mais de 500 aprovados na região. Em novembro, o próximo pode ser você.
+
+Black da Liderança: carro, moto, carro e moto, categoria D e E com condição especial até 30/11.
+
+✅ Curso de legislação e material incluídos
+✅ 5x sem juros no cartão
+
+👉 Chama no WhatsApp e recebe a tabela completa.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>+500 aprovados. O próximo é você</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Black da Liderança · até 30/11</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi a Black da Liderança e quero receber a tabela completa.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-06-black-aprovados.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 26 CJ -->
+  <div class="peca">
+    <img src="novembro/bk-07-black-ultima-semana-cj.jpg" alt="A Black acaba dia 30 — Coração de Jesus" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 26 · Última semana · Coração de Jesus</span>
+      <h3>A Black acaba dia 30 (Samuel)</h3>
+      <div class="badges"><span class="badge b-cj">Grupo CJ</span><span class="badge b-rmk">Grupo RMK</span><span class="badge b-dt">Entra em 19/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 26 - BLACK ULTIMA SEMANA</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>⏰ A Black da Liderança acaba dia 30/11.
+
+Carro, moto, carro e moto, categoria D e E com condição especial só até lá. Depois, volta a tabela normal.
+
+✅ Curso de legislação e material incluídos
+✅ 5x sem juros no cartão
+
+👉 Chama no WhatsApp hoje e garante a condição.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Última semana da Black da Liderança</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Acaba dia 30/11 · Coração de Jesus</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Quero garantir a condição da Black da Liderança antes de acabar.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-07-black-ultima-semana-cj.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 26 BM -->
+  <div class="peca">
+    <img src="novembro/bk-07-black-ultima-semana-bm.jpg" alt="A Black acaba dia 30 — Brasília de Minas" loading="lazy">
+    <div class="lado">
+      <span class="ad">AD 26 · Última semana · Brasília de Minas</span>
+      <h3>A Black acaba dia 30 (Gabriel)</h3>
+      <div class="badges"><span class="badge b-bm">Grupo BM</span><span class="badge b-dt">Entra em 19/11</span></div>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 26 - BLACK ULTIMA SEMANA</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>⏰ A Black da Liderança acaba dia 30/11.
+
+Carro, moto, carro e moto, categoria D e E com condição especial só até lá. Depois, volta a tabela normal.
+
+✅ Curso de legislação e material incluídos
+✅ 5x sem juros no cartão
+
+👉 Chama no WhatsApp hoje e garante a condição.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Última semana da Black da Liderança</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Acaba dia 30/11 · Brasília de Minas</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Quero garantir a condição da Black da Liderança antes de acabar.</span><button>Copiar</button></div>
+      <div class="arquivo">06-CRIATIVOS-ADS/novembro/bk-07-black-ultima-semana-bm.jpg</div>
+    </div>
+  </div>
+
+  <!-- AD 27 vídeo -->
+  <div class="peca">
+    <img src="novembro/bk-01-black-geral-cj.jpg" alt="Vídeo da Black (capa provisória)" loading="lazy" style="filter:grayscale(.6) brightness(.6)">
+    <div class="lado">
+      <span class="ad">AD 27 · Vídeo da Black</span>
+      <h3>Vídeo da Black: Samuel e Gabriel</h3>
+      <div class="badges"><span class="badge b-cj">Grupo CJ</span><span class="badge b-bm">Grupo BM</span><span class="badge b-dt">Entra em 04 ou 05/11</span></div>
+      <p style="font-size:13px;color:var(--texto);margin:4px 0 6px">Gravado na sexta 30/10 pelo <a href="roteiros-black.html" style="color:var(--laranja)">roteiro VB01</a>. Cada unidade usa o vídeo do seu porta-voz. A imagem ao lado é só um lugar reservado: o arquivo do vídeo entra aqui quando estiver editado.</p>
+      <div class="rot">Nome no Gerenciador</div>
+      <div class="cp"><span>AD 27 - BLACK VIDEO</span><button>Copiar</button></div>
+      <div class="rot">Texto principal</div>
+      <div class="cp"><p>🖤 Novembro inteiro é Black na Liderança.
+
+Carro, moto, carro e moto, categoria D e categoria E com condição especial até 30/11, nas duas unidades.
+
+✅ Curso de legislação e material incluídos
+✅ 5x sem juros no cartão
+✅ Sem limite de vagas
+
+👉 Chama no WhatsApp e recebe a tabela completa da Black.</p><button>Copiar</button></div>
+      <div class="dois">
+        <div><div class="rot">Título</div><div class="cp"><span>Black da Liderança: até 30/11</span><button>Copiar</button></div></div>
+        <div><div class="rot">Descrição</div><div class="cp"><span>Carro, moto, D e E · 5x sem juros</span><button>Copiar</button></div></div>
+      </div>
+      <div class="rot">Saudação do WhatsApp</div>
+      <div class="cp"><span>Olá! Vi o vídeo da Black da Liderança e quero receber a tabela completa.</span><button>Copiar</button></div>
+    </div>
+  </div>
+</section>
+
+<footer class="doc-footer">Auto Escola Liderança · Criativos para Tráfego Pago · Novembro 2026 · ADS Company</footer>
+<script>
+document.querySelectorAll('.cp button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=b.parentNode.querySelector('p,span'); var t=el.innerText;
+    navigator.clipboard.writeText(t).then(function(){b.textContent='Copiado';b.classList.add('ok');setTimeout(function(){b.textContent='Copiar';b.classList.remove('ok')},1600)});
+  });
+});
+</script>
+</body>
+</html>

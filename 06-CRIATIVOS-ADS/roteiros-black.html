@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiros da Black — Novembro 2026 — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:640px;line-height:1.7}
+  .section{max-width:900px;margin:0 auto;padding:48px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;margin-bottom:6px}
+  .section h2 em{font-style:italic;color:var(--laranja)}
+  .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
+  .destaque{background:rgba(255,92,0,.07);border:1px solid rgba(255,92,0,.25);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--branco);margin:16px 0}
+  .destaque strong{color:var(--laranja)}
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .bloco{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+  .bloco .et{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .bloco h3{font-family:var(--serif);font-weight:400;font-size:1.1rem;margin-bottom:8px}
+  .bloco p,.bloco li{font-size:13.5px;color:var(--texto)}
+  .bloco ul,.bloco ol{padding-left:18px}
+  .bloco li{margin-bottom:4px}
+  .bloco strong,.bloco b{color:var(--branco);font-weight:600}
+  .full{grid-column:1/-1}
+  .fala{background:rgba(255,255,255,.03);border-left:3px solid var(--laranja);border-radius:0 10px 10px 0;padding:12px 16px;margin:8px 0;font-size:14.5px;color:var(--branco);line-height:1.6}
+  .fala small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2);margin-bottom:4px}
+  .tela{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--amarelo);background:rgba(234,179,8,.06);border:1px dashed rgba(234,179,8,.3);border-radius:8px;padding:10px 12px;margin:8px 0}
+  .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid;margin-right:6px}
+  .tag-cj{color:var(--azul);border-color:rgba(59,139,255,.3)}.tag-bm{color:var(--verde);border-color:rgba(34,197,94,.3)}.tag-t{color:var(--amarelo);border-color:rgba(234,179,8,.3)}
+  .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:36px 20px}.doc-grid{grid-template-columns:1fr}}
+  @media(max-width:480px){.hero h1{font-size:1.5rem}.nav-title{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-bar"><div class="nav-left"><a href="index.html" class="btn-voltar">&#8592; CRIATIVOS</a><span class="nav-title">Novembro 2026 · Roteiros da Black</span></div><span class="nav-badge">ADS Company</span></nav>
+<header class="hero"><p class="hero-eyebrow">Novembro 2026 · Gravação na sexta 30/10</p><h1>Roteiros de vídeo <em>da Black da Liderança</em></h1><p class="hero-sub">Três vídeos curtos para anúncio, gravados pelo Samuel em Coração de Jesus e pelo Gabriel em Brasília de Minas. O primeiro é o mais importante do mês: entra no ar em 04 ou 05/11 e substitui o vídeo de outubro.</p></header>
+
+<section class="section">
+  <p class="section-num">Antes de gravar</p>
+  <h2>Uma sessão de manhã, <em>três vídeos</em></h2>
+  <p>Mesmo esquema do vídeo de outubro, que foi o segundo melhor anúncio do mês: celular na vertical, lapela ou ambiente silencioso, olho na câmera, sem ler. Cada porta-voz grava na sua unidade.</p>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Ordem</div><h3>Prioridade</h3><ol><li><b>VB01 · Lançamento da Black</b> (obrigatório; vira anúncio e Reels de 03/11).</li><li><b>VB02 · Quanto custa</b> (responde a maior dúvida).</li><li><b>VB03 · Caminhão e ônibus</b> (só o Samuel, ao lado da carreta).</li></ol></div>
+    <div class="bloco"><div class="et">Dois finais</div><h3>Grave o fechamento duas vezes</h3><p>Cada vídeo termina de dois jeitos: um para o anúncio (<b>“toca em Enviar mensagem”</b>) e um para o Reels (<b>“link na bio”</b>). São 5 segundos a mais e evitam regravar.</p></div>
+    <div class="bloco"><div class="et">Cenário</div><h3>Pátio ou fachada, luz natural</h3><p>Carro de aula ao fundo com a logo visível. Nada de contraluz: o sol fica atrás do celular, não atrás da pessoa. Camisa da autoescola.</p></div>
+    <div class="bloco"><div class="et">Entrega</div><h3>Vídeo bruto no grupo até sexta à tarde</h3><p>Mandar o arquivo original (sem compressão) no grupo do WhatsApp do projeto. A edição (corte, legenda, logo e tabela na tela) fica com a ADS Company e sai até quarta 04/11.</p></div>
+  </div>
+  <div class="destaque"><strong>Regra de ouro:</strong> os 3 primeiros segundos decidem se a pessoa fica. Começar já falando a frase de gancho, sem “oi, gente” e sem apresentação.</div>
+</section>
+
+<section class="section" id="vb01">
+  <p class="section-num">VB01 · Lançamento</p>
+  <h2>Novembro inteiro é Black na Liderança</h2>
+  <p><span class="tag tag-cj">Samuel · CJ</span><span class="tag tag-bm">Gabriel · BM</span><span class="tag tag-t">20 a 25 segundos</span> Entra como AD 27 nos dois grupos e como Reels de terça 03/11. Mostrar a tabela da Black na edição enquanto fala os valores.</p>
+  <div class="fala"><small>Gancho · 0 a 3 s</small>Novembro inteiro é Black na Liderança. E vale para todas as categorias.</div>
+  <div class="fala"><small>Desenvolvimento · 3 a 17 s</small>Carro, 10 aulas por 850. Moto, 10 aulas por 700. Os dois juntos por 1.350. Categoria D por 1.300 e categoria E por 2.000. Tudo com curso de legislação e material, parcelado sem juros no cartão. Vale até 30 de novembro, aqui em [Coração de Jesus / Brasília de Minas].</div>
+  <div class="fala"><small>Fechamento para o anúncio · 17 a 22 s</small>Toca em “Enviar mensagem” aqui embaixo que a gente te manda a tabela completa.</div>
+  <div class="fala"><small>Fechamento para o Reels · 17 a 22 s</small>O link do WhatsApp está na bio. Chama lá que a gente te manda a tabela completa.</div>
+  <div class="tela">Texto na tela (edição): BLACK DA LIDERANÇA · 03 a 30/11 → Carro 10 aulas R$ 850 · Moto 10 aulas R$ 700 → Carro e moto R$ 1.350 → Cat. D R$ 1.300 · Cat. E R$ 2.000 → Com legislação · 5x sem juros</div>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Como gravar</div><ul><li>Em pé, ao lado do carro de aula, meio corpo.</li><li>Falar os valores no ritmo normal, sem correr: a tabela aparece na tela.</li><li>Gravar três vezes seguidas e mandar as três.</li></ul></div>
+    <div class="bloco"><div class="et">Se der errado</div><ul><li>Errou um valor: para, respira e recomeça do gancho.</li><li>Barulho de rua: encostar na parede da fachada, celular mais perto.</li><li>Esqueceu a ordem: carro, moto, os dois, D, E.</li></ul></div>
+  </div>
+</section>
+
+<section class="section" id="vb02">
+  <p class="section-num">VB02 · Objeção de preço</p>
+  <h2>Quanto custa tirar a carteira na Black?</h2>
+  <p><span class="tag tag-cj">Samuel · CJ</span><span class="tag tag-bm">Gabriel · BM</span><span class="tag tag-t">20 a 25 segundos</span> Entra na segunda rotação (09/11) como reforço do AD 21 e do AD 22, respondendo à pergunta que mais chega no WhatsApp.</p>
+  <div class="fala"><small>Gancho · 0 a 3 s</small>Quanto custa tirar a carteira de carro? Em novembro, menos do que você pensa.</div>
+  <div class="fala"><small>Desenvolvimento · 3 a 17 s</small>Na Black da Liderança o pacote de 10 aulas de carro sai por 850 reais, já com o curso de legislação e o material. No cartão, cinco vezes sem juros. Quem já fez a legislação paga 100 a menos. E se você quer carro e moto, os dois juntos saem por 1.350.</div>
+  <div class="fala"><small>Fechamento para o anúncio · 17 a 22 s</small>Toca em “Enviar mensagem” e pergunta o que quiser. A gente responde na hora.</div>
+  <div class="fala"><small>Fechamento para o Reels · 17 a 22 s</small>Chama no WhatsApp da sua unidade, o link está na bio.</div>
+  <div class="tela">Texto na tela: Carro 10 aulas → R$ 850 · com legislação e material → 5x sem juros → já tem legislação? R$ 100 a menos → Carro e moto R$ 1.350</div>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Como gravar</div><ul><li>Sentado no banco do motorista, porta aberta, câmera de fora.</li><li>Tom de quem está respondendo uma pergunta real, sem “vendedor”.</li></ul></div>
+    <div class="bloco"><div class="et">Versão moto (Gabriel)</div><p>Trocar carro por moto: “10 aulas de moto por 700 reais”. O resto é igual.</p></div>
+  </div>
+</section>
+
+<section class="section" id="vb03">
+  <p class="section-num">VB03 · Categorias D e E</p>
+  <h2>Caminhão e ônibus na Black</h2>
+  <p><span class="tag tag-cj">Samuel · CJ</span><span class="tag tag-t">15 a 20 segundos</span> Versão em vídeo do melhor anúncio de outubro. Entra em 09/11 nos dois grupos (o vídeo do Samuel roda também em BM, como em outubro).</p>
+  <div class="fala"><small>Gancho · 0 a 3 s</small>Já tem a carteira e quer trabalhar com caminhão ou ônibus? Olha isso.</div>
+  <div class="fala"><small>Desenvolvimento · 3 a 14 s</small>Na Black da Liderança, a categoria D sai por 1.300 e a categoria E, de carreta, por 2.000. Em dez vezes sem juros. Dez aulas, veículo com ar-condicionado e o deslocamento para o exame já incluídos. Só até 30 de novembro.</div>
+  <div class="fala"><small>Fechamento para o anúncio · 14 a 18 s</small>Toca em “Enviar mensagem” e garante sua vaga na primeira turma.</div>
+  <div class="fala"><small>Fechamento para o Reels · 14 a 18 s</small>Chama no WhatsApp, o link está na bio.</div>
+  <div class="tela">Texto na tela: Categoria D R$ 1.300 · 10x de R$ 150 → Categoria E R$ 2.000 · 10x de R$ 225 → aulas + veículo + deslocamento para o exame → até 30/11</div>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Como gravar</div><ul><li>Samuel na frente da carreta, cabine inteira no quadro no início; depois aproxima.</li><li>Se a carreta não estiver na unidade na sexta, gravar na frente do veículo da categoria D.</li></ul></div>
+    <div class="bloco"><div class="et">Já existe</div><p>Os três roteiros da <a href="roteiros-categoria-e.html" style="color:var(--laranja)">página da Categoria E</a> continuam valendo para o orgânico. Este é a versão curta, com valor, para o anúncio.</p></div>
+  </div>
+</section>
+
+<footer class="doc-footer">Auto Escola Liderança · Roteiros de vídeo para anúncio · Novembro 2026 · ADS Company</footer>
+</body>
+</html>
