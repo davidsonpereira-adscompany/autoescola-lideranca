@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo VIP na Black — Novembro 2026 — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#FFFFFF;--card:#FFFFFF;--card2:#F7F7F5;--card-hover:#FFFBF8;--border:#E6E6E3;--branco:#1A1A1A;--texto:#5C5C5C;--texto2:#8A8A8A;--verde:#15803D;--amarelo:#B45309;--azul:#1D4ED8;--roxo:#7E22CE;--vermelho:#B91C1C;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:15px}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--border);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:64px 32px 40px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,.06) 0%,transparent 70%),var(--card2)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.7rem,4.5vw,2.8rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:16px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:640px}
+  .section{max-width:900px;margin:0 auto;padding:44px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;margin-bottom:6px}
+  .section h2 em{font-style:italic;color:var(--laranja)}
+  .section>p{color:var(--texto);font-size:14.5px;margin-bottom:20px}
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .bloco{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+  .bloco .et{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .bloco h3{font-family:var(--serif);font-weight:400;font-size:1.1rem;margin-bottom:8px}
+  .bloco p,.bloco li{font-size:14px;color:var(--texto)}
+  .bloco ul,.bloco ol{padding-left:18px}.bloco li{margin-bottom:4px}
+  .bloco strong{color:var(--branco);font-weight:600}
+  .full{grid-column:1/-1}
+  .destaque{background:rgba(255,92,0,.07);border:1px solid rgba(255,92,0,.3);border-radius:14px;padding:16px 20px;font-size:14.5px;margin:16px 0}
+  .destaque strong{color:var(--laranja)}
+  .msg{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-bottom:14px}
+  .msg .cab{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .msg .data{font-family:var(--serif);font-size:1.05rem}
+  .msg .hora{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid var(--border);color:var(--texto)}
+  .msg .tipo{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid;color:var(--roxo);border-color:rgba(126,34,206,.3)}
+  .msg .tipo.vd{color:var(--verde);border-color:rgba(21,128,61,.3)}
+  .msg .tipo.ur{color:var(--vermelho);border-color:rgba(185,28,28,.3)}
+  .msg .obs{font-size:13px;color:var(--texto);margin-bottom:8px}
+  .cp{display:flex;gap:10px;align-items:flex-start;background:#E7F8EC;border:1px solid #C8EAD3;border-radius:12px;padding:12px 14px}
+  .cp p{flex:1;font-size:14px;color:var(--branco);white-space:pre-wrap;line-height:1.55}
+  .cp button{flex-shrink:0;background:#fff;border:1px solid var(--border);color:var(--texto);font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer;font-family:var(--sans)}
+  .cp button:hover{border-color:var(--laranja);color:var(--laranja)}
+  .cp button.ok{border-color:var(--verde);color:var(--verde)}
+  table.cal{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.cal th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  table.cal td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  table.cal td.d{font-weight:600;white-space:nowrap}
+  .doc-footer{max-width:900px;margin:0 auto;padding:36px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:48px 20px 32px}.section{padding:34px 18px}.doc-grid{grid-template-columns:1fr}}
+  @media(max-width:480px){.nav-title{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-bar"><div class="nav-left"><a href="index.html" class="btn-voltar">&#8592; CALENDÁRIO</a><span class="nav-title">Novembro 2026 · Grupo VIP na Black</span></div><span class="nav-badge">ADS Company</span></nav>
+<header class="hero"><p class="hero-eyebrow">Novembro 2026 · Grupo VIP CFC Liderança</p><h1>Como conduzir o grupo <em>durante a Black</em></h1><p class="hero-sub">Quem posta, quando posta, o que escreve e o que nunca faz. Cada mensagem do mês já está pronta: é copiar, colar e enviar no horário marcado.</p></header>
+
+<section class="section" id="regras">
+  <p class="section-num">01 · Regras do grupo</p>
+  <h2>Pouco, no horário certo, <em>sempre com um próximo passo</em></h2>
+  <p>O grupo tem alunos, ex-alunos e gente que ainda está decidindo. Ele funciona quando a pessoa sente que recebe algo primeiro, e cansa quando vira mural de propaganda. Por isso, uma mensagem por dia no máximo, e nos dias sem mensagem o grupo fica em silêncio.</p>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Quem posta</div><h3>Uma pessoa só</h3><p>A Priscila posta. Samuel e Gabriel aparecem nos vídeos e nos áudios, mas quem envia é uma pessoa só, para o tom ficar igual o mês inteiro.</p></div>
+    <div class="bloco"><div class="et">Quando</div><h3>Às 9h, nos dias marcados</h3><p>Mensagem principal sempre às 9h. Nos dias de Café e na sexta de Black entra uma segunda, à tarde. Fora disso, nada: sem “bom dia”, sem corrente, sem repost de terceiros.</p></div>
+    <div class="bloco"><div class="et">Configuração</div><h3>Só administradores enviam</h3><p>Em Dados do grupo, deixar “Enviar mensagens” apenas para administradores. Quem quiser falar, fala no privado. Isso evita pergunta de preço em público e conversa paralela.</p></div>
+    <div class="bloco"><div class="et">Preço</div><h3>Valor só no privado</h3><p>No grupo entra o desconto (“até 30% na sua CNH, com direito a brinde”), nunca o valor do pacote. Quem pergunta “quanto fica?” recebe: “te chamo no privado agora”. E a pessoa é chamada em até uma hora.</p></div>
+    <div class="bloco"><div class="et">Toda mensagem termina com</div><h3>Um pedido claro</h3><p>“Chama no WhatsApp da sua unidade” com os dois números, ou “responde aqui com a sua cidade”. Mensagem sem próximo passo é mensagem perdida.</p></div>
+    <div class="bloco"><div class="et">Quem reage ou responde</div><h3>Vira conversa no privado</h3><p>Reagiu com emoji, respondeu, perguntou: é interessado. Alguém da equipe chama no privado no mesmo dia, com a tabela interna na mão, e lança a matrícula na planilha se fechar.</p></div>
+  </div>
+  <div class="destaque"><strong>Os dois números, sempre do mesmo jeito:</strong> Coração de Jesus (38) 9920-5651 · Brasília de Minas (38) 9868-8520. Em toda mensagem que pede para chamar, os dois aparecem.</div>
+</section>
+
+<section class="section" id="mensagens">
+  <p class="section-num">02 · Mensagens prontas</p>
+  <h2>De 04 a 30/11, <em>dia por dia</em></h2>
+  <p>Cada mensagem abaixo está escrita como vai no WhatsApp, com negrito entre asteriscos. Quando a mensagem pede foto, vídeo ou arte, o arquivo é o mesmo do calendário de conteúdo daquele dia. Se o lançamento de 03/11 não foi enviado, a primeira mensagem de hoje faz esse papel.</p>
+
+  <div class="msg"><div class="cab"><span class="data">Quarta 04/11</span><span class="hora">9h</span><span class="tipo">Lançamento</span></div><div class="obs">Vai junto com o vídeo da Black do Samuel ou do Gabriel (o mesmo do Reels de 03/11). Se o vídeo ainda não estiver pronto, vai com a arte “Até 30% de desconto na sua CNH”.</div>
+  <div class="cp"><p>🖤 *Chegou a Black da Liderança.*
+
+Novembro inteiro com *até 30% de desconto na sua CNH*, com direito a brinde. 🎁
+
+Vale para carro, moto, carro e moto, categoria D e categoria E, nas duas unidades. Curso de legislação e material incluídos, parcelado sem juros no cartão.
+
+Vocês do grupo ficam sabendo primeiro. Quer saber quanto fica o seu? Chama no privado que a gente monta o seu pacote hoje:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Sexta 06/11</span><span class="hora">9h</span><span class="tipo vd">Prova social</span></div><div class="obs">Vai com a foto dos aprovados da semana (com autorização) ou com um print de mensagem de aluno feliz, sem nome.</div>
+  <div class="cp"><p>🎉 *Primeira semana de Black e já tem gente comemorando.*
+
+Esses aqui passaram essa semana. O próximo pode ser você: a condição da Black vale o mês inteiro, até 30/11.
+
+Ainda não chamou? Manda um “oi” no WhatsApp da sua unidade e pergunta quanto fica a sua CNH com o desconto:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Sábado 07/11</span><span class="hora">9h</span><span class="tipo">Convite</span></div><div class="obs">Sem arte ainda: texto só. A arte do Café entra no dia 12.</div>
+  <div class="cp"><p>☕ *Anota aí: sábado 14/11 tem Café da Black na Liderança.*
+
+Das 8h às 12h, nas duas unidades. Café, bate-papo com os instrutores, uma volta pelos carros, motos e a carreta, e uma primeira aula de dez minutos para quem nunca sentou no banco do motorista.
+
+Quem fechar a matrícula no dia leva brinde. 🎁
+
+É só chegar. Mas se quiser avisar que vai, responde aqui com a sua cidade.</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Terça 10/11</span><span class="hora">9h</span><span class="tipo">Categoria E</span></div><div class="obs">Vai com o vídeo da carreta (Reels de 11/11, pode adiantar) ou com a foto da carreta.</div>
+  <div class="cp"><p>🚛 *Você já tem carteira e quer trabalhar com caminhão ou ônibus?*
+
+A Liderança tem categoria D e categoria E aqui na região, com veículo com ar-condicionado, dez aulas e o deslocamento para o exame já incluídos.
+
+E em novembro as duas estão na Black: até 30% de desconto, em 10x sem juros, com brinde.
+
+Quer saber como funciona? Chama no privado:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Quinta 12/11</span><span class="hora">9h</span><span class="tipo">Convite</span></div><div class="obs">Vai com a arte do convite do Café (post do feed de 12/11).</div>
+  <div class="cp"><p>☕🖤 *Sábado é dia de Café da Black.*
+
+14/11, das 8h às 12h, em Coração de Jesus e em Brasília de Minas.
+
+☕ Café e bolo na recepção
+🚗 Primeira aula de dez minutos no pátio
+🗣️ Tira-dúvidas com o Samuel e o Gabriel
+🎁 Brinde para quem fechar a matrícula no dia
+
+Traz quem está pensando em tirar a carteira: filho, irmão, amigo. Chega sem compromisso.</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Sexta 13/11</span><span class="hora">9h</span><span class="tipo">Lembrete</span></div><div class="obs">Pedido de ajuda ao grupo: repost nos status. Vai com a mesma arte do dia 12.</div>
+  <div class="cp"><p>📣 *Amanhã tem Café da Black.* Das 8h às 12h, nas duas unidades.
+
+Um favor: quem puder, posta essa arte no status hoje. Tem muita gente aí fora esperando um empurrão para começar, e um convite de amigo vale mais do que qualquer anúncio. 💛
+
+A gente te espera amanhã.</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Sábado 14/11</span><span class="hora">8h30 e 11h</span><span class="tipo vd">Ao vivo</span></div><div class="obs">Duas mensagens curtas com foto na hora: a chegada e o meio da manhã. Fotos com autorização, ou de costas.</div>
+  <div class="cp"><p>☕ *Começou o Café da Black!* Já tem gente aqui tomando café e tirando dúvida com os instrutores. Vem, vai até meio-dia. 🚗</p><button>Copiar</button></div>
+  <div style="height:10px"></div>
+  <div class="cp"><p>🎉 Primeira aula de dez minutos rolando no pátio e as primeiras matrículas da manhã saindo com brinde. Ainda dá tempo: estamos aqui até meio-dia.</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Segunda 16/11</span><span class="hora">9h</span><span class="tipo vd">Agradecimento</span></div><div class="obs">Vai com a foto geral do Café. Se a autoescola topar, pode dizer quantas matrículas saíram no dia.</div>
+  <div class="cp"><p>💛 *Obrigado a quem passou no Café da Black.*
+
+Foi uma manhã cheia, nas duas unidades, e já tem aluno novo começando esta semana.
+
+Quem não conseguiu ir: a condição da Black continua até 30/11, com até 30% de desconto e brinde. Chama no privado que a gente te atende do mesmo jeito:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Quarta 18/11</span><span class="hora">9h</span><span class="tipo vd">Depoimento</span></div><div class="obs">Vai com um vídeo curto ou áudio de um aluno que passou (com autorização). Sem depoimento, vai com a foto do carrossel de aprovados de 17/11.</div>
+  <div class="cp"><p>🗣️ *“Eu achava que não ia conseguir.”*
+
+Quem fala isso hoje está com a carteira na mão. A maioria dos nossos alunos chegou com medo de dirigir, e passou de primeira.
+
+Se o seu medo é esse, a hora boa de começar é agora: até 30/11 a Black dá até 30% de desconto na sua CNH. Chama no privado e conversa com a gente, sem compromisso.</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Quinta 19/11</span><span class="hora">9h</span><span class="tipo ur">Contagem</span></div><div class="obs">Vai com a arte “Faltam 10 dias” (feed de 19/11).</div>
+  <div class="cp"><p>⏰ *Faltam 10 dias para a Black da Liderança acabar.*
+
+Até 30% de desconto na sua CNH, com brinde, só até 30/11. Depois volta a tabela normal.
+
+Se você estava deixando para depois, o depois é agora. Chama no WhatsApp da sua unidade:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Segunda 23/11</span><span class="hora">9h</span><span class="tipo ur">Última semana</span></div><div class="obs">Vai com o vídeo “Última semana” do Samuel e do Gabriel (Reels de 23/11).</div>
+  <div class="cp"><p>🖤 *Última semana da Black da Liderança.*
+
+Carro, moto, carro e moto, categoria D e E com até 30% de desconto e brinde, só até domingo 30/11.
+
+Quem fechar essa semana já começa as aulas antes de dezembro. Chama no privado e garante a sua condição:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Quinta 26/11</span><span class="hora">9h</span><span class="tipo ur">Véspera</span></div><div class="obs">Vai com a arte “Amanhã é a sexta de Black” (feed de 26/11).</div>
+  <div class="cp"><p>📅 *Amanhã é a sexta de Black na Liderança.* Depois, só mais o fim de semana.
+
+Sexta a equipe fica o dia inteiro no WhatsApp respondendo na hora. Se você quer fechar com o desconto, amanhã é o dia.
+
+Manda “quero a condição” no privado da sua unidade e a gente já te responde:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Sexta 27/11</span><span class="hora">9h e 16h</span><span class="tipo ur">Sexta de Black</span></div><div class="obs">Duas mensagens. De manhã, o vídeo “Sexta de Black” do Samuel e do Gabriel. À tarde, texto só.</div>
+  <div class="cp"><p>🖤 *Hoje é a sexta de Black.* E faltam três dias para acabar.
+
+Até 30% de desconto na sua CNH, com brinde, até domingo. A equipe está on-line o dia todo: chama agora e sai com a matrícula pronta.
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div>
+  <div style="height:10px"></div>
+  <div class="cp"><p>⏳ Ainda é sexta de Black. Quem chamou hoje já está com a matrícula encaminhada. Se você ficou de responder, responde agora: a gente fica on-line até as 18h e amanhã de manhã também.</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Domingo 29/11</span><span class="hora">10h</span><span class="tipo ur">Véspera do fim</span></div><div class="obs">Texto só. Única mensagem de domingo do mês.</div>
+  <div class="cp"><p>⏰ *Amanhã a Black da Liderança acaba.*
+
+Segunda 30/11 é o último dia com até 30% de desconto na sua CNH e brinde. Terça volta a tabela normal.
+
+Quem quer garantir, manda mensagem hoje ou amanhã cedo:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div></div>
+
+  <div class="msg"><div class="cab"><span class="data">Segunda 30/11</span><span class="hora">9h e 19h</span><span class="tipo ur">Último dia</span></div><div class="obs">De manhã, o último chamado. À noite, o fechamento: agradecimento e a promessa de que a próxima condição sai primeiro no grupo.</div>
+  <div class="cp"><p>🚨 *Último dia da Black da Liderança.*
+
+Até as 18h de hoje: até 30% de desconto na sua CNH, com brinde. Depois disso, acabou.
+
+Chama agora:
+📲 Coração de Jesus: (38) 9920-5651
+📲 Brasília de Minas: (38) 9868-8520</p><button>Copiar</button></div>
+  <div style="height:10px"></div>
+  <div class="cp"><p>💛 *Obrigado, novembro.*
+
+A Black da Liderança acabou e novembro trouxe uma turma nova para as duas unidades. Bem-vindos, novos alunos!
+
+Quem ficou de fora: fica no grupo. A próxima condição sai aqui primeiro, como foi essa.</p><button>Copiar</button></div></div>
+</section>
+
+<section class="section" id="resumo">
+  <p class="section-num">03 · Resumo do mês</p>
+  <h2>Quinze mensagens em <em>vinte e sete dias</em></h2>
+  <p>Para colar na parede: o que vai em cada dia e com qual material. Nos dias que não estão aqui, o grupo fica em silêncio.</p>
+  <table class="cal"><thead><tr><th>Dia</th><th>Hora</th><th>Mensagem</th><th>Vai com</th></tr></thead><tbody>
+    <tr><td class="d">Qua 04/11</td><td>9h</td><td>Lançamento da Black</td><td>Vídeo da Black ou arte “até 30%”</td></tr>
+    <tr><td class="d">Sex 06/11</td><td>9h</td><td>Aprovados da primeira semana</td><td>Foto dos aprovados</td></tr>
+    <tr><td class="d">Sáb 07/11</td><td>9h</td><td>Convite do Café (texto)</td><td>Nada</td></tr>
+    <tr><td class="d">Ter 10/11</td><td>9h</td><td>Categoria D e E na Black</td><td>Vídeo ou foto da carreta</td></tr>
+    <tr><td class="d">Qui 12/11</td><td>9h</td><td>Convite do Café (arte)</td><td>Arte do convite</td></tr>
+    <tr><td class="d">Sex 13/11</td><td>9h</td><td>Amanhã tem Café + pedido de repost</td><td>Arte do convite</td></tr>
+    <tr><td class="d">Sáb 14/11</td><td>8h30 e 11h</td><td>Café ao vivo (2 mensagens)</td><td>Fotos na hora</td></tr>
+    <tr><td class="d">Seg 16/11</td><td>9h</td><td>Obrigado pelo Café, Black continua</td><td>Foto geral do Café</td></tr>
+    <tr><td class="d">Qua 18/11</td><td>9h</td><td>Depoimento de aluno</td><td>Vídeo ou áudio de aluno</td></tr>
+    <tr><td class="d">Qui 19/11</td><td>9h</td><td>Faltam 10 dias</td><td>Arte “Faltam 10 dias”</td></tr>
+    <tr><td class="d">Seg 23/11</td><td>9h</td><td>Última semana</td><td>Vídeo “Última semana”</td></tr>
+    <tr><td class="d">Qui 26/11</td><td>9h</td><td>Amanhã é a sexta de Black</td><td>Arte da véspera</td></tr>
+    <tr><td class="d">Sex 27/11</td><td>9h e 16h</td><td>Sexta de Black (2 mensagens)</td><td>Vídeo “Sexta de Black”</td></tr>
+    <tr><td class="d">Dom 29/11</td><td>10h</td><td>Amanhã acaba</td><td>Nada</td></tr>
+    <tr><td class="d">Seg 30/11</td><td>9h e 19h</td><td>Último dia + obrigado (2 mensagens)</td><td>Arte da última semana · foto da equipe</td></tr>
+  </tbody></table>
+  <div class="destaque"><strong>Se alguém perguntar preço no grupo:</strong> responder em público só “te chamo no privado agora 😉”, chamar em até uma hora com a tabela interna e seguir o manual de atendimento. Nunca discutir valor, desconto ou condição de outra autoescola dentro do grupo.</div>
+</section>
+
+<footer class="doc-footer">Auto Escola Liderança · Grupo VIP na Black · Novembro 2026 · ADS Company</footer>
+<script>
+document.querySelectorAll('.cp button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.parentNode.querySelector('p').innerText;
+    navigator.clipboard.writeText(t).then(function(){b.textContent='Copiado';b.classList.add('ok');setTimeout(function(){b.textContent='Copiar';b.classList.remove('ok')},1600)});
+  });
+});
+</script>
+</body>
+</html>
