@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estratégia Presencial — Auto Escola Liderança | ADS Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#FF5C00;--preto:#060606;--card:#111;--card-hover:#161616;--border:rgba(255,255,255,0.06);--branco:#F5F5F5;--texto:#A0A0A0;--texto2:#666;--verde:#22C55E;--amarelo:#EAB308;--azul:#3B8BFF;--roxo:#C084FC;--vermelho:#EF4444;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-voltar{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--branco);font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;text-decoration:none;transition:all .2s}
+  .btn-voltar:hover{border-color:var(--laranja);color:var(--laranja)}
+  .nav-title{font-family:var(--serif);font-size:14px;color:var(--texto)}
+  .nav-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja)}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 32px 48px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,92,0,0.06) 0%,transparent 70%),linear-gradient(180deg,#040404 0%,#060606 100%)}
+  .hero-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;max-width:760px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-sub{font-size:15px;color:var(--texto);max-width:640px;line-height:1.7}
+  .meta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+  .meta-item{font-size:12px;color:var(--texto);border:1px solid var(--border);border-radius:20px;padding:6px 14px}
+  .meta-item b{color:var(--branco);font-weight:600}
+  .section{max-width:900px;margin:0 auto;padding:48px 32px}
+  .section+.section{border-top:1px solid var(--border)}
+  .section-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .section h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;margin-bottom:6px}
+  .section h2 em{font-style:italic;color:var(--laranja)}
+  .section>p{color:var(--texto);font-size:14px;margin-bottom:22px}
+  .grupo{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--texto2);font-weight:700;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+  .grupo::after{content:"";flex:1;height:1px;background:var(--border)}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:8px}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+  .kpi .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--texto2);font-weight:700}
+  .kpi .v{font-family:var(--serif);font-size:1.6rem;line-height:1.2;margin-top:4px}
+  .kpi .s{font-size:12px;color:var(--texto);margin-top:2px}
+  table.t{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 10px}
+  table.t th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  table.t td{padding:10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--branco)}
+  table.t td.m{color:var(--texto);font-size:12.5px}
+  table.t tr.tot td{font-weight:700;background:rgba(255,255,255,.02)}
+  .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
+  .tag-ok{color:var(--verde);border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.08)}
+  .tag-at{color:var(--amarelo);border-color:rgba(234,179,8,.3);background:rgba(234,179,8,.08)}
+  .tag-no{color:var(--vermelho);border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.08)}
+  .tag-az{color:var(--azul);border-color:rgba(59,139,255,.3);background:rgba(59,139,255,.08)}
+  .tag-rx{color:var(--roxo);border-color:rgba(192,132,252,.3);background:rgba(192,132,252,.08)}
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .bloco{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+  .bloco .et{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin-bottom:6px}
+  .bloco h3{font-family:var(--serif);font-weight:400;font-size:1.1rem;margin-bottom:8px}
+  .bloco p,.bloco li{font-size:13.5px;color:var(--texto)}
+  .bloco ul{padding-left:18px}
+  .bloco li{margin-bottom:4px}
+  .bloco strong{color:var(--branco);font-weight:600}
+  .bloco:only-child{grid-column:1/-1}
+  .full{grid-column:1/-1}
+  .destaque{background:rgba(255,92,0,.07);border:1px solid rgba(255,92,0,.25);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--branco);margin:16px 0}
+  .destaque strong{color:var(--laranja)}
+  .timeline{display:flex;flex-direction:column;gap:0;margin-top:6px}
+  .ti{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)}
+  .ti .d{font-family:var(--serif);font-size:1rem;color:var(--laranja)}
+  .ti .x{font-size:13.5px;color:var(--texto)}
+  .ti .x strong{color:var(--branco);font-weight:600}
+  .check{list-style:none;padding:0}
+  .check li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--texto)}
+  .check li::before{content:"";width:16px;height:16px;border:1.5px solid rgba(255,255,255,.25);border-radius:4px;flex-shrink:0;margin-top:5px}
+  .check li strong{color:var(--branco);font-weight:600}
+  .check code{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:rgba(255,255,255,.06);padding:1px 6px;border-radius:4px;color:var(--branco)}
+  a.link{color:var(--laranja);text-decoration:none}a.link:hover{text-decoration:underline}
+  .doc-footer{max-width:900px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--texto2)}
+  @media(max-width:768px){.nav-bar{padding:10px 16px}.hero{padding:56px 20px 36px}.section{padding:36px 20px}.doc-grid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.ti{grid-template-columns:1fr;gap:4px}table.t{font-size:12.5px}table.t td,table.t th{padding:8px 6px}}
+  @media(max-width:480px){.hero h1{font-size:1.5rem}.nav-title{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-bar"><div class="nav-left"><a href="index.html" class="btn-voltar">&#8592; TRÁFEGO PAGO</a><span class="nav-title">Estratégia presencial · novembro 2026 a março 2027</span></div><span class="nav-badge">ADS Company</span></nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Combinado na reunião de 30/10 · entregue em 09/11</p>
+  <h1>Levar gente até a autoescola: <em>a estratégia presencial</em></h1>
+  <p class="hero-sub">Na reunião de 30/10, o Samuel e a Priscila contaram o que o atendimento já sabia: em Coração de Jesus, quem pisa na autoescola fecha rápido; em Brasília de Minas, muita gente pede orçamento pelo WhatsApp por curiosidade e some. Esta página transforma isso em método: um anúncio que convida para a visita, um roteiro de atendimento que puxa a pessoa para dentro e um evento presencial por mês até março.</p>
+  <div class="meta-row">
+    <span class="meta-item">Orçamento <b>o mesmo R$ 36 por dia</b></span>
+    <span class="meta-item">Primeiro evento <b>Café da Black, sáb 14/11</b></span>
+    <span class="meta-item">Próximos <b>12/12 · 16/01 · 06/03</b></span>
+    <span class="meta-item">Medida <b>visitas e matrículas no dia</b></span>
+  </div>
+</header>
+
+<section class="section" id="porque">
+  <p class="section-num">01 · Por que presencial</p>
+  <h2>O que a reunião <em>mostrou</em></h2>
+  <p>Três fatos saíram da conversa de 30/10 e dos números de outubro e novembro. Juntos, eles explicam por que a visita vale mais do que uma conversa a mais no WhatsApp.</p>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Coração de Jesus</div><h3>Quem vem, fecha</h3><p>O público prefere resolver pessoalmente. Pede o orçamento, passa na autoescola e sai matriculado. O gargalo não é convencer: é fazer a pessoa aparecer.</p></div>
+    <div class="bloco"><div class="et">Brasília de Minas</div><h3>Muita curiosidade, pouca decisão</h3><p>Mais orçamentos pelo WhatsApp, boa parte só para saber o preço. É a unidade que mais gera conversa a custo baixo (R$ 3,12 em novembro) e a que mais precisa de um passo a mais entre a conversa e a matrícula.</p></div>
+    <div class="bloco full"><div class="et">O número que importa</div><h3>79 conversas e 2 matrículas lançadas em nove dias</h3><p>Até 09/11 o anúncio trouxe 79 conversas e a planilha registra 2 matrículas no mês. Mesmo que faltem lançamentos, a distância é grande. A visita presencial é a forma mais barata de encurtar essa distância: não custa anúncio, custa um convite bem feito no atendimento.</p></div>
+  </div>
+  <div class="destaque"><strong>Regra desta estratégia:</strong> toda conversa que pede preço recebe, junto com a tabela, um convite para vir. Com dia e hora. Quem marca visita vira "quase matrícula"; quem só recebe a tabela vira "vou pensar".</div>
+</section>
+
+<section class="section" id="anuncio">
+  <p class="section-num">02 · O anúncio da visita</p>
+  <h2>AD 28 · <em>Vem conhecer a Liderança</em></h2>
+  <p>Um anúncio novo em cada grupo, dentro da mesma campanha e da mesma verba. Em vez de vender o pacote, ele vende a visita: café, carro, instrutor, dúvida tirada na hora. Entra no lugar do AD 17 (que em novembro já custa R$ 5,75 por conversa) nas duas unidades, sem mexer no orçamento.</p>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Texto principal</div><p>🚗☕ Pensando em tirar a CNH, mas ainda tem dúvida?<br><br>Vem conhecer a Liderança. Passa aqui, toma um café com a gente, conhece os carros e os instrutores e tira todas as dúvidas sem compromisso.<br><br>Chama no WhatsApp e marca seu horário. 👇</p></div>
+    <div class="bloco"><div class="et">Título e descrição</div><p><strong>Título:</strong> Vem conhecer a Liderança<br><strong>Descrição:</strong> Marque sua visita pelo WhatsApp<br><strong>Botão:</strong> Enviar mensagem (WhatsApp)<br><strong>Saudação:</strong> "Olá! Quero marcar uma visita na Liderança."</p></div>
+    <div class="bloco"><div class="et">Imagem</div><p>Foto real da equipe na porta da unidade, com o selo "Vem conhecer a Liderança" e a faixa "Marca sua visita no WhatsApp". Sem preço, sem desconto. Uma versão por unidade, com a fachada de cada cidade.</p></div>
+    <div class="bloco"><div class="et">Quando entra</div><p>Segunda 16/11, na rotação já prevista. Novembro inteiro ele divide espaço com as peças da Black; a partir de dezembro passa a ser o anúncio fixo de visita, e as peças de oferta trocam por mês.</p></div>
+  </div>
+  <div class="destaque"><strong>O que a autoescola precisa fazer:</strong> responder "Quero marcar uma visita" em menos de 15 minutos e oferecer dois horários ("amanhã às 10h ou às 16h?"). Visita marcada entra numa lista simples no WhatsApp da unidade, com nome, dia e hora.</div>
+</section>
+
+<section class="section" id="atendimento">
+  <p class="section-num">03 · O convite no atendimento</p>
+  <h2>Do orçamento à <em>visita marcada</em></h2>
+  <p>Vale para toda conversa, de anúncio ou não. É a parte que mais muda resultado em Brasília de Minas e não custa nada.</p>
+  <div class="timeline">
+    <div class="ti"><div class="d">Pediu o preço</div><div class="x">Manda a tabela e, na mesma mensagem, o convite: <strong>"Se quiser, passa aqui para conhecer o carro e os instrutores. Amanhã às 10h ou às 16h fica bom para você?"</strong> Nunca mandar só a tabela.</div></div>
+    <div class="ti"><div class="d">Disse "vou pensar"</div><div class="x"><strong>"Tranquilo. Vem tomar um café com a gente e pensa aqui, vendo o carro. Sem compromisso."</strong> Se aceitar, marca. Se não, segue o acompanhamento normal do manual (dois contatos em 48 horas).</div></div>
+    <div class="ti"><div class="d">Marcou a visita</div><div class="x">Anota nome, dia e hora na lista da unidade. Na véspera, uma mensagem curta: <strong>"Te esperamos amanhã às 10h. Vai ter café."</strong> No dia, a recepção já sabe quem vem.</div></div>
+    <div class="ti"><div class="d">Chegou</div><div class="x">Roteiro de 15 minutos: café, mostra o carro (ou a moto), apresenta o instrutor, tira as dúvidas e apresenta a condição do mês. <strong>Quem fecha na visita leva o brinde</strong>, igual ao Café.</div></div>
+    <div class="ti"><div class="d">Não apareceu</div><div class="x">Uma mensagem no mesmo dia: <strong>"Não deu para vir hoje? Sem problema. Quer remarcar para quinta?"</strong> Uma só. Depois, acompanhamento normal.</div></div>
+  </div>
+</section>
+
+<section class="section" id="eventos">
+  <p class="section-num">04 · Um evento por mês</p>
+  <h2>Calendário presencial até <em>março de 2027</em></h2>
+  <p>Sempre no sábado de manhã, nas duas unidades, com o mesmo formato do Café da Black: recepção com café, primeira aula de dez minutos no pátio, roda de dúvidas, condição do mês e brinde para quem fecha no dia. Muda o motivo, não a estrutura.</p>
+  <table class="t">
+    <thead><tr><th>Data</th><th>Evento</th><th>Motivo e público</th><th>Divulgação</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sáb 14/11</strong></td><td>Café da Black</td><td class="m">Meio da Black. Quem conversou em outubro e novembro e não fechou. Planejamento completo na página do calendário de novembro.</td><td class="m">Feed e stories em 12/11 (arte pronta), grupo VIP em 07, 12 e 13/11, convite pessoal no WhatsApp.</td></tr>
+      <tr><td><strong>Sáb 12/12</strong></td><td>Natal da Liderança</td><td class="m">Fechar o ano: quem quer começar em janeiro garante a vaga em dezembro, com condição de fim de ano. Público: adultos que adiaram a CNH o ano inteiro e pais de jovens que fazem 18 anos em 2027.</td><td class="m">Anúncio AD 28 citando o dia, feed e stories na quinta 10/12, grupo VIP, convite pessoal para a lista do Café.</td></tr>
+      <tr><td><strong>Sáb 16/01</strong></td><td>Primeira habilitação 2027</td><td class="m">Começo do ano, quem fez ou vai fazer 18 anos. Pais acompanham. Roda de dúvidas sobre o processo inteiro, da inscrição ao exame.</td><td class="m">Reels com instrutor explicando "o que muda em 2027", feed e stories em 14/01, grupo VIP, escolas e cursinhos da cidade.</td></tr>
+      <tr><td><strong>Sáb 06/03</strong></td><td>Mulheres ao volante</td><td class="m">Semana do Dia da Mulher. Mulheres adultas que têm medo de dirigir ou pararam no meio do processo. Aula experimental com instrutora ou instrutor de confiança, depoimento de aluna aprovada.</td><td class="m">Reels de depoimento em 02/03, feed e stories em 04/03, grupo VIP, parceria com salões e lojas da cidade.</td></tr>
+    </tbody>
+  </table>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">Meta sugerida por evento</div><h3>15 visitas e 5 matrículas por unidade</h3><p>É a conta que faz o evento se pagar sozinho: cinco matrículas em cada unidade, no ticket médio de R$ 900, são R$ 9 mil num sábado. O número real do Café de 14/11 vira a referência para os próximos.</p></div>
+    <div class="bloco"><div class="et">Como medir</div><h3>Folha de presença e planilha</h3><p>Quem chega escreve nome e WhatsApp na folha. No fim da manhã, a equipe lança as matrículas do dia nas colunas de sempre da planilha e manda no grupo: quantos vieram, quantos fecharam. O painel mostra o sábado.</p></div>
+  </div>
+</section>
+
+<section class="section" id="divisao">
+  <p class="section-num">05 · Quem faz o quê</p>
+  <h2>Divisão <em>de tarefas</em></h2>
+  <div class="doc-grid">
+    <div class="bloco"><div class="et">ADS Company</div><ul>
+      <li>Anúncio AD 28 (texto, imagem e saudação) e a troca no Gerenciador em 16/11.</li>
+      <li>Arte do convite de cada evento, feed e stories, uma semana antes.</li>
+      <li>Textos do grupo VIP e do convite pessoal.</li>
+      <li>Leitura do resultado de cada evento no painel e na parcial seguinte.</li>
+    </ul></div>
+    <div class="bloco"><div class="et">Autoescola</div><ul>
+      <li>Responder "quero marcar uma visita" em até 15 minutos, com dois horários.</li>
+      <li>Lista de visitas marcadas no WhatsApp de cada unidade.</li>
+      <li>Estrutura do dia: café, folha de presença, carro e moto no pátio, dois instrutores, maquininha, contratos e brinde.</li>
+      <li>Lançar matrículas e aulas avulsas do dia na planilha e avisar o grupo.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="section" id="proximos">
+  <p class="section-num">06 · Próximos passos</p>
+  <h2>O que acontece <em>agora</em></h2>
+  <ul class="check">
+    <li><strong>Até 12/11:</strong> autoescola confirma horário do Café (8h às 12h) e define o brinde. Arte do convite já está pronta.</li>
+    <li><strong>Sáb 14/11:</strong> Café da Black nas duas unidades. Folha de presença e matrículas lançadas no mesmo dia.</li>
+    <li><strong>Seg 16/11:</strong> AD 28 entra no lugar do AD 17 nas duas unidades, mesma verba. Depende do ok do Davidson.</li>
+    <li><strong>Seg 16/11:</strong> leitura do Café na parcial: quantos vieram, quantos fecharam, o que repetir em dezembro.</li>
+    <li><strong>Até 30/11:</strong> definir a condição do Natal da Liderança (12/12) com a autoescola, para a arte sair em 04/12.</li>
+  </ul>
+</section>
+
+<footer class="doc-footer">Auto Escola Liderança · Estratégia Presencial · Novembro 2026 a março 2027 · ADS Company</footer>
+</body>
+</html>

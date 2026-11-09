@@ -11,9 +11,11 @@
       "vendas_cj": "F",
       "valor_cj": "G",
       "vendas_bm": "H",
-      "valor_bm": "I"
+      "valor_bm": "I",
+      "avulsas": "M",
+      "valor_avulsas": "N"
     },
-    "observacao": "J, K e L são fórmulas (totais e retorno); a sincronização lê só as amarelas F a I e calcula os totais."
+    "observacao": "J, K e L são fórmulas (totais e retorno); a sincronização lê só as amarelas F a I e M a N (aulas avulsas, criadas em 09/11/2026 a pedido do Samuel na call de 30/10) e calcula os totais."
   },
   "projecao": {
     "id": "1WaP88oxvKjGqDSWnAhJ916mRy6F4dCWB6xI-cA0iZ1E",

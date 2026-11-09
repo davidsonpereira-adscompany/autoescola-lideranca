@@ -2,7 +2,7 @@
 """Sincroniza o painel com as planilhas da cliente (Google Sheets via Maton).
 
 ida   : dados.json  -> Controle Diário (colunas azuis: investido e conversas, por data)
-volta : Controle Diário (colunas amarelas: matrículas e valor por unidade) -> vendas.json (lido pelo painel)
+volta : Controle Diário (colunas amarelas: matrículas e valor por unidade, aulas avulsas) -> vendas.json (lido pelo painel)
         e Projeção de Metas (dias trabalhados, vendas acumuladas, nº de vendas, por mês)
 
 Uso: python3 sync_planilhas.py [ida|volta|tudo]   (padrão: tudo)
@@ -90,6 +90,9 @@ def linhas_controle():
         else:
             item["vendas"] = numero(row[idx(col["vendas"])])
             item["valor_vendido"] = numero(row[idx(col["valor_vendido"])])
+        if "avulsas" in col:   # aulas avulsas vendidas no dia (não entram nas matrículas)
+            item["avulsas"] = numero(row[idx(col["avulsas"])])
+            item["valor_avulsas"] = numero(row[idx(col["valor_avulsas"])]) if "valor_avulsas" in col else None
         out[d] = item
     return out
 
@@ -115,11 +118,14 @@ def volta():
     mapa = linhas_controle()
     vendas = []
     for d, v in sorted(mapa.items()):
-        if v["vendas"] is not None or v["valor_vendido"] is not None:
+        tem_avulsas = v.get("avulsas") is not None or v.get("valor_avulsas") is not None
+        if v["vendas"] is not None or v["valor_vendido"] is not None or tem_avulsas:
             item = {"data": d, "vendas": int(v["vendas"] or 0), "valor_vendido": round(v["valor_vendido"] or 0, 2)}
             if "vendas_cj" in v:
                 item["vendas_cj"], item["vendas_bm"] = int(v["vendas_cj"] or 0), int(v["vendas_bm"] or 0)
                 item["valor_cj"], item["valor_bm"] = round(v.get("valor_cj") or 0, 2), round(v.get("valor_bm") or 0, 2)
+            if tem_avulsas:
+                item["avulsas"], item["valor_avulsas"] = int(v.get("avulsas") or 0), round(v.get("valor_avulsas") or 0, 2)
             vendas.append(item)
     saida = {"atualizado_em": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-3))).isoformat(timespec="minutes"),
              "fonte": "Controle Diário (planilha da cliente)", "vendas": vendas}
