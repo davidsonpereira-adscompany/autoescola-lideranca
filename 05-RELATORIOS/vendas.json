@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-12T21:19-03:00",
+  "atualizado_em": "2026-11-13T20:31-03:00",
   "fonte": "Controle Diário (planilha da cliente)",
   "vendas": [
     {
@@ -28,15 +28,6 @@
       "vendas_bm": 0,
       "valor_cj": 635.0,
       "valor_bm": 395.0
-    },
-    {
-      "data": "2026-10-10",
-      "vendas": 0,
-      "valor_vendido": 0,
-      "vendas_cj": 0,
-      "vendas_bm": 0,
-      "valor_cj": 0,
-      "valor_bm": 0
     },
     {
       "data": "2026-10-11",
@@ -257,10 +248,10 @@
     {
       "data": "2026-11-10",
       "vendas": 2,
-      "valor_vendido": 2200.0,
+      "valor_vendido": 2023.52,
       "vendas_cj": 1,
       "vendas_bm": 1,
-      "valor_cj": 1500.0,
+      "valor_cj": 1323.52,
       "valor_bm": 700.0
     },
     {
@@ -274,12 +265,21 @@
     },
     {
       "data": "2026-11-12",
-      "vendas": 3,
-      "valor_vendido": 2250.0,
-      "vendas_cj": 0,
+      "vendas": 5,
+      "valor_vendido": 3297.98,
+      "vendas_cj": 2,
       "vendas_bm": 3,
-      "valor_cj": 0,
+      "valor_cj": 1047.98,
       "valor_bm": 2250.0
+    },
+    {
+      "data": "2026-11-13",
+      "vendas": 1,
+      "valor_vendido": 1300.0,
+      "vendas_cj": 1,
+      "vendas_bm": 0,
+      "valor_cj": 1300.0,
+      "valor_bm": 0
     }
   ]
 }
