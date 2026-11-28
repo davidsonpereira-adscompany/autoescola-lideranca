@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-27T07:10:00-03:00",
+  "atualizado_em": "2026-11-28T07:03:41-03:00",
   "fonte": "Gerenciador de Anúncios (Meta) — conta 1114773581250921 · leitura via Windsor.ai até a Meta liberar o conector",
   "campanha": {
     "id": "120254021728130249",
@@ -40,11 +40,6 @@
           "investido": 6.15,
           "conversas": 0,
           "alcance": 849
-        },
-        "IG | Visitas ao perfil": {
-          "investido": 0.0,
-          "conversas": 0,
-          "alcance": 0
         }
       },
       "vendas": null,
@@ -68,11 +63,6 @@
           "investido": 16.73,
           "conversas": 9,
           "alcance": 1825
-        },
-        "IG | Visitas ao perfil": {
-          "investido": 0.0,
-          "conversas": 0,
-          "alcance": 0
         }
       },
       "vendas": null,
@@ -1364,10 +1354,10 @@
     },
     {
       "data": "2026-11-26",
-      "investido": 29.36,
+      "investido": 29.38,
       "conversas": 11,
-      "alcance": 3864,
-      "impressoes": 4537,
+      "alcance": 3867,
+      "impressoes": 4542,
       "cliques": 33,
       "engajamentos": 162,
       "campanhas": {
@@ -1377,9 +1367,9 @@
           "alcance": 1478
         },
         "BM | Brasília de Minas": {
-          "investido": 12.44,
+          "investido": 12.46,
           "conversas": 4,
-          "alcance": 1787
+          "alcance": 1789
         },
         "IG | Visitas ao perfil": {
           "investido": 5.3,
@@ -1390,27 +1380,53 @@
     },
     {
       "data": "2026-11-27",
-      "investido": 1.98,
-      "conversas": 1,
-      "alcance": 300,
-      "impressoes": 334,
-      "cliques": 5,
-      "engajamentos": 15,
+      "investido": 24.79,
+      "conversas": 7,
+      "alcance": 3376,
+      "impressoes": 4057,
+      "cliques": 32,
+      "engajamentos": 302,
       "campanhas": {
         "CJ | Coração de Jesus": {
-          "investido": 0.56,
-          "conversas": 1,
-          "alcance": 100
+          "investido": 10.1,
+          "conversas": 3,
+          "alcance": 1380
         },
         "BM | Brasília de Minas": {
-          "investido": 0.8,
-          "conversas": 0,
-          "alcance": 140
+          "investido": 9.24,
+          "conversas": 4,
+          "alcance": 1464
         },
         "IG | Visitas ao perfil": {
-          "investido": 0.62,
+          "investido": 5.45,
           "conversas": 0,
-          "alcance": 51
+          "alcance": 619
+        }
+      }
+    },
+    {
+      "data": "2026-11-28",
+      "investido": 1.5,
+      "conversas": 0,
+      "alcance": 271,
+      "impressoes": 301,
+      "cliques": 3,
+      "engajamentos": 18,
+      "campanhas": {
+        "CJ | Coração de Jesus": {
+          "investido": 0.41,
+          "conversas": 0,
+          "alcance": 90
+        },
+        "BM | Brasília de Minas": {
+          "investido": 0.5,
+          "conversas": 0,
+          "alcance": 106
+        },
+        "IG | Visitas ao perfil": {
+          "investido": 0.59,
+          "conversas": 0,
+          "alcance": 75
         }
       }
     }
@@ -1419,31 +1435,31 @@
     {
       "id": "120254021728140249",
       "nome": "CJ | Coração de Jesus",
-      "investido": 765.64,
-      "conversas": 191,
-      "alcance": 23468,
-      "impressoes": 124874,
-      "cliques": 783,
+      "investido": 775.59,
+      "conversas": 193,
+      "alcance": 23545,
+      "impressoes": 126519,
+      "cliques": 790,
       "status": "ACTIVE"
     },
     {
       "id": "120254022219800249",
       "nome": "BM | Brasília de Minas",
-      "investido": 768.07,
-      "conversas": 205,
-      "alcance": 28547,
-      "impressoes": 135048,
-      "cliques": 870,
+      "investido": 777.03,
+      "conversas": 209,
+      "alcance": 28581,
+      "impressoes": 136731,
+      "cliques": 875,
       "status": "ACTIVE"
     },
     {
       "id": "120254054880830249",
       "nome": "IG | Visitas ao perfil",
-      "investido": 292.81,
+      "investido": 298.23,
       "conversas": 1,
-      "alcance": 25144,
-      "impressoes": 62002,
-      "cliques": 959,
+      "alcance": 25227,
+      "impressoes": 62703,
+      "cliques": 977,
       "status": "ACTIVE"
     }
   ],
@@ -1452,7 +1468,7 @@
       "id": "120254022219710249",
       "nome": "BM · AD 02",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1463,7 +1479,7 @@
       "id": "120254021954210249",
       "nome": "CJ · AD 07",
       "grupo": "CJ",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1474,7 +1490,7 @@
       "id": "120254021972210249",
       "nome": "CJ · AD 10",
       "grupo": "CJ",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1485,7 +1501,7 @@
       "id": "120254022219770249",
       "nome": "BM · AD 10",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1496,7 +1512,7 @@
       "id": "120254021975490249",
       "nome": "CJ · AD 11",
       "grupo": "CJ",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1507,7 +1523,7 @@
       "id": "120254021915750249",
       "nome": "CJ · AD 02",
       "grupo": "CJ",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1518,7 +1534,7 @@
       "id": "120254022219750249",
       "nome": "BM · AD 06",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1529,7 +1545,7 @@
       "id": "120254022219820249",
       "nome": "BM · AD 05",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1540,7 +1556,7 @@
       "id": "120254021938590249",
       "nome": "CJ · AD 05",
       "grupo": "CJ",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1551,7 +1567,7 @@
       "id": "120254022219720249",
       "nome": "BM · AD 04",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1562,7 +1578,7 @@
       "id": "120254021935710249",
       "nome": "CJ · AD 04",
       "grupo": "CJ",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1573,7 +1589,7 @@
       "id": "120254022219760249",
       "nome": "BM · AD 08",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1584,7 +1600,7 @@
       "id": "120254021946210249",
       "nome": "CJ · AD 06",
       "grupo": "CJ",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1595,7 +1611,7 @@
       "id": "120254022219790249",
       "nome": "BM · AD 12",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 0,
       "impressoes": 0,
@@ -1661,7 +1677,7 @@
       "id": "120254022219730249",
       "nome": "BM · AD 01",
       "grupo": "BM",
-      "investido": 0,
+      "investido": 0.0,
       "conversas": 0,
       "alcance": 7,
       "impressoes": 7,
@@ -1782,10 +1798,10 @@
       "id": "120254144170680249",
       "nome": "CJ · AD 17 - CAT D E E (CLIENTE)",
       "grupo": "CJ",
-      "investido": 177.41,
+      "investido": 177.81,
       "conversas": 53,
-      "alcance": 9818,
-      "impressoes": 29800,
+      "alcance": 9829,
+      "impressoes": 29865,
       "cliques": 208,
       "status": "ACTIVE"
     },
@@ -1815,10 +1831,10 @@
       "id": "120254144171080249",
       "nome": "BM · AD 17 - CAT D E E (CLIENTE)",
       "grupo": "BM",
-      "investido": 92.33,
+      "investido": 92.63,
       "conversas": 24,
       "alcance": 7803,
-      "impressoes": 19828,
+      "impressoes": 19893,
       "cliques": 128,
       "status": "ACTIVE"
     },
@@ -1837,10 +1853,10 @@
       "id": "120254525586760249",
       "nome": "CJ · AD 20 - BLACK GERAL",
       "grupo": "CJ",
-      "investido": 43.36,
+      "investido": 43.87,
       "conversas": 12,
-      "alcance": 3616,
-      "impressoes": 7172,
+      "alcance": 3653,
+      "impressoes": 7269,
       "cliques": 49,
       "status": "ACTIVE"
     },
@@ -1848,22 +1864,22 @@
       "id": "120254525612460249",
       "nome": "BM · AD 20 - BLACK GERAL",
       "grupo": "BM",
-      "investido": 148.94,
-      "conversas": 46,
-      "alcance": 9418,
-      "impressoes": 25097,
-      "cliques": 151,
+      "investido": 151.81,
+      "conversas": 47,
+      "alcance": 9494,
+      "impressoes": 25694,
+      "cliques": 153,
       "status": "ACTIVE"
     },
     {
       "id": "120254525614280249",
       "nome": "CJ · AD 21 - BLACK CARRO",
       "grupo": "CJ",
-      "investido": 178.93,
-      "conversas": 58,
-      "alcance": 9883,
-      "impressoes": 31231,
-      "cliques": 180,
+      "investido": 183.6,
+      "conversas": 59,
+      "alcance": 9968,
+      "impressoes": 32073,
+      "cliques": 184,
       "status": "ACTIVE"
     },
     {
@@ -1881,10 +1897,10 @@
       "id": "120254525623360249",
       "nome": "CJ · AD 23 - BLACK CARRO E MOTO",
       "grupo": "CJ",
-      "investido": 18.84,
+      "investido": 19.36,
       "conversas": 8,
-      "alcance": 1608,
-      "impressoes": 3661,
+      "alcance": 1619,
+      "impressoes": 3752,
       "cliques": 20,
       "status": "ACTIVE"
     },
@@ -1914,10 +1930,10 @@
       "id": "120254525630730249",
       "nome": "BM · AD 25 - BLACK APROVADOS",
       "grupo": "BM",
-      "investido": 33.8,
+      "investido": 34.18,
       "conversas": 6,
-      "alcance": 3311,
-      "impressoes": 6691,
+      "alcance": 3326,
+      "impressoes": 6761,
       "cliques": 52,
       "status": "ACTIVE"
     },
@@ -1925,10 +1941,10 @@
       "id": "120254525633110249",
       "nome": "CJ · AD 26 - BLACK ULTIMA SEMANA",
       "grupo": "CJ",
-      "investido": 1.45,
+      "investido": 2.23,
       "conversas": 1,
-      "alcance": 250,
-      "impressoes": 285,
+      "alcance": 341,
+      "impressoes": 433,
       "cliques": 1,
       "status": "ACTIVE"
     },
@@ -1936,11 +1952,11 @@
       "id": "120254525634560249",
       "nome": "BM · AD 26 - BLACK ULTIMA SEMANA",
       "grupo": "BM",
-      "investido": 3.6,
-      "conversas": 2,
-      "alcance": 499,
-      "impressoes": 587,
-      "cliques": 5,
+      "investido": 6.75,
+      "conversas": 5,
+      "alcance": 844,
+      "impressoes": 1135,
+      "cliques": 8,
       "status": "ACTIVE"
     },
     {
@@ -1969,21 +1985,21 @@
       "id": "120254532934520249",
       "nome": "IG · AD 27 - BLACK VIDEO (PERFIL)",
       "grupo": "IG",
-      "investido": 136.1,
+      "investido": 141.52,
       "conversas": 0,
-      "alcance": 11865,
-      "impressoes": 23735,
-      "cliques": 469,
+      "alcance": 12045,
+      "impressoes": 24436,
+      "cliques": 487,
       "status": "ACTIVE"
     },
     {
       "id": "120254582789840249",
       "nome": "CJ · AD 24 - BLACK CAT D E E (ONIBUS E CARRETA)",
       "grupo": "CJ",
-      "investido": 8.11,
+      "investido": 8.12,
       "conversas": 2,
-      "alcance": 832,
-      "impressoes": 1431,
+      "alcance": 834,
+      "impressoes": 1435,
       "cliques": 5,
       "status": "ACTIVE"
     },
@@ -1991,11 +2007,33 @@
       "id": "120254582792540249",
       "nome": "BM · AD 24 - BLACK CAT D E E (ONIBUS E CARRETA)",
       "grupo": "BM",
-      "investido": 53.71,
+      "investido": 54.71,
       "conversas": 20,
-      "alcance": 3663,
-      "impressoes": 8818,
+      "alcance": 3676,
+      "impressoes": 9029,
       "cliques": 66,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120255017489790249",
+      "nome": "CJ · AD 29 - CAFE DA BLACK VIDEO",
+      "grupo": "CJ",
+      "investido": 3.06,
+      "conversas": 1,
+      "alcance": 348,
+      "impressoes": 398,
+      "cliques": 3,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "120255017492560249",
+      "nome": "BM · AD 29 - CAFE DA BLACK VIDEO",
+      "grupo": "BM",
+      "investido": 1.26,
+      "conversas": 0,
+      "alcance": 170,
+      "impressoes": 192,
+      "cliques": 0,
       "status": "ACTIVE"
     }
   ],
@@ -2042,7 +2080,8 @@
     "2026-11-24T07:05:00-03:00",
     "2026-11-25T07:10:00-03:00",
     "2026-11-26T07:10:00-03:00",
-    "2026-11-27T07:10:00-03:00"
+    "2026-11-27T07:10:00-03:00",
+    "2026-11-28T07:03:41-03:00"
   ],
-  "leitura": "<strong>O ritmo de conversas no WhatsApp continua forte nas duas unidades.</strong> Desde 07/10 já foram investidos R$ 1.826,52, com 397 conversas pelo WhatsApp (R$ 4,60 em média por conversa); ontem foram R$ 29,36 investidos e 11 conversas, a R$ 2,67 cada. Brasília de Minas está levemente na frente no total de conversas, mas o anúncio que mais traz gente é o \"Black Carro\", de Coração de Jesus — vale manter o investimento nele e seguir de perto as matrículas da Black Friday."
+  "leitura": "<strong>O investimento desde o início das campanhas (07/10) já trouxe 403 conversas no WhatsApp, com custo médio de R$ 4,20 por conversa.</strong> Ontem (27/11) foram investidos R$ 24,79, com 7 novas conversas iniciadas, a um custo de R$ 3,54 cada. Brasília de Minas é a unidade que mais traz gente, e o anúncio \"AD 21 - BLACK CARRO\" (Coração de Jesus) é o que mais converte entre os anúncios ativos. Próximo passo: manter o ritmo atual, já que o custo por conversa continua bem abaixo do teto combinado."
 }
